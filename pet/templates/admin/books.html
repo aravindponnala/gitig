@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Books Upload</h1>
+    <form  method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="title"><b>title:</b></label>
+      <input type="text" name="title" value="">
+       <label for="title"><b>summary:</b></label>
+      <input type="text" name="summary" value="">
+      <label for="file"><b>file</b></label>
+      <input type="file" name="myfile" value="">
+      <input type="submit" name="" value="submit">
+    </form>
+    <!-- {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %} -->
+  </body>
+</html>

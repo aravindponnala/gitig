@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thankyou</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+ #grad1 {
+            min-height: 100vh;
+            min-width: 100%;
+           
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #session_end_doctor_card{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 45%;
+    }
+    #session_end_customer_card{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 45%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #session_end_doctor_card{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35%;
+    }
+    #session_end_customer_card{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #session_end_doctor_card{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25%;
+    }
+    #session_end_customer_card{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #session_end_doctor_card{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+    }
+    #session_end_customer_card{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #session_end_doctor_card{
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 18%;
+    }
+    #session_end_customer_card{
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 18%;
+    }
+  
+}
+    </style>
+<body>
+    <div id="grad1">
+    <div class="wrapper">
+        <div class="container">
+    {% if doctorid == 'None' %}
+    <div class="row" id="session_end_customer_row">
+        <div class="col">
+            <div class="card" id="session_end_customer_card" style="border-radius: 10px;border-style: solid;border-color: #003300;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="fa fa-check-circle" style="font-size: 80px;color: #003300;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <label style="font-weight: bold;font-size: 20px;">Video call session ended</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <a
+                            href="{% url 'customer_home_page' customer_id=customerid  %}"
+                           >      
+                            <button class="btn btn" name="home" id="home_button"  style="background-color: #003300;color: white;">Home</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    {% else %}
+    <div class="row" id="session_end_doctor_row">
+        <div class="col">
+            <div class="card" id="session_end_doctor_card" style="border-radius: 10px;border-style: solid;border-color: #003300;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <i class="fa fa-check-circle" style="font-size: 80px;color: #003300;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <label style="font-weight: bold;font-size: 20px;">Video call session ended</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <a
+                            href="{% url 'list_patient' doc_id=doctorid  %}"
+                           > 
+                            <button class="btn btn" name="home" id="doctor_home_button"  style="background-color: #003300;color: white;">Home</button></a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    {% endif %}
+
+    
+</div>
+</div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

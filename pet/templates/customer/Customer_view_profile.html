@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view profile</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+    #grad1 {
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        filter: brightness(100%);
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 2px;
+            padding: 5px;
+        }
+
+        #name_card {
+            margin-top: 20%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #email_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #mobile_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #password_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #address_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #name_card {
+            margin-top: 15%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #email_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #mobile_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #password_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #address_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #name_card {
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #email_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #mobile_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #password_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #address_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            float: left;
+            margin-left: 10%;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #name_card {
+            margin-top: 7%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #email_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #mobile_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #password_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #address_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            float: left;
+            margin-left: 10%;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #name_card {
+            margin-top: 7%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #email_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #mobile_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #password_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #address_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            float: left;
+            margin-left: 10%;
+        }
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 m-0 p-0">
+                        <div id="heading_div">
+                            <h3 id="heading_id">MY PROFILE</h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                        <a role="button" id="back_button" class="btn" href="{% url 'customer_home_page' customer_id=customer_id %}">Home</a>
+
+                    </div>
+                </div>
+                <div class="card" id="name_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span>Name:</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-default"
+                                    href="{% url 'view_profile_edit_name' customer_id=customer_id %}" role="button"
+                                    style="float: right;">Edit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>{{customer_profile.customer_name}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- name card ends -->
+
+                <div class="card" id="email_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span>E-mail:</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-default"
+                                    href="{% url 'view_profile_edit_email' customer_id=customer_id %}" role="button"
+                                    style="float: right;">Edit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>{{customer_profile.email}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- email ends -->
+
+                <div class="card" id="mobile_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span>Mobile:</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-default"
+                                    href="{% url 'view_profile_edit_mobile' customer_id=customer_id %}" role="button"
+                                    style="float: right;">Edit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>{{customer_profile.mobile}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- mobile number ends -->
+
+                <div class="card" id="password_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span>Password:</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-default"
+                                    href="{% url 'view_profile_edit_password' customer_id=customer_id %}" role="button"
+                                    style="float: right;">Edit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>*****</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- address number ends -->
+
+                <div class="card" id="address_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <span>Address:</span>
+                            </div>
+                            <div class="col">
+                                <a class="btn btn-default"
+                                    href="{% url 'view_profile_edit_address' customer_id=customer_id %}" role="button"
+                                    style="float: right;">Edit</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>{{customer_profile.address}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

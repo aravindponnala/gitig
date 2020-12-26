@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>Doctor Details</h1>
+    <table class="table table-bordered table-sm" id="customers">
+          <thead>
+          <tr >
+          <th><center><b>Name of doctor</b></center></th>
+          <th><center><b>Gender</b></center></th>
+          <th><center><b>Date of birth</b></center></th>
+          <th><center><b>Email</b></center></th>
+          <th><center><b>Mobile</b></center></th>
+          <th><center><b>Telephone</b></center></th>
+          <th><center><b>Address</b></center></th>
+          <th><center><b>Qualification</b></center></th>
+          <th><center><b>Registration_number</b></center></th>
+          <th><center><b>consultation_fee</b></center></th>
+          <th><center><b>password</b></center></th>
+          <th><center><b>Hospital</b></center></th>
+          <th><center><b>Stock</b></center></th>
+          <th><center><b>Mode</b></center></th>
+          </tr>
+          </thead>
+          {% for doc_det in doctor %}
+          <tbody>
+          <tr>
+          <td><center>{{ doc_det.Name_of_doctor }}</center></td>
+          <td><center>{{ doc_det.Gender }}</center></td>
+          <td><center>{{ doc_det.Date_of_birth }}</center></td>
+          <td><center>{{ doc_det.Email}}</center></td>
+          <td><center>{{ doc_det.Mobile }}</center></td>
+          <td><center>{{ doc_det.Telephone }}</center></td>
+          <td><center>{{ doc_det.Address }}</center></td>
+          <td><center>{{ doc_det.Qualification}}</center></td>
+          <td><center>{{ doc_det.Registration_number }}</center></td>
+          <td><center>{{ doc_det.consultation_fee }}</center></td>
+          <td><center>{{ doc_det.password }}</center></td>
+          <td><center>{{ doc_det.Hospital }}</center></td>
+          <td><center>{{ doc_det.stock_management }}</center></td>
+          <td><center>{{ doc_det.mode }}</center></td>
+          </tr>
+          </tbody>
+          {% endfor %}
+  </body>
+</html>

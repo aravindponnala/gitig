@@ -1,0 +1,3869 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PET DETAILS</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.js"
+        integrity="sha256-2JRzNxMJiS0aHOJjG+liqsEOuBb6++9cY4dSOyiijX4=" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+
+        body {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #deworming_table {
+            border-color: #003300;
+            border-style: solid;
+            border-radius: 10px;
+
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            border-width: 0.75px;
+            display: block;
+
+
+
+        }
+
+        #deworming_tablebody_id {
+
+            height: 80px;
+        }
+
+        #deworming_table_td {
+            width: 100%;
+        }
+        #deworming_tablebody_id td,
+        th {
+            padding: 4px;
+            height: 25px;
+        }
+        #vaccination_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 90%;
+            overflow-x: scroll;
+            display: block;
+        }
+
+        thead {
+            background-color: #EFEFEF;
+        }
+
+        thead,
+        tbody {
+            display: block;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar {
+
+            width: 17px;
+            /* width of the entire scrollbar */
+
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-track {
+            margin: 2px;
+            border-radius: 30px;
+            background: white;
+            /* color of the tracking area */
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-thumb {
+            background-color: #003300;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+
+            border: 3px solid whitesmoke;
+            /* creates padding around scroll thumb */
+        }
+
+        #vaccination_table_body {
+            overflow-y: scroll;
+            scrollbar-color: blue;
+
+            overflow-x: hidden;
+            height: 220px;
+        }
+
+        #vaccination_table_body td,
+        th {
+            padding: 4px;
+            height: 25px;
+            border: dashed 1px lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+
+
+        #back_button_id {
+            margin: 4%;
+        }
+
+        #pet_name {
+            margin-left: 15%;
+            margin-top: 8px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pet_name_input {
+            width: 80%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+      
+        #breed_input {
+            width: 80%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+
+        }
+
+
+
+        #age {
+            padding-top: 6px;
+         margin-left: 25%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #years {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #months {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #gender {
+            padding-top: 5px;
+          margin-left: 25%;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+        #male {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #female {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            color: #003300;
+            border-radius: 30px;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+
+        }
+
+
+      
+
+        #last_vaccination {
+
+            width: 85%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+
+        #vaccination_img_id {
+            margin-bottom: 8px;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+        }
+
+        #last_vaccination_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #dewarming_img_id {
+            margin-bottom: 8px;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+
+        }
+
+      
+
+        #last_dewarming {
+
+
+
+            width: 85%;
+            border-style: solid;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #last_deworming_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #submit_button {
+            color: white;
+            float: right;
+            background-color: #003300;
+        }
+
+        #add_another_pet {
+            float: left;
+            color: white;
+            margin-top: 3px;
+            background-color: #003300;
+        }
+
+        #show_div {
+            margin-left: 5%;
+
+        }
+
+        #show_div_enter_date {
+            margin-left: 5%;
+
+        }
+
+
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #rabies_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #dhpp_input {
+            width: 150px;
+            height: 30px;
+
+        }
+
+        #da2pp_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #da2ppc_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #da2ppvl2_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #rabies_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #distemper_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #parovirus_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #parainfluenza_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #corona_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #bordetella_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #lyme_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #cav1_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #cav2_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #can_l_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #giardia_input {
+            width: 150px;
+            height: 30px;
+        }
+
+        #Leptospirosis {
+            width: 150px;
+            height: 30px;
+        }
+
+        #Enter_date_input {
+
+            width: 140px;
+            height: 30px;
+        }
+
+#empty_td{
+    width: 150px;
+            height: 30px;
+}
+ 
+        #symbol_id {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #symbol_id2 {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        body {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #vaccination_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 90%;
+            /* overflow-x: scroll; */
+            display: block;
+        }
+
+        thead {
+            background-color: #EFEFEF;
+        }
+
+        thead,
+        tbody {
+            display: block;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar {
+
+            width: 17px;
+            /* width of the entire scrollbar */
+
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-track {
+            margin: 2px;
+            border-radius: 30px;
+            background: white;
+            /* color of the tracking area */
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-thumb {
+            background-color: #003300;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+
+            border: 3px solid whitesmoke;
+            /* creates padding around scroll thumb */
+        }
+
+        #vaccination_table_body {
+            overflow-y: scroll;
+            scrollbar-color: blue;
+
+            overflow-x: hidden;
+            height: 220px;
+        }
+
+      #vaccination_table_body  td,
+        th {
+            padding: 5px;
+            height: 25px;
+            border: dashed 1px lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        #deworming_table{
+            display: block;
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+
+        }
+
+        #deworming_tablebody_id {
+
+            height: 80px;
+        }
+        #deworming_tablebody_id td,
+        th {
+            padding: 4px;
+            height: 25px;
+        }
+        #back_button_id {
+            margin: 4%;
+            margin-right: 8%;
+
+        }
+
+        #pet_name {
+            margin-left: 15%;
+            margin-top: 8px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pet_name_input {
+            width: 72%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+   
+        #breed_input {
+            width: 72%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+
+        }
+
+        #age {
+            padding-top: 6px;
+         margin-left: 25%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #years {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #months {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #gender {
+          padding-top: 5px;
+          margin-left: 25%;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #male {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #female {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            color: #003300;
+            border-radius: 30px;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+
+        }
+
+
+        #last_vaccination {
+            margin-left: 8%;
+            width: 85%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+
+        #vaccination_img_id {
+            margin-bottom: 8px;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+        }
+
+        #last_vaccination_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #dewarming_img_id {
+
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+
+        }
+
+
+
+        #last_dewarming {
+
+
+            width: 85%;
+            border-style: solid;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #last_deworming_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #submit_button {
+            color: white;
+            float: right;
+            background-color: #003300;
+        }
+
+        #add_another_pet {
+            float: left;
+            color: white;
+            margin-top: 3px;
+            background-color: #003300;
+        }
+
+        #show_div {
+            margin-left: 15%;
+        }
+
+        #show_div_enter_date {
+            margin-left: 15%;
+
+        }
+
+        #select_vaccine_and_enter_date {
+            margin-left: 10%;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #dapv_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #dhpp_input {
+            width: 120%;
+            height: 30px;
+
+        }
+
+        #da2pp_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #da2ppc_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #da2ppvl2_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #rabies_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #distemper_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #parovirus_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #parainfluenza_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #corona_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #bordetella_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #lyme_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #cav1_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #cav2_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #can_l_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #giardia_input {
+            width: 120%;
+            height: 30px;
+        }
+
+        #Leptospirosis {
+            width: 120%;
+            height: 30px;
+        }
+
+        #Enter_date_input {
+
+width: 140px;
+height: 30px;
+}
+
+#empty_td{
+width: 150px;
+height: 30px;
+}
+
+
+
+        #symbol_id {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #symbol_id2 {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        body {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+
+        }
+        #vaccination_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 55%;
+            /* overflow-x: scroll; */
+            display: block;
+        }
+
+        thead {
+            background-color: #EFEFEF;
+        }
+
+        thead,
+        tbody {
+            display: block;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar {
+
+            width: 17px;
+            /* width of the entire scrollbar */
+
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-track {
+            margin: 2px;
+            border-radius: 30px;
+            background: white;
+            /* color of the tracking area */
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-thumb {
+            background-color: #003300;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+
+            border: 3px solid whitesmoke;
+            /* creates padding around scroll thumb */
+        }
+
+        #vaccination_table_body {
+            overflow-y: scroll;
+            scrollbar-color: blue;
+
+            overflow-x: hidden;
+            height: 220px;
+        }
+
+      #vaccination_table_body  td,
+        th {
+            padding: 5px;
+            height: 25px;
+            border: dashed 1px lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        #deworming_table{
+            display: block;
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+
+        }
+
+        #deworming_tablebody_id {
+
+            height: 80px;
+        }
+        #deworming_tablebody_id td,
+        th {
+            padding: 4px;
+            height: 25px;
+        }
+        #history_heading_id {
+            margin-left: 55%;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #back_button_id {
+            margin: 2%;
+            margin-right: 8%;
+
+        }
+
+        #pet_name {
+            margin-left: 65%;
+            margin-top: 8px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pet_name_input {
+            width: 57%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+        #breed {
+            margin-left: 65%;
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #breed_input {
+
+            width: 57%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+        #age {
+            padding-top: 6px;
+         margin-left: 25%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #years {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #months {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #gender {
+          padding-top: 5px;
+          margin-left: 25%;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #male {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #female {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            color: #003300;
+            border-radius: 30px;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+
+        }
+
+        #last_vaccination {
+            width: 85%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+        #vaccination_div {
+            margin-left: 25%;
+        }
+
+        #last_vaccination {
+            margin-left: 8%;
+            width: 60%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+
+        #vaccination_img_id {
+            margin-bottom: 8px;
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+        }
+
+        #last_vaccination_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #dewarming_img_id {
+
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+
+        }
+
+        #deworming_div {
+            margin-left: 25%;
+        }
+
+        #div_enter_date {
+            margin-left: 25%;
+        }
+
+        #last_dewarming {
+
+
+            width: 60%;
+            border-style: solid;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #last_deworming_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #submit_button {
+            color: white;
+            float: right;
+            background-color: #003300;
+        }
+
+
+        #add_another_pet {
+            float: right;
+            color: white;
+            margin-top: 3px;
+            background-color: #003300;
+        }
+
+        #show_div {
+            margin-left: 25%;
+        }
+
+        #show_div_enter_date {
+            margin-left: 25%;
+
+        }
+
+        #select_vaccine_and_enter_date {
+            margin-left: 10%;
+        }
+
+        #last_deworming_arrow {
+            margin-left: 15%
+        }
+
+        #last_vaccination_arrow {
+            margin-left: 15%
+        }
+
+        #enter_date {
+
+            width: 120px;
+
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #vaccination_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 42%;
+            /* overflow-x: scroll; */
+            display: block;
+        }
+
+        thead {
+            background-color: #EFEFEF;
+        }
+
+        thead,
+        tbody {
+            display: block;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar {
+
+            width: 17px;
+            /* width of the entire scrollbar */
+
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-track {
+            margin: 2px;
+            border-radius: 30px;
+            background: white;
+            /* color of the tracking area */
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-thumb {
+            background-color: #003300;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+
+            border: 3px solid whitesmoke;
+            /* creates padding around scroll thumb */
+        }
+
+        #vaccination_table_body {
+            overflow-y: scroll;
+            scrollbar-color: blue;
+
+            overflow-x: hidden;
+            height: 220px;
+        }
+
+       #vaccination_table_body td,
+        th {
+            padding: 5px;
+            height: 25px;
+            border: dashed 1px lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        #deworming_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            display: block;
+
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            width: 42%;
+
+        }
+
+        #deworming_tablebody_id {
+
+            height: 80px;
+        }
+        #deworming_tablebody_id td,
+        th {
+            padding: 4px;
+            height: 25px;
+        }
+        #history_heading_id {
+            margin-left: 70%;
+        }
+
+        #back_button_id {
+            margin: 4%;
+            margin-right: 15%;
+
+        }
+
+        #pet_name {
+            margin-left: 70%;
+            margin-top: 8px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pet_name_input {
+            width: 32%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+        #breed {
+            margin-left: 70%;
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #breed_input {
+
+            width: 32%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+
+        }
+
+
+        #age {
+            padding-top: 6px;
+         margin-left: 25%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #years {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #months {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #gender {
+          padding-top: 5px;
+          margin-left: 25%;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #male {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #female {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            color: #003300;
+            border-radius: 30px;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+
+        }
+        #last_vaccination {
+
+            width: 50%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+
+        #vaccination_img_id {
+            margin-bottom: 8px;
+            width: 35;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+        }
+
+        #last_vaccination_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #dewarming_img_id {
+
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+
+        }
+
+        #deworming_div {
+            margin-left: 35%;
+        }
+
+        #div_enter_date {
+            margin-left: 35%;
+        }
+
+        #vaccination_div {
+            margin-left: 35%;
+        }
+
+        #last_dewarming {
+
+
+            width: 50%;
+            border-style: solid;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #last_deworming_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #submit_button {
+            margin-right: 2%;
+            color: white;
+            float: right;
+            background-color: #003300;
+        }
+
+        #add_another_pet {
+            float: right;
+            color: white;
+            margin-top: 3px;
+            background-color: #003300;
+        }
+
+
+        #show_div {
+            margin-left: 30%;
+        }
+
+        #show_div_enter_date {
+            margin-left: 35%;
+
+        }
+
+        #select_vaccine_and_enter_date {
+            margin-left: 10%;
+        }
+
+        #last_deworming_arrow {
+            margin-left: 15%
+        }
+
+        #last_vaccination_arrow {
+            margin-left: 15%
+        }
+
+        #enter_date {
+
+            width: 120px;
+
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #rabies_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #dhpp_input {
+            width: 160px;
+            height: 30px;
+
+        }
+
+        #da2pp_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #da2ppc_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #da2ppvl2_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #rabies_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #distemper_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #parovirus_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #parainfluenza_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #corona_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #bordetella_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #lyme_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #cav1_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #cav2_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #can_l_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #giardia_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #Leptospirosis {
+            width: 160px;
+            height: 30px;
+        }
+
+        #Enter_date_input {
+
+            width: 160px;
+            height: 30px;
+        }
+ 
+#empty_td{
+width: 150px;
+height: 30px;
+}
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            min-width: 100%;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #vaccination_table {
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 35%;
+            /* overflow-x: scroll; */
+            display: block;
+        }
+
+        thead {
+            background-color: #EFEFEF;
+        }
+
+        thead,
+        tbody {
+            display: block;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar {
+
+            width: 17px;
+            /* width of the entire scrollbar */
+
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-track {
+            margin: 2px;
+            border-radius: 30px;
+            background: white;
+            /* color of the tracking area */
+            margin: 2px;
+        }
+
+        #vaccination_table_body::-webkit-scrollbar-thumb {
+            background-color: #003300;
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+
+            border: 3px solid whitesmoke;
+            /* creates padding around scroll thumb */
+        }
+
+        #vaccination_table_body {
+            overflow-y: scroll;
+            scrollbar-color: blue;
+
+            overflow-x: hidden;
+            height: 180px;
+        }
+
+     #vaccination_table_body   td,
+        th {
+            padding: 5px;
+            height: 25px;
+            border: dashed 1px lightblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        #deworming_table {
+            display: block;
+            border-width: 0.75px;
+            border-radius: 10px;
+            border-color: #003300;
+            border-style: solid;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            width: 35%;
+
+
+        }
+
+        #deworming_tablebody_id {
+
+            height: 70px;
+        }
+        #deworming_tablebody_id td,
+        th {
+            padding: 4px;
+            height: 25px;
+        }
+
+
+        #history_heading_id {
+            margin-left: 65%;
+        }
+
+   
+
+        #pet_name_input {
+            width: 32%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+        }
+
+    
+
+        #breed_input {
+
+            width: 32%;
+            outline: 0;
+
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 0%;
+
+
+        }
+
+
+        #age {
+            padding-top: 6px;
+            margin-left: 25%;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #years {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #months {
+            text-align: center;
+            width: 94%;
+            border: none;
+            border-bottom: 2px solid #1f7a1f;
+            border-radius: 0%;
+        }
+
+        #gender {
+          padding-top: 5px;
+          margin-left: 25%;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #male {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 30px;
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #female {
+            text-align: center;
+            width: 80%;
+            font-size: 16px;
+            color: #003300;
+            border-radius: 30px;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+
+        }
+
+
+        #vaccination_div {
+            margin-left: 35%;
+        }
+
+        #last_vaccination {
+
+            width: 45%;
+            font-size: 16px;
+            border-width: 0.75px;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+
+        }
+
+        #vaccination_img_id {
+            margin-bottom: 8px;
+            width: 35;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+        }
+
+        #last_vaccination_arrow {
+            float: right;
+            margin-right: 15%;
+            padding: 5px;
+        }
+
+        #dewarming_img_id {
+
+            width: 25px;
+            height: 25px;
+            float: left;
+            margin-left: 10px;
+
+
+        }
+
+    
+
+     
+
+        #submit_button {
+            margin-right: 8%;
+            color: white;
+            float: right;
+            background-color: #003300;
+        }
+
+
+        #add_another_pet {
+            margin-right: 10%;
+            float: right;
+            color: white;
+            margin-top: 3px;
+            background-color: #003300;
+        }
+
+
+    
+      
+      
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #rabies_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #dhpp_input {
+            width: 160px;
+            height: 30px;
+
+        }
+
+        #da2pp_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #da2ppc_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #da2ppvl2_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #rabies_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #distemper_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #parovirus_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #parainfluenza_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #corona_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #bordetella_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #lyme_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #cav1_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #cav2_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #can_l_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #giardia_input {
+            width: 160px;
+            height: 30px;
+        }
+
+        #Leptospirosis {
+            width: 160px;
+            height: 30px;
+        }
+
+        #Enter_date_input {
+
+            width: 160px;
+            height: 30px;
+        }
+        #empty_td{
+width: 150px;
+height: 30px;
+}
+
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+    <div id="grad1">
+        <div id="first_div">
+            <div class="row">
+                <div class="col-xs-3 col-sm-4 col-md-5 col-lg-5 col-xl-4">
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+                                style="font-weight: bold;" href="{% url 'mypets' %}">
+                                My pets
+                              </a></li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a>
+                            </li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a>
+                            </li>
+                        </div>
+                    </div>
+                    <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+                </div>
+                <div class="col-xs-7 col-sm-6 col-md-3 col-lg-3 col-xl-4">
+
+                    <div id="heading_div">
+                        <h3 id="heading_id">PET DETAILS</h3>
+                    </div>
+
+                </div>
+            </div>
+
+         <br>
+            <div id="wrapper_id" class="wrapper ">
+                <div class="container" id="container_id">
+
+                        <form method="POST">
+                            {% csrf_token %}
+
+                                    
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                    <div class="row" style="justify-content: center;">
+                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-1 col-xl-1">
+                            <label class="radio-inline ml-4"><input type="radio" name="optradio"
+                                    onclick="show_dog_breed()">Dog</label>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-1 col-xl-1">
+                            <label class="radio-inline  ml-2"><input type="radio" name="optradio"   onclick="hide_dog_breed()">Cat</label>
+                        </div>
+                        <!-- <div class="col-xs-3 col-sm-3 col-md-2 col-lg-1 col-xl-1 m-0 p-0">
+                            <label class="radio-inline"><input type="radio" name="optradio"   onclick="hide_dog_breed()">Others</label>
+                        </div> -->
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2 col-xl-2  m-0 p-0">
+                            <input type="text" class="form-control" placeholder="Enter, other species">
+                        </div>
+                    
+                    </div>
+                    </div>
+                    </div>
+                            <!-- <div id="div1_show"> -->
+                          
+
+                            <div class="row mt-2">
+                              
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 m-0 p-0  mt-2"  style="display: none;" id="breed_row">
+                                        <input type="text" list="datalist_id" name=breed id="breed_input"
+                                            class="form-control" data-required="true"
+                                            placeholder="Select / Type breed" 
+                                            pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$"
+                                            title="Please type breed if not found in the dropdown" data-toggle="tooltip" >
+                                        <datalist id="datalist_id">
+                                            <option value="Affenpinscher" data-tokens="Affenpinscher">Affenpinscher
+                                            </option>
+                                            <option value="Afghan Hound" data-tokens="Afghan Hound">Afghan Hound
+                                            </option>
+                                            <option value="Afghan Shepherd" data-tokens="Afghan Shepherd">Afghan
+                                                Shepherd</option>
+                                            <option value="Aidi" data-tokens="Aidi">Aidi</option>
+                                            <option value="Airedale Terrier" data-tokens="Airedale Terrier">Airedale
+                                                Terrier</option>
+                                            <option value="Akbash" data-tokens="Akbash">Akbash</option>
+                                            <option value="Akita" data-tokens="Akita"> Akita</option>
+                                            <option value="Alano Espanol" data-tokens="Alano Espanol">Alano Espanol
+                                            </option>
+                                            <option value="Alaskan husky" data-tokens="Alaskan husky"> Alaskan husky
+                                            </option>
+                                            <option value="Alaskan Klee Kai" data-tokens="Alaskan Klee Kai">Alaskan Klee
+                                                Kai</option>
+                                            <option value="Alaskan Malamute" data-tokens="Alaskan Malamute">Alaskan
+                                                Malamute</option>
+                                            <option value="Alaunt" data-tokens="Alaunt">Alaunt</option>
+                                            <option value="Alopekis" data-tokens="Alopekis">Alopekis</option>
+                                            <option value="Alpine Dachsbracke" data-tokens="Alpine Dachsbracke">Alpine
+                                                Dachsbracke</option>
+                                            <option value="Alpine Mastiff" data-tokens="Alpine Mastiff">Alpine Mastiff
+                                            </option>
+                                            <option value="Alpine Spaniel" data-tokens="Alpine Spaniel">Alpine Spaniel
+                                            </option>
+                                            <option value="American Akita" data-tokens="American Akita">American Akita
+                                            </option>
+                                            <option value="American Bulldog" data-tokens="American Bulldog">American
+                                                Bulldog</option>
+                                            <option value="American Bully" data-tokens="American Bully"> American Bully
+                                            </option>
+                                            <option value="American Cocker Spaniel"
+                                                data-tokens="American Cocker Spaniel">American Cocker Spaniel</option>
+                                            <option value="American English Coonhound"
+                                                data-tokens="American English Coonhound"> American English Coonhound
+                                            </option>
+                                            <option value="American Eskimo Dog" data-tokens="American Eskimo Dog">
+                                                American
+                                                Eskimo Dog</option>
+                                            <option value="American Foxhound" data-tokens="American Foxhound">American
+                                                Foxhound</option>
+                                            <option value="American Hairless Terrier"
+                                                data-tokens="American Hairless Terrier">American Hairless Terrier
+                                            </option>
+                                            <option value="American Pit Bull Terrier"
+                                                data-tokens="American Pit Bull Terrier">American Pit Bull Terrier
+                                            </option>
+                                            <option value="American Staffordshire Terrier"
+                                                data-tokens="American Staffordshire Terrier">American Staffordshire
+                                                Terrier</option>
+                                            <option value="American Water Spaniel" data-tokens="American Water Spaniel">
+                                                American Water Spaniel</option>
+                                            <option value="Anatolian Shepherd Dog" data-tokens="Anatolian Shepherd Dog">
+                                                Anatolian Shepherd Dog</option>
+                                            <option value="Andalusian Hound" data-tokens="Andalusian Hound">Andalusian
+                                                Hound</option>
+                                            <option value="Anglo Francais de Petite Vénerie"
+                                                data-tokens="Anglo Francais de Petite Vénerie">Anglo Francais de Petite
+                                                Vénerie</option>
+                                            <option value="Appenzeller Sennenhund" data-tokens="Appenzeller Sennenhund">
+                                                Appenzeller Sennenhund</option>
+                                            <option value="Argentine Polar Dog" data-tokens="Argentine Polar Dog">
+                                                Argentine Polar Dog</option>
+                                            <option value="Ariegeois" data-tokens="Ariegeois"> Ariegeois</option>
+                                            <option value="Armant" data-tokens="Armant">Armant</option>
+                                            <option value="Armenian Gampr dog" data-tokens="Armenian Gampr dog">Armenian
+                                                Gampr dog</option>
+                                            <option value="Artois Hound" data-tokens="Artois Hound">Artois Hound
+                                            </option>
+                                            <option value="Australian Cattle Dog" data-tokens="Australian Cattle Dog">
+                                                Australian Cattle Dog</option>
+                                            <option value="Australian Kelpie" data-tokens="Australian Kelpie">Australian
+                                                Kelpie</option>
+                                            <option value="Australian Shepherd" data-tokens="Australian Shepherd">
+                                                Australian Shepherd</option>
+                                            <option value="Australian Stumpy Tail Cattle Dog"
+                                                data-tokens="Australian Stumpy Tail Cattle Dog">Australian Stumpy Tail
+                                                Cattle Dog</option>
+                                            <option value="Australian Terrier" data-tokens="Australian Terrier">
+                                                Australian Terrier</option>
+                                            <option value="Austrian Black and Tan Hound"
+                                                data-tokens="Austrian Black and Tan Hound">Austrian Black and Tan Hound
+                                            </option>
+                                            <option value="Austrian Pinscher" data-tokens="Austrian Pinscher">Austrian
+                                                Pinscher</option>
+                                            <option value="Azawakh" data-tokens="Azawakh">Azawakh</option>
+                                            <option value="Bakharwal dog" data-tokens="Bakharwal dog"> Bakharwal dog
+                                            </option>
+                                            <option value="Barbado da Terceira" data-tokens="Barbado da Terceira">
+                                                Barbado da Terceira</option>
+                                            <option value="Barbet" data-tokens="Barbet">Barbet</option>
+
+                                            <option value="Basenji" data-tokens="Basenji">Basenji</option>
+                                            <option value="Basque Shepherd Dog" data-tokens="Basque Shepherd Dog">Basque
+                                                Shepherd Dog</option>
+                                            <option value="Basset Artesien Normand"
+                                                data-tokens="Basset Artesien Normand"> Basset Artesien Normand</option>
+                                            <option value="Basset Bleu de Gascogne"
+                                                data-tokens="Basset Bleu de Gascogne"> Basset Bleu de Gascogne</option>
+                                            <option value="Basset Fauve de Bretagne"
+                                                data-tokens="Basset Fauve de Bretagne">Basset Fauve de Bretagne</option>
+                                            <option value="Basset Hound" data-tokens="Basset Hound">Basset Hound
+                                            </option>
+                                            <option value="Bavarian Mountain Hound"
+                                                data-tokens="Bavarian Mountain Hound">Bavarian Mountain Hound</option>
+                                            <option value="Beagle" data-tokens="Beagle">Beagle</option>
+                                            <option value="Beagle Harrier" data-tokens="Beagle Harrier">Beagle Harrier
+                                            </option>
+                                            <option value="Bearded Collie" data-tokens="Bearded Collie">Bearded Collie
+                                            </option>
+                                            <option value="Beauceron" data-tokens="Beauceron"> Beauceron</option>
+                                            <option value="Bedlington Terrier" data-tokens="Bedlington Terrier">
+                                                Bedlington Terrier</option>
+                                            <option value="Belgian Shepherd Dog Groenendael"
+                                                data-tokens="Belgian Shepherd Dog Groenendael">Belgian Shepherd Dog
+                                                Groenendael</option>
+                                            <option value="Belgian Shepherd Dog Laekenois"
+                                                data-tokens="Belgian Shepherd Dog Laekenois">Belgian Shepherd Dog
+                                                Laekenois</option>
+                                            <option value="Belgian Shepherd Dog Malinois"
+                                                data-tokens="Belgian Shepherd Dog Malinois"> Belgian Shepherd Dog
+                                                Malinois</option>
+                                            <option value="Belgian Shepherd Dog Tervuren"
+                                                data-tokens="Belgian Shepherd Dog Tervuren">Belgian Shepherd Dog
+                                                Tervuren</option>
+                                            <option value="Bergamasco Shepherd" data-tokens="Bergamasco Shepherd">
+                                                Bergamasco Shepherd</option>
+                                            <option value="Berger Blanc Suisse" data-tokens="Berger Blanc Suisse">
+                                                Berger Blanc Suisse</option>
+                                            <option value="Berger Picard" data-tokens="Berger Picard">Berger Picard
+                                            </option>
+                                            <option value="Bernese Mountain Dog" data-tokens="Bernese Mountain Dog">
+                                                Bernese Mountain Dog</option>
+                                            <option value="Bichon Frise" data-tokens="Bichon Frise">Bichon Frise
+                                            </option>
+                                            <option value="Billy" data-tokens="Billy"> Billy</option>
+                                            <option value="Black and Tan Coonhound"
+                                                data-tokens="Black and Tan Coonhound">Black and Tan Coonhound</option>
+                                            <option value="Black and Tan Virginia Foxhound"
+                                                data-tokens="Black and Tan Virginia Foxhound">Black and Tan Virginia
+                                                Foxhound</option>
+                                            <option value="Black Norwegian Elkhound"
+                                                data-tokens="Black Norwegian Elkhound">Black Norwegian Elkhound</option>
+                                            <option value="Black Russian Terrier" data-tokens="Black Russian Terrier">
+                                                Black Russian Terrier</option>
+                                            <option value="Black Mouth Cur" data-tokens="Black Mouth Cur"> Black Mouth
+                                                Cur</option>
+                                            <option value="Bloodhound" data-tokens="Bloodhound">Bloodhound</option>
+                                            <option value="Blue Heeler" data-tokens="Blue Heeler">Blue Heeler</option>
+                                            <option value="Blue Lacy" data-tokens="Blue Lacy">Blue Lacy</option>
+                                            <option value="Blue Paul Terrier" data-tokens="Blue Paul Terrier">Blue Paul
+                                                Terrier</option>
+                                            <option value="Blue Picardy Spaniel" data-tokens="Blue Picardy Spaniel">Blue
+                                                Picardy Spaniel</option>
+                                            <option value="Bluetick Coonhound" data-tokens="Bluetick Coonhound">Bluetick
+                                                Coonhound</option>
+                                            <option value="Boerboel" data-tokens="Boerboel">Boerboel</option>
+                                            <option value="Bohemian Shepherd" data-tokens="Bohemian Shepherd">Bohemian
+                                                Shepherd</option>
+                                            <option value="Bolognese" data-tokens="Bolognese"> Bolognese</option>
+                                            <option value="Border Collie" data-tokens="Border Collie"> Border Collie
+                                            </option>
+                                            <option value="Border Terrier" data-tokens="Border Terrier">Border Terrier
+                                            </option>
+                                            <option value="Borzoi" data-tokens="Borzoi"> Borzoi</option>
+                                            <option value="Bosnian Coarse haired Hound"
+                                                data-tokens="Bosnian Coarse haired Hound">Bosnian Coarse haired Hound
+                                            </option>
+                                            <option value="Boston Terrier" data-tokens="Boston Terrier">Boston Terrier
+                                            </option>
+                                            <option value="Bouvier des Ardennes" data-tokens="Bouvier des Ardennes">
+                                                Bouvier des Ardennes</option>
+                                            <option value="Bouvier des Flandres" data-tokens="Bouvier des Flandres">
+                                                Bouvier des Flandres</option>
+                                            <option value="Boxer" data-tokens="Boxer"> Boxer</option>
+                                            <option value="Boykin Spaniel" data-tokens="Boykin Spaniel">Boykin Spaniel
+                                            </option>
+                                            <option value="Bracco Italiano" data-tokens="Bracco Italiano"> Bracco
+                                                Italiano</option>
+                                            <option value="Braque d'Auvergne" data-tokens="Braque d'Auvergne">Braque
+                                                d'Auvergne</option>
+                                            <option value="Braque de l'Ariege" data-tokens="Braque de l'Ariege">Braque
+                                                de l'Ariege</option>
+                                            <option value="Braque du Bourbonnais" data-tokens="Braque du Bourbonnais">
+                                                Braque du Bourbonnais</option>
+                                            <option value="Braque du Puy" data-tokens="Braque du Puy">Braque du Puy
+                                            </option>
+                                            <option value="Braque Francais" data-tokens="Braque Francais"> Braque
+                                                Francais</option>
+                                            <option value="Braque Saint Germain" data-tokens="Braque Saint Germain">
+                                                Braque Saint Germain</option>
+                                            <option value="Brazilian Dogo" data-tokens="Brazilian Dogo">Brazilian Dogo
+                                            </option>
+                                            <option value="Brazilian Terrier" data-tokens="Brazilian Terrier"> Brazilian
+                                                Terrier</option>
+                                            <option value="Briard" data-tokens="Briard">Briard</option>
+                                            <option value="Briquet Griffon Vendéen"
+                                                data-tokens="Briquet Griffon Vendéen">Briquet Griffon Vendéen</option>
+                                            <option value="Brittany" data-tokens="Brittany"> Brittany</option>
+                                            <option value="Broholmer" data-tokens="Broholmer"> Broholmer</option>
+                                            <option value="Bruno Jura Hound" data-tokens="Bruno Jura Hound">Bruno Jura
+                                                Hound</option>
+                                            <option value="Brussels Griffon" data-tokens="Brussels Griffon">Brussels
+                                                Griffon</option>
+                                            <option value="Bucovina Shepherd Dog" data-tokens="Bucovina Shepherd Dog">
+                                                Bucovina Shepherd Dog</option>
+                                            <option value="Bull and terrier" data-tokens="Bull and terrier">Bull and
+                                                terrier</option>
+                                            <option value="Bull Terrier" data-tokens="	Bull Terrier">Bull Terrier
+                                            </option>
+                                            <option value="Bulldog" data-tokens="Bulldog"> Bulldog</option>
+                                            <option value="Bullenbeisser" data-tokens="Bullenbeisser">Bullenbeisser
+                                            </option>
+                                            <option value="Bullmastiff" data-tokens="Bullmastiff"> Bullmastiff</option>
+                                            <option value="Bully Kutta" data-tokens="Bully Kutta"> Bully Kutta</option>
+                                            <option value="Burgos Pointer" data-tokens="Burgos Pointer">Burgos Pointer
+                                            </option>
+                                            <option value="Cairn Terrier" data-tokens="Cairn Terrier"> Cairn Terrier
+                                            </option>
+                                            <option value="Campeiro Bulldog" data-tokens="Campeiro Bulldog">Campeiro
+                                                Bulldog</option>
+                                            <option value="Canaan Dog" data-tokens="Canaan Dog">Canaan Dog</option>
+                                            <option value="Canadian Eskimo Dog" data-tokens="Canadian Eskimo Dog">
+                                                Canadian Eskimo Dog</option>
+                                            <option value="Cane Corso" data-tokens="Cane Corso">Cane Corso</option>
+                                            <option value="Cantabrian Water Dog" data-tokens="Cantabrian Water Dog">
+                                                Cantabrian Water Dog</option>
+                                            <option value="Cao da Serra de Aires" data-tokens="Cao da Serra de Aires">
+                                                Cao da Serra de Aires</option>
+                                            <option value="Cao de Gado Transmontano"
+                                                data-tokens="Cao de Gado Transmontano"> Cao de Gado Transmontano
+                                            </option>
+                                            <option value="Cao Fila de Sao Miguel" data-tokens="Cao Fila de Sao Miguel">
+                                                Cao Fila de Sao Miguel</option>
+                                            <option value="Cardigan Welsh Corgi" data-tokens="Cardigan Welsh Corgi">
+                                                Cardigan Welsh Corgi</option>
+                                            <option value="Carolina Dog" data-tokens="Carolina Dog"> Carolina Dog
+                                            </option>
+                                            <option value="Carpathian Shepherd Dog"
+                                                data-tokens="Carpathian Shepherd Dog">Carpathian Shepherd Dog</option>
+                                            <option value="Catalan Sheepdog" data-tokens="Catalan Sheepdog"> Catalan
+                                                Sheepdog</option>
+                                            <option value="Caucasian Shepherd Dog" data-tokens="Caucasian Shepherd Dog">
+                                                Caucasian Shepherd Dog</option>
+                                            <option value="Cavalier King Charles Spaniel"
+                                                data-tokens="Cavalier King Charles Spaniel">Cavalier King Charles
+                                                Spaniel</option>
+                                            <option value="Central Asian Shepherd Dog"
+                                                data-tokens="Central Asian Shepherd Dog">Central Asian Shepherd Dog
+                                            </option>
+                                            <option value="Cesky Fousek" data-tokens="Cesky Fousek">Cesky Fousek
+                                            </option>
+                                            <option value="Cesky Terrier" data-tokens="Cesky Terrier"> Cesky Terrier
+                                            </option>
+                                            <option value="Chesapeake Bay Retriever"
+                                                data-tokens="Chesapeake Bay Retriever"> Chesapeake Bay Retriever
+                                            </option>
+                                            <option value="Chien Francais Blanc et Noir"
+                                                data-tokens="Chien Francais Blanc et Noir"> Chien Francais Blanc et Noir
+                                            </option>
+                                            <option value="Chien Francais Blanc et Orange"
+                                                data-tokens="Chien Francais Blanc et Orange">Chien Francais Blanc et
+                                                Orange</option>
+                                            <option value="Chien Francais Tricolore"
+                                                data-tokens="Chien Francais Tricolore"> Chien Francais Tricolore
+                                            </option>
+                                            <option value="Chien gris" data-tokens="Chien gris">Chien gris</option>
+                                            <option value="Chihuahua" data-tokens="Chihuahua"> Chihuahua</option>
+                                            <option value="Chilean Terrier" data-tokens="Chilean Terrier"> Chilean
+                                                Terrier</option>
+                                            <option value="Chinese Chongqing Dog" data-tokens="Chinese Chongqing Dog">
+                                                Chinese Chongqing Dog</option>
+                                            <option value="Chinese Crested Dog" data-tokens="Chinese Crested Dog">
+                                                Chinese Crested Dog</option>
+                                            <option value="Chinook" data-tokens="Chinook">Chinook</option>
+                                            <option value="Chippiparai" data-tokens="Chippiparai">Chippiparai</option>
+                                            <option value="Chiribaya Dog" data-tokens="Chiribaya Dog">Chiribaya Dog
+                                            </option>
+                                            <option value="Chow Chow" data-tokens="Chow Chow"> Chow Chow</option>
+                                            <option value="Cierny Sery" data-tokens="Cierny Sery"> Cierny Sery</option>
+                                            <option value="Cirneco dell'Etna" data-tokens="Cirneco dell'Etna">Cirneco
+                                                dell'Etna</option>
+                                            <option value="Clumber Spaniel" data-tokens="Clumber Spaniel">Clumber
+                                                Spaniel</option>
+                                            <option value="Collie Rough" data-tokens="Collie Rough">Collie Rough
+                                            </option>
+                                            <option value="Collie Smooth" data-tokens="Collie Smooth">Collie Smooth
+                                            </option>
+                                            <option value="Combai" data-tokens="Combai">Combai</option>
+                                            <option value="Cordoba Fighting Dog" data-tokens="Cordoba Fighting Dog">
+                                                Cordoba Fighting Dog</option>
+                                            <option value="Coton de Tulear" data-tokens="Coton de Tulear">Coton de
+                                                Tulear</option>
+                                            <option value="Cross breed" data-tokens="Cross breed">Cross breed</option>
+                                            <option value="Cretan Hound" data-tokens="Cretan Hound"> Cretan Hound
+                                            </option>
+                                            <option value="Croatian Sheepdog" data-tokens="Croatian Sheepdog">Croatian
+                                                Sheepdog</option>
+                                            <option value="Cumberland Sheepdog" data-tokens="Cumberland Sheepdog">
+                                                Cumberland Sheepdog</option>
+                                            <option value="Curly Coated Retriever" data-tokens="Curly Coated Retriever">
+                                                Curly Coated Retriever</option>
+                                            <option value="Cursinu" data-tokens="Cursinu"> Cursinu</option>
+                                            <option value="Czechoslovakian Wolfdog"
+                                                data-tokens="Czechoslovakian Wolfdog"> Czechoslovakian Wolfdog</option>
+                                            <option value="Dachshund" data-tokens="Dachshund"> Dachshund</option>
+                                            <option value="Dalbo dog" data-tokens="Dalbo dog">Dalbo dog</option>
+                                            <option value="Dalmatian" data-tokens="Dalmatian">Dalmatian</option>
+                                            <option value="Dandie Dinmont Terrier" data-tokens="Dandie Dinmont Terrier">
+                                                Dandie Dinmont Terrier</option>
+                                            <option value="Danish Swedish Farmdog" data-tokens="Danish Swedish Farmdog">
+                                                Danish Swedish Farmdog</option>
+                                            <option value="Deutsche Bracke" data-tokens="Deutsche Bracke">Deutsche
+                                                Bracke</option>
+                                            <option value="Doberman Pinscher" data-tokens="Doberman Pinscher">Doberman
+                                                Pinscher</option>
+                                            <option value="Dogo Argentino" data-tokens="Dogo Argentino">Dogo Argentino
+                                            </option>
+                                            <option value="Dogo Cubano" data-tokens="Dogo Cubano"> Dogo Cubano</option>
+                                            <option value="Dogue de Bordeaux" data-tokens="Dogue de Bordeaux"> Dogue de
+                                                Bordeaux</option>
+                                            <option value="Drentse Patrijshond" data-tokens="Drentse Patrijshond">
+                                                Drentse Patrijshond</option>
+                                            <option value="Drever" data-tokens="Drever">Drever</option>
+                                            <option value="Dunker" data-tokens="Dunker"> Dunker</option>
+                                            <option value="Dutch Shepherd" data-tokens="Dutch Shepherd">Dutch Shepherd
+                                            </option>
+                                            <option value="Dutch Smoushond" data-tokens="Dutch Smoushond"> Dutch
+                                                Smoushond</option>
+                                            <option value="East Siberian Laika" data-tokens="East Siberian Laika"> East
+                                                Siberian Laika</option>
+                                            <option value="East European Shepherd" data-tokens="East European Shepherd">
+                                                East European Shepherd</option>
+                                            <option value="Elo" data-tokens="Elo"> Elo</option>
+                                            <option value="English Cocker Spaniel" data-tokens="English Cocker Spaniel">
+                                                English Cocker Spaniel</option>
+                                            <option value="English Foxhound" data-tokens="English Foxhound">English
+                                                Foxhound</option>
+                                            <option value="English Mastiff" data-tokens="English Mastiff"> English
+                                                Mastiff</option>
+                                            <option value="English Pointer" data-tokens="English Pointer">English
+                                                Pointer</option>
+                                            <option value="English Setter" data-tokens="English Setter"> English Setter
+                                            </option>
+                                            <option value="English Shepherd" data-tokens="English Shepherd">English
+                                                Shepherd</option>
+                                            <option value="English Springer Spaniel"
+                                                data-tokens="English Springer Spaniel">English Springer Spaniel</option>
+                                            <option value="English Toy Terrier" data-tokens="English Toy Terrier">
+                                                English Toy Terrier
+                                            </option>
+                                            <option value="English Water Spaniel" data-tokens="English Water Spaniel">
+                                                English Water Spaniel</option>
+                                            <option value="English White Terrier" data-tokens="English White Terrier">
+                                                English White Terrier</option>
+                                            <option value="Entlebucher Mountain Dog"
+                                                data-tokens="Entlebucher Mountain Dog">Entlebucher Mountain Dog</option>
+                                            <option value="Estonian Hound" data-tokens="Estonian Hound">Estonian Hound
+                                            </option>
+                                            <option value="Estrela Mountain Dog" data-tokens="Estrela Mountain Dog">
+                                                Estrela Mountain Dog</option>
+                                            <option value="Eurasier" data-tokens="Eurasier"> Eurasier</option>
+                                            <option value="Field Spaniel" data-tokens="Field Spaniel">Field Spaniel
+                                            </option>
+                                            <option value="Fila Brasileiro" data-tokens="Fila Brasileiro"> Fila
+                                                Brasileiro</option>
+                                            <option value="Finnish Hound" data-tokens="Finnish Hound">Finnish Hound
+                                            </option>
+                                            <option value="Finnish Lapphund" data-tokens="Finnish Lapphund">Finnish
+                                                Lapphund</option>
+                                            <option value="Finnish Spitz" data-tokens="Finnish Spitz"> Finnish Spitz
+                                            </option>
+                                            <option value="Flat Coated Retriever" data-tokens="Flat Coated Retriever">
+                                                Flat Coated Retriever</option>
+                                            <option value="Fox Terrier Smooth" data-tokens="Fox Terrier Smooth"> Fox
+                                                Terrier Smooth</option>
+                                            <option value="Fox Terrier Wire" data-tokens="Fox Terrier Wire">Fox
+                                                Terrier Wire</option>
+
+                                            <option value="French Bulldog" data-tokens="French Bulldog">French Bulldog
+                                            </option>
+                                            <option value="French Spaniel" data-tokens="French Spaniel">French Spaniel
+                                            </option>
+                                            <option value="Gaddi Kutta" data-tokens="Gaddi Kutta"> Gaddi Kutta</option>
+                                            <option value="Galgo Español" data-tokens="Galgo Español"> Galgo Español
+                                            </option>
+                                            <option value="Galician Shepherd Dog" data-tokens="Galician Shepherd Dog">
+                                                Galician Shepherd Dog</option>
+                                            <option value="Garafian Shepherd" data-tokens="Garafian Shepherd">Garafian
+                                                Shepherd</option>
+                                            <option value="Gascon Saintongeois" data-tokens="Gascon Saintongeois">Gascon
+                                                Saintongeois</option>
+                                            <option value="Georgian Shepherd" data-tokens="Georgian Shepherd"> Georgian
+                                                Shepherd</option>
+                                            <option value="German Longhaired Pointer"
+                                                data-tokens="German Longhaired Pointer">German Longhaired Pointer
+                                            </option>
+                                            <option value="German Pinscher" data-tokens="German Pinscher">German
+                                                Pinscher</option>
+                                            <option value="German Roughhaired Pointer"
+                                                data-tokens="German Roughhaired Pointer">German Roughhaired Pointer
+                                            </option>
+                                            <option value="German Shepherd Dog" data-tokens="German Shepherd Dog">German
+                                                Shepherd Dog</option>
+                                            <option value="German Shorthaired Pointer"
+                                                data-tokens="German Shorthaired Pointer">German Shorthaired Pointer
+                                            </option>
+                                            <option value="German Spaniel" data-tokens="German Spaniel">German Spaniel
+                                            </option>
+                                            <option value="German Spitz" data-tokens="German Spitz">German Spitz
+                                            </option>
+                                            <option value="German Wirehaired Pointer"
+                                                data-tokens="German Wirehaired Pointer">German Wirehaired Pointer
+                                            </option>
+                                            <option value="Giant Schnauzer" data-tokens="Giant Schnauzer">Giant
+                                                Schnauzer</option>
+                                            <option value="Glen of Imaal Terrier" data-tokens="Glen of Imaal Terrier">
+                                                Glen of Imaal Terrier</option>
+                                            <option value="Golden Retriever" data-tokens="Golden Retriever">Golden
+                                                Retriever</option>
+                                            <option value="Gordon Setter" data-tokens="Gordon Setter">Gordon Setter
+                                            </option>
+                                            <option value="Puerto Rican Mastiff" data-tokens="Puerto Rican Mastiff">
+                                                Puerto Rican Mastiff</option>
+
+
+
+
+                                            <option value="Great Anglo French White and Black Hound"
+                                                data-tokens="Great Anglo French White and Black Hound">
+                                                Great Anglo French White and Black Hound</option>
+
+
+
+                                            <option value="Great Anglo French White and Orange Hound"
+                                                data-tokens="Great Anglo French White and Orange Hound">Great
+                                                Anglo French White and Orange Hound</option>
+                                            <option value="Great Anglo French Tricolour Hound"
+                                                data-tokens="Great Anglo French Tricolour Hound">Great Anglo French
+                                                Tricolour Hound</option>
+                                            <option value="Grand Basset Griffon Vendéen"
+                                                data-tokens="Grand Basset Griffon Vendéen">Grand Basset Griffon Vendéen
+                                            </option>
+                                            <option value="Grand Bleu de Gascogne" data-tokens="Grand Bleu de Gascogne">
+                                                Grand Bleu de Gascogne</option>
+                                            <option value="Grand Griffon Vendeen" data-tokens="Grand Griffon Vendeen">
+                                                Grand Griffon Vendeen</option>
+                                            <option value="Great Dane" data-tokens="Great Dane">Great Dane</option>
+                                            <option value="Great Pyrenees" data-tokens="Great Pyrenees">Great Pyrenees
+                                            </option>
+                                            <option value="Greater Swiss Mountain Dog"
+                                                data-tokens="Greater Swiss Mountain Dog">Greater Swiss Mountain Dog
+                                            </option>
+                                            <option value="Greek Harehound" data-tokens="Greek Harehound">Greek
+                                                Harehound</option>
+                                            <option value="Greek Shepherd" data-tokens="Greek Shepherd">Greek Shepherd
+                                            </option>
+                                            <option value="Greenland Dog" data-tokens="Greenland Dog">Greenland Dog
+                                            </option>
+                                            <option value="Greyhound" data-tokens="Greyhound">Greyhound</option>
+                                            <option value="Griffon Bleu de Gascogne"
+                                                data-tokens="Griffon Bleu de Gascogne">Griffon Bleu de Gascogne</option>
+                                            <option value="Griffon Fauve de Bretagne"
+                                                data-tokens="Griffon Fauve de Bretagne">Griffon Fauve de Bretagne
+                                            </option>
+                                            <option value="Griffon Nivernais" data-tokens="Griffon Nivernais">Griffon
+                                                Nivernais</option>
+                                            <option value="Guatemalan Dogo" data-tokens="Guatemalan Dogo">Guatemalan
+                                                Dogo</option>
+                                            <option value="Gull Terrier" data-tokens="Gull Terrier">Gull Terrier
+                                            </option>
+                                            <option value="Hamiltonstovare" data-tokens="Hamiltonstovare">
+                                                Hamiltonstovare</option>
+                                            <option value="Hanover Hound" data-tokens="Hanover Hound">Hanover Hound
+                                            </option>
+                                            <option value="Harrier" data-tokens="Harrier">Harrier</option>
+                                            <option value="Havanese" data-tokens="Havanese">Havanese</option>
+                                            <option value="Hawaiian Poi Dog" data-tokens="Hawaiian Poi Dog">Hawaiian Poi
+                                                Dog</option>
+                                            <option value="Himalayan Sheepdog" data-tokens="Himalayan Sheepdog">
+                                                Himalayan Sheepdog</option>
+                                            <option value="Hokkaido" data-tokens="Hokkaido">Hokkaido</option>
+                                            <option value="Hortaya borzaya" data-tokens="Hortaya borzayar">Hortaya
+                                                borzaya</option>
+                                            <option value="Hovawart" data-tokens="Hovawart">Hovawart</option>
+                                            <option value="Huntaway" data-tokens="Huntaway">Huntaway</option>
+                                            <option value="Hygen Hound" data-tokens="Hygen Hound">Hygen Hound</option>
+                                            <option value="Ibizan Hound" data-tokens="Ibizan Hound">Ibizan Hound
+                                            </option>
+                                            <option value="Icelandic Sheepdog" data-tokens="Icelandic Sheepdog">
+                                                Icelandic Sheepdog</option>
+                                            <option value="Indian cross breed" data-tokens="Indian cross breed">Indian
+                                                cross breed</option>
+
+                                            <option value="Indian pariah dog" data-tokens="Indian pariah dog">Indian
+                                                pariah dog</option>
+                                            <option value="Indian Spitz" data-tokens="Indian Spitz">Indian Spitz
+                                            </option>
+                                            <option value="Irish Red and White Setter"
+                                                data-tokens="Irish Red and White Setter">Irish Red and White Setter
+                                            </option>
+                                            <option value="Irish Setter" data-tokens="Irish Setter">Irish Setter
+                                            </option>
+                                            <option value="Irish Terrier" data-tokens="Irish Terrier">Irish Terrier
+                                            </option>
+                                            <option value="Irish Water Spaniel" data-tokens="Irish Water Spaniel">Irish
+                                                Water Spaniel</option>
+                                            <option value="Irish Wolfhound" data-tokens="Irish Wolfhound">Irish
+                                                Wolfhound</option>
+                                            <option value="Istrian Coarse haired Hound"
+                                                data-tokens="Istrian Coarse haired Hound">Istrian Coarse haired Hound
+                                            </option>
+                                            <option value="Istrian Short haired Hound"
+                                                data-tokens="Istrian Short haired Hound">Istrian Short haired Hound
+                                            </option>
+                                            <option value="Italian Greyhound" data-tokens="Italian Greyhound">Italian
+                                                Greyhound</option>
+                                            <option value="Jack Russell Terrier" data-tokens="Jack Russell Terrier">Jack
+                                                Russell Terrier</option>
+                                            <option value="Jagdterrier" data-tokens="Jagdterrier">Jagdterrier</option>
+                                            <option value="Swedish Elkhound" data-tokens="Swedish Elkhound">Swedish
+                                                Elkhound</option>
+                                            <option value="Japanese Chin" data-tokens="Japanese Chin">Japanese Chin
+                                            </option>
+                                            <option value="Japanese Spitz" data-tokens="Japanese Spitz">Japanese Spitz
+                                            </option>
+                                            <option value="Japanese Terrier" data-tokens="Japanese Terrier">Japanese
+                                                Terrier</option>
+                                            <option value="Jindo" data-tokens="Jindo">Jindo</option>
+                                            <option value="Jonangi" data-tokens="Jonangi">Jonangi</option>
+                                            <option value="Kaikadi dog" data-tokens="Kaikadi dog">Kaikadi dog</option>
+                                            <option value="Kai Ken" data-tokens="Kai Ken">Kai Ken</option>
+                                            <option value="Kangal Shepherd Dog" data-tokens="Kangal Shepherd Dog">Kangal
+                                                Shepherd Dog</option>
+                                            <option value="Kanni" data-tokens="Kanni">Kanni</option>
+                                            <option value="Karakachan dog" data-tokens="Karakachan dog">Karakachan dog
+                                            </option>
+                                            <option value="Karelian Bear Dog" data-tokens="Karelian Bear Dog">Karelian
+                                                Bear Dog</option>
+                                            <option value="Karst Shepherd" data-tokens="Karst Shepherd">Karst Shepherd
+                                            </option>
+                                            <option value="Keeshond" data-tokens="Keeshond">Keeshond</option>
+                                            <option value="Kerry Beagle" data-tokens="Kerry Beagle">Kerry Beagle
+                                            </option>
+                                            <option value="Kerry Blue Terrier" data-tokens="Kerry Blue Terrier">Kerry
+                                                Blue Terrier</option>
+                                            <option value="King Charles Spaniel" data-tokens="King Charles Spaniel">King
+                                                Charles Spaniel</option>
+                                            <option value="King Shepherd" data-tokens="King Shepherd">King Shepherd
+                                            </option>
+                                            <option value="Kintamani" data-tokens="Kintamani">Kintamani</option>
+                                            <option value="Kishu Ken" data-tokens="Kishu Ken">Kishu Ken</option>
+                                            <option value="Komondor" data-tokens="Komondor">Komondor</option>
+                                            <option value="Koolie" data-tokens="Koolie">Koolie</option>
+                                            <option value="Koyun dog" data-tokens="Koyun dog">Koyun dog</option>
+                                            <option value="Kromfohrlander" data-tokens="Kromfohrlander">Kromfohrlander
+                                            </option>
+                                            <option value="Kumaon Mastiff" data-tokens="Kumaon Mastiff">Kumaon Mastiff
+                                            </option>
+                                            <option value="Kunming Wolfdog" data-tokens="Kunming Wolfdog">Kunming
+                                                Wolfdog</option>
+                                            <option value="Kurī" data-tokens="Kurī">Kurī</option>
+                                            <option value="Kuvasz" data-tokens="Kuvasz">Kuvasz</option>
+                                            <option value="Kyi Leo" data-tokens="Kyi Leo">Kyi Leo</option>
+                                            <option value="Labrador Husky" data-tokens="Labrador Husky">Labrador Husky
+                                            </option>
+                                            <option value="Labrador Retriever" data-tokens="Labrador Retriever">Labrador
+                                                Retriever</option>
+                                            <option value="Lagotto Romagnolo" data-tokens="Lagotto Romagnolo">Lagotto
+                                                Romagnolo</option>
+                                            <option value="Lakeland Terrier" data-tokens="Lakeland Terrier">Lakeland
+                                                Terrier</option>
+                                            <option value="Lancashire Heeler" data-tokens="Lancashire Heeler">Lancashire
+                                                Heeler</option>
+                                            <option value="Landseer" data-tokens="Landseer">Landseer</option>
+                                            <option value="Lapponian Herder" data-tokens="Lapponian Herder">Lapponian
+                                                Herder</option>
+                                            <option value="Lapponian Shepherd" data-tokens="Lapponian Shepherd">
+                                                Lapponian Shepherd</option>
+                                            <option value="Leonberger" data-tokens="Leonberger">Leonberger</option>
+                                            <option value="Lhasa Apso" data-tokens="Lhasa Apso">Lhasa Apso</option>
+                                            <option value="Lithuanian Hound" data-tokens="Lithuanian Hound">Lithuanian
+                                                Hound</option>
+                                            <option value="Louisiana Catahoula Leopard Dog"
+                                                data-tokens="Louisiana Catahoula Leopard Dog">Louisiana Catahoula
+                                                Leopard Dog</option>
+                                            <option value="Lowchen" data-tokens="Lowchen">Lowchen</option>
+                                            <option value="Mackenzie River husky" data-tokens="Mackenzie River husky">
+                                                Mackenzie River husky</option>
+                                            <option value="Magyar agar" data-tokens="Magyar agar">Magyar agar</option>
+                                            <option value="Mahratta Greyhound" data-tokens="Mahratta Greyhound">Mahratta
+                                                Greyhound</option>
+                                            <option value="Maltese" data-tokens="Maltese">Maltese</option>
+                                            <option value="Manchester Terrier" data-tokens="Manchester Terrier">
+                                                Manchester Terrier</option>
+                                            <option value="Maremma Sheepdog" data-tokens="Maremma Sheepdog">Maremma
+                                                Sheepdog</option>
+                                            <option value="Marquesan Dog" data-tokens="Marquesan Dog">Marquesan Dog
+                                            </option>
+                                            <option value="McNab dog" data-tokens="McNab dog">McNab dog</option>
+                                            <option value="Miniature American Shepherd"
+                                                data-tokens="Miniature American Shepherd">Miniature American Shepherd
+                                            </option>
+                                            <option value="Miniature Bull Terrier" data-tokens="Miniature Bull Terrier">
+                                                Miniature Bull Terrier</option>
+                                            <option value="Miniature Fox Terrier" data-tokens="Miniature Fox Terrier">
+                                                Miniature Fox Terrier</option>
+                                            <option value="Miniature Pinscher" data-tokens="Miniature Pinscher">
+                                                Miniature Pinscher</option>
+                                            <option value="Miniature Schnauzer" data-tokens="Miniature Schnauzer">
+                                                Miniature Schnauzer</option>
+                                            <option value="Miniature Shar Pei" data-tokens="Miniature Shar Pei">
+                                                Miniature Shar Pei</option>
+                                            <option value="Molossus" data-tokens="Molossus">Molossus</option>
+                                            <option value="Molossus of Epirus" data-tokens="Molossus of Epirus">Molossus
+                                                of Epirus</option>
+                                            <option value="Montenegrin Mountain Hound"
+                                                data-tokens="Montenegrin Mountain Hound	">Montenegrin Mountain Hound
+                                            </option>
+                                            <option value="Moscow Watchdog" data-tokens="Moscow Watchdog">Moscow
+                                                Watchdog </option>
+                                            <option value="Moscow Water Dog" data-tokens="Moscow Water Dog">Moscow Water
+                                                Dog</option>
+                                            <option value="Mountain Cur" data-tokens="Mountain Cur">Mountain Cur
+                                            </option>
+                                            <option value="Mucuchies" data-tokens="Mucuchies">Mucuchies</option>
+                                            <option value="Mudhol Hound" data-tokens="Mudhol Hound">Mudhol Hound
+                                            </option>
+                                            <option value="Mudi" data-tokens="Mudi">Mudi</option>
+                                            <option value="Munsterlander Large" data-tokens="Munsterlander Large">
+                                                Munsterlander Large</option>
+                                            <option value="Munsterlander Small" data-tokens="Munsterlander Small">
+                                                Munsterlander Small</option>
+                                            <option value="Neapolitan Mastiff" data-tokens="Neapolitan Mastiff">
+                                                Neapolitan Mastiff</option>
+                                            <option value="Nederlandse Kooikerhondje"
+                                                data-tokens="Nederlandse Kooikerhondje">Nederlandse Kooikerhondje
+                                            </option>
+                                            <option value="Newfoundland" data-tokens="Newfoundland">Newfoundland
+                                            </option>
+                                            <option value="New Zealand Heading Dog"
+                                                data-tokens="New Zealand Heading Dog">New Zealand Heading Dog</option>
+                                            <option value="Norfolk Spaniel" data-tokens="Norfolk Spaniel">Norfolk
+                                                Spaniel</option>
+                                            <option value="Norfolk Terrier" data-tokens="Norfolk Terrier">Norfolk
+                                                Terrier</option>
+                                            <option value="Norrbottenspets" data-tokens="Norrbottenspets">
+                                                Norrbottenspets</option>
+                                            <option value="North Country Beagle" data-tokens="North Country Beagle">
+                                                North Country Beagle</option>
+                                            <option value="Northern Inuit Dog" data-tokens="Northern Inuit Dog">Northern
+                                                Inuit Dog</option>
+                                            <option value="Norwegian Buhund" data-tokens="Norwegian Buhund">Norwegian
+                                                Buhund</option>
+                                            <option value="Norwegian Elkhound" data-tokens="Norwegian Elkhound">
+                                                Norwegian Elkhound</option>
+                                            <option value="Norwegian Lundehund" data-tokens="Norwegian Lundehund">
+                                                Norwegian Lundehund</option>
+                                            <option value="Norwich Terrier" data-tokens="Norwich Terrier">Norwich
+                                                Terrier</option>
+                                            <option value="Nova Scotia Duck Tolling Retriever"
+                                                data-tokens="Nova Scotia Duck Tolling Retriever">Nova Scotia Duck
+                                                Tolling Retriever</option>
+                                            <option value="Old Croatian Sighthound"
+                                                data-tokens="Old Croatian Sighthound">Old Croatian Sighthound</option>
+                                            <option value="Old Danish Pointer" data-tokens="Old Danish Pointer">Old
+                                                Danish Pointer</option>
+                                            <option value="Old English Bulldog" data-tokens="Old English Bulldog">Old
+                                                English Bulldog</option>
+                                            <option value="Old English Sheepdog" data-tokens="Old English Sheepdog">Old
+                                                English Sheepdog</option>
+                                            <option value="Old English Terrier" data-tokens="Old English Terrier">Old
+                                                English Terrier</option>
+                                            <option value="Old German Shepherd Dog"
+                                                data-tokens="Old German Shepherd Dog">Old German Shepherd Dog</option>
+                                            <option value="Old Spanish Pointer" data-tokens="Old Spanish Pointer">Old
+                                                Spanish Pointer</option>
+                                            <option value="Old Time Farm Shepherd" data-tokens="Old Time Farm Shepherd">
+                                                Old Time Farm Shepherd</option>
+                                            <option value="Olde English Bulldogge" data-tokens="Olde English Bulldogge">
+                                                Olde English Bulldogge</option>
+                                            <option value="Otterhound" data-tokens="Otterhound">Otterhound</option>
+                                            <option value="Pachon Navarro" data-tokens="Pachon Navarro">Pachon Navarro
+                                            </option>
+                                            <option value="Pandikona" data-tokens="Pandikona">Pandikona</option>
+                                            <option value="Paisley Terrier" data-tokens="Paisley Terrier">Paisley
+                                                Terrier</option>
+                                            <option value="Papillon" data-tokens="Papillon">Papillon</option>
+                                            <option value="Parson Russell Terrier" data-tokens="Parson Russell Terrier">
+                                                Parson Russell Terrier</option>
+                                            <option value="Pastore della Lessinia e del Lagorai"
+                                                data-tokens="Pastore della Lessinia e del Lagorai">Pastore della
+                                                Lessinia e del Lagorai</option>
+                                            <option value="Patterdale Terrier" data-tokens="Patterdale Terrier">
+                                                Patterdale Terrier</option>
+                                            <option value="Pekingese" data-tokens="Pekingese">Pekingese</option>
+                                            <option value="Majorca Shepherd Dog" data-tokens="Majorca Shepherd Dog">
+                                                Majorca Shepherd Dog</option>
+                                            <option value="Canary Mastiff" data-tokens="Canary Mastiff">Canary Mastiff
+                                            </option>
+                                            <option value="Mallorquin Mastiff" data-tokens="Mallorquin Mastiff">
+                                                Mallorquin Mastiff</option>
+                                            <option value="Peruvian Hairless Dog" data-tokens="Peruvian Hairless Dog">
+                                                Peruvian Hairless Dog</option>
+                                            <option value="Petit Basset Griffon Vendeen"
+                                                data-tokens="Petit Basset Griffon Vendeen">Petit Basset Griffon Vendeen
+                                            </option>
+                                            <option value="Petit Bleu de Gascogne" data-tokens="Petit Bleu de Gascogne">
+                                                Petit Bleu de Gascogne</option>
+                                            <option value="Phalene" data-tokens="Phalene">Phalene</option>
+                                            <option value="Pharaoh Hound" data-tokens="Pharaoh Hound">Pharaoh Hound
+                                            </option>
+                                            <option value="Phu Quoc Ridgeback" data-tokens="Phu Quoc Ridgeback">Phu Quoc
+                                                Ridgeback</option>
+                                            <option value="Picardy Spaniel" data-tokens="Picardy Spaniel">Picardy
+                                                Spaniel</option>
+                                            <option value="Plummer Terrier" data-tokens="Plummer Terrier">Plummer
+                                                Terrier</option>
+                                            <option value="Plott Hound" data-tokens="Plott Hound">Plott Hound</option>
+                                            <option value="Podenco Canario" data-tokens="Podenco Canario">Podenco
+                                                Canario</option>
+                                            <option value="Poitevin" data-tokens="Poitevin">Poitevin</option>
+                                            <option value="Polish Greyhound" data-tokens="Polish Greyhound">Polish
+                                                Greyhound</option>
+                                            <option value="Polish Hound" data-tokens="Polish Hound">Polish Hound
+                                            </option>
+                                            <option value="Polish Hunting Dog" data-tokens="Polish Hunting Dog">Polish
+                                                Hunting Dog</option>
+                                            <option value="Polish Lowland Sheepdog"
+                                                data-tokens="Polish Lowland Sheepdog">Polish Lowland Sheepdog</option>
+                                            <option value="Polish Tatra Sheepdog" data-tokens="Polish Tatra Sheepdog">
+                                                Polish Tatra Sheepdog</option>
+                                            <option value="Pomeranian" data-tokens="Pomeranian">Pomeranian</option>
+                                            <option value="Pont Audemer Spaniel" data-tokens="Pont Audemer Spaniel">
+                                                Pont Audemer Spaniel</option>
+                                            <option value="Poodle" data-tokens="Poodle">Poodle</option>
+                                            <option value="Porcelaine" data-tokens="Porcelaine">Porcelaine</option>
+                                            <option value="Portuguese Podengo" data-tokens="Portuguese Podengor">
+                                                Portuguese Podengo</option>
+                                            <option value="Portuguese Pointer" data-tokens="Portuguese Pointer">
+                                                Portuguese Pointer</option>
+                                            <option value="Portuguese Water Dog" data-tokens="Portuguese Water Dog">
+                                                Portuguese Water Dog</option>
+                                            <option value="Posavac Hound" data-tokens="Posavac Hound">Posavac Hound
+                                            </option>
+                                            <option value="Potsdam Greyhound" data-tokens="Potsdam Greyhound">Potsdam
+                                                Greyhound</option>
+                                            <option value="Prague Ratter" data-tokens="Prague Ratter"> Prague Ratter
+                                            </option>
+                                            <option value="Pudelpointer" data-tokens="Pudelpointer">Pudelpointer
+                                            </option>
+                                            <option value="Pug" data-tokens="Pug">Pug</option>
+                                            <option value="Puli" data-tokens="Puli">Puli</option>
+                                            <option value="Pumi" data-tokens="Pumi">Pumi</option>
+                                            <option value="Pungsan dog" data-tokens="Pungsan dog">Pungsan dog</option>
+                                            <option value="Pyrenean Mastiff" data-tokens="Pyrenean Mastiff">Pyrenean
+                                                Mastiff</option>
+                                            <option value="Pyrenean Shepherd" data-tokens="Pyrenean Shepherd">Pyrenean
+                                                Shepherd</option>
+
+
+                                            <option value="Alentejo Or Portuguese Mastiff"
+                                                data-tokens="Alentejo Or Portuguese Mastiff">Alentejo Or Portuguese
+                                                Mastiff</option>
+
+
+
+                                            <option value="Rajapalayam" data-tokens="Rajapalayam">Rajapalayam</option>
+                                            <option value="Rampur Greyhound" data-tokens="Rampur Greyhound">Rampur
+                                                Greyhound</option>
+                                            <option value="Rastreador Brasileiro" data-tokens="Rastreador Brasileiro">
+                                                Rastreador Brasileiro</option>
+                                            <option value="Rat Terrier" data-tokens="Rat Terrier">Rat Terrier</option>
+                                            <option value="Ratonero Bodeguero Andaluz"
+                                                data-tokens="Ratonero Bodeguero Andaluz">Ratonero Bodeguero Andaluz
+                                            </option>
+                                            <option value="Majorca Ratter" data-tokens="Majorca Ratter">Majorca Ratter
+                                            </option>
+
+                                            <option value="Valencian rat hunting dog"
+                                                data-tokens="Valencian rat hunting dog">Valencian rat hunting dog
+                                            </option>
+                                            <option value="Redbone Coonhound" data-tokens="Redbone Coonhound">Redbone
+                                                Coonhound</option>
+                                            <option value="Rhodesian Ridgeback" data-tokens="Rhodesian Ridgeback">
+                                                Rhodesian Ridgeback</option>
+                                            <option value="Romanian Mioritic Shepherd Dog"
+                                                data-tokens="Romanian Mioritic Shepherd Dog">Romanian Mioritic Shepherd
+                                                Dog</option>
+                                            <option value="Romanian Raven Shepherd Dog"
+                                                data-tokens="Romanian Raven Shepherd Dog">Romanian Raven Shepherd Dog
+                                            </option>
+                                            <option value="Rottweiler" data-tokens="Rottweiler">Rottweiler</option>
+                                            <option value="Russian Spaniel" data-tokens="Russian Spaniel">Russian
+                                                Spaniel</option>
+                                            <option value="Russian Toy" data-tokens="Russian Toy">Russian Toy</option>
+                                            <option value="Russian Tracker" data-tokens="Russian Tracker">Russian
+                                                Tracker</option>
+                                            <option value="Russo European Laika" data-tokens="Russo European Laika">
+                                                Russo European Laika</option>
+                                            <option value="Russell Terrier" data-tokens="Russell Terrier">Russell
+                                                Terrier</option>
+                                            <option value="Saarloos Wolfdog" data-tokens="Saarloos Wolfdog">Saarloos
+                                                Wolfdog</option>
+                                            <option value="Spanish Scenthound" data-tokens="Spanish Scenthound">Spanish
+                                                Scenthound</option>
+                                            <option value="Colombian fino hound" data-tokens="Colombian fino hound">
+                                                Colombian fino hound</option>
+                                            <option value="Saint Bernard" data-tokens="Saint Bernard">Saint Bernard
+                                            </option>
+                                            <option value="Saint John's water dog" data-tokens="Saint John's water dog">
+                                                Saint John's water dog</option>
+                                            <option value="Saint Usuge Spaniel" data-tokens="Saint Usuge Spaniel">
+                                                Saint Usuge Spaniel</option>
+                                            <option value="Sakhalin Husky" data-tokens="Sakhalin Husky">Sakhalin Husky
+                                            </option>
+                                            <option value="Salish Wool Dog" data-tokens="Salish Wool Dog">Salish Wool
+                                                Dog</option>
+                                            <option value="Saluki" data-tokens="Saluki">Saluki</option>
+                                            <option value="Samoyed" data-tokens="Samoyed">Samoyed</option>
+                                            <option value="Sapsali" data-tokens="Sapsali">Sapsali</option>
+                                            <option value="Yugoslavian Shepherd Dog"
+                                                data-tokens="Yugoslavian Shepherd Dog"> Yugoslavian Shepherd Dog
+                                            </option>
+                                            <option value="Schapendoes or Dutch sheep dog"
+                                                data-tokens="Schapendoes or Dutch sheep dog">Schapendoes or Dutch sheep
+                                                dog</option>
+                                            <option value="Schiller Hound" data-tokens="Schiller Hound">Schiller Hound
+                                            </option>
+                                            <option value="Schipperke" data-tokens="Schipperke">Schipperke</option>
+                                            <option value="Schweizer Laufhund" data-tokens="Schweizer Laufhund">
+                                                Schweizer Laufhund</option>
+                                            <option value="Schweizerischer Niederlaufhund"
+                                                data-tokens="Schweizerischer Niederlaufhund">Schweizerischer
+                                                Niederlaufhund</option>
+                                            <option value="Scotch Collie" data-tokens="Scotch Collie">Scotch Collie
+                                            </option>
+                                            <option value="Scottish Deerhound" data-tokens="Scottish Deerhound">Scottish
+                                                Deerhound</option>
+                                            <option value="Scottish Terrier" data-tokens="Scottish Terrier">Scottish
+                                                Terrier</option>
+                                            <option value="Sealyham Terrier" data-tokens="Sealyham Terrier">Sealyham
+                                                Terrier</option>
+                                            <option value="Segugio Italiano" data-tokens="Segugio Italiano">Segugio
+                                                Italiano</option>
+                                            <option value="Seppala Siberian Sleddog"
+                                                data-tokens="Seppala Siberian Sleddog">Seppala Siberian Sleddog</option>
+                                            <option value="Serbian Hound" data-tokens="Serbian Hound"> Serbian Hound
+                                            </option>
+                                            <option value="Serbian Tricolour Hound"
+                                                data-tokens="Serbian Tricolour Hound">Serbian Tricolour Hound</option>
+                                            <option value="Serrano Bulldog" data-tokens="Serrano Bulldog">Serrano
+                                                Bulldog</option>
+                                            <option value="Shar Pei" data-tokens="Shar Pei">Shar Pei</option>
+                                            <option value="Shetland Sheepdog" data-tokens="Shetland Sheepdog">Shetland
+                                                Sheepdog</option>
+                                            <option value="Shiba Inu" data-tokens="Shiba Inu">Shiba Inu</option>
+                                            <option value="Shih Tzu" data-tokens="Shih Tzu">Shih Tzu</option>
+                                            <option value="Shikoku" data-tokens="Shikoku">Shikoku</option>
+                                            <option value="Shiloh Shepherd" data-tokens="Shiloh Shepherd">Shiloh
+                                                Shepherd</option>
+                                            <option value="Siberian Husky" data-tokens="Siberian Husky">Siberian Husky
+                                            </option>
+                                            <option value="Silken Windhound" data-tokens="Silken Windhound">Silken
+                                                Windhound</option>
+                                            <option value="Silky Terrier" data-tokens="Silky Terrier">Silky Terrier
+                                            </option>
+                                            <option value="Sinhala Hound" data-tokens="Sinhala Hound">Sinhala Hound
+                                            </option>
+                                            <option value="Skye Terrier" data-tokens="	Skye Terrier">Skye Terrier
+                                            </option>
+                                            <option value="Sloughi" data-tokens="Sloughi">Sloughi</option>
+                                            <option value="Slovak Cuvac" data-tokens="Slovak Cuvac">Slovak Cuvac
+                                            </option>
+                                            <option value="Slovak Rough haired Pointer"
+                                                data-tokens="Slovak Rough haired Pointer">Slovak Rough haired Pointer
+                                            </option>
+                                            <option value="Slovensky kopov" data-tokens="Slovensky kopov">Slovensky
+                                                kopov</option>
+                                            <option value="Smaland Hound" data-tokens="Smaland Hound">Smaland Hound
+                                            </option>
+                                            <option value="Small Greek Domestic Dog"
+                                                data-tokens="Small Greek Domestic Dog">Small Greek Domestic Dog</option>
+                                            <option value="Soft Coated Wheaten Terrier"
+                                                data-tokens="Soft Coated Wheaten Terrier">Soft Coated Wheaten Terrier
+                                            </option>
+                                            <option value="South Russian Ovcharka" data-tokens="South Russian Ovcharka">
+                                                South Russian Ovcharka</option>
+                                            <option value="Southern Hound" data-tokens="Southern Hound">Southern Hound
+                                            </option>
+                                            <option value="Spanish Mastiff" data-tokens="Spanish Mastiff">Spanish
+                                                Mastiff</option>
+                                            <option value="Spanish Water Dog" data-tokens="Spanish Water Dog">Spanish
+                                                Water Dog</option>
+                                            <option value="Spinone Italiano" data-tokens="Spinone Italiano">Spinone
+                                                Italiano</option>
+                                            <option value="Sporting Lucas Terrier" data-tokens="Sporting Lucas Terrier">
+                                                Sporting Lucas Terrier</option>
+                                            <option value="Stabyhoun" data-tokens="Stabyhoun"> Stabyhoun</option>
+                                            <option value="Staffordshire Bull Terrier"
+                                                data-tokens="Staffordshire Bull Terrier">Staffordshire Bull Terrier
+                                            </option>
+                                            <option value="Standard Schnauzer" data-tokens="Standard Schnauzer">Standard
+                                                Schnauzer</option>
+                                            <option value="Stephens Cur" data-tokens="Stephens Cur">Stephens Cur
+                                            </option>
+                                            <option value="Styrian Coarse haired Hound"
+                                                data-tokens="Styrian Coarse haired Hound">Styrian Coarse haired Hound
+                                            </option>
+                                            <option value="Sussex Spaniel" data-tokens="Sussex Spaniel">Sussex Spaniel
+                                            </option>
+                                            <option value="Swedish Lapphund" data-tokens="Swedish Lapphund">Swedish
+                                                Lapphund</option>
+                                            <option value="Swedish Vallhund" data-tokens="Swedish Vallhund">Swedish
+                                                Vallhund</option>
+                                            <option value="Tahitian Dog" data-tokens="Tahitian Dog">Tahitian Dog
+                                            </option>
+                                            <option value="Tahltan Bear Dog" data-tokens="Tahltan Bear Dog">Tahltan Bear
+                                                Dog</option>
+                                            <option value="Taigan" data-tokens="Taigan">Taigan</option>
+                                            <option value="Taiwan Dog" data-tokens="Taiwan Dog">Taiwan Dog</option>
+                                            <option value="Talbot Hound" data-tokens="Talbot Hound">Talbot Hound
+                                            </option>
+                                            <option value="Tamaskan Dog" data-tokens="Tamaskan Dog">Tamaskan Dog
+                                            </option>
+                                            <option value="Teddy Roosevelt Terrier"
+                                                data-tokens="Teddy Roosevelt Terrier">Teddy Roosevelt Terrier</option>
+                                            <option value="Telomian" data-tokens="Telomian">Telomian</option>
+                                            <option value="Tenterfield Terrier" data-tokens="Tenterfield Terrier">
+                                                Tenterfield Terrier</option>
+                                            <option value="Terceira Mastiff" data-tokens="Terceira Mastiff">Terceira
+                                                Mastiff</option>
+                                            <option value="Thai Bangkaew Dog" data-tokens="Thai Bangkaew Dog">Thai
+                                                Bangkaew Dog</option>
+                                            <option value="Thai Ridgeback" data-tokens="Thai Ridgeback">Thai Ridgeback
+                                            </option>
+                                            <option value="Tibetan Mastiff" data-tokens="Tibetan Mastiff">Tibetan
+                                                Mastiff</option>
+                                            <option value="Tibetan Spaniel" data-tokens="Tibetan Spaniel">Tibetan
+                                                Spaniel</option>
+                                            <option value="Tibetan Terrier" data-tokens="Tibetan Terrier">Tibetan
+                                                Terrier</option>
+                                            <option value="Tornjak" data-tokens="Tornjak">Tornjak</option>
+                                            <option value="Other" data-tokens="Other">Other</option>
+
+                                            <option value="Tosa" data-tokens="Tosa">Tosa</option>
+                                            <option value="Toy Bulldog" data-tokens="Toy Bulldog">Toy Bulldog</option>
+                                            <option value="Toy Fox Terrier" data-tokens="Toy Fox Terrier">Toy Fox
+                                                Terrier</option>
+                                            <option value="Toy Manchester Terrier" data-tokens="Toy Manchester Terrier">
+                                                Toy Manchester Terrier</option>
+                                            <option value="Toy Trawler Spaniel" data-tokens="Toy Trawler Spaniel">Toy
+                                                Trawler Spaniel</option>
+                                            <option value="Transylvanian Hound" data-tokens="Transylvanian Hound">
+                                                Transylvanian Hound</option>
+                                            <option value="Treeing Cur" data-tokens="Treeing Cur">Treeing Cur</option>
+                                            <option value="Treeing Tennessee Brindle"
+                                                data-tokens="Treeing Tennessee Brindle">Treeing Tennessee Brindle
+                                            </option>
+                                            <option value="Treeing Walker Coonhound"
+                                                data-tokens="Treeing Walker Coonhound">Treeing Walker Coonhound</option>
+                                            <option value="Trigg Hound" data-tokens="Trigg Hound">Trigg Hound</option>
+                                            <option value="Tweed Water Spaniel" data-tokens="Tweed Water Spaniel">Tweed
+                                                Water Spaniel</option>
+                                            <option value="Tyrolean Hound" data-tokens="Tyrolean Hound">Tyrolean Hound
+                                            </option>
+                                            <option value="Cimarron Uruguayo" data-tokens="Cimarron Uruguayo">Cimarron
+                                                Uruguayo</option>
+                                            <option value="Vanjari Hound" data-tokens="Vanjari Hound"> Vanjari Hound
+                                            </option>
+                                            <option value="Villano de Las Encartaciones"
+                                                data-tokens="	Villano de Las Encartaciones">Villano de Las Encartaciones
+                                            </option>
+                                            <option value="Villanuco de Las Encartaciones"
+                                                data-tokens="Villanuco de Las Encartaciones">Villanuco de Las
+                                                Encartaciones</option>
+                                            <option value="Vizsla" data-tokens="Vizsla">Vizsla</option>
+                                            <option value="Volpino Italiano" data-tokens="Volpino Italiano">Volpino
+                                                Italiano</option>
+                                            <option value="Weimaraner" data-tokens="Weimaraner">Weimaraner</option>
+
+                                            <option value="Pembroke Welsh Corgi" data-tokens="Pembroke Welsh Corgi">
+                                                Pembroke Welsh Corgi</option>
+                                            <option value="Welsh Sheepdog" data-tokens="Welsh Sheepdog">Welsh Sheepdog
+                                            </option>
+                                            <option value="Welsh Springer Spaniel" data-tokens="Welsh Springer Spaniel">
+                                                Welsh Springer Spaniel</option>
+                                            <option value="Welsh Terrier" data-tokens="Welsh Terrier">Welsh Terrier
+                                            </option>
+                                            <option value="West Highland White Terrier"
+                                                data-tokens="West Highland White Terrier">West Highland White Terrier
+                                            </option>
+                                            <option value="West Siberian Laika" data-tokens="West Siberian Laika">West
+                                                Siberian Laika</option>
+                                            <option value="Westphalian Dachsbracke"
+                                                data-tokens="Westphalian Dachsbracke">Westphalian Dachsbracke</option>
+                                            <option value="Wetterhoun" data-tokens="Wetterhoun">Wetterhoun</option>
+                                            <option value="Whippet" data-tokens="Whippet">Whippet</option>
+                                            <option value="White Shepherd" data-tokens="White Shepherd">White Shepherd
+                                            </option>
+                                            <option value="Wirehaired Pointing Griffon"
+                                                data-tokens="Wirehaired Pointing Griffon">Wirehaired Pointing Griffon
+                                            </option>
+                                            <option value="Wirehaired Vizsla" data-tokens="Wirehaired Vizsla">Wirehaired
+                                                Vizsla</option>
+                                            <option value="Xiasi Dog" data-tokens="Xiasi Dog">Xiasi Dog</option>
+                                            <option value="Xoloitzcuintli" data-tokens="Xoloitzcuintli">Xoloitzcuintli
+                                            </option>
+                                            <option value="Yakutian Laika" data-tokens="Yakutian Laika">Yakutian Laika
+                                            </option>
+                                            <option value="Yorkshire Terrier" data-tokens="Yorkshire Terrier">Yorkshire
+                                                Terrier</option>
+
+
+                                        </datalist>
+                                  
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                          
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 m-0 p-0">
+                                    <input type="text" class="form-control" id="pet_name_input" name="name"
+                                       pattern="+[A-Za-z\s]{1}"
+                                        title="no Numerics" required placeholder="Enter pet name">
+                                </div>
+                            </div>
+                          
+                            <div class="row mt-2" style="justify-content: center;">
+                                <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                                    <label for="create-account" class="form-label" id="age">
+                                        <span class="star" style="color: red;" id="age_star">*</span>Age</label>
+                                </div>
+                                <div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xl-1 m-0 p-0">
+                                    <input type="number" class="form-control" id="years" placeholder="years"
+                                        name="age_year" min="0" max="16" required>
+                                </div>
+                                <div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xl-1 m-0 p-0">
+                                    <input type="number" class="form-control" id="months" placeholder="months"
+                                        name="age_month" min="0" max="12"
+                                        onchange="IsEmpty()" required>
+                                </div>
+                            </div>
+                            <div class="row mt-2" id="gender_div" style="justify-content: center;">
+                                <input hidden name="gender" value="" id="gender_id">
+                                <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                                    <label for="create-account" class="form-label" 
+                                        id="gender"> <span class="star" style="color: red;"
+                                            id="age_star">*</span>Gender</label>
+                                </div>
+                                <div class="col-3 col-sm-3 col-md-2 col-lg-1 m-0 p-0">
+                                    <input type="radio" name="gender" value="Male">&nbsp;Male</input>
+
+                                </div>
+                                <div class="col-3 col-sm-3 col-md-2 col-lg-1 m-0 p-0">
+                                    <input type="radio" name="gender" value="Female">&nbsp;Female</input>
+
+
+                                </div>
+                            </div>
+
+                            <hr class="m-0 p-0">
+                            <!-- --------------------history start-------------------------------------------------- -->
+        
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-5 col-lg-6">
+                                    <h3 id="history_heading_id" style="color: #003300;">History</h3>
+                                </div>
+                            </div>
+
+                       
+                                    <div class="row">
+                                        <div class="col">
+                                            <table id="deworming_table">
+
+                                                <tbody id="deworming_tablebody_id">
+
+                                                    <tr style="border: none;">
+                                                        <td id="deworming_table_td" colspan="2" style="border: none;color: #003300;"><u>Enter
+                                                                last
+                                                                deworming date</u></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="border: none;" id="empty_td"></td>
+
+                                                        <td style="border: none;"> <input type="date" name="last_date" id="Enter_date_input">
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+
+                                <!-- <div class="row mt-3" style="display: none" id="show_div_enter_date">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="enter_date_div">
+                                        <label for="create-account" class="form-label" style="font-weight: bold;"
+                                            id="enter_date">Enter date</label>
+                                        <input type="date" name="last_date" id="">
+                                    </div>
+                                </div> -->
+                                <!-- <div class="row mt-2" id="vaccination_row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div id="vaccination_div">
+                                            <a class="list-group-item list-group-item-action m-3 p-3 text-center"
+                                                role="tab" id="last_vaccination"
+                                                style="font-weight: bold;color: #003300"
+                                                onclick="show_last_vaccination()"><i class='fas fa-syringe'
+                                                    id="vaccination_img_id" style="color: #003300;"></i>Last
+                                                Vaccination<span class="glyphicon glyphicon-menu-down "
+                                                    id="last_vaccination_arrow"></span></a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <!-- <div style="display: none" id="show_div">
+                                    <div class="row mt-1">
+                                        <div class="col" id="select_vaccine_and_enter_date_col">
+                                            <div id="select_vaccine_and_enter_date_div">
+                                                <label for="create-account" class="form-label"
+                                                    style="font-weight: bold;" id="select_vaccine_and_enter_date">Select
+                                                    vaccine and enter date</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <table id="vaccination_table">
+                                                <thead>
+                
+                                                </thead>
+                                                <tbody id="vaccination_table_body">
+                                                    <tr>
+                                                        <td colspan="2" style="color: #003300;border: none;"><u>Enter last vaccination date</u></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center;color: #003300;border: none;">Vaccine</td>
+                                                        <td style="text-align: center;color: #003300;border: none;">Enter date</td>
+                
+                                                    </tr>
+                                            <tr>
+                                                <td  style="border: none;">3-in-1(DAPV)</td>
+                                                <td  style="border: none;"><input type="date" id="rabies_input" name="last_date_3_in_1_DAPV">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">4-in-1(DHPP)</td>
+                                                <td  style="border: none;"><input type="date" name="last_date_4_in_1_DHPP" id="dhpp_input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;">5-in-1(DA2PP)</td>
+                                                <td  style="border: none;"><input type="date" name="last_date_5_in_1_DA2PP" id="da2pp_input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;">6-in-1(DA2PPC)</td>
+                                                <td  style="border: none;"><input type="date" name="last_date_6_in_1_DA2PPC" id="da2ppc_input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">7-in-1(DA2PPvL2)</td>
+                                                <td  style="border: none;"><input type="date" name="last_date_7_in_1_DA2PPVL2"
+                                                        id="da2ppvl2_input"></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">Rabies</td>
+                                                <td  style="border: none;"><input type="date" name="l_rabies" id="rabies_input"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;">Distemper</td>
+                                                <td  style="border: none;"><input type="date" name="l_distemper" id="distemper_input"></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">Parvovirus</td>
+                                                <td  style="border: none;"><input type="date" name="l_parovirus" id="parovirus_input"></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">Parainfluenza</td>
+                                                <td  style="border: none;"><input type="date" name="l_parainfluenza" id="parainfluenza_input">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">Corona</td>
+                                                <td  style="border: none;"><input type="date" name="l_coronavirus" id="corona_input"></td>
+                                            </tr>
+                                            <tr>
+                                                <td  style="border: none;">Bordetella</td>
+                                                <td  style="border: none;"><input type="date" name="l_bordetella" id="bordetella_input"></td>
+                                            </tr>
+                                            <tr>
+                                            <td  style="border: none;">Lyme</td>
+                                            <td  style="border: none;"><input type="date" name="l_lymedisease" id="lyme_input"></td>
+                                            </tr>
+                                            <tr>
+                                            <td  style="border: none;">CAV-1</td>
+                                            <td  style="border: none;"><input type="date" name="l_hepatitis" id="cav1_input"></td>
+                                            </tr>
+                                            <tr>
+                                            <td  style="border: none;">CAV-2</td>
+                                            <td  style="border: none;"><input type="date" name="l_dhpp" id="cav2_input"></td>
+                                            </tr>
+                                            <tr>
+                                            <td  style="border: none;">Can L</td>
+                                            <td  style="border: none;"><input type="date" name="Can_L" id="can_l_input"></td>
+                                            </tr>
+                                            <td  style="border: none;">Giardia</td>
+                                        
+                                            <td  style="border: none;"><input type="date" name="l_giardia" id="giardia_input"></td>
+                                            </tr>
+                                            <tr>
+                                            <td style="border: none;">Leptospirosis</td>
+                                            <td  style="border: none;"><input type="date" name="l_Leptospirosis" id="Leptospirosis"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border: none;">9_in_1_Vaccine</td>
+                                            <td  style="border: none;"><input type="date" name="l_9_in_1" id="9_in_1_Vaccine"></td>
+                                        </tr>
+                                         <tr>
+                                            <td style="border: none;">10_in_1_Vaccine</td>
+                                            <td  style="border: none;"><input type="date" name="l_10_in_1" id="10_in_1_Vaccine"></td>
+                                        </tr>
+                                         <tr>
+                                            <td style="border: none;">Feline Vaccine</td>
+                                            <td  style="border: none;"><input type="date" name="l_Feline" id="Feline_Vaccine"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+    
+                            <div class="row mt-3">
+                                <!-- <div class="col-6 col-sm-6 col-md-4 col-lg-6">
+                                    <button name="addpet" class="btn btn" id="add_another_pet">Add another pet</button>
+                                </div> -->
+                                <div class="col-12 col-sm-12 col-md-10 col-lg-9 col-xl-9">
+
+                                    <button type="Submit" class="btn btn" id="submit_button"
+                                    onclick="return IsEmpty();">Next</button>
+                                </div>
+
+                                <br>
+
+                            </div>
+
+                        </form>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script>
+
+    function show_last_vaccination() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+            document.getElementById('show_div').scrollIntoView();
+            document.getElementById('div1_show').style.display = 'none';
+            document.getElementById('last_deworming_div').style.display = 'none';
+
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+            document.getElementById('div1_show').style.display = 'inline-block';
+            document.getElementById('last_deworming_div').style.display = 'inline-block';
+
+        }
+    }
+
+
+    function show_enter_date() {
+        if (document.getElementById('show_div_enter_date').style.display == 'none') {
+            document.getElementById('show_div_enter_date').style.display = 'inline-block';
+        } else {
+            document.getElementById('show_div_enter_date').style.display = 'none';
+
+        }
+    }
+
+    function Gender(data) {
+        let val = data.innerText;
+        let div = document.querySelector('#gender_div').querySelectorAll('a');
+        let i;
+        for (i = 0; i < div.length; i++) {
+            div[i].style.backgroundColor = "white";
+            div[i].style.color = 'darkgreen';
+        }
+
+        data.style.backgroundColor = "lightgreen";
+        data.style.color = 'black';
+
+
+        document.querySelector('#gender_id').value = val;
+        console.log(val)
+    }
+
+    function set(data) {
+        var set = document.getElementById('set_id').value;
+        var gender_list = set.split(',');
+        console.log(gender_list);
+        if (gender_list.includes(data.innerText)) {
+            index = gender_list.indexOf(data.innerText);
+            gender_list.splice(index, 1);
+            data.style.backgroundColor = "white";
+            data.style.color = "darkgreen";
+
+        } else {
+            gender_list.push(data.innerText);
+            data.style.backgroundColor = "lightgreen";
+            data.style.color = "black";
+        }
+        document.querySelector('#set_id').value = gender_list.toString();
+        console.log(gender_list.toString())
+    }
+    function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    // future date restriction for last deworming and vaccination
+    $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+
+        $('#Enter_date_input').attr('max', maxDate);
+
+        $('#rabies_input').attr('max', maxDate);
+        $('#dhpp_input').attr('max', maxDate);
+        $('#da2pp_input').attr('max', maxDate);
+        $('#da2ppc_input').attr('max', maxDate);
+        $('#da2ppvl2_input').attr('max', maxDate);
+        $('#rabies_input1').attr('max', maxDate);
+        $('#distemper_input').attr('max', maxDate);
+        $('#parovirus_input').attr('max', maxDate);
+        $('#parainfluenza_input').attr('max', maxDate);
+
+        $('#corona_input').attr('max', maxDate);
+        $('#bordetella_input').attr('max', maxDate);
+        $('#lyme_input').attr('max', maxDate);
+        $('#cav1_input').attr('max', maxDate);
+        $('#cav2_input').attr('max', maxDate);
+        $('#can_l_input').attr('max', maxDate);
+        $('#giardia_input').attr('max', maxDate);
+        $('#Leptospirosis').attr('max', maxDate);
+        $('#9_in_1_Vaccine').attr('max', maxDate);
+        $('#10_in_1_Vaccine').attr('max', maxDate);
+        $('#Feline_Vaccine').attr('max', maxDate);
+
+    });
+
+
+    // gender checked required
+    function validate(form) {
+        var isChecked = Array.prototype.some.call(form.querySelectorAll('input[name=gender]'), function (radio) {
+            return radio.checked;
+        });
+
+        if (!isChecked) {
+            alert("You must select Male or Female");
+        }
+
+        return isChecked;
+    }
+
+
+    function IsEmpty() {
+        var x = document.getElementById('years').value;
+        var y = document.getElementById('months').value;
+        console.log(x, y)
+        if (x == 0 && y == 0) {
+            alert("Age should not be zero");
+            return false;
+        }
+
+        return true;
+    }
+
+    function show_dog_breed() {
+        if (document.getElementById('breed_row').style.display == 'none') {
+            document.getElementById('breed_row').style.display = 'block';
+        } 
+    }
+
+    function hide_dog_breed() {
+        if (document.getElementById('breed_row').style.display == 'none') {
+            document.getElementById('breed_row').style.display = 'none';
+        } else {
+            document.getElementById('breed_row').style.display = 'none';
+
+        }
+    }
+    
+</script>

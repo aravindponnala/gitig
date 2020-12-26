@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Deworming reminder list search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00796b;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="row" style="text-align: right;">
+      <div class="col">
+        <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+      </div>
+    </div>
+    <h3>Deworming reminders generated list </h3>
+    <form method="post">
+      {% csrf_token %}
+      <input type="date" name="search_date">
+      <button class="btn btn-success">Search</button>
+
+    </form>
+    <table id="customers">
+      <thead>
+       
+        <th>Customer Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Doctor</th>
+        <th>Hospital</th>
+        <th>Reminder Date</th>
+        <th>Generated Date</th>
+      </thead>
+      {% for vac in dewormin_date_list %}
+      <tbody>
+        <tr>
+   
+          <td>{{vac.customer.customer_name}}</td>
+          <td>{{vac.customer.mobile}}</td>
+          <td>{{vac.customer.email}}</td>
+          <td>{{vac.doctor}}</td>
+          <td>{{vac.hospital}}</td>
+          <td>{{vac.remiander_date}}</td>
+          <td>{{vac.date}}</td>
+        </tr>
+      </tbody>
+          {% endfor %}
+    </table>
+  </body>
+  </html>

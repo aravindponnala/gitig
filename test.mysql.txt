@@ -1,0 +1,36 @@
+
+CREATE TABLE `pet_customer` (`customer_id` varchar(20) NOT NULL PRIMARY KEY, `first_name` varchar(50) NOT NULL, `last_name` varchar(50) NOT NULL, `email` varchar(50) NOT NULL, `mobile` varchar(15) NOT NULL, `password` varchar(50) NOT NULL);
+
+CREATE TABLE `pet_doctor` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `first_name` varchar(50) NOT NULL, `last_name` varchar(50) NOT NULL, `gender` varchar(10) NOT NULL, `dob` date NOT NULL, `experience` integer NOT NULL, `hospital` varchar(50) NOT NULL, `email` varchar(50) NOT NULL, `mobile` varchar(15) NOT NULL, `telephone` varchar(15) NOT NULL, `address` longtext NOT NULL, `reg_no` integer NOT NULL);
+
+CREATE TABLE `pet_pet` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(30) NOT NULL, `breed` varchar(30) NOT NULL, `age` integer NOT NULL, `gender` varchar(10) NOT NULL, `customer_id_id` varchar(20) NOT NULL);
+
+CREATE TABLE `pet_purposeanddiet` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `set1` varchar(30) NOT NULL, `set2` varchar(30) NOT NULL, `disease` varchar(10) NOT NULL, `vaccination_a` varchar(10) NOT NULL, `deworming_b` varchar(10) NOT NULL, `date` date NOT NULL, `pet_id_id` integer NOT NULL);
+
+CREATE TABLE `pet_vitals` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_vaccination` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `l_rabies` date NOT NULL, `d_rabies` date NOT NULL, `l_distemper` date NOT NULL, `d_distemper` date NOT NULL, `l_hepatitis` date NOT NULL, `d_hepatitis` date NOT NULL, `l_parovirus` date NOT NULL, `d_parovirus` date NOT NULL, `l_parainfluenza` date NOT NULL, `d_parainfluenza` date NOT NULL, `l_bordetella` date NOT NULL, `d_bordetella` date NOT NULL, `l_leptospirosis` date NOT NULL, `d_leptospirosis` date NOT NULL, `l_lymedisease` date NOT NULL, `d_lymedisease` date NOT NULL, `l_coronavirus` date NOT NULL, `d_coronavirus` date NOT NULL, `l_giardia` date NOT NULL, `d_giardia` date NOT NULL, `l_dhpp` date NOT NULL, `d_dhpp` date NOT NULL, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_symptoms` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `notes` longtext NOT NULL, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_prescription` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `consultation_fee` varchar(20) NOT NULL, `final_fee` varchar(20) NOT NULL, `customer_id` varchar(20) NOT NULL, `doctor_id` integer NOT NULL, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_diagnostics` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_deworming` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `last_date` date NOT NULL, `due_date` date NOT NULL, `purpose_id_id` integer NOT NULL UNIQUE);
+
+CREATE TABLE `pet_assessment` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `purpose_id_id` integer NOT NULL UNIQUE);
+ALTER TABLE `pet_pet` ADD CONSTRAINT `pet_pet_customer_id_id_1b4c426f_fk_pet_customer_customer_id` FOREIGN KEY (`customer_id_id`) REFERENCES `pet_customer` (`customer_id`);
+ALTER TABLE `pet_purposeanddiet` ADD CONSTRAINT `pet_purposeanddiet_pet_id_id_5de53521_fk_pet_pet_id` FOREIGN KEY (`pet_id_id`) REFERENCES `pet_pet` (`id`);
+ALTER TABLE `pet_vitals` ADD CONSTRAINT `pet_vitals_purpose_id_id_34e48623_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_vaccination` ADD CONSTRAINT `pet_vaccination_purpose_id_id_57711eac_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_symptoms` ADD CONSTRAINT `pet_symptoms_purpose_id_id_b36a6c6e_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_prescription` ADD CONSTRAINT `pet_prescription_purpose_id_id_728e6983_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_log` ADD CONSTRAINT `pet_log_customer_id_9442c6bd_fk_pet_customer_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `pet_customer` (`customer_id`);
+ALTER TABLE `pet_log` ADD CONSTRAINT `pet_log_doctor_id_d0d36d17_fk_pet_doctor_id` FOREIGN KEY (`doctor_id`) REFERENCES `pet_doctor` (`id`);
+ALTER TABLE `pet_log` ADD CONSTRAINT `pet_log_purpose_id_id_acc218e8_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_diagnostics` ADD CONSTRAINT `pet_diagnostics_purpose_id_id_8dd1f56a_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_deworming` ADD CONSTRAINT `pet_deworming_purpose_id_id_d8cff93a_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);
+ALTER TABLE `pet_assessment` ADD CONSTRAINT `pet_assessment_purpose_id_id_11769d16_fk_pet_purposeanddiet_id` FOREIGN KEY (`purpose_id_id`) REFERENCES `pet_purposeanddiet` (`id`);

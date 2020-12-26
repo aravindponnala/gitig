@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer book an appointment</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 812px) {
+body{
+    font-size: 16px;
+    font-weight:bold;
+}
+
+             #grad1 {
+
+                min-height: 92vh;
+                height: border-box;
+                 border-radius: 10px;
+                filter:brightness(100%);
+            {#height: auto;#}
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white , lightgrey); /* Standard syntax (must be last) */
+            }
+
+            #book_an_appointment {
+                margin-left: 20%;
+                background-color: #003300;
+                color: white;
+                text-align: center;
+                margin-top: 5%;
+                border-left: none;
+                width: 60%;
+                border-radius: 30px;
+
+
+            }
+
+        #first_aid_guide{
+
+                 width:48%;
+                 text-align: center;
+                 padding-top: 5px;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+              #pet_care_dog_sitting_centres{
+                  margin-left: 2%;
+                  width: 48%;
+                text-align: center;
+                 padding-top: 5px;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+               #budget_analyzer{
+
+
+
+                  width:48%;
+                text-align: center;
+                 padding-top: 5px;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+                #pet_gallery{
+
+                  width:48%;
+                    margin-left: 2%;
+               text-align: center;
+                 padding-top: 5px;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+                 #pet_names{
+
+
+                     text-align: center;
+                 padding-top: 5px;
+                width:48%;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+                  #anti_dog_whistle{
+                 margin-left: 2%;
+
+                     text-align: center;
+                 padding-top: 5px;
+                width:48%;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+                   #Isqueeek_toy{
+
+
+                     text-align: center;
+                 padding-top: 5px;
+                width:48%;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+                    #Pet_acoustic_music{
+                 margin-left: 2%;
+
+                     text-align: center;
+                 padding-top: 5px;
+                width:48%;
+                font-size: 16px;
+                 border-radius: 30px;
+
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+
+#my_bookings{
+    text-align: center;
+    width: 31%;
+    background-color: #003300;
+    color: white;
+    border-radius: 30px;
+}
+
+#notification_bell_icon{
+    margin-top: 2%;
+    margin-left: 61%;
+    font-size: 22px;
+}
+
+.topnav {
+
+ margin-left: 5%;
+    margin-top: 80%;
+  overflow: hidden;
+  background-color: lightgrey;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+    border-radius: 30px;
+  float: left;
+  color: white;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.icon {
+
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #003300;
+  color: white;
+}
+}
+{#=========================media query for desktop==============================#}
+    @media all and (min-width: 1024px) and (max-width: 1800px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: lightgrey; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+        body{
+          overflow: hidden;
+        }
+
+ #book_an_appointment {
+                margin-left: 40%;
+                background-color: #003300;
+                color: white;
+                text-align: center;
+                margin-top: 5%;
+                border-left: none;
+                width: 20%;
+                border-radius: 30px;
+            }
+
+        #first_aid_guide{
+                margin-left: 30%;
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+             }
+              #pet_care_dog_sitting_centres{
+                margin-left: 1%;
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+
+             }
+               #budget_analyzer{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                    margin-left: 30%;
+             }
+                #pet_gallery{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                     margin-left: 1%;
+
+             }
+                 #pet_names{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                margin-left: 30%;
+
+             }
+                  #anti_dog_whistle{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                       margin-left: 1%;
+
+             }
+                   #Isqueeek_toy{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                         margin-left: 30%;
+
+             }
+                    #Pet_acoustic_music{
+                 width:20%;
+                 text-align: center;
+                font-size: 16px;
+                 border-radius: 30px;
+                 color: #003300;
+                border-width:  0.75px;
+                border-style: solid;
+                border-color: #1f7a1f;
+                 margin-left: 1%;
+
+             }
+
+        #my_bookings{
+            text-align: center;
+            width: 15%;
+            background-color: #003300;
+            color: white;
+            border-radius: 30px;
+        }
+
+        #notification_bell_icon{
+            margin-top: 2%;
+            margin-left: 82%;
+            font-size: 22px;
+        }
+.topnav {
+            margin-top: 15%;
+            margin-left: 38%;
+            overflow: hidden;
+            background-color: lightgrey;
+            position: relative;
+        }
+
+.topnav #myLinks {
+                    display: none;
+                }
+
+.topnav a {
+    border-radius: 30px;
+    float: left;
+    color: white;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.icon {
+
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #003300;
+  color: white;
+}
+#home{
+    background-color: #003300;
+    color: white;
+}
+#blog{
+    background-color: #003300;
+    color: white;
+}
+#camera{
+    background-color: #003300;
+    color: white;
+}
+#pet_registration{
+    background-color: #003300;
+    color: white;
+}
+
+    }
+
+
+
+</style>
+</head>
+<body>
+<div id="grad1">
+     <div class="row">
+            <i class="fa fa-bell" id="notification_bell_icon"></i>
+            <a class="list-group-item list-group-item-action " id="my_bookings" role="tab" onclick="Diet_type(this)" style="font-weight: bold;">My bookings</a>
+         </div>
+     <div class="row">
+         <div class="col">
+         <a class="list-group-item list-group-item-action " id="book_an_appointment" role="tab" onclick="Diet_type(this)" style="font-weight: bold;">BOOK AN APPOINTMENT</a>
+         </div>
+     </div><br>
+
+
+<div class="container">
+              <form method="POST">
+                {% csrf_token %}
+
+{#  ===================================  diet started==============================================#}
+ <div id="diet_heading_div">
+
+     <div class="row ">
+         <input type="hidden" name="set1" id="first_aid_guide_input">
+         <a class="list-group-item list-group-item-action " id="first_aid_guide" role="tab" onclick="Diet_type(this)" style="font-weight: bold;">First aid guide</a>
+         <a class="list-group-item list-group-item-action " id="pet_care_dog_sitting_centres" role="tab" onclick="Diet_type(this)" style="font-weight: bold;">Pet care centres</a>
+     </div>
+     <div class="row mt-2">
+         <input type="hidden" name="set2" value="" id="set_id">
+          <a class="list-group-item list-group-item-action " id="budget_analyzer" role="tab" onclick="set(this)" style="font-weight: bold;">Budget analyzer</a>
+         <a class="list-group-item list-group-item-action " id="pet_gallery" role="tab" onclick="set(this)" style="font-weight: bold;">Pet gallery</a>
+        </div>
+       <div class="row mt-2">
+         <input type="hidden" name="set2" value="" id="set_id">
+          <a class="list-group-item list-group-item-action " id="pet_names" role="tab" onclick="set(this)" style="font-weight: bold;">Pet names</a>
+         <a class="list-group-item list-group-item-action " id="anti_dog_whistle" role="tab" onclick="set(this)" style="font-weight: bold;">Anti dog whistle</a>
+     </div>
+      <div class="row mt-2">
+         <input type="hidden" name="set2" value="" id="set_id">
+         <a class="list-group-item list-group-item-action " id="Isqueeek_toy" role="tab" onclick="set(this)" style="font-weight: bold;">Isqueeek toy</a>
+         <a class="list-group-item list-group-item-action " id="Pet_acoustic_music" role="tab" onclick="set(this)" style="font-weight: bold;">Pet acoustic music</a>
+     </div>
+
+{#===================history started==========================================#}
+<br>
+ </div>
+</form>
+</div>
+<div class="topnav">
+  <a href="#home" class="active"  id="home">Home</a>
+    <a href="#Blog" class="active ml-1" id="blog">Blog</a>
+    <a href="#Camera" class="active  ml-1" id="camera">Camera</a>
+    <a href="#Pet registration" class="active  ml-1" id="pet_registration">Pet registration</a>
+</div>
+</div>
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>message</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+    html,
+    body {
+        margin: 0%;
+        padding: 0%;
+        overflow-x: hidden;
+    }
+
+    .numberCircle {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 2px;
+
+        background: #fff;
+        border: 2px solid green;
+        color: #666;
+        text-align: center;
+
+        font: 32px Arial, sans-serif;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #text_area {
+
+            height: 100px;
+            width: 100%;
+        }
+
+        #send_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+
+        #card_id {
+            height: fit-content;
+            margin-top: 2%;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_card {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_row {
+            margin-top: 40%;
+            text-align: center;
+        }
+
+        /* message read starts */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #07A5E1;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 65px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            min-width: 300px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        #message_read_card_id {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 130px;
+        }
+
+        /* When the textarea gets focus, do something */
+        #message_read_card_id {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+            margin-bottom: 20%;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+
+        #text_area {
+
+            height: 120px;
+            width: 100%;
+        }
+
+        #send_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+
+        #card_id {
+            height: fit-content;
+            margin-top: 2%;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_card {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_row {
+            margin-top: 35%;
+            text-align: center;
+        }
+
+        /* message read starts */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #07A5E1;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 65px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            min-width: 300px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        #message_read_card_id {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 120px;
+        }
+
+        /* When the textarea gets focus, do something */
+        #message_read_card_id {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+            margin-bottom: 5%;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #text_area {
+
+            height: 100px;
+            width: 100%;
+        }
+
+        #send_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+
+        #card_id {
+            height: fit-content;
+            margin-top: 2%;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_card {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_row {
+            margin-top: 25%;
+            text-align: center;
+        }
+
+        /* message read starts */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #07A5E1;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 5%;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            min-width: 300px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        #message_read_card_id {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 150px;
+        }
+
+        /* When the textarea gets focus, do something */
+        #message_read_card_id {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #text_area {
+
+            height:100px;
+            width: 100%;
+        }
+
+        #send_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+        }
+
+        #card_id {
+
+            height: fit-content;
+            margin-top: 2%;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_card {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_row {
+            margin-top: 20%;
+            text-align: center;
+        }
+
+        /* message read starts */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #07A5E1;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 65px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            min-width: 300px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        #message_read_card_id {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 150px;
+        }
+
+        /* When the textarea gets focus, do something */
+        #message_read_card_id {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #text_area {
+
+            height: 200px;
+            width: 100%;
+        }
+
+        #send_button {
+            background-color: #003300;
+            color: white;
+            float: right;
+
+        }
+
+
+        #card_id {
+            height: fit-content;
+            margin-top: 10%;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #message_sent_successfully_row {
+            margin-top: 17%;
+            text-align: center;
+        }
+
+        #message_sent_successfully_card {
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* message read starts */
+
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #07A5E1;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 65px;
+            right: 28px;
+            width: 280px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            min-width: 300px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        #message_read_card_id {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        /* When the textarea gets focus, do something */
+        #message_read_card_id {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <form method="post">
+                            {% csrf_token %}
+                        
+                        <div class="row" id="main_div">
+                            <div class="col">
+
+                                <div class="card" id="card_id">
+
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                                <label for="msg" style="color: #003300;"><b>Message</b></label>
+                                            </div>
+
+                                            <div class="col-6 col-md-6 col-sm-6 col-lg-6">
+                                                <a style="color: #003300;float: right;"
+                                                    href="{% url 'danalytics' %}"><span
+                                                        style="color: #003300;font-weight: bold;font-size: 25px;">&times;</span></a>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <textarea placeholder="Type message.." name="msg" required
+                                                    id="text_area"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button type="submit" class="btn" id="send_button"
+                                                    onclick="send()">Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        </form>
+                        <!-- Your message has been sent starts -->
+                        <div id="Back_button_div" style="display: none;">
+                            <div class="row" id="message_sent_successfully_row">
+                                <div class="col">
+                                    <div class="card" id="message_sent_successfully_card">
+                                        <div class="card-body">
+                                            <!-- <div class="numberCircle">30</div> -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- <span class="glyphicon glyphicon-ok-circle"  style="font-size: 80px;color: green;"></span> -->
+
+                                                    <i class="fa fa-check-circle"
+                                                        style="font-size: 80px;color: #003300;"></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label style="font-weight: bold;font-size: 25px;">Your message was
+                                                        sent successfully.</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button type="button" class="btn"
+                                                        onclick="window.history.go(-1); return false;"
+                                                        style="background-color: #003300;color: white;">Back</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Your message has been sent ends -->
+                        <!-- chat pop up starts -->
+
+                        <button class="open-button" onclick="openForm()">Messages</button>
+
+                        <div class="chat-popup" id="myForm">
+                            <form  class="form-container">
+                                <h1>Chat</h1>
+                                <div class="row">
+                                    <div class="col">
+                            <div class="card" >
+                                <div class="card-body" id="message_read_card_id">
+                                    {% for i in previous_chat %}
+                                    {{i.message}}
+                                    on {{i.date}}
+                                    {% endfor %}
+                                    </div>
+                                    
+                            </div>
+                            </div>
+                            </div>
+
+                                <!-- <textarea placeholder="Type message.." name="msg" required id="message_read_card_id"></textarea> -->
+
+                                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                            </form>
+                        </div>
+
+                        <!-- chat pop up ends -->
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+            <script type="text/javascript">
+                function send() {
+                    document.getElementById('send_button').style.display = 'none';
+                    document.getElementById('main_div').style.display = 'none';
+                    document.getElementById('Back_button_div').style.display = 'block';
+
+
+                    msg = document.getElementById('text_area').value;
+                    console.log(msg)
+                    $.ajax({
+                        url: "/custmizemessage/{{customer_id}}/{{doc_id}}",
+                        type: 'POST',
+
+                        data: {
+
+                            'msg': msg,
+                            'csrfmiddlewaretoken': '{{ csrf_token }}',
+                        },
+
+                        success: function (data) {
+
+
+                        }
+                    });
+                }
+
+                function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+            </script>
+</body>
+
+</html>

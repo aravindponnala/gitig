@@ -1,0 +1,2674 @@
+  {% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<style>
+    .dropdown-menu {
+
+        height: 400px !important;
+    }
+
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+    .bootstrap-select .btn {
+
+        border-style: solid;
+        border-width: 1px;
+        border-color: #1f7a1f;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+
+    #down_arrow {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: 4%;
+        border: solid #003300;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+
+    }
+
+
+
+
+    #vitals_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    #vaccination_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+
+    }
+
+    #deworming_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    /* ===============sidebar style ends============================== */
+    #grad1 {
+        filter: brightness(100%);
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        background-color: lightgray;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    /*------------------------------------ gradient ends----------------------------*/
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+
+        #disease_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vaccination_a {
+
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+        #camera_card {
+            width: 90%;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #symptoms_card{
+         margin-left: auto;
+         margin-right: auto;
+         width: 80%;
+     }
+     #visit_purpose_card{
+        margin-left: auto;
+         margin-right: auto;
+         width: 80%;
+     }
+
+        #disease_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+        #camera_card {
+            width: 70%;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #symptoms_card{
+         margin-left: auto;
+         margin-right: auto;
+         width: 70%;
+     }
+     #visit_purpose_card{
+        margin-left: auto;
+         margin-right: auto;
+         width: 70%;
+     }
+        #disease_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #plus1_div {
+            margin-left: 12%;
+        }
+
+        #plus2_div {
+            margin-left: 12%;
+        }
+
+        #plus3_div {
+            margin-left: 12%;
+        }
+        #camera_card {
+            width: 55%;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+
+        #symptoms_card{
+         margin-left: auto;
+         margin-right: auto;
+         width: 60%;
+     }
+     #visit_purpose_card{
+        margin-left: auto;
+         margin-right: auto;
+         width: 60%;
+     }
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #plus1_div {
+            margin-left: 20%;
+        }
+
+        #plus2_div {
+            margin-left: 20%;
+        }
+
+        #plus3_div {
+            margin-left: 20%;
+        }
+        #camera_card {
+            width: 45%;
+        }
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        #disease_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #plus1_div {
+            margin-left: 23%;
+        }
+
+        #plus2_div {
+            margin-left: 23%;
+        }
+
+        #plus3_div {
+            margin-left: 23%;
+        }
+        #symptoms_card{
+         margin-left: auto;
+         margin-right: auto;
+         width: 50%;
+     }
+     #visit_purpose_card{
+        margin-left: auto;
+         margin-right: auto;
+         width: 50%;
+     }
+     #camera_card {
+            width: 40%;
+        }
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ doc_pk }}" name="doc_id" id="doc_id">
+
+    <div id="grad1">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+            <div class="overlay-content">
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                        style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor profile</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                        style="font-weight: bold;" href="{% url 'list_patient' %}">List of patients
+                    </a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                        style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<i class="down"
+                            id="down_arrow"></i></a>
+                </li>
+                <li id="show_div" style="display: none">
+
+                    <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                        style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                        style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports
+                    </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                        style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences
+                    </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                        style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                        style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;"
+                        href="{% url 'books_sbar' %}">Books</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics</a>
+                </li>
+                {% if doc_pk_stock.stock_management == 'yes' %}
+
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;"
+                        href="{% url 'stocks' %}">Stocks</a>
+                </li>
+                {% else %}
+                {% endif %}
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;">About</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                </li>
+
+
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+        <label id=pet_name_label><b>Pet name:</b></label>{{ pet_obj.name }}
+        <label id=breed_label class="ml-2"><b>Breed:</b></label>{{ pet_obj.breed }}
+        <label id="age_label" class="ml-2"><b>Age:</b></label>{{ pet_obj.dob }}
+        <label id="gender_label" class="ml-2"><b>Gender:</b></label>{{ pet_obj.gender }}
+        <label id="diet_label" class="ml-2"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }}
+        <label id="diet_state_label" class="ml-2"><b>Diet_state:</b></label>{{ purpose_pet_obj_diet.diet_state }}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="wrapper">
+                <!-- <div class="container">
+                    <div class="card" style="background-color:  #e6ffe6;" id="visit_purpose_card">
+
+                        <div class="card-body">
+                            <div class="row mt-2" style="justify-content: center;">
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3  col-xl-3 m-0 p-0 text-center">
+                                    <button class="btn btn" type="button" id="" style="outline: none;"><span
+                                            id="visit_purpose_span"></span>
+                                        <br><span>Visit purpose</span> </button>
+                                </div>
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 m-0 p-0 text-center">
+                                    <button name="vitals_name" class="btn btn" type="submit" style="outline: none;">
+                                        <span id="vitals_span"> </span><br><span>Vitals</span></button>
+
+                                </div>
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 m-0 p-0 text-center">
+                                    <a
+                                        href="{% url 'doctor_history' %}"><button
+                                            class="btn btn" type="button" style="outline: none;"><span
+                                                id="history_span"></span><br><span>History</span></button></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-11 col-lg-10">
+                            <a href="{% url 'doctor_history' %}" class="btn btn" style="background-color: #003300;color: white;float: right;" id="history_btn">History</a>
+                            </div>
+
+                    </div>
+                    </div>
+                <div class="container mt-2" id="container_id">
+                    <div class="card" id="symptoms_card">
+                        <div class="card-body m-0 p-0">
+                            <div class="row mt-2" style="justify-content: center;">
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                    <button name="vitals_name" class="btn btn  m-0 p-0" type="submit" style="outline: none;">
+                                        <span id="vitals_span">  <i class="fas fa-file-medical-alt" style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vitals</span></button>
+                                    <!-- <button class="btn btn-light m-1 p-1" id="symptoms_a" name="symptoms_name"
+                                        style="outline: none;">
+                                        <span id="symptoms_span"></span><br>Symptoms</button> -->
+                                </div>
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                    <button class="btn btn-light m-0 p-0 " id="vaccination_a" name="vaccination_name"
+                                        style="background-color: white;outline: none;"><span
+                                            id="vaccination_span"><i class='fas fa-syringe'
+                                            style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vaccination</span></button>
+                                </div>
+                                <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                    <button class="btn btn-light m-0 p-0" id="deworming_a" name="deworming_name"
+                                        style="background-color: white;outline: none;"><span
+                                            id="deworming_span"><img class="img-fluid" style="width: 100%;height: 100%;padding-top: 2px;"
+                                            src="{% static 'media/deworming.jpg' %}" id="dewarming_img_id"></span><br>Deworming</button>
+                                </div>
+                            </div>
+
+
+
+                            <div class="wrapper" id="disease_div">
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light  m-1 p-1" name="assessment_name" id="assessment_a"
+                                         style="background-color: white;"><i class="fas fa-notes-medical" style="font-size: 20px;"></i><br><span id="symptoms_span">Symptoms</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light  m-1 p-1" id="diagnostics_a" style="background-color: white;"
+                                            name="diagnostic_name"> <i class="fas fa-laptop-medical" style="font-size: 20px;"></i><br><span>Diagnostics</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button type="button" class="btn btn-light  m-1 p-1" name="prescription_name"
+                                            id="prescription_a"
+                                            style="background-color: #003300;color: white;"> <i class="fas fa-prescription" style="font-size: 20px ;"></i><br><span>Prescription</span></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="test" value="{{ x }}" name="">
+                    <input type="hidden" id="test1" value="{{ x.medicine1_name }}" name="">
+                    <input type="hidden" id="test2" value="{{ x.medicine2_name }}" name="">
+                    <input type="hidden" id="test3" value="{{ x.medicine1 }}" name="">
+                    <input type="hidden" id="test4" value="{{ x.medicine2 }}" name="">
+                    <input type="hidden" id="test5" value="{{ x.medicine3 }}" name="">
+                    <input type="hidden" id="test6" value="{{ x.medicine4 }}" name="">
+                    <input type="hidden" id="test7" value="{{ x.medicine5 }}" name="">
+                    <input type="hidden" id="test8" value="{{ x.medicine6 }}" name="">
+                    <input type="hidden" id="foll_unit" value="{{ unt }}" name="">
+
+
+
+                    {% for i in messages %}
+
+                    <input type="hidden" id="messages_id" value="{{i}}" name="">
+                    {% endfor %}
+
+                    <!--------------- prescription first row start ----------------------->
+
+                    <div class="row mt-5" style="justify-content: center;">
+                        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                          <!--   <div class="form-group">
+                                <select class="selectpicker show-tick form-control" data-live-search="true"
+                                    style="width: 100%;" name="medicine1" id="firstone" onchange="first()">
+                                    <option value="">select</option>
+                                    {% for i in st %}
+                                    <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                    {% endfor %}
+                                </select>
+                            </div> -->
+                             <div class="form-group " id=dropdown_div_id>
+                                        <!-- <select name="breed" class="selectpicker"     data-live-search ="true" data-style="btn btn-outline-dark"> -->
+                                        <input type="text" list="datalist_id" name="medicine1" id="firstone" onchange="first()"
+                                            class="form-control" placeholder="Select / Type medicine"  value="{{ x.medicine1_name }}"
+                                              data-toggle="tooltip" >
+                                        <datalist id="datalist_id">
+                                          {% for i in st %}
+                                    <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                    {% endfor %}
+                                        </datalist>
+
+                                    </div>
+
+                        </div>
+                        <input type="hidden" name="medicine1_time" id="med1_input">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 m-0 p-0">
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med1(this)" id="med1_m">M
+                            </a>
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  col-xl-1 m-0 p-0">
+                            <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med1(this)" id="med1_an">AN </a>
+
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1  m-0 p-0">
+
+                            <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med1(this)" id="med1_n">N</a>
+
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                            <div class="form-group">
+                                <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                    style="width: 100%;" id="days1_select" name="medicine1_days">
+                                    <option value="" data-tokens="" hidden> Days </option>
+                                    <option value="1 day" data-tokens="1 day">1 day </option>
+                                    <option value="2 days" data-tokens="2 days">2 days</option>
+                                    <option value="3 days" data-tokens="3 days">3 days</option>
+                                    <option value="4 days" data-tokens="4 days">4 days</option>
+                                    <option value="5 days" data-tokens="5 days">5 days</option>
+                                    <option value="6 days" data-tokens="6 days">6 days</option>
+                                    <option value="7 days" data-tokens="7 days">7 days</option>
+                                    <option value="8 days" data-tokens="8 days">8 days</option>
+                                    <option value="9 days" data-tokens="9 days">9 days</option>
+                                    <option value="10 days" data-tokens="10 days">10 days</option>
+                                    <option value="11 days" data-tokens="11 days">11 days</option>
+                                    <option value="12 days" data-tokens="12 days">12 days</option>
+                                    <option value="13 days" data-tokens="13 days">13 days</option>
+                                    <option value="14 days" data-tokens="14 days">14 days</option>
+                                    <option value="15 days" data-tokens="15 days">15 days</option>
+                                    <option value="16 days" data-tokens="16 days">16 days</option>
+                                    <option value="17 days" data-tokens="17 days">17 days</option>
+                                    <option value="18 days" data-tokens="18 days">18 days</option>
+                                    <option value="19 days" data-tokens="19 days">19 days</option>
+                                    <option value="20 days" data-tokens="20 days">20 days</option>
+                                    <option value="21 days" data-tokens="21 days">21 days</option>
+                                    <option value="22 days" data-tokens="22 days">22 days</option>
+                                    <option value="23 days" data-tokens="23 days">23 days</option>
+                                    <option value="24 days" data-tokens="24 days">24 days</option>
+                                    <option value="25 days" data-tokens="25 days">25 days</option>
+                                    <option value="26 days" data-tokens="26 days">26 days</option>
+                                    <option value="27 days" data-tokens="27 days">27 days</option>
+                                    <option value="28 days" data-tokens="28 days">28 days</option>
+                                    <option value="29 days" data-tokens="29 days">29 days</option>
+                                    <option value="30 days" data-tokens="30 days">30 days</option>
+                                    <option value="31 days" data-tokens="31 days">31 days</option>
+                                    <option value="2 months" data-tokens="2 months">2 months</option>
+                                    <option value="3 months" data-tokens="3 months">3 months </option>
+                                    <option value="4 months" data-tokens="4 months">4 months</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--------------- prescription first row ends ----------------------->
+
+
+                    <!--------------- prescription second row start ----------------------->
+
+                    <!--------------- prescription second row ends ----------------------->
+                    <!--------------- prescription third row start ----------------------->
+
+
+                    <div class="row mt-2" style="justify-content: center;">
+                        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                            <div class="form-group">
+                             <input type="text" list="datalist_id" name="medicine2" id="secondselect" onchange="second()"
+                                            class="form-control" placeholder="Select / Type medicine" value="{{ x.medicine2_name}}"
+                                              data-toggle="tooltip" >
+                                        <datalist >
+                                    <option value="">select</option>
+                                    {% for i in st %}
+                                    <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+                        </div>
+                        <input type="hidden" name="medicine2_time" id="med2_input">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 m-0 p-0">
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med2(this)" id="med2_m">M </a>
+
+
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 m-0 p-0">
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med2(this)" id="med2_an">AN </a>
+
+
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 m-0 p-0">
+
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med2(this)" id="med2_n">N</a>
+
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                            <div class="form-group">
+                                <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                    style="width: 100%;" id="days2_select" name="medicine2_days">
+                                    <option value="" data-tokens="" hidden> Days </option>
+                                    <option value="1 day" data-tokens="1 day">1 day </option>
+                                    <option value="2 days" data-tokens="2 days">2 days</option>
+                                    <option value="3 days" data-tokens="3 days">3 days</option>
+                                    <option value="4 days" data-tokens="4 days">4 days</option>
+                                    <option value="5 days" data-tokens="5 days">5 days</option>
+                                    <option value="6 days" data-tokens="6 days">6 days</option>
+                                    <option value="7 days" data-tokens="7 days">7 days</option>
+                                    <option value="8 days" data-tokens="8 days">8 days</option>
+                                    <option value="9 days" data-tokens="9 days">9 days</option>
+                                    <option value="10 days" data-tokens="10 days">10 days</option>
+                                    <option value="11 days" data-tokens="11 days">11 days</option>
+                                    <option value="12 days" data-tokens="12 days">12 days</option>
+                                    <option value="13 days" data-tokens="13 days">13 days</option>
+                                    <option value="14 days" data-tokens="14 days">14 days</option>
+                                    <option value="15 days" data-tokens="15 days">15 days</option>
+                                    <option value="16 days" data-tokens="16 days">16 days</option>
+                                    <option value="17 days" data-tokens="17 days">17 days</option>
+                                    <option value="18 days" data-tokens="18 days">18 days</option>
+                                    <option value="19 days" data-tokens="19 days">19 days</option>
+                                    <option value="20 days" data-tokens="20 days">20 days</option>
+                                    <option value="21 days" data-tokens="21 days">21 days</option>
+                                    <option value="22 days" data-tokens="22 days">22 days</option>
+                                    <option value="23 days" data-tokens="23 days">23 days</option>
+                                    <option value="24 days" data-tokens="24 days">24 days</option>
+                                    <option value="25 days" data-tokens="25 days">25 days</option>
+                                    <option value="26 days" data-tokens="26 days">26 days</option>
+                                    <option value="27 days" data-tokens="27 days">27 days</option>
+                                    <option value="28 days" data-tokens="28 days">28 days</option>
+                                    <option value="29 days" data-tokens="29 days">29 days</option>
+                                    <option value="30 days" data-tokens="30 days">30 days</option>
+                                    <option value="31 days" data-tokens="31 days">31 days</option>
+                                    <option value="2 months" data-tokens="2 months">2 months</option>
+                                    <option value="3 months" data-tokens="3 months">3 months </option>
+                                    <option value="4 months" data-tokens="4 months">4 months</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--------------- prescription third row ends ----------------------->
+                    <!--------------- prescription fourth row start ----------------------->
+
+                    <!--------------- prescription fourth row ends ----------------------->
+                    <!--------------- prescription fifth row starts ----------------------->
+                    <div class="row mt-2" style="justify-content: center;">
+                        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                            <div class="form-group">
+                               <!--  <select class="selectpicker show-tick form-control" data-live-search="true"
+                                    style="width: 100%;" name="medicine3" id="thirdselect" onchange="third()"> -->
+                                    <input type="text" list="datalist_id" name="medicine3" id="thirdselect" onchange="third()"
+                                            class="form-control" placeholder="Select / Type medicine"  value="{{ x.medicine3_name}}"
+                                              data-toggle="tooltip" >
+                                        <datalist >
+                                    <option value="">select</option>
+                                    {% for i in st %}
+                                    <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                    {% endfor %}
+                                </datalist>
+                            </div>
+
+                        </div>
+
+                        <input type="hidden" name="medicine3_time" id="med3_input">
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med3(this)" id="med3_m">M </a>
+
+
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  m-0 p-0">
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med3(this)" id="med3_an">AN </a>
+
+
+                        </div>
+                        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+
+                            <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                onclick="med3(this)" id="med3_n">N</a>
+
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                            <div class="form-group">
+                                <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                    style="width: 100%;" id="days3_select" name="medicine3_days">
+                                    <option value="" data-tokens="" hidden> Days </option>
+                                    <option value="1 day" data-tokens="1 day">1 day </option>
+                                    <option value="2 days" data-tokens="2 days">2 days</option>
+                                    <option value="3 days" data-tokens="3 days">3 days</option>
+                                    <option value="4 days" data-tokens="4 days">4 days</option>
+                                    <option value="5 days" data-tokens="5 days">5 days</option>
+                                    <option value="6 days" data-tokens="6 days">6 days</option>
+                                    <option value="7 days" data-tokens="7 days">7 days</option>
+                                    <option value="8 days" data-tokens="8 days">8 days</option>
+                                    <option value="9 days" data-tokens="9 days">9 days</option>
+                                    <option value="10 days" data-tokens="10 days">10 days</option>
+                                    <option value="11 days" data-tokens="11 days">11 days</option>
+                                    <option value="12 days" data-tokens="12 days">12 days</option>
+                                    <option value="13 days" data-tokens="13 days">13 days</option>
+                                    <option value="14 days" data-tokens="14 days">14 days</option>
+                                    <option value="15 days" data-tokens="15 days">15 days</option>
+                                    <option value="16 days" data-tokens="16 days">16 days</option>
+                                    <option value="17 days" data-tokens="17 days">17 days</option>
+                                    <option value="18 days" data-tokens="18 days">18 days</option>
+                                    <option value="19 days" data-tokens="19 days">19 days</option>
+                                    <option value="20 days" data-tokens="20 days">20 days</option>
+                                    <option value="21 days" data-tokens="21 days">21 days</option>
+                                    <option value="22 days" data-tokens="22 days">22 days</option>
+                                    <option value="23 days" data-tokens="23 days">23 days</option>
+                                    <option value="24 days" data-tokens="24 days">24 days</option>
+                                    <option value="25 days" data-tokens="25 days">25 days</option>
+                                    <option value="26 days" data-tokens="26 days">26 days</option>
+                                    <option value="27 days" data-tokens="27 days">27 days</option>
+                                    <option value="28 days" data-tokens="28 days">28 days</option>
+                                    <option value="29 days" data-tokens="29 days">29 days</option>
+                                    <option value="30 days" data-tokens="30 days">30 days</option>
+                                    <option value="31 days" data-tokens="31 days">31 days</option>
+                                    <option value="2 months" data-tokens="2 months">2 months</option>
+                                    <option value="3 months" data-tokens="3 months">3 months </option>
+                                    <option value="4 months" data-tokens="4 months">4 months</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--------------- prescription fifth row ends ----------------------->
+                    <!--------------- prescription sixth row starts ----------------------->
+
+                    <!--------------- prescription sixth row ends ----------------------->
+                    <!--------------- prescription seventh row starts ----------------------->
+                    <div class="wrapper" id="show_wrapper">
+                        <div class="row mt-2" style="justify-content: center;" id="drug_select4">
+                            <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                                <div class="form-group">
+
+                                         <input type="text" list="datalist_id" name="medicine4" id="fourthselect" onchange="fourth()"
+                                            class="form-control" placeholder="Select / Type medicine" value="{{ x.medicine4_name}}"
+                                              data-toggle="tooltip" >
+                                        <datalist >
+
+                                        <option value="">select</option>
+                                        {% for i in st %}
+                                        <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                        {% endfor %}
+                                    </datalist>
+                                </div>
+
+                            </div>
+                            <input type="hidden" name="medicine4_time" id="med4_input">
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+                                <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med4(this)" id="med4_m">M </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+                                <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med4(this)" id="med4_an">AN </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+
+                                <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med4(this)" id="med4_n">N</a>
+
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                                <div class="form-group">
+                                    <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                        style="width: 100%;" id="days4_select" name="medicine4_days">
+                                        <option value="" data-tokens="" hidden> Days </option>
+                                        <option value="1 day" data-tokens="1 day">1 day </option>
+                                        <option value="2 days" data-tokens="2 days">2 days</option>
+                                        <option value="3 days" data-tokens="3 days">3 days</option>
+                                        <option value="4 days" data-tokens="4 days">4 days</option>
+                                        <option value="5 days" data-tokens="5 days">5 days</option>
+                                        <option value="6 days" data-tokens="6 days">6 days</option>
+                                        <option value="7 days" data-tokens="7 days">7 days</option>
+                                        <option value="8 days" data-tokens="8 days">8 days</option>
+                                        <option value="9 days" data-tokens="9 days">9 days</option>
+                                        <option value="10 days" data-tokens="10 days">10 days</option>
+                                        <option value="11 days" data-tokens="11 days">11 days</option>
+                                        <option value="12 days" data-tokens="12 days">12 days</option>
+                                        <option value="13 days" data-tokens="13 days">13 days</option>
+                                        <option value="14 days" data-tokens="14 days">14 days</option>
+                                        <option value="15 days" data-tokens="15 days">15 days</option>
+                                        <option value="16 days" data-tokens="16 days">16 days</option>
+                                        <option value="17 days" data-tokens="17 days">17 days</option>
+                                        <option value="18 days" data-tokens="18 days">18 days</option>
+                                        <option value="19 days" data-tokens="19 days">19 days</option>
+                                        <option value="20 days" data-tokens="20 days">20 days</option>
+                                        <option value="21 days" data-tokens="21 days">21 days</option>
+                                        <option value="22 days" data-tokens="22 days">22 days</option>
+                                        <option value="23 days" data-tokens="23 days">23 days</option>
+                                        <option value="24 days" data-tokens="24 days">24 days</option>
+                                        <option value="25 days" data-tokens="25 days">25 days</option>
+                                        <option value="26 days" data-tokens="26 days">26 days</option>
+                                        <option value="27 days" data-tokens="27 days">27 days</option>
+                                        <option value="28 days" data-tokens="28 days">28 days</option>
+                                        <option value="29 days" data-tokens="29 days">29 days</option>
+                                        <option value="30 days" data-tokens="30 days">30 days</option>
+                                        <option value="31 days" data-tokens="31 days">31 days</option>
+                                        <option value="2 months" data-tokens="2 months">2 months</option>
+                                        <option value="3 months" data-tokens="3 months">3 months </option>
+                                        <option value="4 months" data-tokens="4 months">4 months</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--------------- prescription seventh row ends ----------------------->
+
+
+                    <!--------------- prescription ningth row starts ----------------------->
+
+                    <div class="wrapper" id="show_wrapper_two">
+                        <div class="row mt-2" style="justify-content: center;" id="drug_select4">
+                            <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                                <div class="form-group">
+                                   <input type="text" list="datalist_id" name="medicine5" id="fifthselect" onchange="fifth()"
+                                            class="form-control" placeholder="Select / Type medicine" value="{{ x.medicine5_name}}"
+                                              data-toggle="tooltip" >
+                                        <datalist >
+                                        {% for i in st %}
+                                        <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                        {% endfor %}
+                                    </datalist>
+
+                                </div>
+                            </div>
+                            <input type="hidden" name="medicine5_time" id="med5_input">
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+                                <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med5(this)" id="med5_m">M </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  m-0 p-0">
+                                <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med5(this)" id="med5_an">AN </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  m-0 p-0">
+
+                                <a class="list-group-item list-group-item-action m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med5(this)" id="med5_n">N</a>
+
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                                <div class="form-group">
+                                    <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                        style="width: 100%;" id="days5_select" name="medicine5_days">
+                                        <option value="" data-tokens="" hidden> Days </option>
+                                        <option value="1 day" data-tokens="1 day">1 day </option>
+                                        <option value="2 days" data-tokens="2 days">2 days</option>
+                                        <option value="3 days" data-tokens="3 days">3 days</option>
+                                        <option value="4 days" data-tokens="4 days">4 days</option>
+                                        <option value="5 days" data-tokens="5 days">5 days</option>
+                                        <option value="6 days" data-tokens="6 days">6 days</option>
+                                        <option value="7 days" data-tokens="7 days">7 days</option>
+                                        <option value="8 days" data-tokens="8 days">8 days</option>
+                                        <option value="9 days" data-tokens="9 days">9 days</option>
+                                        <option value="10 days" data-tokens="10 days">10 days</option>
+                                        <option value="11 days" data-tokens="11 days">11 days</option>
+                                        <option value="12 days" data-tokens="12 days">12 days</option>
+                                        <option value="13 days" data-tokens="13 days">13 days</option>
+                                        <option value="14 days" data-tokens="14 days">14 days</option>
+                                        <option value="15 days" data-tokens="15 days">15 days</option>
+                                        <option value="16 days" data-tokens="16 days">16 days</option>
+                                        <option value="17 days" data-tokens="17 days">17 days</option>
+                                        <option value="18 days" data-tokens="18 days">18 days</option>
+                                        <option value="19 days" data-tokens="19 days">19 days</option>
+                                        <option value="20 days" data-tokens="20 days">20 days</option>
+                                        <option value="21 days" data-tokens="21 days">21 days</option>
+                                        <option value="22 days" data-tokens="22 days">22 days</option>
+                                        <option value="23 days" data-tokens="23 days">23 days</option>
+                                        <option value="24 days" data-tokens="24 days">24 days</option>
+                                        <option value="25 days" data-tokens="25 days">25 days</option>
+                                        <option value="26 days" data-tokens="26 days">26 days</option>
+                                        <option value="27 days" data-tokens="27 days">27 days</option>
+                                        <option value="28 days" data-tokens="28 days">28 days</option>
+                                        <option value="29 days" data-tokens="29 days">29 days</option>
+                                        <option value="30 days" data-tokens="30 days">30 days</option>
+                                        <option value="31 days" data-tokens="31 days">31 days</option>
+                                        <option value="2 months" data-tokens="2 months">2 months</option>
+                                        <option value="3 months" data-tokens="3 months">3 months </option>
+                                        <option value="4 months" data-tokens="4 months">4 months</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--------------- prescription ningth row ends ----------------------->
+
+                    <!-- plus 2 ends -->
+                    <!--------------- prescription eleventh row starts ----------------------->
+                    <div class="wrapper" id="show_wrapper_four">
+                        <div class="row mt-2" style="justify-content: center;" id="drug_select4">
+                            <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0">
+                                <div class="form-group">
+                                    <input type="text" list="datalist_id" name="medicine6" id="sixthselect" onchange="sixth()"
+                                            class="form-control" placeholder="Select / Type medicine" value="{{ x.medicine6_name}}"
+                                              data-toggle="tooltip" >
+                                        <datalist >
+                                        {% for i in st %}
+                                        <option value="{{i.medicine}}">{{i.medicine}}</option>
+
+                                        {% endfor %}
+                                    </datalist>
+                                </div>
+                            </div>
+                            <input type="hidden" name="medicine6_time" id="med6_input">
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+                                <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;color: #1f7a1f;"
+                                    onclick="med6(this)" id="med6_m">M </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  m-0 p-0">
+                                <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med6(this)" id="med6_an">AN </a>
+
+
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 m-0 p-0">
+
+                                <a class="list-group-item list-group-item-action  m-1 p-1" role="tab"
+                                    style="font-weight: bold;text-align: center;border-color: #1f7a1f;border-style: solid;color: #1f7a1f;"
+                                    onclick="med6(this)" id="med6_n">N</a>
+
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 m-0 p-0">
+                                <div class="form-group">
+                                    <select class="selectpicker show-tick form-control ml-1" data-live-search="true"
+                                        style="width: 100%;" id="days6_select" name="medicine6_days">
+                                        <option value="" data-tokens="" hidden> Days </option>
+                                        <option value="1 day" data-tokens="1 day">1 day </option>
+                                        <option value="2 days" data-tokens="2 days">2 days</option>
+                                        <option value="3 days" data-tokens="3 days">3 days</option>
+                                        <option value="4 days" data-tokens="4 days">4 days</option>
+                                        <option value="5 days" data-tokens="5 days">5 days</option>
+                                        <option value="6 days" data-tokens="6 days">6 days</option>
+                                        <option value="7 days" data-tokens="7 days">7 days</option>
+                                        <option value="8 days" data-tokens="8 days">8 days</option>
+                                        <option value="9 days" data-tokens="9 days">9 days</option>
+                                        <option value="10 days" data-tokens="10 days">10 days</option>
+                                        <option value="11 days" data-tokens="11 days">11 days</option>
+                                        <option value="12 days" data-tokens="12 days">12 days</option>
+                                        <option value="13 days" data-tokens="13 days">13 days</option>
+                                        <option value="14 days" data-tokens="14 days">14 days</option>
+                                        <option value="15 days" data-tokens="15 days">15 days</option>
+                                        <option value="16 days" data-tokens="16 days">16 days</option>
+                                        <option value="17 days" data-tokens="17 days">17 days</option>
+                                        <option value="18 days" data-tokens="18 days">18 days</option>
+                                        <option value="19 days" data-tokens="19 days">19 days</option>
+                                        <option value="20 days" data-tokens="20 days">20 days</option>
+                                        <option value="21 days" data-tokens="21 days">21 days</option>
+                                        <option value="22 days" data-tokens="22 days">22 days</option>
+                                        <option value="23 days" data-tokens="23 days">23 days</option>
+                                        <option value="24 days" data-tokens="24 days">24 days</option>
+                                        <option value="25 days" data-tokens="25 days">25 days</option>
+                                        <option value="26 days" data-tokens="26 days">26 days</option>
+                                        <option value="27 days" data-tokens="27 days">27 days</option>
+                                        <option value="28 days" data-tokens="28 days">28 days</option>
+                                        <option value="29 days" data-tokens="29 days">29 days</option>
+                                        <option value="30 days" data-tokens="30 days">30 days</option>
+                                        <option value="31 days" data-tokens="31 days">31 days</option>
+                                        <option value="2 months" data-tokens="2 months">2 months</option>
+                                        <option value="3 months" data-tokens="3 months">3 months </option>
+                                        <option value="4 months" data-tokens="4 months">4 months</option>
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--------------- prescription eleventh row ends ----------------------->
+                    <!--------------- prescription twelve row starts ----------------------->
+
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card" style="margin-left: auto;margin-right: auto;" id="camera_card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xs-1 m-1 p-1">
+                                            <i class="fa fa-camera" style="float: right;"></i>
+                                        </div>
+                                        <div class="col-xs-10  m-0 p-0">
+                                            <div class="wrapper">
+                                                <input type="file" name="file" id="camerasave" accept="image/*"
+                                                    class="form-control-file">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" id="textarea_id" value="{{ x.medicine_other }}" name="">
+                                    <textarea class="form-control mt-2" name="medicine_other"
+                                        id="TEXTAREA_ID_prescription" placeholder="Enter other medicine"></textarea>
+
+
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row mt-1" style="justify-content: center;">
+                      <div class="col-xs-4 col-sm-3 col-md-2  col-lg-2 col-xl-2 m-0 p-0">
+                          <span style="color: #003300;float: right;padding: 5px;">Follow up date</span>
+                      </div>
+
+                      <div class="col-xs-3 col-sm-2  col-md-2 col-lg-1 col-xl-1 m-0 p-0 ml-1">
+                          <input type="number" class="form-control"  placeholder="" name="followup_date" value="{{reverse_date_num}}">
+                          </div>
+                          <div class="col-xs-3 col-sm-2  col-md-2 col-lg-1 col-xl-1 m-0 p-0">
+                          <select name="followup_date_unit" class="selectpicker show-tick form-control"
+                            data-style="btn btn-outline-dark" id="foll_date">
+                            <option value="days" data-tokens="days">Days</option>
+                            <option value="week" data-tokens="week">Week</option>
+                            <option value="month" data-tokens="month" >Month</option>
+                            <option value="year" data-tokens="year" >Year</option>
+                          </select>
+                      </div>
+                  </div>
+                    <input type="hidden" name="symptoms" id="symptoms_input" value="{{ purpose_pet_obj.disease }}">
+                    <input type="hidden" name="" id="symptoms_text" value="{{ purpose_pet_obj.symptoms_text }}">
+                    <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                    <input type="hidden" name="" id="purpose_visit" value="{{ purpose_pet_obj.vaccination_purpose }}">
+                    <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                    <!-- ==============textarea ends ===============-->
+
+
+                    <div class="row mt-4">
+                        <div class="col-12 col-sm-12 col-md-11 col-lg-10">
+                            <button name="" class="btn btn" id="Next_button"
+                                style="background-color: red;color: white;float: right;" onclick="myFunction()">Close
+                                visit</button>
+                        </div>
+                    </div>
+                </div>
+<br>
+        </form>
+
+
+    </div>
+
+
+    <!-- Notepad Script -->
+    <!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+    <script>
+          function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+        function show_doctors_corner() {
+            if (document.getElementById('show_div').style.display == 'none') {
+                document.getElementById('show_div').style.display = 'inline-block';
+
+
+            } else {
+                document.getElementById('show_div').style.display = 'none';
+
+            }
+        }
+
+        function show_prescription_row() {
+            if (document.getElementById('show_wrapper').style.display == 'none') {
+                document.getElementById('show_wrapper').style.display = 'block';
+                document.getElementById('show_wrapper_one').style.display = 'block';
+
+
+                document.getElementById('plus1_div').style.display = 'none';
+                document.getElementById('plus2_div').style.display = 'inline-block';
+
+            } else {
+                document.getElementById('show_wrapper').style.display = 'none';
+            }
+        }
+        function show_prescription_row2() {
+            if (document.getElementById('show_wrapper_two').style.display == 'none') {
+                document.getElementById('show_wrapper_two').style.display = 'block';
+                document.getElementById('show_wrapper_three').style.display = 'block';
+
+                document.getElementById('plus3_div').style.display = 'inline-block';
+
+                document.getElementById('plus2_div').style.display = 'none';
+                document.getElementById('plus1_div').style.display = 'none';
+
+
+            } else {
+                document.getElementById('show_wrapper_two').style.display = 'none';
+
+            }
+        }
+        function show_prescription_row3() {
+            if (document.getElementById('show_wrapper_four').style.display == 'none') {
+                document.getElementById('show_wrapper_four').style.display = 'block';
+                document.getElementById('show_wrapper_five').style.display = 'block';
+                document.getElementById('plus2_div').style.display = 'none';
+                document.getElementById('plus1_div').style.display = 'none';
+                document.getElementById('plus3_div').style.display = 'none';
+
+
+
+            } else {
+                document.getElementById('show_wrapper_four').style.display = 'none';
+
+            }
+        }
+
+        //m,an,n div
+        var symp = document.getElementById('test3').value;
+        var x1 = []
+        symp = symp.split(/[ ,]+/)
+
+        if (symp.includes('AN')) {
+            document.getElementById('med1_an').style.background = 'lightgreen';
+            x1.push('AN');
+        }
+        if (symp.includes('N')) {
+            document.getElementById('med1_n').style.background = 'lightgreen';
+            x1.push('N');
+
+
+        }
+        if (symp.includes('M')) {
+            document.getElementById('med1_m').style.background = 'lightgreen';
+            x1.push('M');
+
+
+        }
+        document.getElementById('med1_input').value = x1
+
+        var symp1 = document.getElementById('test4').value;
+        var x2 = []
+        symp1 = symp1.split(/[ ,]+/)
+        if (symp1.includes('AN')) {
+            document.getElementById('med2_an').style.background = 'lightgreen';
+            x2.push('AN');
+
+        }
+        if (symp1.includes('N')) {
+            document.getElementById('med2_n').style.background = 'lightgreen';
+            x2.push('N');
+
+        }
+        if (symp1.includes('M')) {
+            document.getElementById('med2_m').style.background = 'lightgreen';
+            x2.push('M');
+
+        }
+        document.getElementById('med2_input').value = x2
+
+        var symp2 = document.getElementById('test5').value;
+        var x3 = []
+        symp2 = symp2.split(/[ ,]+/)
+        if (symp2.includes('AN')) {
+            document.getElementById('med3_an').style.background = 'lightgreen';
+            x3.push('AN');
+
+        }
+        if (symp2.includes('N')) {
+            document.getElementById('med3_n').style.background = 'lightgreen';
+            x3.push('N');
+
+        }
+        if (symp2.includes('M')) {
+            document.getElementById('med3_m').style.background = 'lightgreen';
+            x3.push('M');
+
+        }
+        document.getElementById('med3_input').value = x3
+        var symp3 = document.getElementById('test6').value;
+        var x4 = []
+        symp3 = symp3.split(/[ ,]+/)
+        if (symp3.includes('AN')) {
+            document.getElementById('med4_an').style.background = 'lightgreen';
+            x4.push('AN');
+
+
+        }
+        if (symp3.includes('N')) {
+            document.getElementById('med4_n').style.background = 'lightgreen';
+            x4.push('N');
+
+        }
+        if (symp3.includes('M')) {
+            document.getElementById('med4_m').style.background = 'lightgreen';
+            x4.push('M');
+
+        }
+        document.getElementById('med4_input').value = x4
+        var symp4 = document.getElementById('test7').value;
+        var x5 = []
+        symp4 = symp4.split(/[ ,]+/)
+        if (symp4.includes('AN')) {
+            document.getElementById('med5_an').style.background = 'lightgreen';
+            x5.push('AN');
+
+        }
+        if (symp4.includes('N')) {
+            document.getElementById('med5_n').style.background = 'lightgreen';
+            x5.push('N');
+
+        }
+        if (symp4.includes('M')) {
+            document.getElementById('med5_m').style.background = 'lightgreen';
+            x5.push('M');
+
+        }
+        document.getElementById('med5_input').value = x5
+        var symp5 = document.getElementById('test8').value;
+        var x6 = []
+        symp5 = symp5.split(/[ ,]+/)
+        if (symp5.includes('AN')) {
+            document.getElementById('med6_an').style.background = 'lightgreen';
+            x6.push('AN');
+
+        }
+        if (symp5.includes('N')) {
+            document.getElementById('med6_n').style.background = 'lightgreen';
+            x6.push('N');
+
+        }
+        if (symp5.includes('M')) {
+            document.getElementById('med6_m').style.background = 'lightgreen';
+            x6.push('M');
+
+        }
+        document.getElementById('med6_input').value = x6
+
+
+
+        function med1(data) {
+            var gender = document.getElementById('med1_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med1_input').value = gender_list.toString();
+        }
+
+
+
+        function med2(data) {
+            var gender = document.getElementById('med2_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med2_input').value = gender_list.toString();
+        }
+        function med3(data) {
+            var gender = document.getElementById('med3_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med3_input').value = gender_list.toString();
+        }
+        function med4(data) {
+            var gender = document.getElementById('med4_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med4_input').value = gender_list.toString();
+        }
+        function med5(data) {
+            var gender = document.getElementById('med5_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med5_input').value = gender_list.toString();
+        }
+        function med6(data) {
+            var gender = document.getElementById('med6_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med6_input').value = gender_list.toString();
+        }
+        function med7(data) {
+            var gender = document.getElementById('med7_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med7_input').value = gender_list.toString();
+        }
+        function med8(data) {
+            var gender = document.getElementById('med8_input').value
+            var gender_list = gender.split(',')
+            if (gender_list.includes(data.innerText)) {
+                index = gender_list.indexOf(data.innerText);
+                gender_list.splice(index, 1);
+                data.style.backgroundColor = "white";
+                data.style.color = "darkgreen";
+
+            } else {
+                gender_list.push(data.innerText);
+                data.style.backgroundColor = "lightgreen";
+                data.style.color = "black";
+            }
+            document.querySelector('#med8_input').value = gender_list.toString();
+        }
+
+        //// Ajax requests for medicine count of 0.
+
+        function first() {
+            xone = document.getElementById('firstone').value;
+            yone = document.getElementById('doc_id').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (data == 0) {
+                        alert(xone+' '+'stock is 0')
+                    }
+
+
+                }
+            });
+
+        }
+        function second() {
+            xtwo = document.getElementById('secondselect').value;
+            ytwo = document.getElementById('doc_id').value;
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': ytwo,
+                    'medicine_name': xtwo,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (data == 0) {
+
+                       alert(xtwo+' '+'stock is 0')
+                    }
+
+
+
+                }
+            });
+
+        }
+        function third() {
+            xthree = document.getElementById('thirdselect').value;
+            ythree = document.getElementById('doc_id').value;
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': ythree,
+                    'medicine_name': xthree,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+
+
+                    if (data == 0) {
+                        alert(xthree+' '+'stock is 0')
+                    }
+
+
+                }
+            });
+
+        }
+        function fourth() {
+            xfour = document.getElementById('fourthselect').value;
+            yfour = document.getElementById('doc_id').value;
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yfour,
+                    'medicine_name': xfour,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    console.log(data);
+                    console.log(data);
+
+                    if (data == 0) {
+
+                       alert(xfive+' '+'stock is 0')
+                    }
+
+
+                }
+            });
+
+        }
+        function fifth() {
+            xfive = document.getElementById('fifthselect').value;
+            yfive = document.getElementById('doc_id').value;
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yfive,
+                    'medicine_name': xfive,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+
+
+                    if (data == 0) {
+                        alert(xfive+' '+'stock is 0')
+                    }
+
+                }
+            });
+
+        }
+        function sixth() {
+            xsix = document.getElementById('sixthselect').value;
+            ysix = document.getElementById('doc_id').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': ysix,
+                    'medicine_name': xsix,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+
+                    if (data == 0) {
+
+                      alert(xsix+' '+'stock is 0')
+                    }
+
+
+                }
+            });
+
+        }
+
+
+        // //dropdown1
+        // const x = document.getElementById('test').value;
+        // y = document.getElementById('test1').value;
+        // z = document.getElementById('test2').value;
+
+
+
+
+
+
+        // var optionsToSelect = document.getElementById('test3').value;
+        // console.log(optionsToSelect)
+        // var select = document.getElementById('firstone');
+        // console.log(select)
+        // for (var i = 0, l = select.options.length, o; i < l; i++) {
+        //     o = select.options[i];
+        //     if (optionsToSelect.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+        // //dropdown2
+        // var optionsToSelect1 = document.getElementById('test4').value;
+        // var select2 = document.getElementById('secondselect');
+
+        // for (var i = 0, l = select2.options.length, o; i < l; i++) {
+        //     o = select2.options[i];
+        //     if (optionsToSelect1.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+
+        // //dropdown3
+        // var optionsToSelect3 = document.getElementById('test5').value;
+        // var select3 = document.getElementById('thirdselect');
+
+        // for (var i = 0, l = select3.options.length, o; i < l; i++) {
+        //     o = select3.options[i];
+        //     if (optionsToSelect3.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+        // //dropdown4
+        // var optionsToSelect4 = document.getElementById('test6').value;
+        // var select4 = document.getElementById('fourthselect');
+
+        // for (var i = 0, l = select4.options.length, o; i < l; i++) {
+        //     o = select4.options[i];
+        //     if (optionsToSelect4.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+        // //dropdown5
+        // var optionsToSelect5 = document.getElementById('test7').value;
+        // var select5 = document.getElementById('fifthselect');
+
+        // for (var i = 0, l = select5.options.length, o; i < l; i++) {
+        //     o = select5.options[i];
+        //     if (optionsToSelect5.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+
+        // //dropdown6
+        // var optionsToSelect6 = document.getElementById('test8').value;
+        // var select6 = document.getElementById('sixthselect');
+
+        // for (var i = 0, l = select6.options.length, o; i < l; i++) {
+        //     o = select6.options[i];
+        //     if (optionsToSelect6.indexOf(o.text) != -1) {
+        //         o.selected = true;
+        //     }
+        // }
+
+
+
+        //days select 1
+        var optionsToSelect = document.getElementById('test3').value;
+        var select = document.getElementById('days1_select');
+
+        for (var i = 0, l = select.options.length, o; i < l; i++) {
+            o = select.options[i];
+            if (optionsToSelect.indexOf(o.text) != -1) {
+                console.log(optionsToSelect.indexOf(o.text))
+                o.selected = true;
+            }
+        }
+        //days select 2
+        var optionsToSelect1 = document.getElementById('test4').value;
+        var select2 = document.getElementById('days2_select');
+
+        for (var i = 0, l = select2.options.length, o; i < l; i++) {
+            o = select2.options[i];
+            if (optionsToSelect1.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+
+        //days select 3
+        var optionsToSelect3 = document.getElementById('test5').value;
+        var select3 = document.getElementById('days3_select');
+
+        for (var i = 0, l = select3.options.length, o; i < l; i++) {
+            o = select3.options[i];
+            if (optionsToSelect3.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //days select 4
+
+        var optionsToSelect4 = document.getElementById('test6').value;
+        var select4 = document.getElementById('days4_select');
+
+        for (var i = 0, l = select4.options.length, o; i < l; i++) {
+            o = select4.options[i];
+            if (optionsToSelect4.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //days select 5
+
+        var optionsToSelect5 = document.getElementById('test7').value;
+        var select5 = document.getElementById('days5_select');
+
+        for (var i = 0, l = select5.options.length, o; i < l; i++) {
+            o = select5.options[i];
+            if (optionsToSelect5.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+        //days select 6
+        var optionsToSelect6 = document.getElementById('test8').value;
+        var select6 = document.getElementById('days6_select');
+
+        for (var i = 0, l = select6.options.length, o; i < l; i++) {
+            o = select6.options[i];
+            if (optionsToSelect6.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        var foll_unit = document.getElementById('foll_unit').value;
+        var sel = document.getElementById('foll_date');
+        for (var i = 0, l = sel.options.length, o; i < l; i++) {
+            o = sel.options[i];
+            console.log(o.text)
+            if (sel.options[i].text== foll_unit) {
+              sel.options[i].selected = true;
+        }
+
+        }
+
+        //textarea value
+        var textareavalue = document.getElementById('textarea_id').value;
+        document.getElementById('TEXTAREA_ID_prescription').value = textareavalue;
+
+
+        r = document.getElementById('Next_button').name;
+        console.log(r)
+
+        function myFunction() {
+            if (confirm("Do you wish to continue")) {
+                document.getElementById('Next_button').setAttribute('type', '');
+
+                document.getElementById('Next_button').name = 'close_visit';
+
+            } else {
+                document.getElementById('Next_button').setAttribute('type', 'button');
+
+
+            }
+
+        }
+
+
+        //stock greater than input quantity check
+
+        function firstqty() {
+            xone = document.getElementById('firstone').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug1_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug1_quantity').value = qtyinputcheck;
+                        document.getElementById('drug1_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug1_quantity').value = qtyinputcheck;
+                        document.getElementById('drug1_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+        function secondqty() {
+            xone = document.getElementById('secondselect').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug2_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug2_quantity').value = qtyinputcheck;
+                        document.getElementById('drug2_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug2_quantity').value = qtyinputcheck;
+                        document.getElementById('drug2_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+        function thirdqty() {
+            xone = document.getElementById('thirdselect').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug3_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug3_quantity').value = qtyinputcheck;
+                        document.getElementById('drug3_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug3_quantity').value = qtyinputcheck;
+                        document.getElementById('drug3_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+        function fourthqty() {
+            xone = document.getElementById('fourthselect').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug4_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug4_quantity').value = qtyinputcheck;
+                        document.getElementById('drug4_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug4_quantity').value = qtyinputcheck;
+                        document.getElementById('drug4_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+
+        function fifthqty() {
+            xone = document.getElementById('fifthselect').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug5_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug5_quantity').value = qtyinputcheck;
+                        document.getElementById('drug5_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug5_quantity').value = qtyinputcheck;
+                        document.getElementById('drug5_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+        function sixqty() {
+            xone = document.getElementById('sixthselect').value;
+            yone = document.getElementById('doc_id').value;
+            qtyinputcheck = document.getElementById('drug6_quantity').value;
+
+            $.ajax({
+                url: "/quantitycheck/",
+                type: 'POST',
+                cache: false,
+                processData: true,
+
+                data: {
+                    'doc_id': yone,
+                    'medicine_name': xone,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+
+                success: function (data) {
+
+                    if (Number(qtyinputcheck) > Number(data)) {
+                        document.getElementById('drug6_quantity').value = qtyinputcheck;
+                        document.getElementById('drug6_quantity').style.color = "red";
+                    } else {
+
+                        document.getElementById('drug6_quantity').value = qtyinputcheck;
+                        document.getElementById('drug6_quantity').style.color = "black";
+                    }
+
+
+                }
+            });
+        }
+
+
+
+       // on load functions
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var symp = document.getElementById('symptoms_input').value;
+            var symp_list = symp.split(',');
+            console.log(symp_list)
+            if (symp_list.includes('Diarrhea')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+
+            }
+            if (symp_list.includes('Weight loss')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Limping')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Skin')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Injuries')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tooth broken')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Fracture')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tongue')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Eye')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Bleeding')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+
+
+
+
+            var purpose_visit = document.getElementById('purpose_visit').value;
+            purpose_visit_list = purpose_visit.split(',');
+            console.log(purpose_visit_list)
+            if (purpose_visit_list.includes('VACCINATION')) {
+                document.getElementById('vaccination_span').style.background = 'lightgreen';
+            }
+            if (purpose_visit_list.includes('DEWORMING')) {
+                document.getElementById('deworming_span').style.background = 'lightgreen';
+            }
+
+            var symp_text = document.getElementById('symptoms_text').value;
+            console.log(symp_text)
+            var n = symp_text.length
+            if (n > 2) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+        });
+
+
+    messages_value=document.getElementById('messages_id').value;
+    if(messages_value == 'select medicine and days'){
+        alert('Please select medicine name and days and time')
+    }
+    </script>
+</body>
+
+</html>

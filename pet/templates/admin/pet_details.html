@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Pet Details</h1>
+    <form  method="post">
+      {% csrf_token %}
+      <input type="text" name="customer_id" value="{{customer_id}}">
+      pet name:
+      <input type="text" name="petname" value="">
+      <input type="submit" name="" value="submit">
+    </form>
+  </body>
+</html>

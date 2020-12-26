@@ -1,0 +1,389 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aodh Petcare</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+    #wrapper_id {
+        background: url("{% static 'media/Pet_image.jpg' %}") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        body {
+
+            overflow-x: hidden;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #aodh_petcare_p {
+            margin-top: 25%;
+        }
+
+        #logo_id {
+            width: 100%;
+        }
+
+        #register_button {
+            float: right;
+        }
+
+        #book_a_consultation {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #pet_schedule {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #pet_history {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #book_a_consultation_row {
+            margin-top: 5%;
+        }
+
+        #all_rights_col {
+            margin-top: 10%;
+            height: auto;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        body {
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        #aodh_petcare_p {
+            margin-top: 10%;
+        }
+
+        #logo_id {
+            width: 100%;
+        }
+
+        #register_button {
+            float: right;
+        }
+
+        #book_a_consultation {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #pet_schedule {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #pet_history {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 15vh;
+        }
+
+        #all_rights_col {
+            margin-top: 8%;
+
+        }
+
+        #book_a_consultation_row {
+            margin-top: 5%;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        body {
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        #logo_id {
+            width: 50%;
+        }
+
+        #aodh_petcare_p {
+            margin-top: 10%;
+        }
+
+        #register_button {
+            float: right;
+        }
+
+        #book_a_consultation {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 12vh;
+        }
+
+        #pet_schedule {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 12vh;
+        }
+
+        #pet_history {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 12vh;
+        }
+
+        #all_rights_col {
+            margin-top: 10%;
+
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        body {
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        #aodh_petcare_p {
+            margin-top: 12%;
+        }
+
+        #logo_id {
+            width: 35%;
+        }
+
+        #register_button {
+            float: right;
+        }
+
+        #book_a_consultation {
+            padding-top: 25px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #pet_schedule {
+            padding-top: 25px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #pet_history {
+            padding-top: 25px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #all_rights_col {
+            margin-top: 5%;
+
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        body {
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        #aodh_petcare_p {
+            margin-top: 12%;
+        }
+
+        #logo_id {
+            width: 40%;
+        }
+
+        #register_button {
+            float: right;
+        }
+
+        #book_a_consultation {
+            padding-top: 30px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #pet_schedule {
+            padding-top: 30px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #pet_history {
+            padding-top: 30px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            height: 16vh;
+        }
+
+        #book_a_consultation_row {
+            margin-top: 5%;
+        }
+
+        #all_rights_col {
+            margin-top: 6%;
+
+        }
+    }
+</style>
+
+<body>
+<!-- wrapper id for background dog image -->
+    <div class="wrapper" id="wrapper_id">
+        <div class="wrapper">
+            <div class="container">
+                <!-- register login button row starts -->
+                <div class="row">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                        <img class="img-fluid " src="{% static 'media/weblogo_front_nb.png' %}" id="logo_id">
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-6 col-lg-6 col-xl-6 mt-2">
+                        <a type="button" class="btn btn" style="background-color: #003300;color: white;"
+                            id="register_button" href="{% url 'customer_registration_home' %}"> Register</a>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 col-xl-1 m-0 p-0 mt-2">
+                        <a type="button" class="btn btn" style="background-color: #003300;color: white;"
+                            id="login_button" href="{% url 'customer_login_home' %}"> Login</a>
+                    </div>
+
+
+                </div>
+           <!-- register login button row ends -->
+                <!-- content strats -->
+                <div class="row" id="aodh_petcare_row">
+                    <div class="col">
+                        <p style="text-align-last: center;text-align: justify;color: white;" id="aodh_petcare_p"><b>
+                                AODH PETCARE </b>is your dependable and trustworthy partner for all your pet care
+                            needs.We pride
+                            ourselves in enriching pet's lives by connecting pet owners and veterinarian with our single
+                            digital platform.</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col text-center">
+                        <p style="color: white;font-size: 20px;"><b>OUR MISSION</b></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <p style="color: white;"><b>There for you, care for pets.</b></p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col text-center">
+                        <p style="color: white;">We are on a mission to keep all pets happy</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p style="text-align-last: center;text-align: justify;color: white;">Our mission is simple:- To
+                            ensure that pets have all the care they need and to provide the best care and attention to
+                            your pet, by cutting through the noise and offering you all the services right on your
+                            finger prints</p>
+                    </div>
+                </div>
+
+
+                <div class="row" id="book_a_consultation_row">
+                    <div class="col m-0 p-0">
+                        <div>
+                            <a class="list-group-item list-group-item-action " role="tab" id="book_a_consultation"
+                                href=""> <i class='fas fa-hospital-alt'></i><br> Book a consultation
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="col  m-0 p-0">
+                        <div>
+                            <a class="list-group-item list-group-item-action " role="tab" id="pet_schedule" href=""> <i
+                                    class="fa fa-clock-o"></i><br>Pet schedule </a>
+                        </div>
+                    </div>
+                    <div class="col m-0 p-0">
+                        <div> <a class="list-group-item list-group-item-action " role="tab" id="pet_history" href=""><i
+                                    class='fas fa-calendar-alt'></i><br>Pet history
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- all right reserved strarts -->
+                <div class="row" id="all_rights_row">
+                    <div class="col text-center" id="all_rights_col">
+                        <p style="color: white;font-weight: bold;">&copy; 2020 Aodh Petcare | All Rights Reserved</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- dog img wrapper closed -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

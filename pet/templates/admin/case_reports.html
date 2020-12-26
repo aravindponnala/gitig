@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Articles</h1>
+        <a href="{% url 'create_casereport'%}">Create Case Report</a>
+    <form  method="post">
+      {% csrf_token %}
+    {% for casereport in case_reports%}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{casereport.title|title}}</td>
+        <td><b>author:</b>
+        {{casereport.author}}</td>
+        <td>
+          <b>date:</b>
+          {{casereport.published_on}}</td>
+          <td>
+            <b>email:</b>
+            {{casereport.email}}</td>
+    <table>
+      <tbody>
+        <td><b>link</b>
+        {{casereport.link}}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'view_casereport' pk=casereport.pk %}">View</a></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><center><button type="submit">delete</center></button></td></td>
+        <input type="hidden" name="report_pk" value="{{casereport.id}}">
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+</form>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Articles</h1>
+        <a href="{% url 'create_article'%}">Creat Article</a>
+    <form  method="post">
+      {% csrf_token %}
+    {% for atricle in articles%}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{atricle.article_title|title}}</td>
+        <td><b>summery:</b>
+        {{atricle.summery}}</td>
+        <td>
+          <b>date:</b>
+          {{atricle.published_on}}</td>
+          <td>
+            <b>authors:</b>
+            {{atricle.authors}}</td>
+    <table>
+      <tbody>
+        <td><b>content</b>
+        {{atricle.content|truncatewords:10}}</td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'view_article' pk=atricle.pk %}">View</a></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><center><button type="submit">delete</center></button></td></td>
+        <input type="hidden" name="art_pk" value="{{atricle.id}}">
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+</form>
+  </body>
+</html>

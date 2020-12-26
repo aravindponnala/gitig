@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="row" style="text-align: center;">
+      <div class="col">
+        
+      
+  <h1>Create Confernce</h1>
+  </div>
+  </div>
+  <form  method="post">
+    {% csrf_token %}
+  
+    <input type="text" name="title" value="" placeholder="Title" required>
+   
+    <input type="text" name="location" value="" placeholder="Location" required>
+  
+    <input type="date" name="posted_date" value="" required>
+    <label for="time">time</label>
+    <input type="time" name="posted_time" value="" placeholder="time" required>
+    
+    <input type="textarea" name="content" value="" placeholder="content" required>
+   
+    <input type="textarea" name="link" value="" placeholder="Link" required>
+    <input type="submit" name="" value="submit" class="btn">
+  </form>
+  </body>
+</html>

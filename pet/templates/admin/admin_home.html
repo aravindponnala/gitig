@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADMIN</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    {% if superuser%}
+      <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+      <h1>Hello {{username}}</h1>
+      <a href="{% url 'doctor_registration' %}" role="button" class="btn btn-outline-info">Doctor Registration</a><br>
+      <a href="{% url 'doctor_list' %}" role="button" class="btn btn-outline-info">Doctor List</a><br>
+      <a href="{% url 'registrad_users_list' %}" role="button" class="btn btn-outline-info">Registered Users</a><br>
+      <a href="{% url 'patients_list' %}" role="button" class="btn btn-outline-info">Patients List</a><br>
+      <a href="{% url 'payment_settlement' %}" role="button" class="btn btn-outline-info">Payment Settlement </a><br>
+      <a href="{% url 'payment_anlytics' %}" role="button" class="btn btn-outline-info">Payment Analytics</a><br>
+      <a href="{% url 'doctors_corner' %}" role="button" class="btn btn-outline-info">Doctors Corner</a><br>
+      <a href="{% url 'vaccination_remainder' %}" role="button" class="btn btn-outline-info"> Vaccination Remianders </a><br>
+      <a href="{% url 'deworming_remainder' %}" role="button" class="btn btn-outline-info"> Deworming Remianders </a><br>
+      <a href="{% url 'verify_licence' %}" role="button" class="btn btn-outline-info">Pet licence verification</a><br>
+      <a href="{% url 'razorpaydashboard' %}" role="button" class="btn btn-outline-info">Razorpay Dashboard</a><br>
+      <a href="{% url 'loggingfile' %}" role="button" class="btn btn-outline-info">Logging Errors</a><br>
+      <a href="{% url 'follow_up_date_reminder' %}" role="button" class="btn btn-outline-info">Follow up date Reminders</a><br>
+      <a href="{% url 'follow_up_date_list_view' %}" role="button" class="btn btn-outline-info">Follow up date Reminders list view</a><br>
+      <a href="{% url 'deworming_reminder_list_view' %}" role="button" class="btn btn-outline-info">deworming date Reminders list view</a><br>
+      <a href="{% url 'vaccination_reminder_list_view' %}" role="button" class="btn btn-outline-info">Vaccination date Reminders list view</a><br>
+      {% else %}
+      <h1>hello staff {{username}}</h1>
+    {% endif %}
+  </div>
+</div>
+  </body>
+</html

@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+	{% for img in images %}
+<img class="circle" src="{{media_url}}{{img.gal_img}}"  width="150" height="100s">	
+{% endfor %}
+
+</body>
+</html>

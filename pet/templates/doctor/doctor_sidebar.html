@@ -1,0 +1,439 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<TITLE>DOCTOR SIDEBAR</TITLE>
+<head>
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <style>
+   #menu-toggle{
+    color:white;
+    position: absolute;
+    top: 46px;
+    left: -45.75px;
+    transform: rotate(90deg);
+    background: whitesmoke;
+    }
+
+    #wrapper {
+    padding-left: 0px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    }
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+    #sidebar-wrapper {
+      position: fixed;
+      left: 250px;
+      width: 0px;
+      height: 100%;
+      margin-left: -250px;
+      z-index: 10;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      background: white;
+
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+
+    }
+
+    #wrapper.toggled #sidebar-wrapper {width: 250px;
+    }
+
+    #page-content-wrapper {
+      position: absolute;
+      margin-right: -250px;
+      width:100%;
+      padding: 50px;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+
+      width: auto;
+      position: absolute;
+      padding: 50px;
+    }
+
+    .sidebar-nav {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidebar-nav li {
+      text-indent: 20px;
+      line-height: 40px;
+    }
+
+    .sidebar-nav li a {
+      display: block;
+       text-decoration: none;
+      color: #999999;
+    }
+
+    .sidebar-nav li a:hover {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+
+    .sidebar-nav li a:active, .sidebar-nav li a:focus {
+      text-decoration: none;
+    }
+
+    .sidebar-nav>.sidebar-brand {
+      height: 65px;
+      font-size: 18px;
+      line-height: 60px;
+    }
+
+    .sidebar-nav>.sidebar-brand a {
+      color: #999999;
+    }
+
+
+    .sidebar-nav>.sidebar-brand a:hover {
+      color: #fff;
+      background: none;
+    }
+
+    .row {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+   /*form styles     */
+   .btn {
+        border: 2px solid black;
+        background-color: white;
+        color: black;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+   }
+      .btn-group button {
+      background-color: #33A8FF; /* Green background */
+      border: 1px solid green; /* Green border */
+      color: white; /* White text */
+      padding: 5px 3px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      width: 10%; /* Set a width if needed */
+      display: inline-block; /* Make the buttons appear below each other */
+            padding: 0px 20px 15px 20px;
+    }
+      .btn-group button:not(:last-child) {
+      border-bottom: none; /* Prevent double borders */
+      }
+
+    /*/* Add a background color on hover */
+    /*.btn-group button:hover {
+      background-color: #3e8e41;
+    }*/
+
+      .dropbtn {
+      width: 280px;
+      background-color: #c8ca36;
+      color: black;
+      padding: 1px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      }
+
+      .dropdown {
+      position: relative;
+      display: block;
+    }
+
+      .dropdown:hover .dropbtn {
+      background-color: #c8ca36;
+      }
+
+      .dropbtn1 {
+      width: 280px;
+      background-color: #dc6912;
+      color: white;
+      padding: 1px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      }
+
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+      .dropdown-content a {
+      color: black;
+      padding: 4px 16px;
+      text-decoration: none;
+      display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+
+      .dropdown:hover .dropbtn1 {
+      background-color: #3e8e41;
+      }
+
+      .dropbtn2 {
+      width: 280px;
+      background-color: rgba(238, 32, 18, 0.99);
+      color: white;
+      padding: 1px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      }
+
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+      .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+      .dropdown:hover .dropbtn2 {
+      background-color: #3e8e41;
+      }
+      .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+      }
+
+ #doctor_analytics{
+      font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+         #doctors_corner{
+              font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+         #list_of_patients{
+              font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+         #doctor_prrofile{
+             font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+         #helpline_number{
+              font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+         #about{
+              font-size: 16px;
+                 color: #1f7a1f;
+
+             }
+        #Articles{
+             font-size: 16px;
+            width: 250px;
+        }
+        #Case_studies {
+             font-size: 16px;
+            width: 250px;
+        }
+          #Case_reports {
+               font-size: 16px;
+            width: 250px;
+        }
+          #conferences {
+               font-size: 16px;
+            width: 250px;
+        }
+
+          #Vet_needs {
+               font-size: 16px;
+            width: 250px;
+        }
+
+          #Seminars {
+               font-size: 16px;
+            width: 250px;
+        }
+
+          #Books {
+               font-size: 16px;
+            width: 250px;
+        }
+
+
+#div_menu {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+
+
+
+
+
+</style>
+
+<title>customer sidebar</title>
+</head>
+  <body onload="im()" style="background-color:#f2f2f2;">
+
+  <div id="wrapper">
+      <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand"></li>
+           <li>
+               <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"  style="font-weight: bold;">DOCTOR PROFILE</a>
+          </li>
+           <li>
+               <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"  style="font-weight: bold;">LIST OF PATIENTS </a>
+          </li>
+           <li>
+              <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner" style="font-weight: bold;" onclick="show_doctors_corner()">DOCTORS CORNER<span class="glyphicon glyphicon-menu-down " id="disease_arrow"></span></a>
+          </li>
+          <li id="show_div" style="display: none">
+
+                      <a class="list-group-item list-group-item-action " role="tab" id="Articles" style="font-weight: bold;color: #1f7a1f;"> Articles </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Case_studies" style="font-weight: bold;color: #1f7a1f;">Case studies</a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Case_reports" style="font-weight: bold;color: #1f7a1f;">Case reports </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="conferences" style="font-weight: bold;color: #1f7a1f;">Conferences </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs" style="font-weight: bold;color: #1f7a1f;">Vet needs</a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Seminars" style="font-weight: bold;color: #1f7a1f;">Seminars</a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;color: #1f7a1f;">Books</a>
+
+
+          </li>
+            <li>
+            <a class="list-group-item list-group-item-action " href="#" role="tab" id="doctor_analytics"  style="font-weight: bold;">DOCTOR ANALYTICS </a>
+        </li>
+
+
+
+           <li>
+               <a class="list-group-item list-group-item-action "  role="tab" id="helpline_number" onclick="diseaseshow()" style="font-weight: bold;">HELPLINE NUMBER</a>
+          </li>
+           <li>
+               <a class="list-group-item list-group-item-action "  role="tab" id="about" onclick="diseaseshow()" style="font-weight: bold;">ABOUT</a>
+          </li>
+
+
+  </ul>
+  </div>
+
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+
+
+        <button id="menu-toggle" class="btn btn-secondary" style="background-color:  #1f7a1f"><i id="toggleIcon" class="fa fa-angle-double-down"></i><div id="div_menu"></div><div id="div_menu"></div><div id="div_menu"></div><i class="fa fa-filter"></i></button>
+<div class="container">
+    <!-- Heading -->
+
+
+
+    </form>
+</div>
+</div>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+<script>
+$("#menu-toggle").click(function(e) {
+e.preventDefault();
+ var isIE11 = !!navigator.userAgent.match(/Trident.*rv\:11\./);
+
+
+
+
+
+
+       $("#toggleIcon").toggleClass("fa fa-angle-double-down fa fa-angle-double-up")
+       $("#wrapper").toggleClass("toggled");
+
+   if(isIE11){
+         if($("#wrapper").hasClass("toggled")){
+     $('#sidebar-wrapper').css("margin-left", "-268px")
+   } else {
+     $('#sidebar-wrapper').css("margin-left", "-250px")
+         }
+ }
+   });
+
+</script>
+<script>
+function show_doctors_corner(){
+    var s1 = document.getElementById("doctors_corner");
+     var s2 = document.getElementById("show_div");
+
+       if (s1.value == "") {
+          s1.value = "yes";
+          s2.style.display = "inline-block";
+
+      } else {
+          s1.value = "";
+          s2.style.display = "none";
+      }
+  }
+    </script>
+
+
+
+
+
+  </body>
+  </html>

@@ -1,0 +1,2274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CUSTOMER VACCINATION HISTORY</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+<style>
+    body {
+        /* Set "my-sec-counter" to 0 */
+        counter-reset: my-sec-counter;
+    }
+
+    h5::before {
+        /* Decrement "my-sec-counter" by 1 */
+        counter-increment: my-sec-counter 1;
+        content: "VISIT"counter(my-sec-counter);
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            margin: 3px;
+            padding: 6px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+
+        table {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+
+        th {
+            /*  position:absolute;
+  *position: relative; /*ie7*/
+            /*  left:0; */
+            width: auto;
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        .next_left {
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 100px;
+            width: 100px;
+        }
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 180px;
+            margin-left: 200px;
+        }
+
+        #last_date_heading {
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+        }
+
+        #h_id {
+            text-align: center;
+
+
+
+
+        }
+
+        #current_date_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th {
+            font-size: 16px;
+        }
+
+        #rabies_input_first {
+            width: 140px;
+        }
+
+        #Distemper_input_first {
+            width: 140px;
+        }
+
+        #Hepatitis_input_first {
+            width: 140px;
+        }
+
+        #Parovirus_input_first {
+
+            width: 140px;
+        }
+
+        #Para_input_first {
+            width: 140px;
+        }
+
+        #Bordetella_input_first {
+            width: 140px;
+        }
+
+        #Leptospirosis_input_first {
+            width: 140px;
+        }
+
+        #Lyme_input_first {
+
+            width: 140px;
+        }
+
+        #Giardia_input_first {
+            width: 140px;
+        }
+
+
+        #Corona_input_first {
+            width: 140px;
+        }
+
+        #DHPP_input_first {
+            width: 140px;
+        }
+
+        #Rabies_third_input {
+            width: 140px;
+            font-weight: bold;
+
+        }
+
+        #Distemper_third_input {
+            width: 140px;
+            font-weight: bold;
+        }
+
+        #Hepatitis_third_input {
+            width: 140px;
+            font-weight: bold;
+        }
+
+        #Parovirus_third_input {
+            font-weight: bold;
+            width: 140px;
+
+        }
+
+        #Para_third_input {
+            font-weight: bold;
+            width: 140px;
+
+        }
+
+        #Bordetella_third_input {
+            font-weight: bold;
+            width: 140px;
+        }
+
+        #Leptospirosis_third_input {
+            font-weight: bold;
+            width: 140px;
+        }
+
+        #Lyme_third_input {
+            font-weight: bold;
+            width: 140px;
+
+
+        }
+
+        #Corona_third_input {
+            font-weight: bold;
+            width: 140px;
+
+
+        }
+
+        #Giardia_third_input {
+            font-weight: bold;
+
+            width: 140px;
+        }
+
+        #DHPP_third_input {
+            font-weight: bold;
+
+            width: 140px;
+        }
+
+        #dapv {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #dhpp {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2pp {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2ppc {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #DA2PPvL2 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+
+
+        }
+
+        #Rabies {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Distemper {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parovirus {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parainfluenza {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Corona {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Bordetella {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #lyme {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_1 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_2 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Can_L {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Giardia {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Leptospirosis {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+    }
+
+
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            font-weight: bold;
+
+            margin: 5px;
+            padding: 6px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 99%;
+            min-height: 93vh;
+            height: auto;
+
+            border-radius: 10px;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        table {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+        }
+
+        th {
+            /*  position:absolute;
+  *position: relative; /*ie7*/
+            /*  left:0; */
+            width: auto;
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        .next_left {
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 100px;
+            width: 100px;
+        }
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 300px;
+            margin-left: 200px;
+        }
+
+        #last_date_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #h_id {
+            text-align: center;
+        }
+
+        #current_date_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th {
+            font-size: 16px;
+        }
+
+        #rabies_input_first {
+            width: 140px;
+        }
+
+        #Distemper_input_first {
+            width: 140px;
+        }
+
+        #Hepatitis_input_first {
+            width: 140px;
+        }
+
+        #Parovirus_input_first {
+
+            width: 140px;
+        }
+
+        #Para_input_first {
+            width: 140px;
+        }
+
+        #Bordetella_input_first {
+            width: 140px;
+        }
+
+        #Leptospirosis_input_first {
+            width: 140px;
+        }
+
+        #Lyme_input_first {
+
+            width: 140px;
+        }
+
+        #Giardia_input_first {
+            width: 140px;
+        }
+
+
+        #Corona_input_first {
+            width: 140px;
+        }
+
+        #DHPP_input_first {
+            width: 140px;
+        }
+
+        #Rabies_third_input {
+            width: 140px;
+            font-weight: bold;
+
+        }
+
+        #Distemper_third_input {
+            width: 140px;
+            font-weight: bold;
+        }
+
+        #Hepatitis_third_input {
+            width: 140px;
+            font-weight: bold;
+        }
+
+        #Parovirus_third_input {
+            font-weight: bold;
+            width: 140px;
+
+        }
+
+        #Para_third_input {
+            font-weight: bold;
+            width: 140px;
+
+        }
+
+        #Bordetella_third_input {
+            font-weight: bold;
+            width: 140px;
+        }
+
+        #Leptospirosis_third_input {
+            font-weight: bold;
+            width: 140px;
+        }
+
+        #Lyme_third_input {
+            font-weight: bold;
+            width: 140px;
+
+
+        }
+
+        #Corona_third_input {
+            font-weight: bold;
+            width: 140px;
+
+
+        }
+
+        #Giardia_third_input {
+            font-weight: bold;
+
+            width: 140px;
+        }
+
+        #DHPP_third_input {
+            font-weight: bold;
+
+            width: 140px;
+        }
+
+        #dapv {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #dhpp {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2pp {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2ppc {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #DA2PPvL2 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+
+
+        }
+
+        #Rabies {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Distemper {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parovirus {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parainfluenza {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Corona {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Bordetella {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #lyme {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_1 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_2 {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Can_L {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Giardia {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Leptospirosis {
+            padding-top: 4px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            margin-left: right;
+        }
+
+    }
+
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            font-weight: bold;
+
+            margin: 5px;
+            padding: 6px;
+        }
+
+        table {
+            margin-left: 20%;
+
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+        }
+
+        th {
+            /*  position:absolute;
+  *position: relative; /*ie7*/
+            /*  left:0; */
+            width: auto;
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        .next_left {
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 100px;
+            width: 100px;
+        }
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 380px;
+            margin-left: 140px;
+        }
+
+
+        #last_date_heading {
+            text-align: center;
+        }
+
+        #h_id {
+            text-align: center;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #current_date_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #rabies_input_first {
+            margin-left: 10%;
+        }
+
+        #dapv {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #dhpp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2pp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2ppc {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #DA2PPvL2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+
+        }
+
+        #Rabies {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Distemper {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parovirus {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parainfluenza {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Corona {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Bordetella {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #lyme {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_1 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Can_L {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Giardia {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Leptospirosis {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #rabies_input {
+
+            margin-left: 15%;
+        }
+
+        #Rabies_third_input {
+            margin-left: 20%;
+        }
+
+        #Distemper_input_first {
+            margin-left: 10%;
+        }
+
+        #Distemper_input {
+            margin-left: 15%;
+        }
+
+        #Distemper_third_input {
+            margin-left: 20%;
+        }
+
+        #Hepatitis_input_first {
+            margin-left: 10%;
+        }
+
+        #Hepatitis_input {
+            margin-left: 15%;
+        }
+
+        #Hepatitis_third_input {
+            margin-left: 20%;
+        }
+
+        #Parovirus_input_first {
+            margin-left: 10%;
+        }
+
+        #Parovirus_input {
+            margin-left: 15%;
+        }
+
+        #Parovirus_third_input {
+            margin-left: 20%;
+        }
+
+        #Para_input_first {
+            margin-left: 10%;
+        }
+
+        #Para_input {
+            margin-left: 15%;
+        }
+
+        #Para_third_input {
+            margin-left: 20%;
+        }
+
+        #Bordetella_input_first {
+            margin-left: 10%;
+        }
+
+        #Bordetella_input {
+            margin-left: 15%;
+        }
+
+        #Bordetella_third_input {
+            margin-left: 20%;
+        }
+
+        #Leptospirosis_input_first {
+            margin-left: 10%;
+        }
+
+        #Leptospirosis_input {
+            margin-left: 15%;
+        }
+
+        #Leptospirosis_third_input {
+            margin-left: 20%;
+        }
+
+        #Lyme_input_first {
+            margin-left: 10%;
+        }
+
+        #Lyme_input {
+            margin-left: 15%;
+        }
+
+        #Lyme_third_input {
+            margin-left: 20%;
+        }
+
+        #Corona_input_first {
+            margin-left: 10%;
+        }
+
+        #Corona_input {
+            margin-left: 15%;
+        }
+
+        #Corona_third_input {
+            margin-left: 20%;
+        }
+
+        #Giardia_input_first {
+            margin-left: 10%;
+        }
+
+        #Giardia_input {
+            margin-left: 15%;
+        }
+
+        #Giardia_third_input {
+            margin-left: 20%;
+        }
+
+        #DHPP_input_first {
+            margin-left: 10%;
+        }
+
+        #DHPP_input {
+            margin-left: 15%;
+        }
+
+        #DHPP_third_input {
+            margin-left: 20%;
+        }
+
+        #outer_id {
+            margin-left: 12%;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            font-weight: bold;
+
+            margin: 5px;
+            padding: 6px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+        }
+
+        th {
+            /*  position:absolute;
+  *position: relative; /*ie7*/
+            /*  left:0; */
+            width: auto;
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        .next_left {
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 100px;
+            width: 100px;
+        }
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 500px;
+            margin-left: 140px;
+        }
+
+
+
+        table {
+            margin-left: 20%;
+        }
+
+        #last_date_heading {
+            text-align: center;
+        }
+
+        #h_id {
+            text-align: center;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #current_date_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #rabies_input_first {
+            margin-left: 10%;
+        }
+
+        #dapv {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #dhpp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2pp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2ppc {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #DA2PPvL2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+
+        }
+
+        #Rabies {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Distemper {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parovirus {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parainfluenza {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Corona {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Bordetella {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #lyme {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_1 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Can_L {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Giardia {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Leptospirosis {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #rabies_input {
+
+            margin-left: 15%;
+        }
+
+        #Rabies_third_input {
+            margin-left: 20%;
+        }
+
+        #Distemper_input_first {
+            margin-left: 10%;
+        }
+
+        #Distemper_input {
+            margin-left: 15%;
+        }
+
+        #Distemper_third_input {
+            margin-left: 20%;
+        }
+
+        #Hepatitis_input_first {
+            margin-left: 10%;
+        }
+
+        #Hepatitis_input {
+            margin-left: 15%;
+        }
+
+        #Hepatitis_third_input {
+            margin-left: 20%;
+        }
+
+        #Parovirus_input_first {
+            margin-left: 10%;
+        }
+
+        #Parovirus_input {
+            margin-left: 15%;
+        }
+
+        #Parovirus_third_input {
+            margin-left: 20%;
+        }
+
+        #Para_input_first {
+            margin-left: 10%;
+        }
+
+        #Para_input {
+            margin-left: 15%;
+        }
+
+        #Para_third_input {
+            margin-left: 20%;
+        }
+
+        #Bordetella_input_first {
+            margin-left: 10%;
+        }
+
+        #Bordetella_input {
+            margin-left: 15%;
+        }
+
+        #Bordetella_third_input {
+            margin-left: 20%;
+        }
+
+        #Leptospirosis_input_first {
+            margin-left: 10%;
+        }
+
+        #Leptospirosis_input {
+            margin-left: 15%;
+        }
+
+        #Leptospirosis_third_input {
+            margin-left: 20%;
+        }
+
+        #Lyme_input_first {
+            margin-left: 10%;
+        }
+
+        #Lyme_input {
+            margin-left: 15%;
+        }
+
+        #Lyme_third_input {
+            margin-left: 20%;
+        }
+
+        #Corona_input_first {
+            margin-left: 10%;
+        }
+
+        #Corona_input {
+            margin-left: 15%;
+        }
+
+        #Corona_third_input {
+            margin-left: 20%;
+        }
+
+        #Giardia_input_first {
+            margin-left: 10%;
+        }
+
+        #Giardia_input {
+            margin-left: 15%;
+        }
+
+        #Giardia_third_input {
+            margin-left: 20%;
+        }
+
+        #DHPP_input_first {
+            margin-left: 10%;
+        }
+
+        #DHPP_input {
+            margin-left: 15%;
+        }
+
+        #DHPP_third_input {
+            margin-left: 20%;
+        }
+
+        #outer_id {
+            margin-left: 20%;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            height: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            font-weight: bold;
+
+            margin: 5px;
+            padding: 6px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 120px;
+        }
+
+        th {
+            /*  position:absolute;
+  *position: relative; /*ie7*/
+            /*  left:0; */
+            width: auto;
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        .next_left {
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 100px;
+            width: 100px;
+        }
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 600px;
+            margin-left: 140px;
+        }
+
+
+
+        table {
+            margin-left: 20%;
+        }
+
+        #last_date_heading {
+            text-align: center;
+        }
+
+        #h_id {
+            text-align: center;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #current_date_heading {
+            text-align: center;
+            margin-left: 20%;
+        }
+
+        #rabies_input_first {
+            margin-left: 10%;
+        }
+
+        #dapv {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #dhpp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2pp {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #da2ppc {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #DA2PPvL2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+
+        }
+
+        #Rabies {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Distemper {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parovirus {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Parainfluenza {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Corona {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Bordetella {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #lyme {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_1 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #cav_2 {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Can_L {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Giardia {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #Leptospirosis {
+            padding-top: 3px;
+            height: 30px;
+            text-align: center;
+            min-width: 165px;
+        }
+
+        #rabies_input {
+
+            margin-left: 15%;
+        }
+
+        #Rabies_third_input {
+            margin-left: 20%;
+        }
+
+        #Distemper_input_first {
+            margin-left: 10%;
+        }
+
+        #Distemper_input {
+            margin-left: 15%;
+        }
+
+        #Distemper_third_input {
+            margin-left: 20%;
+        }
+
+        #Hepatitis_input_first {
+            margin-left: 10%;
+        }
+
+        #Hepatitis_input {
+            margin-left: 15%;
+        }
+
+        #Hepatitis_third_input {
+            margin-left: 20%;
+        }
+
+        #Parovirus_input_first {
+            margin-left: 10%;
+        }
+
+        #Parovirus_input {
+            margin-left: 15%;
+        }
+
+        #Parovirus_third_input {
+            margin-left: 20%;
+        }
+
+        #Para_input_first {
+            margin-left: 10%;
+        }
+
+        #Para_input {
+            margin-left: 15%;
+        }
+
+        #Para_third_input {
+            margin-left: 20%;
+        }
+
+        #Bordetella_input_first {
+            margin-left: 10%;
+        }
+
+        #Bordetella_input {
+            margin-left: 15%;
+        }
+
+        #Bordetella_third_input {
+            margin-left: 20%;
+        }
+
+        #Leptospirosis_input_first {
+            margin-left: 10%;
+        }
+
+        #Leptospirosis_input {
+            margin-left: 15%;
+        }
+
+        #Leptospirosis_third_input {
+            margin-left: 20%;
+        }
+
+        #Lyme_input_first {
+            margin-left: 10%;
+        }
+
+        #Lyme_input {
+            margin-left: 15%;
+        }
+
+        #Lyme_third_input {
+            margin-left: 20%;
+        }
+
+        #Corona_input_first {
+            margin-left: 10%;
+        }
+
+        #Corona_input {
+            margin-left: 15%;
+        }
+
+        #Corona_third_input {
+            margin-left: 20%;
+        }
+
+        #Giardia_input_first {
+            margin-left: 10%;
+        }
+
+        #Giardia_input {
+            margin-left: 15%;
+        }
+
+        #Giardia_third_input {
+            margin-left: 20%;
+        }
+
+        #DHPP_input_first {
+            margin-left: 10%;
+        }
+
+        #DHPP_input {
+            margin-left: 15%;
+        }
+
+        #DHPP_third_input {
+            margin-left: 20%;
+        }
+
+        #outer_id {
+            margin-left: 25%;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+            margin-left: 6%;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div id="first_div">
+            <div class="row">
+                <div class="col-xs-1 col-sm-3 col-md-3 col-lg-4 col-xl-4 m-0 p-0">
+                </div>
+                <div class="col-xs-8 col-sm-6 col-md-6 col-lg-4 col-xl-4 m-0 p-0">
+                    <div id="heading_div">
+                        <h4 id="heading_id">VACCINATION HISTORY </h4>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4 mt-1">
+                    <a> <button type="button" class="btn btn" id="back_button"
+                            onclick="window.history.go(-1); return false;">Back</button>
+                    </a>
+                </div>
+            </div>
+            <div id="wrapper_id" class="wrapper mt-4">
+                <div class="container" id="container_id">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="outer" id="outer_id">
+                            <div class="inner">
+                                <table>
+                                    <tr>
+                                        <th class="hard_left"></th>
+                                        <th scope="col" id="last_date_heading">Last date</th>
+                                        {% for v_c in vaccination %}
+                                        <th>
+                                            <h5 id="h_id"></h5>
+                                        </th>
+                                        {% endfor %}
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action"
+                                                id="dapv" role="tab" onclick="Rabies(this)">3-in-1(DAPV)</a></td>
+                                        <input type="hidden" name="" id="rabies_input" value="">
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ last_vaccination.last_date_3_in_1_DAPV }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_3_in_1_DAPV }}" name=""></td>
+                                        {% endfor %}
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="dhpp" onclick="Rabies(this)">4-in-1(DHPP)</a></td>
+                                        <td><input type="text" readonly id="Distemper_input_first"
+                                                value="{{ last_vaccination.last_date_4_in_1_DHPP }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_4_in_1_DHPP }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="da2pp" role="tab" onclick="Rabies(this)">5-in-1(DA2PP)</a></td>
+                                        <td><input type="text" id="Hepatitis_input_first" readonly
+                                                value="{{ last_vaccination.last_date_5_in_1_DA2PP }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_5_in_1_DA2PP }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action"
+                                                id="da2ppc" role="tab" onclick="Rabies(this)">6-in-1(DA2PPC)</a></td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_6_in_1_DA2PPC }}" name=""
+                                                id="Parovirus_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_6_in_1_DA2PPC }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="DA2PPvL2" onclick="Rabies(this)">7-in-1(DA2PPvL2)</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_7in1_DA2PPVL2 }}" name=""
+                                                id="Para_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_7_in_1_DA2PPVL2 }}" name=""></td>
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action"
+                                                id="Rabies" role="tab" onclick="Rabies(this)">Rabies</a></td>
+                                        <input type="hidden" name="" id="rabies_input" value="">
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ last_vaccination.last_date_rabies }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_rabies }}" name=""></td>
+
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="Distemper" onclick="Rabies(this)">Distemper</a></td>
+                                        <td><input type="text" readonly id="Distemper_input_first"
+                                                value="{{ last_vaccination.last_date_distemper }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_distemper }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action"
+                                                id="Parovirus" role="tab" onclick="Rabies(this)">Parovirus</a></td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_parovirus }}" name=""
+                                                id="Parovirus_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+
+                                        {% if v_h_data.last_date_parovirus == "Jan. 1, 1000" %}
+                                        <td><input type="text" readonly id="rabies_input_first" value="NA" name=""></td>
+                                        {% endif %}
+
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_parovirus }}" name=""></td>
+
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="Parainfluenza" onclick="Rabies(this)">Para influenza</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_parainfluenza }}" name=""
+                                                id="Para_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_parainfluenza }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="Corona" onclick="Rabies(this)">Corona</a></td>
+                                        <td><input type="text" readonly value="{{ last_vaccination.last_date_corona }}"
+                                                name="" id="Corona_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_corona }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="Bordetella" role="tab" onclick="Rabies(this)">Bordetella</a></td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_bordetella }}" name=""
+                                                id="Bordetella_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_bordetella }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="lyme" onclick="Rabies(this)">Lyme</a></td>
+                                        <td><input type="text" readonly value="{{ last_vaccination.last_date_lyme }}"
+                                                name="" id="Lyme_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_lyme }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="cav_1" role="tab" onclick="Rabies(this)">CAV-1</a></td>
+                                        <td><input type="text" id="Hepatitis_input_first" readonly
+                                                value="{{ last_vaccination.last_date_CAV_1 }}" name=""></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_CAV_1 }}" name=""></td>
+                                        {% endfor %}
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="cav_2" onclick="Rabies(this)">CAV 2</a></td>
+                                        <td><input type="text" readonly value="{{ last_vaccination.last_date_CAV_2 }}"
+                                                name="" id="DHPP_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_CAV_2 }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action"
+                                                id="Can_L" role="tab" onclick="Rabies(this)">Can-L</a></td>
+                                        <td><input type="text" readonly value="{{ last_vaccination.last_date_Can_L }}"
+                                                name="" id="Parovirus_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+
+                                        {% if v_h_data.last_date_Can_L == "Jan. 1, 1000" %}
+                                        <td><input type="text" readonly id="rabies_input_first" value="NA" name=""></td>
+                                        {% endif %}
+
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_Can_L }}" name=""></td>
+
+                                        {% endfor %}
+
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                role="tab" id="Giardia" onclick="Rabies(this)">Giardia</a></td>
+                                        <td><input type="text" readonly value="{{ last_vaccination.last_date_giardia }}"
+                                                name="" id="Giardia_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_giardia }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="Leptospirosis" role="tab" onclick="Rabies(this)">Leptospirosis</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_leptospirosis }}" name=""
+                                                id="Leptospirosis_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_leptospirosis }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="9_in_1" role="tab" >9 in 1 Vaccine</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_9_in_1_vaccine }}" name=""
+                                                id="9_in_1_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_9_in_1_vaccine }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="10_in_1" role="tab" >10 in 1 Vaccine</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_10_in_1_vaccine }}" name=""
+                                                id="10_in_1_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_10_in_1_vaccine }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><a class="list-group-item list-group-item-action "
+                                                id="Feline_vaccine" role="tab" >Feline Vaccine</a>
+                                        </td>
+                                        <td><input type="text" readonly
+                                                value="{{ last_vaccination.last_date_Feline_vaccine }}" name=""
+                                                id="Feline_input_first"></td>
+                                        {% for v_h_data in vaccination %}
+                                        <td><input type="text" readonly id="rabies_input_first"
+                                                value="{{ v_h_data.last_date_Feline_vaccine }}" name=""></td>
+                                        {% endfor %}
+
+
+                                    </tr>
+
+
+
+
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1">
+                            <div class="col">
+
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script>
+      function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+ 
+    var inputs = document.getElementsByTagName('input');
+    // console.log(inputs.value)
+    for (var i = 0; i < inputs.length; i++) {
+        var str = inputs[i].value;
+        console.log(typeof str)
+        if (str == 'Jan. 1, 1000') {
+            inputs[i].value = 'N/A';
+
+        }
+    }
+
+    function myFunction() {
+        var printdata = document.getElementById('printid');
+        var close = document.getElementById('close_visit_button');
+        printdata.style.display = "none";
+        close.style.display = "none";
+        window.print();
+
+    }
+
+</script>

@@ -1,0 +1,420 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> notifications</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<style>
+  /*============= Extra small devices (phones, 600px and down)============================== */
+
+  body {
+    font-size: 16px;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+
+    html {
+      overflow-x: hidden;
+
+    }
+
+    #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 4px;
+            padding: 5px;
+            font-weight: bold;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+      
+    }
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      filter: brightness(100%);
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #card_id {
+      margin-top: 1%;
+      width: 90%;
+
+
+    }
+
+    #container_id {
+      margin-top: 4%
+    }
+
+  
+
+    #bell_icon_row {
+      margin-top: 45%;
+      font-size: 40px;
+    }
+  }
+
+  /*================ Small devices (portrait tablets and large phones, 600px and up)========================= */
+  @media only screen and (min-width: 600px) {
+
+    html {
+      overflow-x: hidden;
+
+    }
+
+    #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+          font-weight: bold;
+
+            margin: 4px;
+            padding: 5px;
+        }
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      filter: brightness(100%);
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #card_id {
+      margin-top: 1%;
+      width: 90%;
+
+    }
+
+    #container_id {
+      margin-top: 4%
+    }
+
+
+
+    #bell_icon_row {
+      margin-top: 30%;
+      font-size: 35px;
+    }
+    #back_button{
+        background-color: #003300;
+        color: white;
+        float: right;
+    }
+  }
+
+  /* ====================Medium devices (landscape tablets, 768px and up) =========================*/
+  @media only screen and (min-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      filter: brightness(100%);
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+          font-weight: bold;
+
+            margin: 4px;
+            padding: 5px;
+        }
+
+    #card_id {
+      margin-top: 1%;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #container_id {
+      margin-top: 2%
+    }
+
+  
+
+    #bell_icon_row {
+      margin-top: 25%;
+      font-size: 35px;
+    }
+    #back_button{
+        background-color: #003300;
+        color: white;
+    float: left;
+    }
+  }
+
+  /*============== Large devices (laptops/desktops, 992px and up)======================= */
+  @media only screen and (min-width: 992px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      filter: brightness(100%);
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+          font-weight: bold;
+
+            margin: 4px;
+            padding: 5px;
+        }
+
+    #card_id {
+      margin-top: 1%;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #container_id {
+      margin-top: 2%
+    }
+
+   
+    #bell_icon_row {
+      margin-top: 15%;
+      font-size: 45px;
+    }
+    #back_button{
+        background-color: #003300;
+        color: white;
+        float: left;
+
+    }
+  }
+
+  /* ===============Extra large devices (large laptops and desktops, 1200px and up) ====================*/
+  @media only screen and (min-width: 1200px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      filter: brightness(100%);
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+          font-weight: bold;
+
+            margin: 4px;
+            padding: 5px;
+        }
+
+    #card_id {
+      margin-top: 1%;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #container_id {
+      margin-top: 2%
+    }
+
+  
+
+    #bell_icon_row {
+      margin-top: 15%;
+      font-size: 45px;
+    }
+    #back_button{
+        background-color: #003300;
+        color: white;
+    }
+  }
+</style>
+
+
+<body>
+  <div id="grad1">
+    <div id="wrapper_id" class="wrapper ">
+      <div class="row">
+        <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+        </div>
+        <div class="col-xs-7 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+            <div id="heading_div">
+                <h3 id="heading_id">NOTIFICATIONS </h3>
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4 mt-1">
+          <a> <button type="button" class="btn btn"
+            id="back_button" onclick="window.history.go(-1); return false;">Back</button>
+        </a>
+        </div>
+    </div>
+      <div class="container" id="container_id">
+        <form method="post">
+          {% csrf_token %}
+          {% if update or data %}
+          {% for i in update %}
+
+
+          <div class="card " id="card_id">
+            <div class="card-body">
+              <b>{{i.notification}}</b>
+            
+
+            </div>
+          </div> 
+          {% endfor %}
+          {% if data %}
+          <div class="card " id="card_id">
+            <div class="card-body">
+             <b> {{data}}</b>
+             
+
+            </div>
+          </div> 
+          {% endif %}
+          {% else %}
+          <!-- notification icon starts-->
+      <div class="row" id="bell_icon_row">
+        <div class="col text-center">
+          <i class="fa fa-bell" style="color: #003300;">
+          </i>
+        </div>
+      </div>
+     
+        <!-- notification icon ends-->
+           <div class="row" >
+        <div class="col text-center">
+         <span style="font-weight: bold;">No new notifications</span>
+        </div>
+      </div>
+      {% endif %}
+
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script>
+   function openNav() {
+     if (window.matchMedia("(min-width: 993px)").matches){
+      document.getElementById("myNav").style.width = "29%";
+    }
+    else
+    {
+      document.getElementById("myNav").style.width = "75%";
+
+    }
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+    function show_doctors_corner() {
+      if (document.getElementById('show_div').style.display == 'none') {
+        document.getElementById('show_div').style.display = 'inline-block';
+
+
+      } else {
+        document.getElementById('show_div').style.display = 'none';
+
+      }
+    }
+  </script>
+</body>
+
+</html>

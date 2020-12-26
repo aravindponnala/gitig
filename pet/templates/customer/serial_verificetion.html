@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    </head>
+<style>
+      #img_id{
+                       width: 100px;
+                       height: 100px;
+                       border-radius: 50%;
+                   }
+                   #circle_id{
+                        height: 100px;
+                        width: 100px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        display: inline-block;
+                        }
+html,
+body {
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+}
+
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+
+    margin-left: 200px;
+    font-size: 40px;
+    color: #1f7a1f;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+      filter: brightness(100%);
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+  }
+    #heading_div {
+        background-color: #003300;
+        color: white;
+        width: fit-content;
+    }
+
+    #heading_id {
+        margin: 8px;
+        padding: 4px;
+    }
+    #back_button_id{
+            margin: 4%;
+          
+        }
+    #row_id {
+        margin-top: 5%;
+    }
+
+    #button_id {
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    #div_id {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        background-color: white;
+        border: none;
+
+        border-color: #003300;
+        border-radius: 30px;
+        border-style: solid;
+    }
+
+    #search_icon {
+        border-radius: 30px;
+        margin-right: 5px;
+        float: right;
+        background-color: white;
+        border: none;
+    }
+
+    #serial_verify {
+        margin: 2%;
+        padding: 2px;
+        border-radius: 30px;
+        width: 75%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+    
+   
+    #text_area_id{
+        text-align: center;
+        width: 90%;
+   
+     
+    }
+    #text_area_row{
+   text-align: center;
+    }
+    #submit_button{
+        margin-top: 2%;
+        margin-right: 10%;
+        float: right;
+        background-color: #003300;
+        color: white;
+    }
+    #doc_1_label {
+        padding: 5px;
+      
+    }
+
+    #doc_2_label {
+        padding: 5px;
+      
+    }
+
+    #doc_3_label {
+        padding: 5px;
+       
+    }
+
+    #doc_4_label {
+        padding: 5px;
+       
+    }
+    #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+      
+      filter: brightness(100%);
+     
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+  }
+
+    #heading_div {
+        background-color: #003300;
+        color: white;
+        width: fit-content;
+    }
+
+    #heading_id {
+        margin: 8px;
+        padding: 4px;
+    }
+    #back_button_id{
+            margin: 4%;
+          
+        }
+    #row_id {
+        margin-top: 5%;
+    }
+
+    #button_id {
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    #div_id {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        background-color: white;
+        border: none;
+
+        border-color: #003300;
+        border-radius: 30px;
+        border-style: solid;
+    }
+
+
+    #search_icon {
+        margin-right: 5px;
+        float: right;
+        background-color: white;
+        border: none;
+    }
+
+    #serial_verify {
+        margin: 2%;
+        padding: 2px;
+        border-radius: 30px;
+        width: 75%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+    #text_area_id{
+        text-align: center;
+        width: 60%;
+   
+     
+    }
+    #text_area_row{
+text-align: center;
+    }
+    #submit_button{
+        margin-top: 2%;
+        margin-right:5%;
+        float: right;
+        background-color: #003300;
+        color: white;
+    }
+    #doc_1_label {
+        padding: 5px;
+      
+    }
+
+    #doc_2_label {
+        padding: 5px;
+      
+    }
+
+    #doc_3_label {
+        padding: 5px;
+       
+    }
+
+    #doc_4_label {
+        padding: 5px;
+       
+    }
+    #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+      
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+        filter: brightness(100%);
+       
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+    #heading_div {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #003300;
+        color: white;
+        width: fit-content;
+    }
+
+    #heading_id {
+        margin: 8px;
+        padding: 4px;
+    }
+
+    #row_id {
+        margin-top:2%;
+    }
+
+    #button_id {
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    #div_id {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        background-color: white;
+        border: none;
+
+        border-color: #003300;
+        border-radius: 30px;
+        border-style: solid;
+    }
+
+
+    #search_icon {
+        margin-right: 5px;
+        float: right;
+        background-color: white;
+        border: none;
+    }
+
+    #serial_verify {
+        margin: 2%;
+        padding: 2px;
+        border-radius: 30px;
+        width: 75%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+    #text_area_id{
+        text-align: center;
+        width: 50%;
+   
+     
+    }
+    #text_area_row{
+       text-align: center;
+  
+    }
+    #submit_button{
+        margin-top: 2%;
+        margin-right: 10%;
+        float: right;
+        background-color: #003300;
+        color: white;
+    }
+    #doc_1_label {
+        padding: 5px;
+       margin-left: 60%;
+    }
+
+    #doc_2_label {
+        padding: 5px;
+       margin-left: 60%;
+    }
+
+    #doc_3_label {
+        padding: 5px;
+       margin-left: 60%;
+    }
+
+    #doc_4_label {
+        padding: 5px;
+       margin-left: 60%;
+    }
+    #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+     
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+       overflow-x: hidden;
+    }
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+        filter: brightness(100%);
+       
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+    #heading_div {
+        background-color: #003300;
+        color: white;
+        width: fit-content;
+    }
+
+    #heading_id {
+        margin: 8px;
+        padding: 4px;
+    }
+
+    #doc_1_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #doc_2_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #doc_3_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #doc_4_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #row_id {
+        margin-top: 2%;
+    }
+
+    #button_id {
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    #div_id {
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: white;
+        border: none;
+
+        border-color: #003300;
+        border-radius: 30px;
+        border-style: solid;
+    }
+
+
+
+    #search_icon {
+        margin-right: 5px;
+        float: right;
+        background-color: white;
+        border: none;
+    }
+
+    #serial_verify {
+        margin: 2%;
+        padding: 2px;
+        border-radius: 30px;
+        width: 75%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+
+    #close_btn {
+        margin-left: 80%;
+    }
+    #text_area_id{
+        text-align: center;
+        width:30%;
+   
+     
+    }
+    #text_area_row{
+        text-align: center;
+    }
+    #submit_button{
+        margin-top: 2%;
+        margin-right: 14%;
+        float: right;
+        background-color: #003300;
+        color: white;
+    }
+    #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+   body {
+       overflow-x: hidden;
+     
+        filter: brightness(100%);
+       
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    #heading_div {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #003300;
+        color: white;
+        width: fit-content;
+    }
+
+    #heading_id {
+        margin: 8px;
+        padding: 4px;
+    }
+
+    #doc_1_label {
+        padding: 5px;
+        margin-left:80%;
+    }
+
+    #doc_2_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #doc_3_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #doc_4_label {
+        padding: 5px;
+        margin-left: 80%;
+    }
+
+    #row_id {
+        margin-top: 1%;
+    }
+
+    #button_id {
+        outline: none;
+        border: none;
+        background-color: white;
+    }
+
+    #div_id {
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+        background-color: white;
+        border: none;
+
+        border-color: #003300;
+        border-radius: 30px;
+        border-style: solid;
+    }
+
+
+    #search_icon {
+        margin-right: 5px;
+        float: right;
+        background-color: white;
+        border: none;
+    }
+
+    #serial_verify {
+        margin: 2%;
+        padding: 2px;
+        border-radius: 30px;
+        width: 75%;
+        text-align: center;
+        border: none;
+        outline: none;
+    }
+
+    #close_btn {
+        margin-left: 80%;
+    }
+    #text_area_id{
+        text-align: center;
+        width:30%;
+   
+     
+    }
+    #text_area_row{
+  text-align: center;
+    }
+    #submit_button{
+        margin-top: 2%;
+        margin-right:13%;
+        float: right;
+        background-color: #003300;
+        color: white;
+    }
+    #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+        #back_button_id{
+            margin-top: 2%;
+            margin-right: 20%;
+        }
+}
+</style>
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+                        style="font-weight: bold;" href="{% url 'mypets' %}">
+                        My pets
+                      </a></li>
+                    <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                            id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a></li>
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+  
+            <a> <button type="button" class="btn btn"
+                    style="background-color: #003300;color: white;width: fit-content;float: right;"
+                    id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+            </a>
+          
+        </div>
+    </div>
+            <div id="heading_div">
+                <h3 id="heading_id">UPLOAD DOCUMENTS</h3>
+            </div>
+            <form>
+            <div class="row" id="row_id">
+                <div class="col-12">
+                    <div id="div_id">
+                        <input type="text" placeholder="Search UIN" name='serial_verify' id="serial_verify" required>
+                        <button type="submit" id="button_id"><i class="fa fa-search-plus" ></i></button>
+                    </div>
+                </div>
+            </div>
+            </form>
+       
+            <div style=display:none id="upload_div">
+                <form method="post" enctype="multipart/form-data" action = "{% url 'serial_verificetion' pet_id=pet_id customer_id=customer_id %}" >                    {% csrf_token %}
+                    <div class="row mt-4" id="text_area_row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class=""  id="text_area_div">
+                                
+                            <textarea id="text_area_id" name='address' placeholder="Enter your address"></textarea>
+                      </div>
+                      </div>
+                    </div>                   
+                     <div class="container mt-4">
+                        <div class="row" id="row_id">
+                            <div class="col-3 col-sm-4 col-md-4 col-lg-5">
+                                <label for="" id="doc_1_label">DOC1 </label>
+                            </div>
+                            <div class="col-8 col-sm-6 col-md-6 col-lg-3">
+                                <div class="custom-file" id="d1_choose_file">
+                                    <a  class="list-group-item list-group-item-action m-1 p-1 " style="width: fit-content"><input type="file"  name="myfile" style="width: 100%;" required></a>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2" >
+                            <div class="col-3 col-sm-4 col-md-4 col-lg-5">
+                                <label for="" id="doc_2_label">DOC2 </label>
+                            </div>
+                            <div class="col-8 col-sm-6 col-md-6 col-lg-3">
+                                <div class="custom-file">
+                                    <a  class="list-group-item list-group-item-action m-1 p-1 " style="width: fit-content;"><input type="file"  name="myfile" style="width: 100%;" required></a>
+
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3 col-sm-4 col-md-4 col-lg-5">
+                                <label for="" id="doc_3_label">DOC3 </label>
+                            </div>
+                            <div class="col-8 col-sm-6 col-md-6 col-lg-3">
+                                <div class="custom-file">
+                                    <a  class="list-group-item list-group-item-action m-1 p-1 " style="width: fit-content;"><input type="file"  name="myfile" style="width: 100%;" required></a>
+
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3 col-sm-4 col-md-4 col-lg-5">
+                                <label for="" id="doc_4_label">DOC4 </label>
+                            </div>
+                            <div class="col-8 col-sm-6 col-md-6 col-lg-3">
+                                <div class="custom-file">
+                                    <a  class="list-group-item list-group-item-action m-1 p-1 " style="width: fit-content;"><input type="file"  name="myfile" style="width: 100%;" required></a>
+
+                                 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-10 col-md-10 col-lg-9">
+                      <button type="submit" class="btn btn-default" id="submit_button">Next</button>
+                    </div>
+                    </div>
+                    <!-- <input type='submit' value='submit'> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        $('.custom-file-input').on('change', function () {
+            let fileName = $(this).val().split('\\').pop();
+            $(this).next('.custom-file-label').addClass("selected").html(fileName);
+        });
+
+        $("#serial_verify").change(function () {
+            var formserialver = $(this).val();
+            $.ajax({
+                url: '/ajax/formserial/',
+                data: {
+                    'formserialver': formserialver
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.is_taken) {
+                        verfun()
+                    }
+                    else {
+                        varfailed()
+                        alert('worng serial number');
+                    }
+                },
+            });
+        })
+        function verfun() {
+            x = document.getElementById("upload_div").style.display = "inline"
+
+        }
+        function varfailed() {
+            x = document.getElementById("upload_div").style.display = "none"
+        }
+
+    </script>
+</body>
+
+</html>

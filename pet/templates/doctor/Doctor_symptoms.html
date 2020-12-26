@@ -1,0 +1,1673 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>doctor symptoms</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+        body {
+            width: auto;
+            height: auto;
+            font-size: 16px;
+        }
+
+        #table_id {
+
+            margin-right: auto;
+            margin-left: auto;
+            width: 99%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #deworming_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #heading_div {
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+            min-width: 100%;
+            width: auto;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+
+        #TEXTAREA_ID {
+
+            margin-top: 5%;
+            min-height: 200px;
+            height: auto;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #button_row {
+            margin-top: 8%;
+        }
+
+
+
+        #Next_button {
+            color: white;
+            background-color: #003300;
+            float: right;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #age_label {
+            margin-left: 2%;
+        }
+
+        #gender_label {
+            margin-left: 2%;
+        }
+
+        #diet_label {
+            margin-left: 2%;
+        }
+
+        #diet_state_label {
+            margin-left: 2%;
+        }
+
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        body {
+            width: auto;
+            height: auto;
+            font-size: 16px;
+        }
+
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #deworming_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+
+        #TEXTAREA_ID {
+
+            margin-top: 5%;
+            min-height: 200px;
+            height: auto;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #button_row {
+            margin-top: 8%;
+        }
+
+
+        #Next_button {
+            color: white;
+            background-color: #003300;
+
+            float: right;
+
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #age_label {
+            margin-left: 2%;
+        }
+
+        #gender_label {
+            margin-left: 2%;
+        }
+
+        #diet_label {
+            margin-left: 2%;
+        }
+
+        #diet_state_label {
+            margin-left: 2%;
+        }
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 75%;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #deworming_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #prescription_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #TEXTAREA_ID {
+            margin-top: 5%;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 200px;
+
+            height: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+        #button_row {
+            margin-top: 2%;
+        }
+
+        #Next_button {
+
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #age_label {
+            margin-left: 1%;
+        }
+
+        #gender_label {
+            margin-left: 1%;
+        }
+
+        #diet_label {
+            margin-left: 1%;
+        }
+
+        #diet_state_label {
+            margin-left: 1%;
+        }
+
+
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #table_id {
+            border-width: 2px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 55%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #deworming_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #prescription_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #TEXTAREA_ID {
+            margin-top: 5%;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 200px;
+
+            height: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+
+
+        #button_row {
+            margin-top: 2%;
+        }
+
+        #Next_button {
+
+
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #age_label {
+            margin-left: 1%;
+        }
+
+        #gender_label {
+            margin-left: 1%;
+        }
+
+        #diet_label {
+            margin-left: 1%;
+        }
+
+        #diet_state_label {
+            margin-left: 1%;
+        }
+
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #table_id {
+            border-width: 2px;
+            width: 45%;
+            margin-right: auto;
+            margin-left: auto;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #deworming_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #prescription_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #TEXTAREA_ID {
+            margin-top: 5%;
+            width: 40%;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 200px;
+
+            height: auto;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            border-radius: 30px;
+        }
+
+
+
+        #button_row {
+            margin-top: 2%;
+        }
+
+        #Next_button {
+
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #age_label {
+            margin-left: 1%;
+        }
+
+        #gender_label {
+            margin-left: 1%;
+        }
+
+        #diet_label {
+            margin-left: 1%;
+        }
+
+        #diet_state_label {
+            margin-left: 1%;
+        }
+
+
+    }
+</style>
+
+<body id="body_id">
+    <input type="hidden" value="{{ doc_pk }}" name="doc_id" id="doc_id">
+    <div id="grad1">
+        <div class="one" id="border_id">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                            style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor profile
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                            style="font-weight: bold;" href="{% url 'list_patient' %}">List of patients
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                            style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<span
+                                class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                    </li>
+                    <li id="show_div" style="display: none">
+
+                        <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                            style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                            style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                            style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                            style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                            style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Books"
+                            style="font-weight: bold;" href="{% url 'books_sbar' %}">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics </a>
+                    </li>
+                    {% if doc_pk_stock.stock_management == 'yes' %}
+
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;"
+                            href="{% url 'stocks' %}">Stocks</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;">About</a>
+                    </li>
+
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+            <label id=pet_name_label><b>Pet name:</b></label>{{ pet_obj.name }}
+            <label id=breed_label><b>Breed:</b></label>{{ pet_obj.breed }}
+            <label id="age_label"><b>Age:</b></label>{{ pet_obj.dob}}
+            <label id="gender_label"><b>Gender:</b></label>{{ pet_obj.gender }}
+            <label id="diet_label"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }},{{ purpose_pet_obj_diet.diet_state }}
+
+            <form method="post">
+                {% csrf_token %}
+                <div id="wrapper_id" class="wrapper ">
+                    <div class="container">
+                        <div class="row mt-2" style="justify-content: center;">
+                            <div class="col-xs-7 col-sm-5 col-md-4 col-lg-3 m-0 p-0">
+                                <a class="list-group-item list-group-item-action" role="tab"
+                                    style="font-weight: bold;text-align: center;background-color: #003300;color:white;border-radius: 30px;">Purpose
+                                    of the visit</a>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-4 col-lg-3 m-0 p-0">
+                                <a class="list-group-item list-group-item-action" role="tab"
+                                    style="font-weight: bold;text-align: center;background-color: whitesmoke;color: black;border-radius: 30px;"
+                                    href="{% url 'doctor_history' %}">History</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <table id="table_id" class="mt-3">
+                        <tbody>
+                            <!-- first row -->
+                            <tr>
+                                <td>
+                                    <button type="button" class="btn btn-light" id="disease_a"
+                                        style="width: 100%;background: #003300;color: white">Disease</button>
+                                    <input type="hidden" name="" id="purpose_visit"
+                                        value="{{ purpose_pet_obj.vaccination_purpose }}">
+                                    <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}"
+                                        id="symptoms_text">
+                                </td>
+                                <td>
+                                    <a class="btn btn-light" id="vaccination_a" name="vaccination_name"
+                                        style="width: 100%;"
+                                        href="{% url 'vaccination' pet_pk=pet_pk purpose_pk=purpose_pk %}">Vaccination</a>
+                                </td>
+                                <td> <a class="btn btn-light" id="deworming_a" name="deworming_name"
+                                        style="width: 100%;"
+                                        href="{% url 'deworming' pet_pk=pet_pk purpose_pk=purpose_pk %}">Deworming</a>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <div class="wrapper" id="disease_div">
+                        <div class="container">
+                            <div class="row mt-2" style="justify-content: center;">
+                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                    <a class="btn btn-light" id="symptoms_a" name="symptoms_name"
+                                        style="width: 100%;background: #003300;color: white"
+                                        href="{% url 'symptoms' pet_pk=pet_pk purpose_pk=purpose_pk %}">Symptoms</a>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                    <a class="btn btn-light" id="symptoms_a" name="vitals_name" style="width: 100%;"
+                                        href="{% url 'vitals' pet_pk=pet_pk purpose_pk=purpose_pk %}">Vitals</a>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                    <a class="btn btn-light" name="assessment_name" id="assessment_a"
+                                        style="width: 100%;"
+                                        href="{% url 'assessment' pet_pk=pet_pk purpose_pk=purpose_pk %}">Assessment</a>
+                                </div>
+                            </div>
+                            <div class="row mt-2" style="justify-content: center;">
+                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                    <a class="btn btn-light" id="diagnostics_a" style="width: 100%;"
+                                        name="diagnostic_name"
+                                        href="{% url 'diagnostic_prescription' pet_pk=pet_pk purpose_pk=purpose_pk %}">Diagnostics</a>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                    <a class="btn btn-light" name="prescription_name" id="prescription_a"
+                                        style="width: 100%;"
+                                        href="{% url 'prescription' pet_pk=pet_pk purpose_pk=purpose_pk %}">Prescription</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+<div class="container">
+                        <div class="card " id="TEXTAREA_ID">
+                            <div class="card-body">
+                                <p class="card-text"> <b> {{ purpose_pet_obj.disease }}</b>
+                                    {{  purpose_pet_obj.symptoms_text}}</p>
+
+                            </div>
+                        </div>
+                        <input type="hidden" name="symptoms" id="symptoms_input" value="{{ purpose_pet_obj.disease }}">
+                        <input type="hidden" name="" id="symptoms_text" value="{{ purpose_pet_obj.symptoms_text }}">
+                                <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                                <input type="hidden" name="" id="purpose_visit" value="{{ purpose_pet_obj.vaccination_purpose }}">
+                            <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                        <div class="row" id="button_row">
+
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-9">
+                                <a><button class="btn btn" id="back_button"
+                                        style="background-color: red;color: white;float: right;font-weight: bold;"
+                                        onclick="myFunction()">Close visit</button></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+     function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    function show_doctors_corner() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+
+        }
+    }
+
+    function myFunction() {
+        if (confirm("Do you wish to continue")) {
+            document.getElementById('back_button').setAttribute('type', '');
+
+            document.getElementById('back_button').name = 'close_visit';
+
+        } else {
+            document.getElementById('back_button').setAttribute('type', 'button');
+
+
+        }
+
+    }
+
+// on load functions
+document.addEventListener("DOMContentLoaded", function (event) {
+            var symp = document.getElementById('symptoms_input').value;
+            var symp_list = symp.split(',');
+            console.log(symp_list)
+            if (symp_list.includes('Diarrhea')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+
+            }
+            if (symp_list.includes('Weight loss')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Limping')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Skin')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Injuries')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Tooth broken')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Fracture')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Tongue')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Eye')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+            if (symp_list.includes('Bleeding')) {
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.color = 'black';
+            }
+
+
+
+
+            var purpose_visit = document.getElementById('purpose_visit').value;
+            purpose_visit_list = purpose_visit.split(',');
+            console.log(purpose_visit_list)
+            if (purpose_visit_list.includes('VACCINATION')) {
+                document.getElementById('vaccination_a').style.background = 'lightgreen';
+            }
+            if (purpose_visit_list.includes('DEWORMING')) {
+                document.getElementById('deworming_a').style.background = 'lightgreen';
+            }
+
+            var symp_text = document.getElementById('symptoms_text').value;
+            console.log(symp_text)
+            var n = symp_text.length
+            console.log(n, 'g')
+            if (n > 2) {
+                console.log('hi')
+                document.getElementById('symptoms_a').style.background = 'lightgreen';
+                document.getElementById('disease_a').style.background = 'lightgreen';
+
+            }
+        });
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vaccination reminder list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="row" style="text-align: right;">
+      <div class="col">
+        <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+      </div>
+    </div>
+    <form method="post">
+    {% csrf_token %}
+  
+  <button class="btn" name="2_days">Generate before 2 days</button><br>
+  <button class="btn" name="1_day">Generate before 1 day</button><br>
+  <button class="btn" name="on_day">Generate on the day</button><br>
+  </form>
+  <hr>
+  {% if vacanation_list_rem %}
+  <form method="post" action="{% url 'vaccination_reminder_sms' %}">
+        {% csrf_token %}
+    <table id="customers">
+      <thead>
+        <th>Pet Id</th>
+        <th>Vaccinations</th>
+        <th>Customer Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Doctor</th>
+        <th>Hospital</th>
+        <th>Reminder Date</th>
+        <th>Generated Date</th>
+      </thead>
+      {% for vac in vacanation_list_rem %}
+      <tbody>
+        <tr>
+          <td>{{vac.pet.pet_id}}</td>
+          <td>{{vac.vacanation_list}}</td>
+          <td>{{vac.customer.customer_name}}</td>
+          <td>{{vac.customer.mobile}}</td>
+          <td>{{vac.customer.email}}</td>
+          <td>{{vac.doctor}}</td>
+          <td>{{vac.hospital}}</td>
+          <td>{{vac.remiander_date}}</td>
+          <td>{{vac.date}}</td>
+        </tr>
+      </tbody>
+          {% endfor %}
+    </table>
+     <button class="btn btn-success"  name="{{generated_day}}" >send sms</button><br>
+    </form>
+{% else %}
+<div style="text-align: center;">
+    <span ><b>No customers </b></span>
+</div>
+    {% endif %}
+    
+  </body>
+</html>

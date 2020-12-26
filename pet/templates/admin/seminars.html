@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>seminars</h1>
+    <a href="{% url 'create_seminar'%}">Creat Seminar</a>
+<form  method="post">
+  {% csrf_token %}
+{% for seminar in seminars%}
+<div class="" style="border:red solid 2px">
+<table>
+  <tbody>
+    <td><b>title:</b>
+    {{seminar.title|title}}</td>
+    <td><b>location:</b>
+    {{seminar.location}}</td>
+    <td>
+      <b>date:</b>
+      {{seminar.date}}</td>
+      <td>
+        <b>time:</b>
+        {{seminar.timings}}</td>
+<table>
+  <tbody>
+    <td><b>content</b>
+    {{seminar.content|truncatewords:10}}</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'view_seminar' pk=seminar.pk %}">View</a></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><center><button type="submit">delete</center></button></td></td>
+    <input type="hidden" name="sem_pk" value="{{seminar.id}}">
+  </tbody>
+</table>
+</div>
+{% endfor %}
+</form>
+  </body>
+</html>

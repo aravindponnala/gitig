@@ -1,0 +1,711 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer user login</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<style>
+     .btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+    /* {#=====================ANDROID MOBILE (FOR portrait)==========================#} */
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #resend_otp{
+            background-color:	#E0E0E0;
+        }
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+
+      
+
+        #logo_col {
+            margin-top: 33%;
+
+        }
+
+        #logo_id {
+            width: 50%;
+        }
+
+      body{
+           
+            height: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #enter_mobile_number_email {
+          
+            border-width: 0.75px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #password_id {
+           
+            border-width: 0.75px;
+            width: 100%;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+        #login_button {
+
+            
+            font-size: 16px;
+            background-color: #003300;
+        }
+     
+        #forgot_password {
+          
+            width: auto;
+            font-size: 16px;
+            height: 40px;
+            background-color: #003300;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #resend_otp{
+            background-color:	#E0E0E0;
+        }
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+
+      
+
+        #logo_col {
+            margin-top: 20%;
+
+        }
+
+        #logo_id {
+            width: 45%;
+        }
+
+        body{
+           
+           height: auto;
+           filter: brightness(100%);
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+
+        #enter_mobile_number_email {
+          
+            border-width: 0.75px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #password_id {
+           
+            border-width: 0.75px;
+            width: 100%;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+        #login_button {
+
+      
+            font-size: 16px;
+            background-color: #003300;
+        }
+     
+        #forgot_password {
+          
+            width: 40%;
+            font-size: 16px;
+            height: 40px;
+            background-color: #003300;
+        }
+    }
+    
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #resend_otp{
+            background-color:	#E0E0E0;
+        }
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+
+      
+
+        #logo_col {
+            margin-top: 15%;
+
+        }
+
+        #logo_id {
+            width: 30%;
+        }
+        body{
+           
+           height: auto;
+           filter: brightness(100%);
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+
+
+        #enter_mobile_number_email {
+          
+            border-width: 0.75px;
+            width: 80%;
+            text-align: center;
+        }
+
+        #password_id {
+           
+            border-width: 0.75px;
+            width: 80%;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+        #login_button {
+
+            
+            font-size: 16px;
+            background-color: #003300;
+        }
+     
+        #forgot_password {
+          
+            width: 30%;
+            font-size: 16px;
+            height: 40px;
+            background-color: #003300;
+        }
+        #show_password_id{
+            margin-left: 10%;
+        }
+    }
+    
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+
+      
+
+        #logo_col {
+            margin-top: 10%;
+
+        }
+
+        #logo_id {
+            width: 25%;
+        }
+
+        body{
+           
+           height: auto;
+           filter: brightness(100%);
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+
+        #enter_mobile_number_email {
+          
+            border-width: 0.75px;
+            width: 40%;
+            text-align: center;
+        }
+
+        #password_id {
+           
+            border-width: 0.75px;
+            width: 40%;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+        #login_button {
+
+          
+            font-size: 16px;
+            background-color: #003300;
+        }
+     
+        #forgot_password {
+          
+            width: 20%;
+            font-size: 16px;
+            height: 40px;
+            background-color: #003300;
+        }
+        #show_password_id{
+            margin-left: 30%;
+        }
+        #resend_otp{
+            background-color: #E8E8E8"
+        }
+    }
+    
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+
+      
+
+        #logo_col {
+            margin-top: 10%;
+
+        }
+
+        #logo_id {
+            width: 20%;
+        }
+
+        body{
+           
+           height: auto;
+           filter: brightness(100%);
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+
+
+        #enter_mobile_number_email {
+          
+            border-width: 0.75px;
+            width: 40%;
+            text-align: center;
+        }
+
+        #password_id {
+           
+            border-width: 0.75px;
+            width: 40%;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+        #login_button {
+
+
+            font-size: 16px;
+            background-color: #003300;
+        }
+     
+        #forgot_password {
+          
+            width: 20%;
+            font-size: 16px;
+            height: 40px;
+            background-color: #003300;
+        }
+        #show_password_id{
+            margin-left: 30%;
+        }
+
+        #resend_otp{
+            background-color: #E8E8E8"
+        }
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div id="first_div">
+            <div id="wrapper_id" class="wrapper ">
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+
+                        <form method="post" class="">
+                            {% csrf_token %}
+
+                            <div class="row" id="logo_row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12" id="logo_col">
+                                    <div class="text-center">
+                                    <img class="img-fluid " src="{% static 'media/Siva-Company-logo copy.png' %}"
+                                        id="logo_id" style="max-width:100%;height:auto;">
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="enter_mobile_number_email_row" >
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-12"> 
+                                   
+                                        <input type="text" class="form-control" id="enter_mobile_number_email"
+                                            placeholder="Enter mobile number" name="mobile" onchange="mobi()"
+                                            style=" border-radius: 30px; border-style: solid;border-color: #1f7a1f;margin-left: auto;margin-right: auto;"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'');"  min="10" max="10" pattern="[6789][0-9]{9}" 
+                                            title="Mobile Number must be 10 Digits only.">
+                                    </div>
+                                
+                            </div>
+                            <div class="row mt-2" id="generate_otp_button_row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    <button type="button" class="btn btn"
+                                        style="background-color: #003300;color: white;border-radius:15px"
+                                        id="generate_otp_button">Get
+                                        OTP</button>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-12 col-lg-12">
+                                    <div class="text-center">
+                                    <input type="password" class="form-control" id="password_id" name="otp" required 
+                                        placeholder="Enter OTP" style=" border-radius: 30px; border-style: solid;
+                                        border-color: #1f7a1f;;margin-left: auto;margin-right: auto;" min="4" max="4"  oninput="this.value=this.value.replace(/[^0-9]/g,'');"  pattern="[0-9]{4}" title="OTP must be 4 Digits only.">
+                                         <span id="timer" style="font-size: 14px;"></span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+
+                                <span style="color: red;font-size: 14px;" id="result"></span>
+                                     
+                             
+                          </div>
+                                  
+                            {% if messages %}
+
+                                
+                            <div class="row">
+                                {% for i in messages %}
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                <span style="color: red;font-size: 14px;" id="messages_label">
+                                                    
+                                    {{i}}</span>
+                                    <input type="hidden" id="messages" value="{{i}}" name="">
+                                 
+                              </div>  
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                      
+                        <div class="row">
+                        
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <span style="color: red;font-size: 14px;" id="messages_label">
+                                                
+                                {{i}}</span>
+                                <input type="hidden" id="messages" value="{{i}}" name="">
+                             
+                             
+                                <span id="messages_label"></span>
+                                    <input type="hidden" id="messages" value="{{i}}" name="">
+                            
+                            
+                          </div>  
+                    </div>
+                    {% endif %}
+
+
+
+
+                            <div class="row  mt-1" id="resend_otp_div" style="display: none;">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    <label for="" style="color: green;font-weight: bold;" id="did_not_recieve_otp_label">
+                                        Didn't recieve the code ?</label>
+                                    <button type="button" class="btn btn"  id="resend_otp" style="color:  #337ab7;" ><u>Resend OTP</u></button>
+                                  
+                                    
+                                </div>
+                            </div>
+                            <div class="row mt-2" id="log_in_row">
+                                <div class="col" id="login_col">
+                                    <div class="text-center">
+                                    <button type="submit" class="btn btn-light" id="login_button"
+                                        style="  border-radius: 10px;border-bottom: none;border-top: none;border-left: none;border-right: none;color: white;">Login</button>
+
+                                </div></div>
+                            </div>
+                          
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+     $(document).ready(function() {
+          function disablePrev() { window.history.forward() }
+          window.onload = disablePrev();
+       
+          window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+       });
+//timer count for otp
+ let timerOn = true;
+
+function timer(remaining) {
+  var m = Math.floor(remaining / 60);
+  var s = remaining % 60;
+  
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+  sessionStorage.setItem("minute", m);
+  sessionStorage.setItem("seconds", s);
+  q=sessionStorage.getItem("minute");
+  w=sessionStorage.getItem("seconds");
+    // document.getElementById('timer_session').innerHTML=q+':'+w;
+    document.getElementById('timer').style.display='block'; 
+  document.getElementById('timer').innerHTML ='Time left'+' '+ m + ':' + s;
+  document.getElementById('timer').style.color='red';
+  remaining -= 1;
+  resend_otp_appear= m + ':' + s;
+  if(resend_otp_appear=='02:30'){
+   document.getElementById('resend_otp_div').style.display='block'; 
+  }
+  if(remaining >= 0 && timerOn) {
+    setTimeout(function() {
+        timer(remaining);
+            }, 1000);
+    return;
+  }
+
+  if(!timerOn) {
+
+    // Do validate stuff here
+    return;
+  }
+  
+  // Do timeout stuff here
+  // alert('Timeout for otp');
+  document.getElementById('timer').style.display="none";
+      document.getElementById('generate_otp_button').style.display = 'inline-block';
+      document.getElementById('resend_otp_div').style.display='none';
+      document.getElementById('result').style.display='none'; 
+
+  
+}
+
+
+    $("#generate_otp_button").click(function () {
+        
+        mobile = document.getElementById('enter_mobile_number_email').value;
+        document.getElementById('messages_label').style.display = 'none';
+        if(navigator.onLine){
+
+        if ( /^[6-9]{1}[0-9]{9}$/.test(mobile)){
+            document.getElementById('generate_otp_button').style.display = 'none';
+        $.ajax({
+
+
+            url: "/msg/",
+            type: 'POST',
+
+            data: {
+
+                'mobile': mobile,
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+            },
+
+            success: function (data) {
+
+
+            }
+        });
+        timer(180);
+        }else{
+            alert('Enter valid mobile number')
+        }
+
+return true
+ } else {
+  alert('You are offline please connect to the internet');
+ }
+    });
+
+    $("#resend_otp").click(function () {
+        mobile = document.getElementById('enter_mobile_number_email').value;
+
+
+        $.ajax({
+
+
+            url: "/resendotp/",
+            type: 'POST',
+
+            data: {
+
+                'mobile': mobile,
+
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+            },
+
+            success: function (data) {
+                if(data=="OTP retry count maxed out"){
+                        document.getElementById("result").innerHTML="OTP limit reached";
+                    }
+            }
+        });
+        
+
+    });
+
+ 
+
+
+ function mobi(){
+    x=document.getElementById('enter_mobile_number_email').value;
+    
+
+    sessionStorage.setItem("user_number", x);
+
+    $.ajax({
+                url: '/ajax/validate_mobile/',
+                type:'POST',
+                data: {
+                    'mobile': x,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                },
+             
+                success: function (data) {
+                    console.log(data)
+                    if (data=="NO mobile") {
+                        alert("Account doesn't exist Please Register");
+                    }
+                }
+            });
+}
+
+
+ var user_number=sessionStorage.getItem("user_number");
+ 
+    if (user_number=='null' || user_number==''){
+        
+            }else{
+       document.getElementById('enter_mobile_number_email').value=user_number;
+       
+    }
+
+
+
+msg=document.getElementById("messages").value;
+if (msg=='Invalid OTP Please check your code and try again.'){
+    document.getElementById('generate_otp_button').style.display = 'none';
+       document.getElementById('resend_otp_div').style.display='block';
+       if(sessionStorage.getItem("minute")){
+    q=sessionStorage.getItem("minute");
+  w=sessionStorage.getItem("seconds");
+  var hms="00"+':'+q+":"+w;
+  var a = hms.split(':');
+  var seconds_convert = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+  timer(seconds_convert)
+
+} 
+
+}else{
+    document.getElementById('generate_otp_button').style.display = 'inline-block';
+}
+  
+</script>
+</body>
+
+</html>

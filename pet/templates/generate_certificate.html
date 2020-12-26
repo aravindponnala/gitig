@@ -1,0 +1,512 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> certificate</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<style>
+    body{
+        overflow-x: hidden;
+    }
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        #grad1 {
+            min-height: 98vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #card_row {}
+
+        #card_id {
+            margin-top: 20%;
+            width: 100%;
+            height: fit-content;
+        }
+
+        #img_div {}
+
+        #gov_img {
+
+width: 30%;
+height: 30%;
+
+
+}
+
+        #company_logo_img {
+           max-width: 100%;
+           height: auto;
+         
+        }
+
+        #powered_by_label {
+            font-size: 11px;
+        }
+
+        #liscense_no_label {
+            font-size: 11px;
+        }
+
+        #gov_of_telangana_label {
+
+            font-size: 10px;
+        }
+#pet_certificate_label{
+    font-size: 10px;
+}
+        #aodh_intelligence_label {
+            font-size: 9px;
+        }
+        #button_id{
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #card_row {}
+
+        #card_id {
+            margin-top: 20%;
+            width: 100%;
+            height: fit-content;
+        }
+
+        #img_div {}
+
+        #gov_img {
+
+width: 30%;
+height: 30%;
+
+
+}
+
+        #company_logo_img {
+            height: auto;
+            max-width: 100%;
+        }
+
+        #powered_by_label {
+            font-size: 11px;
+        }
+
+        #liscense_no_label {
+            font-size: 12px;
+        }
+
+        #gov_of_telangana_label {
+
+            font-size:14px;
+        }
+#pet_certificate_label{
+    font-size:14px;
+}
+        #aodh_intelligence_label {
+            font-size: 10px;
+        }
+        #button_id{
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #card_id {
+         
+            margin-top: 5%;
+            width: 100%;
+           height: fit-content;
+        
+        }
+
+        #gov_img {
+
+width: 30%;
+height: 30%;
+
+
+}
+#company_logo_img {
+    height: auto;
+    max-width: 100%;
+}
+
+#powered_by_label {
+font-size: 11px;
+}
+
+#liscense_no_label {
+font-size: 14px;
+}
+
+#gov_of_telangana_label {
+
+font-size:14px;
+}
+#pet_certificate_label{
+font-size:14px;
+}
+#aodh_intelligence_label {
+font-size: 12px;
+}
+#button_id{
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #gov_img {
+
+width: 30%;
+height: 30%;
+
+
+}
+
+#company_logo_img {
+
+height: auto;
+ max-width: 100%;
+}
+
+#card_id {
+margin-top: 2%;
+width: 100%;
+height: fit-content;
+}
+#gov_of_telangana_label {
+
+font-size:20px;
+}
+#pet_certificate_label{
+font-size:20px;
+}
+#aodh_intelligence_label {
+font-size: 20px;
+font-weight: bold;
+}
+#powered_by_label {
+font-size:16px;
+}
+#liscense_no_label {
+font-size:16px;
+}
+#button_id{
+float: right;
+background-color: #003300;
+color: white;
+}
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+       #gov_img {
+
+            width: 30%;
+            height: 30%;
+
+          
+        }
+
+        #company_logo_img {
+
+            height: auto;
+             max-width: 100%;
+        }
+
+        #card_id {
+            margin-top: 2%;
+            width: 100%;
+           height: fit-content;
+        }
+        #gov_of_telangana_label {
+
+font-size:20px;
+}
+#pet_certificate_label{
+font-size:20px;
+}
+#aodh_intelligence_label {
+font-size: 20px;
+font-weight: bold;
+}
+#powered_by_label {
+            font-size:16px;
+        }
+        #liscense_no_label {
+            font-size:16px;
+        }
+        #button_id{
+            float: right;
+            background-color: #003300;
+            color: white;
+        }
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="container">
+                <div class="container" id="">
+                    <div class="row" id="card_row">
+                        <div class="col-12" id="card_col">
+                            <div class="card" id="card_id">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg-8">
+                                            <label id="powered_by_label">Powered by:</label>
+                                            <label id="aodh_intelligence_label" style="color: green;">AODH INTELLIGENCE</label>
+                                            <div class="row">
+                                                <div class="col-2 col-sm-3 col-md-2 col-lg-2">
+                                                </div>
+                                                <div class="col-4 col-sm-2 col-md-2 col-lg-2">
+                                                    <img id="company_logo_img"
+                                                        src="{% static 'media/Siva-Company-logo_copy12.png' %}">
+                                                </div>
+                                                 <div class="col-6 col-sm-7 col-md-8 col-lg-8"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6 col-sm-6 col-md-6 col-lg-4">
+                                            <label id="liscense_no_label">License No.</label>
+                                            {% for z in x %}
+                                            {{z.pet_id.licence_number}} 
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-124">
+                                            <div id="img_div">
+                                               <center> <img id="gov_img" src="{% static 'media/gov_of_telangana.png' %}"></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                            <label id="gov_of_telangana_label">Government of Telangana -GHMC
+                                                Hyderabad</label>
+
+ 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                            <label id="pet_certificate_label">Pet Liscense Certificate</label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="wrapper mt-4" id="wrapper_id">
+                                       
+                                        <div class="row" style="background-color:  #99ebff;height:fit-content;">
+                                            {% for i in x %}
+                                            <div class="col-12">
+                                                <label>Pet Name:</label>
+                                                {{i.pet_id.name}} 
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Breed:</label>
+                                                {{i.pet_id.breed}}   
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Owner:</label>
+                                                {{i.pet_id.customer_id.customer_name}}
+                                            </div>
+                                            <div class="col-6">
+                                                <label<>Contact:</label>
+                                                {{i.pet_id.customer_id.mobile}} 
+                                            </div>
+                                            <div class="col-6">
+                                                <label<>Email ID:</label>
+                                               {{i.pet_id.customer_id.email}}
+                                            </div>
+                                            <div class="col-12">
+                                                <label>Adress:</label>
+                                                {{i.pet_id.address}}
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Date:</label>
+                                                {{today_date}}  
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Valid upto:</label>
+                                                {{endDate}}
+                                            </div>
+
+                                        </div>
+
+                                        {% endfor %}
+                                    </div>
+                                 
+
+                                    <div class="row mt-1">
+                                        <div class="col-12">
+                                        <button onclick="myFunction()"  id="button_id" class="btn btn-default" >Print</button>
+                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <script>
+            function myFunction() {
+            var printdata = document.getElementById('button_id');  
+            printdata.style.display="none";
+            window.print();
+        
+        }
+        </script>
+</body>
+
+</html>

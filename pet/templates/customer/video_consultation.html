@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>list of video consultation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    
+  </head>
+   <style>
+          #img_id{
+                       width: 100px;
+                       height: 100px;
+                       border-radius: 50%;
+                   }
+                   #circle_id{
+                        height: 100px;
+                        width: 100px;
+                        background-color: #bbb;
+                        border-radius: 50%;
+                        display: inline-block;
+                        }
+     body{
+        font-size: 16px;
+      }
+   
+      .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color:white;
+      background-color:white;
+      overflow-x: hidden;
+      transition: 0.3s;
+    }
+    
+    .overlay-content {
+      position: absolute;
+      top: 100px;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+    
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+    
+     margin-left: 200px;
+      font-size: 40px;
+        color: #1f7a1f;
+    }
+    
+    #pet_profile{
+                    font-size: 16px;
+                     color: #003300;
+    
+                 }
+             #blog{
+    
+                    font-size: 16px;
+                     color: #003300;
+    
+                 }
+             #vaccination_history{
+                 font-size: 16px;
+                     color: #003300;
+    
+                 }
+             #deworming_history{
+                 font-size: 16px;
+                     color: #003300;
+    
+                 }
+             #previous_visit{
+                 font-size: 16px;
+                     color: #003300;
+    
+                 }
+             #about_us {
+                         font-size: 16px;
+                         color: #003300;
+                        }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) 
+{
+  #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+        
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+ 
+  #heading_div{
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+          margin: 7px;
+            padding: 7px;
+        }
+        #pet_name_id{
+        
+          font-size: 14px;
+        }
+        #booked_date_id{
+          font-size: 14px;
+        }
+        #call_on_id{
+          font-size: 14px;
+        }
+        #time_slot_id{
+          font-size: 14px;
+        }
+        #meeting_id{
+          font-size: 14px;
+        }
+        #card_id{
+          border-radius: 20px;
+          border-style: solid;
+          border-color: #1f7a1f;
+          width: 100%;
+        }
+        #video_call_button_id{
+          width: 70px;
+          border-radius: 10px;
+        }
+        #video_call_icon_id{
+          font-size: 22px;
+        }
+        #back_button_id{
+          margin: 4%;
+        }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+        
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+  #heading_div{
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+          margin: 7px;
+            padding: 7px;
+        }
+        #card_id{
+          border-radius: 20px;
+          border-style: solid;
+          border-color: #1f7a1f;
+          width: 100%;
+        }
+        #video_call_button_id{
+          width: 70px;
+          border-radius: 10px;
+        }
+        #back_button_id{
+          margin: 4%;
+        }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+        
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+  #heading_div{
+    margin-left: auto;
+    margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+          margin: 7px;
+            padding: 7px;
+        }
+        #card_id{
+          border-radius: 20px;
+          border-style: solid;
+          border-color: #1f7a1f;
+          width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #video_call_button_id{
+          width: 70px;
+          border-radius: 10px;
+        }
+        #close_btn{
+          margin-left: 80%;
+        }
+        #back_button_id{
+          margin: 2%;
+        }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+        
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+  body{
+    overflow-x: hidden;
+  }
+  #heading_div{
+    margin-left: auto;
+    margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+          margin: 7px;
+            padding: 7px;
+        }
+        #card_id{
+          border-radius: 20px;
+          border-style: solid;
+          border-color: #1f7a1f;
+          width: 70%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #video_call_button_id{
+          width: 70px;
+          border-radius: 10px;
+        }
+        #close_btn{
+          margin-left: 80%;
+        }
+        #back_button_id{
+          margin: 2%;
+        }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+        
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+  body{
+    overflow-x: hidden;
+  }
+  #heading_div{
+    margin-left: auto;
+    margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+          margin: 7px;
+            padding: 7px;
+        }
+        #card_id{
+          border-radius: 20px;
+          border-style: solid;
+          border-color: #1f7a1f;
+          width: 60%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #video_call_button_id{
+          width: 70px;
+          border-radius: 10px;
+        }
+        #close_btn{
+          margin-left: 80%;
+        }
+        #back_button_id{
+          margin-top: 1%;
+          margin-right: 20%;
+        }
+}
+</style>
+
+ 
+  <body>
+    <div id="grad1">
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+              <div class="overlay-content">
+                <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                  id="pet_profile" style="font-weight: bold;" href="{% url 'mypets' %}">
+                  My pets
+                </a></li>
+              <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                      id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a></li>
+              <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                      id="about_us" style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a></li>            </div>
+        </div>
+              <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+          </div>
+          <div class="col-xs-6 col-sm-5 col-md-5 col-lg-4">
+            
+              <a> <button type="button" class="btn btn"
+                      style="background-color: #003300;color: white;width: fit-content;float: right;"
+                      id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+              </a>
+            
+          </div>
+      </div>
+    <div class="row">
+      <div class="col">
+        <div id="heading_div">
+        <h4 id='heading_id'>Booked video consultation</h4>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+    {% for vc in video_list %}
+    <div class="row">
+      <div class="col">
+        <div class="card" id="card_id">
+          <div class="card-body">
+         <!--pet name row starts -->
+          <div class="row">
+          <div class="col-6">
+           <label  style="color: #003300;font-weight: bold;"> Pet name:</label> {{vc.pet_id.name}}
+            </div>
+            <div class="col-6">
+              <label  style="color: #003300;font-weight: bold;"> Booked date:</label> {{vc.booking_date}}
+              </div>
+          </div>
+        <!--pet name row ends -->
+         <!-- call on row starts -->
+       
+         <div class="row">
+          <div class="col-6">
+            <label style="color: #003300;font-weight: bold;"> Call on:</label> {{vc.date}}
+            </div>
+            <div class="col-6">
+              <label style="color: #003300;font-weight: bold;"> Time slot:</label> {{vc.time_slot}}
+              </div>
+          </div>
+        <!--call on row ends -->
+        
+         <!-- meeting id row starts -->
+         <!-- <div class="row">
+          <div class="col-12">
+            <label style="color: #003300;font-weight: bold;"> Meeting id: </label>{{vc.meeting_id}}
+            </div>
+          
+          </div> -->
+        <!--meeting id row ends -->
+         <!-- meeting id row starts -->
+         <div class="row">
+      
+            <div class="col-12">
+              <a href="{% url 'roomxx' roomid=vc.meeting_id usertype='participant' userref=vc.customer_id.customer_name customerid=vc.customer_id.customer_id doctorid=None %}" style="float: right;"> <button type="button" class="btn btn-light" style="background-color: #003300;" id="video_call_button_id"><i class='fas fa-video' style="color: white;" id="video_call_icon_id"></i> </button></a> 
+              </div>
+          </div>
+        <!--meeting id row ends -->
+          </div>
+        </div>
+        
+        </div>
+      </div>
+      {% endfor %}
+
+    <!-- <table class="table table"  id="t01">
+      <thead>
+        <tr>
+          <th scope="col" style="background-color: #003300; color: white;" id="pet_name_id">Pet name</th>
+          <th scope="col" style="background-color: #003300; color: white;"  id="booked_date_id">Booked date</th>
+          <th scope="col" style="background-color: #003300; color: white;"  id="call_on_id">Call on</th>
+          <th scope="col" style="background-color: #003300; color: white;"  id="time_slot_id">Time slot</th>
+          <th scope="col" style="background-color: #003300; color: white;"  id="meeting_id">Meeting id</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        {% for vc in video_list %}
+        <tr>
+          <td id="paet_name_td">{{vc.pet_id.name}}</td>
+          <td id="booking_date_td">{{vc.booking_date}}</td>
+          <td id="call_on_td">{{vc.date}}</td>
+          <td id="time_slot_td">{{vc.time_slot}}</td>
+          <td id="meeting_id_td">{{vc.meeting_id}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table> -->
+</div>
+</div>
+</div>
+<script>
+     function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+  </body>
+</html>

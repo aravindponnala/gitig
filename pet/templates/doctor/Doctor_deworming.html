@@ -1,0 +1,2039 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>doctor deworming</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+
+    #vitals_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+
+
+    #vaccination_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+
+    }
+
+    #deworming_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    /* {#=====================ANDROID MOBILE (FOR portrait)==========================#} */
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+        body {
+            width: auto;
+            height: auto;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_table_id {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        .deworming_td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+
+        }
+
+
+
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 50%;
+            margin-left: 48%;
+
+        }
+
+        .hard_left {
+            padding: 10px;
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        #last_date_heading {
+
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #current_date_heading {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #next_dose_heading {
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #last_date_input {
+            width: 60%;
+
+        }
+
+        input[type="date"] {
+            display: block;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            min-height: 28px;
+            width: 120px;
+        }
+
+        #current_date_input {
+
+            width: 120px;
+        }
+
+        #next_dose_input {
+            width: 140px;
+            margin-left: 8%;
+        }
+
+        #current_date_input1 {
+            margin-left: 4%;
+            width: 140px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+    }
+
+    /* ==============Small devices (portrait tablets and large phones, 600px and up) =================================*/
+    @media only screen and (min-width: 600px) {
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        body {
+            width: auto;
+            height: auto;
+        }
+
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+
+        #vaccination_a {
+
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            font-size: 14px;
+
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #deworming_table_id {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        .deworming_td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+
+
+        .outer {
+            position: relative
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 60%;
+            margin-left: 42%;
+
+        }
+
+        .hard_left {
+            padding: 10px;
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        #last_date_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #current_date_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #next_dose_heading {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #last_date_input {
+            width: 60%;
+
+        }
+
+        #next_dose_input {
+            width: 140px;
+            margin-left: 8%;
+        }
+
+        #current_date_input1 {
+            margin-left: 4%;
+            width: 120px;
+        }
+
+        input[type="date"] {
+            display: block;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            min-height: 28px;
+            width: 120px;
+        }
+
+        #current_date_input {
+            width: 120px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        #heading_div {
+            margin-right: auto;
+            margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+        #disease_a {
+
+            text-align: center;
+        }
+
+        #vaccination_a {
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+
+            text-align: center;
+        }
+
+        #vitals_a {
+
+
+            text-align: center;
+        }
+
+        #assessment_a {
+
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+
+            text-align: center;
+        }
+
+        #deworming_table_id {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        .deworming_td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+        th {
+            text-align: center;
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+
+
+        #next_dose_input {
+            margin-left: 2%;
+        }
+
+        .outer {
+            width: 80%;
+            margin-left: 10%;
+            position: relative;
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 80%;
+            margin-left: 30%;
+
+        }
+
+        .hard_left {
+            padding: 10px;
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        table {
+            width: auto;
+        }
+
+        #last_date_input {
+            width: 60%;
+            text-align: center;
+        }
+
+        #current_date_input {
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        #next_dose_input {
+            text-align: center;
+            margin-left: 12%;
+            width: 140px;
+        }
+
+        #current_date_input1 {
+            margin-left: 8%;
+            width: 140px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+
+
+
+    }
+
+    /* =======================Large devices (laptops/desktops, 992px and up) ==========*/
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        #heading_div {
+            margin-right: auto;
+            margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+
+        #vaccination_a {
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+
+            text-align: center;
+        }
+
+        #vitals_a {
+
+
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+
+            text-align: center;
+        }
+
+        #deworming_table_id {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+        .deworming_td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+        th {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+        }
+
+
+
+        .outer {
+            width: 80%;
+            margin-left: 20%;
+            position: relative;
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 80%;
+            margin-left: 20%;
+
+        }
+
+        .hard_left {
+            padding: 10px;
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            /*ie7*/
+            left: 0;
+
+        }
+
+        table {
+            width: auto;
+        }
+
+        #last_date_input {
+            width: 60%;
+            text-align: center;
+        }
+
+        #current_date_input {
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        #next_dose_input {
+            text-align: center;
+            margin-left: 14%;
+            width: 140px;
+        }
+
+        #current_date_input1 {
+            margin-left: 10%;
+            width: 140px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+
+
+
+    }
+
+
+
+
+
+    /* =============Extra large devices (large laptops and desktops, 1200px and up)======================== */
+    @media only screen and (min-width: 1200px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_id {
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        #heading_div {
+            margin-right: auto;
+            margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+
+        #vaccination_a {
+
+            text-align: center;
+        }
+
+        #deworming_a {
+
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            text-align: center;
+        }
+
+        #assessment_a {
+
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+            text-align: center;
+        }
+
+        #deworming_table_id {
+            table-layout: fixed;
+            width: auto;
+            *margin-left: -100px;
+            /*ie7*/
+        }
+
+
+        .deworming_td {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            width: 140px;
+
+        }
+
+        th {
+            vertical-align: top;
+            border-top: 1px solid #ccc;
+
+
+
+            text-align: center;
+        }
+
+
+        .outer {
+            width: 100%;
+            margin-left: 17%;
+            position: relative;
+        }
+
+        .inner {
+            overflow-x: scroll;
+            overflow-y: visible;
+            width: 50%;
+            margin-left: 17%;
+
+        }
+
+        .hard_left {
+            border: none;
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            *position: relative;
+            padding: 10px;
+            left: 0;
+
+        }
+
+        table {
+            width: auto;
+        }
+
+        #last_date_input {
+            width: 60%;
+            text-align: center;
+        }
+
+        #current_date_input {
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        #current_date_input1 {
+            text-align: center;
+            margin-left: 15%;
+            width: 140px;
+        }
+
+        #current_date_heading {
+            padding-left: 40px;
+            text-align: center;
+        }
+
+        #next_dose_heading {
+            padding-left: 40px;
+            text-align: center;
+        }
+
+        #next_dose_input {
+            text-align: center;
+            margin-left: 25%;
+            width: 140px;
+        }
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+
+
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+
+    body {
+        /* Set "my-sec-counter" to 0 */
+        counter-reset: my-sec-counter;
+    }
+
+    h5::before {
+        /* Decrement "my-sec-counter" by 1 */
+        counter-increment: my-sec-counter 1;
+        content: "VISIT"counter(my-sec-counter);
+    }
+</style>
+
+
+<body id="body_id">
+    <input type="hidden" value="{{ doc_pk }}" name="doc_id" id="doc_id">
+    <!----------------- gradient div ------------------------->
+    <div id="grad1">
+        <div class="one" id="border_id">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                            style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor
+                            profile</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                            style="font-weight: bold;" href="{% url 'list_patient' %}">List of patients
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                            style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<span
+                                class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                    </li>
+                    <li id="show_div" style="display: none">
+
+                        <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                            style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                            style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                            style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                            style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                            style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Books"
+                            style="font-weight: bold;" href="{% url 'books_sbar' %}">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics </a>
+                    </li>
+                    {% if doc_pk_stock.stock_management == 'yes' %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;"
+                            href="{% url 'stocks' %}">Stocks</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91
+                                9030504908</u></a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;">About</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                    </li>
+
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+
+            <label id="pet_name_label" class="ml-2"><b>Pet name:</b></label>{{ pet_obj.name }}
+            <label id="breed_label" class="ml-2"><b>Breed:</b></label>{{ pet_obj.breed }}
+            <label id="age_label" class="ml-2"><b>Age:</b></label>{{ pet_obj.dob}}
+            <label id="gender_label" class="ml-2"><b>Gender:</b></label>{{ pet_obj.gender }}
+            <label id="diet_label"
+                class="ml-2"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }},{{ purpose_pet_obj_diet.diet_state }}
+
+            <form method="post">
+                {% csrf_token %}
+                <div id="wrapper_id" class="wrapper ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10">
+                                <a href="{% url 'doctor_history'  %}"
+                                    class="byn btn" style="background-color: #003300;color: white;float: right;">
+                                    History</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-2" id="container_id">
+                        <div class="card" id="symptoms_card">
+                            <div class="card-body m-0 p-0">
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button name="vitals_name" class="btn btn  m-0 p-0" type="submit"
+                                            style="outline: none;">
+                                            <span id="vitals_span"> <i class="fas fa-file-medical-alt"
+                                                    style="columns: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vitals</span></button>
+
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn m-0 p-0" id="vaccination_a" name="vaccination_name"
+                                            style="background-color: white;outline: none;"><span
+                                                id="vaccination_span"><i class='fas fa-syringe'
+                                                    style="font-size: 20px;padding-top: 5px;color: #003300;"></i></span><br><span>Vaccination</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                        <button class="btn btn m-0 p-0" id="deworming_a" name="deworming_name"
+                                            style="outline: none;background-color: #003300;color: white;"><span
+                                                id="deworming_span"><img class="img-fluid"
+                                                    style="width: 100%;height: 100%;padding-top: 2px;"
+                                                    src="{% static 'media/deworming.jpg' %}"
+                                                    id="dewarming_img_id"></span><br>Deworming</button>
+                                    </div>
+                                </div>
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light m-1 p-1" name="assessment_name" id="assessment_a"
+                                            style="color: darkgray;background-color: white;"> <i
+                                                class="fas fa-notes-medical" style="font-size: 20px;"></i><br><span
+                                                id="symptoms_span">Symptoms</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light m-1 p-1" id="diagnostics_a"
+                                            style="color: darkgray;background-color: white;" name="diagnostic_name"><i
+                                                class="fas fa-laptop-medical"
+                                                style="font-size: 20px;"></i><br><span>Diagnostics</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light m-1 p-1" name="prescription_name"
+                                            id="prescription_a" style="color: darkgray;background-color: white;"><i
+                                                class="fas fa-prescription"
+                                                style="font-size: 20px ;"></i><br><span>Prescription</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="test" value="{{ x.due_date }}" name="">
+                        <input type="hidden" id="test1" value="{{ x.last_date }}" name="">
+                        <div class="outer mt-4">
+                            <div class="inner">
+                                <table id="deworming_table_id">
+                                    <tr>
+                                        <th class="hard_left" id="last_date_heading">Last date</th>
+                                        {% for v_c in last_deworming %}
+                                        <th>
+                                            <h5></h5>
+                                        </th>
+                                        {% endfor %}
+                                        <th scope="col" id="current_date_heading">Current date</th>
+                                        <th scope="col" id="next_dose_heading">Next dose</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="hard_left"><input type="text" ID="last_date_input" readonly
+                                                name="last_date" class="current_date_input"
+                                                value="{{ cust_deworming.last_deworming }}"></td>
+                                        {% for v_h_data in last_deworming %}
+                                        <td class="deworming_td"><input type="text" readonly ID="current_date_input"
+                                                value="{{ v_h_data.last_date }}" name=""></td>
+                                        {% endfor %}
+                                        <td class="deworming_td"><input type="date" ID="current_date_input1"
+                                                name="current_date" class="current_date_input"></td>
+                                        <td class="deworming_td"><input type="date" ID="next_dose_input" name="due_date"
+                                                class="next_dose_input"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+        <input type="hidden" name="symptoms" id="symptoms_input" value="{{ purpose_pet_obj.disease }}">
+        <input type="hidden" name="" id="symptoms_text" value="{{ purpose_pet_obj.symptoms_text }}">
+        <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+        <input type="hidden" name="" id="purpose_visit" value="{{ purpose_pet_obj.vaccination_purpose }}">
+        <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-10">
+                        <button onclick="myFunction()" class="btn btn" id="submit_button"
+                            style="color: white;background-color: red;float: right;">Close visit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+
+
+    </div>
+
+    <!-- --------------------gradient div end ------------------------------------->
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script>
+    function openNav() {
+        if (window.matchMedia("(min-width: 993px)").matches) {
+            document.getElementById("myNav").style.width = "29%";
+        }
+        else {
+            document.getElementById("myNav").style.width = "75%";
+
+        }
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    function show_doctors_corner() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+
+        }
+    }
+
+    var inputs = document.getElementsByTagName('input');
+    // console.log(inputs.value)
+    for (var i = 0; i < inputs.length; i++) {
+        var str = inputs[i].value;
+        console.log(typeof str)
+        if (str == 'Jan. 1, 1000') {
+            inputs[i].value = 'N/A';
+
+        }
+    }
+
+
+    // future date restriction for last deworming and vaccination
+    $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate() + 1;
+        var year = dtToday.getFullYear();
+
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+
+
+        $('#next_dose_input').attr('min', maxDate);
+
+    });
+    // future date restriction n pevious date restriction for last deworming and vaccination
+    $(function () {
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+
+        if (month < 10)
+            month = '0' + month.toString();
+        if (day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+
+
+        $('#current_date_input1').attr('min', maxDate);
+        $('#current_date_input1').attr('max', maxDate);
+
+    });
+
+    x = document.getElementById('test').value;
+    y = document.getElementById('test1').value;
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+
+    }
+
+    document.getElementById('current_date_input1').value = formatDate(document.getElementById('test1').value)
+
+    document.getElementById('next_dose_input').value = formatDate(x)
+
+
+    function myFunction() {
+        if (confirm("Do you wish to continue")) {
+            document.getElementById('submit_button').setAttribute('type', '');
+
+            document.getElementById('submit_button').name = 'close_visit';
+
+        } else {
+            document.getElementById('submit_button').setAttribute('type', 'button');
+
+
+        }
+
+    }
+
+    // on load functions
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var symp = document.getElementById('symptoms_input').value;
+        var symp_list = symp.split(',');
+        console.log(symp_list)
+        if (symp_list.includes('Diarrhea')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+
+        }
+        if (symp_list.includes('Weight loss')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Limping')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Skin')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Injuries')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Tooth broken')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Fracture')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Tongue')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Eye')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+        if (symp_list.includes('Bleeding')) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+
+
+
+
+        var purpose_visit = document.getElementById('purpose_visit').value;
+        purpose_visit_list = purpose_visit.split(',');
+        console.log(purpose_visit_list)
+        if (purpose_visit_list.includes('VACCINATION')) {
+            document.getElementById('vaccination_span').style.background = 'lightgreen';
+        }
+        if (purpose_visit_list.includes('DEWORMING')) {
+            document.getElementById('deworming_span').style.background = 'lightgreen';
+        }
+
+        var symp_text = document.getElementById('symptoms_text').value;
+        console.log(symp_text)
+        var n = symp_text.length
+        if (n > 2) {
+            document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+        }
+    });
+
+
+</script>

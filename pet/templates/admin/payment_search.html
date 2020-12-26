@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="wrapper">
+            <div class="container" style="text-align: center;">
+                <div class="row" style="text-align: right;">
+                    <div class="col">
+                      <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+                    </div>
+                  </div>
+<h1>Payment Dash board</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="mobile" placeholder=" doctor Mobile number">
+    <input type="date" value="" id="filter_date" name="filter_date">
+    <button type="submit" class="btn">Search</button>
+</form>
+</div>
+</div>
+</body>
+</html>

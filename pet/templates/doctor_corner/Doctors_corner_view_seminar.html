@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>seminar</h1>
+    {% for seminar in seminars%}
+<div class="" >
+   
+        <b>Title:</b>
+        {{seminar.title|title}} <br>
+        <b>Location:</b>
+        {{seminar.location}} <br>
+       
+          <b>Date:</b>
+          {{seminar.date}} <br>
+            <b>Time:</b>
+            {{seminar.timings}} <br>
+    
+       <b>Content</b>
+        {{seminar.content}} <br>
+     
+  </div>
+    {% endfor %}
+  </body>
+</html>

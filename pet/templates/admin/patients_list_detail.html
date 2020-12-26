@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+            <div class="container" style="text-align: center;">
+              <div class="row" style="text-align: right;">
+                <div class="col">
+                  <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+                </div>
+              </div>
+    <h1>Customer details</h1>
+    <table id="customers">
+          <thead>
+          <tr>
+            <th><center><b>Customer name</b></center></th>
+          <th><center><b>Pet id</b></center></th>
+          <th><center><b>consultation Amount</b></center></th>
+          <th><center><b>subscription Amount</b></center></th>
+          <th><center><b>payment type</b></center></th>
+          <th><center><b>visit type</b></center></th>
+          <th><center><b>Summary</b></center></th>
+          <!-- <th><center><b>amount</b></center></th> -->
+          </tr>
+          </thead>
+          {% for values in doctorviewlog %}
+          <form action="" method="POST">
+            {% csrf_token %}
+          <tbody>
+          <tr>
+          <td><center>{{ values.customer_id.customer_name }}</center></td>
+          <td><center>{{ values.pet_id.pet_id }}</center></td>
+          <td><center>{{ values.doc_pk.consultation_fee }}</center></td>
+          <td><center>{{ values.subscription_fee }}</center></td>
+          <td><center>{{ values.payment_type }}</center></td>
+          <td><center>{{ values.mode }}</center></td>
+          <td><center><a role='button' class="btn btn-info" href="{% url 'customer_previous_visit' purpose_id=values.purpose_id.id %}">Summary</a></center></td>
+          </tr>
+          </tbody>
+          </form>
+          {% endfor %}
+        </table>
+        </div>
+    </div>
+  </body>
+</html>

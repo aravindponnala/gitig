@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypet</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- for drop down -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+</head>
+
+<style>
+    #grad1 {
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        filter: brightness(100%);
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+ 
+    #circle_id {
+        height: 100px;
+        background-color: #bbb;
+        border-radius: 20%;
+        display: inline-block;
+    }
+
+    .row:before,
+    .row:after {
+      display: inline-block !important;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #div_id {
+            margin-top: 2%;
+        }
+
+        #card_id {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+        float: right;
+    }
+    }
+
+
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #div_id {
+            margin-top: 2%;
+        }
+
+        #card_id {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+        float: right;
+    }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #div_id {
+            margin-top: 2%;
+        }
+
+        #card_id {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+    float: left;
+    }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #div_id {
+            margin-top: 2%;
+        }
+
+        #card_id {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+  margin-left: 12%;
+    }
+    }
+
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #div_id {
+            margin-top: 0.5%;
+        }
+
+        #card_id {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+        #back_button{
+        background-color: #003300;
+        color: white;
+        margin-left: 3%;
+    }
+    }
+
+   
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="container">
+            
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                            <div id="heading_div">
+                                <h3 id="heading_id" style="font-weight: bold;">My pets</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                            <a role="button" id="back_button" class="btn" href="{% url 'customer_home_page' customer_id=customer_id %}">Home</a>
+                        </div>
+                    </div>
+                    {% for pet in pets %}
+                    <!-- card begins -->
+                    <div class="card mt-1" id="card_id">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-8 col-lg-9 col-xl-9">
+                                   <b> Name</b>: {{pet.name}}
+                                    <div class="row">
+                                        <div class="col">
+                                            <b> Age</b>: {{pet.dob}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <b>Gender</b>: {{pet.gender}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                                            <select name="" class="selectpicker form-control" id="subjectFilter"
+                                                data-none-selected-text="More.." id="dropDown">
+                                                <option style="display:none">View history...</option>
+
+                                                <option value="{% url 'last_deworming' customer_id=pet.pet_id %}">
+                                                    Deworming history</option>
+                                                <option value="{% url 'last_vaccination' customer_id=pet.pet_id %}">
+                                                    Vaccination history</option>
+                                                <option
+                                                    value="{% url 'summary_customer' customer_id=customer_id pet_id=pet.pet_id %}">
+                                                    Previous visit history</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-lg-3 col-xl-3">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- <img src="" class="img-thumbnail" alt="Cinque Terre"> -->
+                                            {% if pet.pet_id in petlist %}
+                                            {% for petimg in petimg %}
+                                            {% if pet.pet_id == petimg.pet_id.pet_id %}
+                                            <img class="circle" src="{{media_url}}{{petimg.pet_image}}" id="circle_id" style="width: 100%;">
+                                            {% endif %}
+                                            {% endfor %}
+                                            {% else %}
+                                            <span class="circle" id="circle_id"  style="width: 100%;"></span>
+                                            {% endif %}
+                                            <form method="post" action="/petimage/" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                <div id="choose_file_div" class="row mt-2">
+                                                    <div class="col-12 text-center">
+                                                        <label class="fa fa-camera"> <input type="file" name="file"
+                                                                id="camerasave" accept="image/*" hidden required></label>
+                                                        <input type="hidden" value="{{ customer_id }}" id="customer_id"
+                                                            name="customer_id">
+                                                        <input type="hidden" value="{{ pet.pet_id }}" name="petid">
+                                                        <input type="submit" value="Save">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card ends -->
+                    {% endfor %}
+               
+            </div>
+        </div>
+    </div>
+    <script>
+        // var dropDownValue = document.getElementById("dropDown");
+
+        // dropDownValue.onchange = function() {
+        //   if (this.selectedIndex !== 0) {
+        //     window.location.href = this.value;
+        //   }
+        // };
+
+
+        $(document).on('change', '.selectpicker', function (e) {
+            e.preventDefault();
+
+            window.location = $(this).find('option:selected').val();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,478 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Doctor login</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<style>
+
+    /* {#=====================ANDROID MOBILE (FOR portrait)==========================#} */
+    
+    @media only screen and (max-width: 600px) 
+    {    .row {
+            width: 100%;
+            height: 100%;
+        }
+        body{
+        overflow: hidden;
+    }
+        .col {
+            width: 100%;
+            height: 100%;
+        }
+    #logo_div{
+        margin-top: 35%;
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        
+         #grad1 {
+             min-height: 100vh;
+            width: auto;
+          
+            filter: brightness(100%);
+            height:auto;
+            background-color: lightgrey; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+    
+     body {
+                    height: auto;
+                    width: auto;
+                    
+                }
+        #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 80%;
+                        }
+        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            }
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }
+    
+       
+    }
+    
+    
+    @media only screen and (min-width: 600px){
+        #grad1 {
+                filter: brightness(100%);
+                min-height: 100vh;
+                height: auto;
+                background-color: lightgrey; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            } 
+            body{
+        overflow: hidden;
+    }
+          
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }
+        #logo_div{
+            margin-top: 35%;
+        width: 50%;
+        height: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 80%;
+                        }
+                        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            }
+        }
+    
+    
+        @media only screen and (min-width: 768px) {
+        #grad1 {
+                filter: brightness(100%);
+                min-height: 100vh;
+                height: auto;
+                background-color: lightgrey; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            } 
+            
+            body{
+        overflow: hidden;
+    }
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }
+        #logo_div{
+            margin-top: 20%;
+        width: 40%;
+        height: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 60%;
+                        }
+                        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            }
+        }
+    
+    @media (min-device-width : 993px)and (max-device-width : 1024px){
+        #grad1 {
+                display: inline-block;
+                filter: brightness(100%);
+                min-height: 100vh;
+                height: auto;
+                background-color: lightgrey; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            } 
+            body{
+        overflow: hidden;
+    }   
+         
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }
+        #logo_div{
+            margin-top: 10%;
+        width: 25%;
+        height: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 50%;
+                        }
+                        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            }
+    }
+    /* {#==============================for desktop=========================================#} */
+    
+    @media only screen and (min-width: 992px)  {
+    
+         #grad1 {
+                filter: brightness(100%);
+                min-height: 100vh;
+                height: auto;
+                background-color: lightgrey; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+    
+    
+            body{
+        overflow: hidden;
+    }
+        .row {
+            width: 100%;
+        }
+    
+        .col {
+            width: 100%;
+        }
+        #logo_div{
+         margin-top: 10%;
+        width: 25%;
+        height: 25%;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+     #logo_id{
+        
+     }
+       
+        #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width:40%;
+                        }
+                        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            }
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }
+    }
+    @media only screen and (min-width: 1200px) {
+         #grad1 {
+                filter: brightness(100%);
+                min-height: 100vh;
+                height: auto;
+                background-color: lightgrey; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+    
+    body{
+        overflow: hidden;
+    }
+    
+        .row {
+            width: 100%;
+        }
+    
+        .col {
+            width: 100%;
+        }
+        #logo_div{
+         margin-top: 10%;
+        width: 25%;
+        height: 25%;
+        margin-left: auto;
+        margin-right: auto;
+       
+    }
+     #logo_id{
+        
+     }
+       
+        #enter_mobile_number_email {
+            border-width: 0.75px;
+            margin-top: 20px;
+            text-align: center;
+            }
+            #enter_email_div{
+                        margin-left: auto;
+                        margin-right: auto;
+                        width:40%;
+                        }
+                        #password_id {
+            border-width: 0.75px;
+            text-align: center;
+            border-style: solid;
+            border-color: #1f7a1f;
+            }
+    
+            #password_div{
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            }
+        #login_button_div {
+            color: white;
+            background-color: #003300;
+            margin-left: auto;
+            margin-right: auto;
+            width:auto;
+            font-size: 16px;
+              height: 40px;
+              border-radius: 10px;
+    
+        }}
+    
+    
+    </style>
+
+<body>
+    <div id="grad1">
+        <div id="wrapper_id" class="wrapper ">
+            <div class="container" id="container_id">
+                <form method="post">
+                    {% csrf_token %}
+                    <!-- {#     -----------------------   logo----------------------------------#} -->
+
+                    <div class="row">
+                        <div id="logo_div">
+                            <img class="img-fluid " src="{% static 'media/Siva-Company-logo copy.png' %}" id="logo_id">
+                        </div>
+                    </div>
+
+                    <!-- {#       -------------------- email/mobile number------------------------------------------#} -->
+                    <div class="row">
+                        <div id="enter_email_div">
+                            <input type="text" class="form-control" id="enter_mobile_number_email" name="username"
+                                placeholder="Enter mobile number/ Email" style=" border-radius: 30px; border-style: solid;
+                border-color: #1f7a1f;">
+                        </div>
+                    </div>
+
+                    <!-- {#    ------------------------   enter password-----------------------------#} -->
+                    <div class="row mt-3">
+                        <div id="password_div">
+                            <input type="password" class="form-control" id="password_id" name="password"
+                                placeholder="Password" style=" border-radius: 30px; border-style: solid;
+                border-color: #1f7a1f;">
+                        </div>
+                    </div>
+                    <!-- {#     -----------------------   login --------------------------------#} -->
+                    <div class="row mt-3">
+                        <div id="login_button_div">
+                            <button type="submit" class="btn group btn-group" id="login_button"
+                                style="color: white; font-weight: bold;">Login</button>
+
+                        </div>
+                    </div>
+                    <br>
+
+                </form>
+                <!-- validation message starts -->
+                <div class="row">
+                    <div class="col text-center" style="color: red;">
+                        {% for i in messages %}
+                        {{i}}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+     $(document).ready(function() {
+          function disablePrev() { window.history.forward() }
+          window.onload = disablePrev();
+       
+          window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+       });
+</script>
+</html>

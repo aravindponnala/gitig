@@ -1,0 +1,12 @@
+
+
+    
+    
+    {% for i in verify %}
+    <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="petid" value="{{ i.pet_id.id }}">
+    <input type="submit" value="{{i.pet_id.name}}"><br>
+</form>
+    {% endfor %}
+

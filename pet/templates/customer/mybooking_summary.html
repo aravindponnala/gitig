@@ -1,0 +1,1114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+    #img_id {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    #circle_id {
+        height: 100px;
+        width: 100px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #heading_id {
+            margin: 4px;
+            padding: 6px;
+        }
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #back_button_id {
+            margin: 4%;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: content-box;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            height: auto;
+            width: auto;
+        }
+
+        #booking_summarY {
+            margin-left: 3%;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        #doctor_name {
+            font-size: 16px;
+        }
+
+        #consultation_fee_first_label {
+            font-size: 16px;
+        }
+
+
+
+
+        #current_diet_first_label {
+            font-size: 16px;
+        }
+
+        #symptoms_first_label {
+            font-size: 16px;
+        }
+
+        #visit_purpose_first_label {
+            font-size: 16px;
+        }
+
+
+        #visit_purpose {
+            font-size: 16px;
+
+        }
+
+        #service_charges {
+            font-size: 16px;
+
+        }
+
+        #sub_total {
+            font-size: 16px;
+
+        }
+
+        #pay_online {
+            color: white;
+            background-color: #003300;
+            margin-top: 5%;
+            width: 50%;
+            margin-left: 25%;
+
+        }
+
+        #pay_at_clinic {
+            margin-top: 5%;
+            color: white;
+            background-color: #003300;
+            width: 50%;
+            margin-left: 25%;
+
+        }
+
+        #pet_profile {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+
+        }
+
+        #hr_first {
+
+
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: content-box;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            height: auto;
+            width: auto;
+        }
+
+        #back_button_id {
+            margin: 4%;
+        }
+
+        #booking_summarY {
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        #doctor_name {
+            font-size: 16px;
+        }
+
+        #consultation_fee_first_label {
+            font-size: 16px;
+        }
+
+
+
+
+        #current_diet_first_label {
+            font-size: 16px;
+        }
+
+        #symptoms_first_label {
+            font-size: 16px;
+        }
+
+        #visit_purpose_first_label {
+            font-size: 16px;
+        }
+
+
+        #visit_purpose {
+            font-size: 16px;
+
+        }
+
+        #service_charges {
+            font-size: 16px;
+
+        }
+
+        #sub_total {
+            font-size: 16px;
+
+        }
+
+        #pay_online {
+            color: white;
+            background-color: #003300;
+            margin-top: 5%;
+            width: 50%;
+            margin-left: 25%;
+
+        }
+
+        #pay_at_clinic {
+            margin-top: 5%;
+            color: white;
+            background-color: #003300;
+            width: 50%;
+            margin-left: 25%;
+
+        }
+
+        #pet_profile {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+
+        }
+
+        #hr_first {
+
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #booking_summarY {
+            margin-left: 25%;
+        }
+
+        #pay_online {
+            margin-top: 2%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pay_at_clinic {
+            margin-top: 1%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pet_profile {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #003300;
+
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+
+        #doctor_name {
+            margin-left: 60%;
+        }
+
+        #consultation_fee_first_label {
+            margin-left: 60%;
+        }
+
+        #current_diet_first_label {
+            margin-left: 60%;
+        }
+
+        #symptoms_first_label {
+            margin-left: 60%;
+        }
+
+        #visit_purpose_first_label {
+            margin-left: 60%;
+
+        }
+
+
+        #service_charges {
+            margin-left: 60%;
+        }
+
+        #sub_total {
+            margin-left: 60%;
+        }
+
+
+        #hr_first {
+            width: 70%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #hr_second {
+            width: 70%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #booking_summarY {
+            margin-left: 34%;
+        }
+
+        #pay_online {
+            margin-top: 2%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pay_at_clinic {
+            margin-top: 1%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pet_profile {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #003300;
+
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+
+
+        #doctor_name {
+            margin-left: 60%;
+        }
+
+        #consultation_fee_first_label {
+            margin-left: 60%;
+        }
+
+        #current_diet_first_label {
+            margin-left: 60%;
+        }
+
+        #symptoms_first_label {
+            margin-left: 60%;
+        }
+
+        #visit_purpose_first_label {
+            margin-left: 60%;
+
+        }
+
+
+        #service_charges {
+            margin-left: 60%;
+        }
+
+        #sub_total {
+            margin-left: 60%;
+        }
+
+
+
+        #hr_first {
+            width: 55%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #hr_second {
+            width: 55%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+
+
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #booking_summarY {
+            margin-left: 34%;
+        }
+
+        #pay_online {
+            margin-top: 2%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pay_at_clinic {
+            margin-top: 1%;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            width: 20%;
+            margin-left: 38%;
+        }
+
+        #pet_profile {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #003300;
+
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+        #doctor_name {
+            margin-left: 60%;
+        }
+
+        #consultation_fee_first_label {
+            margin-left: 60%;
+        }
+
+        #current_diet_first_label {
+            margin-left: 60%;
+        }
+
+        #symptoms_first_label {
+            margin-left: 60%;
+        }
+
+        #visit_purpose_first_label {
+            margin-left: 60%;
+
+        }
+
+
+        #service_charges {
+            margin-left: 60%;
+        }
+
+        #sub_total {
+            margin-left: 60%;
+        }
+
+        #hr_first {
+            width: 40%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #hr_second {
+            width: 40%;
+            height: 1px;
+            background-color: rgb(12, 2, 2);
+            border: none;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #back_button_id {
+            margin-top: 2%;
+        }
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+    <div id="grad1">
+        <div id="first_div">
+            <div class="row">
+                <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4">
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+                                style="font-weight: bold;" href="{% url 'mypets' %}">
+                                My pets
+                              </a></li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a>
+                            </li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a>
+                            </li>
+                        </div>
+                    </div>
+                    <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+                </div>
+
+
+                <div class="col-xs-7 col-sm-6 col-md-6 col-lg-4 m-0 p-0">
+                    <div id="heading_div">
+                        <h4 id="heading_id" style="font-weight: bold;">BOOKING SUMMARY</h4>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4">
+
+                    <a> <button type="button" class="btn btn"
+                            style="background-color: #003300;color: white;width: fit-content;" id="back_button_id"
+                            onclick="window.history.go(-1); return false;">Back</button>
+                    </a>
+
+                </div>
+            </div>
+
+            <div id="wrapper_id" class="wrapper ">
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;font-size: 16px;" id="booking_id">Booking ID</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    {{purpose.booking_id}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" id="doctor_name_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="doctor_name">Doctor name:</label>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;">  {{ doctor_name }}
+                                    {{purpose.doctor.Name_of_doctor}}</span>
+                                </div>
+                            </div>
+                            <div class="row" id="consultation_fee_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="consultation_fee_first_label">Consultation fee:</label>
+                                </div>
+                                {% if purpose.consultation_fee == '0' %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;">  Pay To Doctor</span>
+                                </div>
+                                {% else %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;">  {{ purpose.consultation_fee }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="row" id="current_diet_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="current_diet_first_label">Current diet:</label>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;">  {{purpose.purpose_id.diet}}{{purpose.purpose_id.diet_state}}</span>
+                                </div>
+                            </div>
+                            <div class="row" id="symptoms_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="symptoms_first_label">Symptoms:</label>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;" id="symptoms_second_label"><b>{{purpose.purpose_id.disease}}</b>
+                                </span>
+                                <span style="font-size: 14px;">  {{purpose.purpose_id.symptoms_text}}   <span style="font-size: 14px;"></span>
+                                </div>
+                            </div>
+                            <div class="row" id="visit_purpose_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="visit_purpose_first_label">Visit purpose:</label>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span style="font-size: 14px;">  {{purpose.purpose_id.vaccination_purpose}}</span>
+                                </div>
+                            </div>
+                            <hr id="hr_first">
+                            <div class="row" id="sub_total_div_id">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 m-0 p-0">
+                                    <label for="create-account" class="form-label" style="font-weight: bold;"
+                                        id="sub_total">
+                                        Total:</label>
+                                </div>
+                                {% if purpose.final_fee  == '0' %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span id="sub_total_second_label">
+                                        pay to doctor</span>
+                                </div>
+                                {% else %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 m-0 p-0">
+                                    <span id="sub_total_second_label">
+                                        {{ purpose.final_fee }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <hr id="hr_second">
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+
+
+        function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

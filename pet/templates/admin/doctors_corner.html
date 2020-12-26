@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>Doctors Corner</h1>
+
+
+    <a href="{% url 'conferences'%}" role="button" class="btn">Conferences</a><br>
+    <a href="{% url 'seminars'%}" role="button" class="btn">seminars</a><br>
+    <a href="{% url 'vet_news'%}" role="button" class="btn">vet news</a><br>
+    <a href="{% url 'books'%}" role="button" class="btn">books</a><br>
+    <a href="{% url 'articles'%}" role="button" class="btn">articles</a><br>
+    <a href="{% url 'case_reports'%}" role="button" class="btn">case reports</a><br>
+  </body>
+</html>

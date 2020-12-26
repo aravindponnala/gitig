@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+  #grad1 {
+    min-width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    filter: brightness(100%);
+
+    background-color: lightgrey;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, white, lightgrey);
+    /* Standard syntax (must be last) */
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    #heading_id {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    #heading_div {
+
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    #heading_id {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    #heading_div {
+
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    #heading_id {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    #heading_id {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    #heading_id {
+
+      padding: 5px;
+      margin: 5px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+  }
+</style>
+
+<body>
+  <div id="grad1">
+    <div class="wrapper">
+      <div class="row">
+        <div class="col">
+          <div id="heading_div">
+            <h3 id="heading_id">ARTICLE</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        {% for article in article %}
+        <div class="wrapper">
+          <div class="row">
+            <div class="col">
+
+              <b>Title:</b>
+              {{article.article_title}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <b>Summary:</b>
+              {{article.summery}}<br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <b>Published on:</b>
+              {{article.published_on}}<br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <b>Authors:</b>
+              {{article.authors}}<br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <b>Content</b>
+              {{article.content}}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

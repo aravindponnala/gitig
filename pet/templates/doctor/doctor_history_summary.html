@@ -1,0 +1,1779 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>summary history</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+<style>
+
+.row:before, .row:after{
+ display: inline-block !important;
+}
+  
+  
+ .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+
+    #doctor_analytics {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctors_corner {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #list_of_patients {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctor_prrofile {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #helpline_number {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #about {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #Articles {
+        font-size: 16px;
+        width: 250px;
+    }
+
+    #Case_studies {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #Case_reports {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #conferences {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #Vet_needs {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #Seminars {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #Books {
+        font-size: 16px;
+        width: 250px;
+        color: #003300;
+    }
+
+    #Articles {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #Case_studies {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #Case_reports {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #conferences {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #Vet_needs {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #Seminars {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    #Books {
+        font-size: 16px;
+        color: #003300;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #wrapper_id {
+            width: 100%;
+        }
+
+
+        .row {
+            width: 100%;
+        }
+
+        .col {
+            width: 100%;
+        }
+
+        .form-label {
+            width: 100%;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        body {
+            height: auto;
+            width: auto;
+
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            border-radius: 10px;
+            filter: brightness(100%);
+
+
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+        #table_id {
+
+margin-right: auto;
+margin-left: auto;
+width: 99%;
+border-color: green;
+border-style: solid;
+
+}
+        #heading_id {
+            margin: 3px;
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #span_id {
+            color: #003300;
+        }
+
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+
+
+
+
+        #vitals_row_div {
+            margin-top: 2%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #vitals_div {
+
+            width: 100%;
+        }
+
+        #assessment_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #assessment_div {
+
+            width: 100%;
+        }
+
+        #symptoms_and_diet_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #symptoms_and_diet_div {
+
+            width: 100%;
+        }
+
+        #deworming_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #deworming_div {
+
+            width: 100%;
+        }
+
+        #diagnostic_row_div {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #diagnostic_div {
+
+            width: 100%;
+        }
+
+        #prescription_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #prescription_div {
+
+            width: 100%;
+        }
+
+        #vaccination_row_div {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #vaccination_div {
+
+            width: 100%;
+        }
+
+
+        .panel-body {
+            width: 100%;
+        }
+        #back_button_id{
+            margin: 4%;
+        }
+    }
+
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #wrapper_id {
+            width: 100%;
+        }
+
+
+        .row {
+            width: 100%;
+        }
+
+        .col {
+            width: 100%;
+        }
+
+        .form-label {
+            width: 100%;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        body {
+            height: auto;
+            width: auto;
+
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+
+
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            border-color: green;
+            border-style: solid;
+
+            }
+        #heading_id {
+            margin: 3px;
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #span_id {
+            color: #003300;
+        }
+
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+
+
+
+        #vitals_row_div {
+            margin-top: 2%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #vitals_div {
+
+            width: 100%;
+        }
+
+        #assessment_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #assessment_div {
+
+            width: 100%;
+        }
+
+        #symptoms_and_diet_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #symptoms_and_diet_div {
+
+            width: 100%;
+        }
+
+        #deworming_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #deworming_div {
+
+            width: 100%;
+        }
+
+        #diagnostic_row_div {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #diagnostic_div {
+
+            width: 100%;
+        }
+
+        #prescription_row_div {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #prescription_div {
+
+            width: 100%;
+        }
+
+        #vaccination_row_div {
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        #vaccination_div {
+
+            width: 100%;
+        }
+
+
+        .panel-body {
+            width: 100%;
+        }
+        #back_button_id{
+            margin: 2%;
+        }
+    }
+
+    /* ==========Medium devices (landscape tablets, 768px and up) ===========================================*/
+    @media only screen and (min-width: 768px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #heading_id {
+            margin: 3px;
+            padding: 3px;
+        }
+
+        #heading_div {
+        float: right; 
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+        #table_id {
+
+margin-right: auto;
+margin-left: auto;
+width: 70%;
+border-color: green;
+border-style: solid;
+
+}
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+
+        #vitals_row_div {
+            margin-top: 2%;
+            margin-left: 7%;
+
+        }
+
+        #vitals_div {
+
+            width: 80%;
+        }
+
+        #assessment_row_div {
+
+            margin-left: 7%;
+
+        }
+
+        #assessment_div {
+
+            width: 80%;
+        }
+
+        #symptoms_and_diet_row_div {
+            margin-left: 7%;
+
+        }
+
+        #symptoms_and_diet_div {
+
+            width: 80%;
+        }
+
+        #deworming_row_div {
+            margin-left: 7%;
+
+        }
+
+        #deworming_div {
+
+            width: 80%;
+        }
+
+        #diagnostic_row_div {
+
+            margin-left: 7%;
+        }
+
+        #diagnostic_div {
+
+            width: 80%;
+        }
+
+        #prescription_row_div {
+            margin-left: 7%;
+
+        }
+
+        #prescription_div {
+
+            width: 80%;
+        }
+
+        #vaccination_row_div {
+            margin-left: 7%;
+
+        }
+
+        #vaccination_div {
+
+            width: 80%;
+        }
+
+
+        .panel-body {
+            width: 100%;
+        }
+        #close_btn{
+            margin-left: 80%;
+        }
+        #back_button_id{
+            margin: 2%;
+        }
+    }
+
+
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #heading_id {
+            margin: 4px;
+        }
+
+        #heading_div {
+            float: right; 
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+        #table_id {
+            border-width:2px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 55%;
+            border-color: green;
+            border-style: solid;
+
+        }
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #vitals_row_div {
+            margin-top: 2%;
+            margin-left: 7%;
+
+        }
+
+        #vitals_div {
+
+            width: 80%;
+        }
+
+        #assessment_row_div {
+
+            margin-left: 7%;
+
+        }
+
+        #assessment_div {
+
+            width: 80%;
+        }
+
+        #symptoms_and_diet_row_div {
+
+            margin-left: 7%;
+        }
+
+        #symptoms_and_diet_div {
+
+            width: 80%;
+        }
+
+        #deworming_row_div {
+            margin-left: 7%;
+
+        }
+
+        #deworming_div {
+
+            width: 80%;
+        }
+
+        #diagnostic_row_div {
+
+            margin-left: 7%;
+        }
+
+        #diagnostic_div {
+
+            width: 80%;
+        }
+
+        #prescription_row_div {
+            margin-left: 7%;
+
+        }
+
+        #prescription_div {
+
+            width: 80%;
+        }
+
+        #vaccination_row_div {
+            margin-left: 7%;
+
+        }
+
+        #vaccination_div {
+
+            width: 80%;
+        }
+
+
+        .panel-body {
+            width: 100%;
+        }
+        #close_btn{
+            margin-left: 80%;
+        }
+        #back_button_id{
+            margin: 2%;
+        }
+    }
+
+
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #heading_id {
+            margin: 3px;
+
+        }
+
+        #heading_div {
+            float: right; 
+            margin-right: 5%;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top:5px;
+            width: fit-content;
+            text-align: center;
+        }
+        #table_id {
+            border-width:2px;
+            width: 30%;
+            margin-right: auto;
+            margin-left: auto;
+            border-color: green;
+            border-style: solid;
+        }
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+
+        #vitals_row_div {
+            margin-top: 2%;
+
+
+        }
+
+        #vitals_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #assessment_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+
+
+        #symptoms_and_diet_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+      
+
+        #deworming_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+
+        #diagnostic_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #prescription_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+
+        #vaccination_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+        .panel-body {
+            width: 100%;
+        }
+        #close_btn{
+            margin-left: 80%;
+        }
+        #back_button_id{
+            margin: 1%;
+            margin-right: 10%;
+        }
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div id="first_div">
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-7 col-lg-7 col-xl-7">
+                    <div id="heading_div">
+                        <h3 id="heading_id">HISTORY</h3>
+                        </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-4 col-xl-2">
+        
+                    <a> <button type="button" class="btn btn"
+                            style="background-color: #003300;color: white;width: fit-content;float: right;"
+                            id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+                    </a>
+        
+                </div>
+            </div>
+            <div id="wrapper_id" class="wrapper">
+                <!-- <div class="container">
+                    <div class="row" style="justify-content: center;">
+                        <div class="col-xs-7 col-sm-5 col-md-4 col-lg-4 m-0 p-0 mt-2">
+                            <button class="list-group-item list-group-item-action" role="tab"
+                            style="font-weight: bold;text-align: center;border-radius: 30px;background-color: whitesmoke;color: black;"
+                            onclick="window.history.go(-2); return false;">Purpose
+                            of the visit</button>
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-3 m-0 p-0 mt-2">
+                            <a class="list-group-item list-group-item-action" role="tab"
+                            style="font-weight: bold;text-align: center;background-color: #003300;color:white;border-radius: 30px;" onclick="window.history.go(-1); return false;"
+                          >History</a>
+                        </div>
+                        
+                    </div>
+                    </div> -->
+                    <br>
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+                        <form method="post">
+                            {% csrf_token %}
+                            {% if vitals.items %}
+                            <div class="row" id="vitals_row_div">
+                                <div id="vitals_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">VITALS</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in vitals.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            {% endif %}
+                            <!-- assessment -->
+                            <div class="row" id="assessment_row_div">
+                                {% if assessment.items %}
+                                <div id="assessment_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">ASSESSMENT</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in assessment.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
+                            </div>
+                            <!-- symptoms -->
+                            <div class="row" id="symptoms_and_diet_row_div">
+                                {% if symptoms.items %}
+                                <div id="symptoms_and_diet_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">SYMPTOMS & DIET</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in symptoms.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
+                            </div>
+                            <!-- vaccination -->
+                            <div class="row" id="vaccination_row_div">
+                                {% if vaccination.items %}
+                                <div id="vaccination_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">VACCINATION</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in vaccination.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
+                            </div>
+
+                            <!-- deworming -->
+
+                            <div class="row" id="deworming_row_div">
+                                {% if deworming.items %}
+                                <div id="deworming_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">DEWORMING</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in deworming.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
+                            </div>
+
+                            <!-- diagnostic -->
+                            <div class="row" id="diagnostic_row_div">
+                                {% if diagnostic.items %}
+                                <div id="diagnostic_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">DIAGNOSTICS</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in diagnostic.items%}
+                                            <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>.</b>
+                                            </span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                {% endif %}
+                            </div>
+
+                             <!-- prescription -->
+                             <div class="row" id="prescription_row_div">
+                                {% if prescription or prescription_image.Prescription_img %}
+                                <div id="prescription_div">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <span style="font-weight: bold;font-size: 20px;">PRESCRIPTION</span>
+                                        </div>
+                                        <div class="panel-body">
+                                            {% for key,value in prescription.items%}
+                                            {% if key == 'followup_date' %}
+                                            <span id="follow_up_span" style="font-size: 15px;"><b>Follow-up date :</b></span>
+
+                                            
+                                            <!-- <label>foll</label> -->
+                                            <span id="test" style="font-size: 15px;"><b>{{value}}</b> .</span><br>
+                                            {% else %}
+                                            <span id="test" style="font-size: 15px;"><b>{{value}}</b> .</span><br>
+
+
+                                           {% endif %}
+                                            {% endfor %}
+                                            <i>*(M=Morning;AN=Afternoon;N=night;)</i>
+
+                                            {% if prescription_image.Prescription_img%}
+                                            <div class="row">
+                                                <div class="col">
+                                                       <img class="img-fluid " src="{{media_url}}{{prescription_image.Prescription_img}}"
+                                                 >
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                {% endif %}
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "50%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+    <script>
+
+
+        function show_doctors_corner() {
+            if (document.getElementById('show_div').style.display == 'none') {
+                document.getElementById('show_div').style.display = 'inline-block';
+
+
+            } else {
+                document.getElementById('show_div').style.display = 'none';
+
+            }
+        }
+
+        var x = document.getElementsByTagName('span')
+        for (i = 0; i < x.length; i++)
+            console.log(x)
+
+
+          
+            function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    function show_doctors_corner() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+
+        }
+    }
+
+    </script>
+</body>
+
+</html>

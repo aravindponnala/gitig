@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>booking summary</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<style>
+    #img_id {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    #circle_id {
+        height: 100px;
+        width: 100px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    html,
+    body {
+        margin: 0%;
+        padding: 0%;
+        overflow-x: hidden;
+    }
+
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #hr_first {
+
+            height: 1px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+
+            height: 1px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin: 4%;
+        }
+
+        #pay_online {
+            background-color: #003300;
+            color: white;
+            margin-right: 2%;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #hr_first {
+
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #back_button_id {
+            margin: 4%;
+        }
+
+        #pay_online {
+            background-color: #003300;
+            color: white;
+            margin-right: 2%;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 2%;
+            margin-right: 25%;
+        }
+
+        #hr_first {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+      
+
+        #pay_online {
+            background-color: #003300;
+            color: white;
+            margin-right: 12%;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 2%;
+            margin-right: 25%;
+        }
+
+        #hr_first {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+    
+
+        #pay_online {
+            background-color: #003300;
+            color: white;
+            margin-right: 2%;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+    
+    #registration_charges{
+        margin-left: 50%;
+    }
+    #service_charges{
+        margin-left: 50%;
+    }
+    #sub_total{
+        margin-left: 50%;
+    }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            min-height: 100vh;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+        #back_button_id {
+            margin-top: 2%;
+            margin-right: 25%;
+         
+        }
+        #hr_first {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+        #hr_second {
+            width: 50%;
+            height: 0.75px;
+            background-color: #000000;
+            border: none;
+        }
+
+       
+        #pay_online {
+            background-color: #003300;
+            color: white;
+            margin-right: 7%;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+    #registration_charges{
+        margin-left: 60%;
+    }
+    #service_charges{
+        margin-left: 60%;
+    }
+    #sub_total{
+        margin-left: 60%;
+    }
+  
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+                                style="font-weight: bold;" href="{% url 'mypets' %}">
+                                My pets
+                              </a></li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a></li>
+                        </div>
+                    </div>
+                    <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+
+                    <a> <button type="button" class="btn btn"
+                            style="background-color: #003300;color: white;width: fit-content;float: right;"
+                            id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+                    </a>
+
+                </div>
+            </div>
+            <div id="heading_div">
+                <h3 id="heading_id"> BOOKING SUMMARY</h3>
+
+            </div>
+            <div class="container mt-4">
+
+                <div class="row" id="registration_charges_row">
+                    <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7">
+                        <label id="registration_charges" style="color: #003300;">Pet registration charges:</label>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        200
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8  col-sm-8 col-md-7 col-lg-7">
+                        <label id="service_charges" style="color: #003300;">Service charges:</label>
+                    </div>
+                    <div class="col-xs-4  col-sm-4 col-md-4 col-lg-4">
+                        30
+                    </div>
+                </div>
+                <hr id="hr_first">
+                <div class="row">
+                    <div class="col-xs-8  col-sm-8 col-md-7 col-lg-7" >
+                        <label id="sub_total" style="color: #003300;">Sub total:</label>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        230
+                    </div>
+                </div>
+                <hr id="hr_second">
+            </div>
+
+            <form method="POST" action="https://api.razorpay.com/v1/checkout/embedded">
+                <input type="hidden" name="key_id" value="rzp_live_KzOTrbFmBHrpSH">
+                <input type="hidden" name="order_id" value="{{order_id}}">
+                <input type="hidden" name="name" value="Acme Corp">
+                <input type="hidden" name="description" value="A Wild Sheep Chase">
+                <input type="hidden" name="image" value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.png">
+                <input type="hidden" name="prefill[name]" value="Gaurav Kumar">
+                <input type="hidden" name="prefill[contact]" value="9123456780">
+                <input type="hidden" name="prefill[email]" value="gaurav.kumar@example.com">
+                <input type="hidden" name="notes[shipping address]"
+                    value="L-16, The Business Centre, 61 Wellfield Road, New Delhi - 110001">
+                <input type="hidden" name="callback_url"
+                    value="https://aodhpet.com/license/conform/{{pet_id}}/{{customer_id}}">
+                <input type="hidden" name="cancel_url" value="https://example.com/payment-cancel">
+                <div class="row">
+                    <div class="col-12 col-sm-10 col-md-10 col-lg-9">
+                        <button type="submit" class="btn btn" id="pay_online">Pay online</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+          function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+</body>
+
+</html>

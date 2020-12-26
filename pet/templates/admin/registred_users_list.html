@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="row" style="text-align: right;">
+      <div class="col">
+        <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+      </div>
+    </div>
+  <form method="post" id="myform">
+    {% csrf_token %}
+  <div class="row" >
+    <div class="col-6 col-sm-6 col-md-6 col-1g-6">
+    <h3 style="color: #003300;">List of registered users</h3>
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-1g-6">
+    <h3 style="text-align: right;margin-right: 10%;color: #003300;">Filter by date</h3>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col" style="text-align: right;">
+
+      <input type="date" value="{{filter_date}}" id="filter_date" name="filter_date">
+    <button type="button" onclick="refresh()">Reset</button>
+    </div>
+  </div>
+</form>
+{% if user %}
+    <table class="table table-bordered table-sm" id="customers">
+          <thead>
+          <tr>
+            <th><center><b>Registered Date</b></center></th>
+          <th><center><b>customer id</b></center></th>
+          <th><center><b>customer name</b></center></th>
+          <th><center><b>Email</b></center></th>
+          <th><center><b>Mobile</b></center></th>
+          <th><center><b>Address</b></center></th>
+          <th><center><b>Subscription</b></center></th>
+          <th><center><b>Pets</b></center></th>
+          </tr>
+          </thead>
+          
+          {% for user_det in user %}
+          <tbody>
+          <tr>
+          <td><center>{{ user_det.date}}</center></td>
+          <td><center>{{ user_det.customer_id }}</center></td>
+          <td><center>{{ user_det.customer_name }}</center></td>
+          <td><center>{{ user_det.email }}</center></td>
+          <td><center>{{ user_det.mobile}}</center></td>
+          <td><center>{{ user_det.address }}</center></td>
+          <td><center>{{ user_det.subscribed}}</center></td>
+
+          <td><a href="{% url 'admin_pet_list' customer_id=user_det.customer_id %}">Pet Details</a></td>
+          </tr>
+          </tbody>
+          {% endfor %}
+           </table>
+          {% else %}
+          <div class="row" style="text-align: center;">
+            <div class="col">
+              <span style="color: red;">No Registered users on this date</span>
+            </div>
+          </div>
+         
+          {% endif %}
+
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <script>
+        $(function () {
+      $("#filter_date").change(function () {
+        document.getElementById("myform").submit();
+      });
+        });
+
+function refresh(){
+  location = location['href']
+}
+</script>
+  </body>
+</html>

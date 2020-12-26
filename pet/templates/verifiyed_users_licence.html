@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>verified users list</h1>
+    <button style="float: left;"> <a  href="{% url 'verify_licence' %}">Back</a></button>
+
+    <table class="table table-bordered table-sm" id="customers">
+          <thead>
+          <tr>
+          <th><center><b>customer_name</b></center></th>
+          <th><center><b>email</b></center></th>
+          <th><center><b>mobile</b></center></th>
+          <th><center><b>vaccination doc</b></center></th>
+          <th><center><b>rabbies doc</b></center></th>
+          <th><center><b>coustomerid_proof</b></center></th>
+          
+       
+          </tr>
+          </thead>
+          {% for i in verify %}
+          <form method="post">
+              {% csrf_token %}
+          <tbody>
+          <tr>
+          <input type="hidden" name="petid" value="{{i.pet_id.id}}">    
+          <td><center>{{ i.pet_id.customer_id.customer_name }}</center></td>
+          <td><center>{{ i.pet_id.customer_id.email }}</center></td>
+          <td><center>{{ i.pet_id.customer_id.mobile }}</center></td>
+          <td><center><a href="{{ media_url }}{{i.file1}}">open</a></center></td>
+          <td><center><a href="{{ media_url }}{{i.file2}}">open</a></center></td>
+          <td><center><a href="{{ media_url }}{{i.file3}}">open</a></center></td>
+         
+          </tr>
+          </tbody>
+        </form>
+          {% endfor %}
+  </body>
+</html>

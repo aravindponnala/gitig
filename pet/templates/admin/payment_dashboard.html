@@ -1,0 +1,82 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+            <div class="container" style="text-align: center;">
+<h1>Payment Dashboard</h1>
+
+
+  <div class="row" style="text-align: left;">
+    <div class="col">
+    <h4>Doctor name:&nbsp;{{doctor.Name_of_doctor}}</h4>
+<h4>Doctor mobile:&nbsp;{{doctor.Mobile}}</h4>
+  </div>
+</div>
+
+
+<table class="table table-bordered table-sm" id="customers">
+          <thead>
+          <tr>
+            <th><center>Booking id</center></th>
+            <th><center>Payment id</center></th>
+          <th><center>Order id</center></th>
+          <th><center>Payment status</center></th>
+          <th><center>Amount paid</center></th>
+          
+          <th><center>Customer name</center></th>
+          <th><center>Customer mobile number</center></th>
+          <th><center>Pet id</center></th>
+          </tr>
+          </thead>
+          {% for data in data %}
+          <tbody>
+          <tr>
+            <td><center>{{ data.booking_id }}</center></td>
+          <td><center>{{ data.Payment_id }}</center></td>
+          <td><center>{{ data.order_id }}</center></td>
+          <td><center>{{ data.payment_status }}</center></td>
+          <td><center>{{ data.amount_paid }}</center></td>
+          
+          <td><center>{{ data.customer_name }}</center></td>
+          <td><center>{{ data.customer_mobile }}</center></td>
+          <td><center>{{ data.pet }}</center></td>
+          </tr>
+          </tbody>
+          {% endfor %} 
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+    <div class="row" style="text-align: right;">
+      <div class="col">
+        <a href="{% url 'admin_home_page' %}" role='button' class="btn btn-success">Home</a>
+      </div>
+    </div>
+     <form method="post">
+    {% csrf_token %}
+  
+  <button class="btn" name="2_days">Generate before 2 days</button><br>
+  <button class="btn" name="1_day">Generate before 1 day</button><br>
+  <button class="btn" name="on_day">Generate on the day</button><br>
+  </form>
+  {% if deworming_list_rem%}
+   <form method="post" action="{% url 'deworming_reminnder_sms' %}">
+        {% csrf_token %}
+    <table id="customers">
+      <thead>
+        <th>Pet Id</th>
+        <th>Customer Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Doctor</th>
+        <th>Hospital</th>
+        <th>Reminder Date</th>
+        <th>Generated Date</th>
+      </thead>
+      {% for vac in deworming_list_rem %}
+      <tbody>
+        <tr>
+          <td>{{vac.purpose_id.pet_id.pet_id}}</td>
+           <td>{{vac.purpose_id.pet_id.customer_id.customer_name}}</td>
+          <td>{{vac.purpose_id.pet_id.customer_id.mobile}}</td>
+       
+          <td>{{vac.purpose_id.pet_id.customer_id.email}}</td>
+          <td>{{vac.purpose_id.purpose.last.doc_pk.Name_of_doctor}}</td>
+          <td>{{vac.purpose_id.purpose.last.doc_pk.Hospital}}</td>
+          <td>{{vac.due_date}}</td>
+          <td>{{today_date}}</td>
+        </tr>
+      </tbody>
+          {% endfor %}
+         
+    </table>
+      <button class="btn btn-success"  name="{{generated_day}}" >send sms</button><br>
+    </form>
+{% else %}
+<div style="text-align: center;">
+    <span ><b>No customers </b></span>
+</div>
+    {% endif %}
+  </body>
+</html>

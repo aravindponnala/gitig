@@ -1,0 +1,2129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>diagnostics & prescription</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<style>
+    .dropdown-menu {
+
+        height: 400px !important;
+    }
+
+    .bootstrap-select .btn {
+
+        border-style: solid;
+        border-width: 1px;
+        border-color: #1f7a1f;
+
+
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+
+
+
+    #vitals_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+
+
+    #vaccination_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+
+    }
+
+    #deworming_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+        #heading_id {
+            margin: 6px;
+
+        }
+
+        #heading_div {
+            width: fit-content;
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+
+
+        }
+
+        html {
+
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 99%;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {}
+
+        #deworming_a {}
+
+        #symptoms_a {}
+
+        #vitals_a {
+
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+            font-size: 14px;
+            background-color: white;
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+            font-size: 14px;
+
+        }
+
+        #prescription_a {
+            font-size: 14px;
+            background-color: white;
+
+            text-align: center;
+        }
+
+        #text_area_row {
+            margin-top: 2%;
+
+        }
+
+        #text_area_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+
+
+
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        .dropdown-menu {
+            width: 300px !important;
+            height: 200px !important;
+        }
+
+
+
+        #down_arrow {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-left: 4%;
+            border: solid #003300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+
+        }
+
+        #haematology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #hametology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hormones_row_div {
+
+            margin-top: 2%;
+        }
+
+        #hormones_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #microbiology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #microbiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #rapid_test_row_div {
+
+            margin-top: 2%;
+        }
+
+        #rapid_test_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #biochemistry_row_div {
+
+            margin-top: 2%;
+        }
+
+        #biochemistry_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_row_div {
+            margin-top: 2%;
+        }
+
+        #parasitology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #parasitology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #radiology_row_div {
+            margin-top: 2%;
+        }
+
+        #radiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+    }
+
+    /*================ Small devices (portrait tablets and large phones, 600px and up) ======================*/
+    @media only screen and (min-width: 600px) {
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #heading_id {
+            margin: 6px;
+        }
+
+        #heading_div {
+            width: fit-content;
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+
+
+        }
+
+        html {
+
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {}
+
+        #deworming_a {}
+
+        #symptoms_a {}
+
+        #vitals_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+        #prescription_a {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+
+        #text_area_row {
+            margin-top: 2%;
+
+        }
+
+        #text_area_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        .dropdown-menu {
+            width: 300px !important;
+            height: 200px !important;
+        }
+
+
+
+        #down_arrow {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-left: 4%;
+            border: solid #003300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+
+        }
+
+        #haematology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #hametology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hormones_row_div {
+
+            margin-top: 2%;
+        }
+
+        #hormones_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #microbiology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #microbiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #rapid_test_row_div {
+
+            margin-top: 2%;
+        }
+
+        #rapid_test_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #biochemistry_row_div {
+
+            margin-top: 2%;
+        }
+
+        #biochemistry_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_row_div {
+            margin-top: 2%;
+        }
+
+        #parasitology_row_div {
+
+            margin-top: 2%;
+        }
+
+        #parasitology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #radiology_row_div {
+            margin-top: 2%;
+        }
+
+        #radiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #breed_label {
+            margin-left: 2%;
+        }
+
+
+
+    }
+
+
+    /* ================Medium devices (landscape tablets, 768px and up) =================*/
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            margin: 6px;
+
+
+        }
+
+
+        #heading_div {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+
+
+
+        }
+
+        html {
+
+            overflow-x: hidden;
+        }
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+
+        #table_id {
+            margin-right: auto;
+            margin-left: auto;
+            width: 75%;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-bottom: 5px;
+            margin-top: 5px;
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {}
+
+        #deworming_a {}
+
+        #symptoms_a {}
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+
+            text-align: center;
+        }
+
+
+        #text_area_row {
+            margin-top: 2%;
+
+        }
+
+        #text_area_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 25%;
+        }
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        .dropdown-menu {
+            width: 300px !important;
+            height: 200px !important;
+        }
+
+
+
+        #down_arrow {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-left: 4%;
+            border: solid #003300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+
+        }
+
+        #haematology_row_div {
+
+            margin-top: 1%;
+        }
+
+        #hametology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hormones_row_div {
+
+            margin-top: 10px;
+        }
+
+        #hormones_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #microbiology_row_div {
+
+            margin-top: 10px;
+        }
+
+        #microbiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #rapid_test_row_div {
+
+            margin-top: 10px;
+        }
+
+        #rapid_test_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #biochemistry_row_div {
+
+            margin-top: 10px;
+        }
+
+        #biochemistry_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_row_div {
+            margin-top: 10px;
+        }
+
+        #parasitology_row_div {
+
+            margin-top: 10px;
+        }
+
+        #parasitology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #radiology_row_div {
+            margin-top: 10px;
+        }
+
+        #radiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+    }
+
+    /* ==================Large devices (laptops/desktops, 992px and up) ==================*/
+    @media only screen and (min-width: 992px) {
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            margin: 6px;
+
+
+        }
+
+        #heading_div {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+
+
+
+        }
+
+        html {
+
+            overflow-x: hidden;
+        }
+
+        #table_id {
+            border-width: 2px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 55%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vaccination_a {}
+
+        #deworming_a {}
+
+        #symptoms_a {}
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #assessment_a {
+
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+
+            text-align: center;
+        }
+
+        #text_area_row {
+            margin-top: 2%;
+
+        }
+
+        #text_area_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        .dropdown-menu {
+            width: 300px !important;
+            height: 200px !important;
+        }
+
+
+
+        #down_arrow {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-left: 4%;
+            border: solid #003300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+
+        }
+
+        #haematology_row_div {
+
+            margin-top: 1%;
+        }
+
+        #hametology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hormones_row_div {
+
+            margin-top: 10px;
+        }
+
+        #hormones_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #microbiology_row_div {
+
+            margin-top: 10px;
+        }
+
+        #microbiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #rapid_test_row_div {
+
+            margin-top: 10px;
+        }
+
+        #rapid_test_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #biochemistry_row_div {
+
+            margin-top: 10px;
+        }
+
+        #biochemistry_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_row_div {
+            margin-top: 10px;
+        }
+
+        #parasitology_row_div {
+
+            margin-top: 10px;
+        }
+
+        #parasitology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #radiology_row_div {
+            margin-top: 10px;
+        }
+
+        #radiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+    }
+
+    /* =======================Extra large devices (large laptops and desktops, 1200px and up) =======================*/
+    @media only screen and (min-width: 1200px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            margin: 6px;
+
+        }
+
+        #heading_div {
+
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+
+
+
+        }
+
+        html {
+
+            overflow-x: hidden;
+        }
+
+        #table_id {
+            border-width: 2px;
+            width: 45%;
+            margin-right: auto;
+            margin-left: auto;
+            border-color: green;
+            border-style: solid;
+        }
+
+        #disease_a {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+
+
+        #assessment_a {
+
+
+            text-align: center;
+        }
+
+        #diagnostics_a {
+
+
+            text-align: center;
+        }
+
+        #prescription_a {
+
+
+            text-align: center;
+        }
+
+        #text_area_row {
+            margin-top: 2%;
+
+        }
+
+        #text_area_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+
+
+
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        .dropdown-menu {
+            width: 300px !important;
+            height: 200px !important;
+        }
+
+
+
+        #down_arrow {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            margin-left: 4%;
+            border: solid #003300;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+
+        }
+
+        #haematology_row_div {
+
+            margin-top: 5px;
+        }
+
+        #hametology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hormones_row_div {
+
+            margin-top: 5px;
+        }
+
+        #hormones_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #microbiology_row_div {
+
+            margin-top: 5px;
+        }
+
+        #microbiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #rapid_test_row_div {
+
+            margin-top: 5px;
+        }
+
+        #rapid_test_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #biochemistry_row_div {
+
+            margin-top: 5px;
+        }
+
+        #biochemistry_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #serology_row_div {
+            margin-top: 5px;
+        }
+
+        #parasitology_row_div {
+
+            margin-top: 5px;
+        }
+
+        #parasitology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #radiology_row_div {
+            margin-top: 5px;
+        }
+
+        #radiology_div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        #visit_purpose_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+</style>
+
+
+<body id="body_id">
+    <input type="hidden" value="{{ doc_pk }}" name="doc_id" id="doc_id">
+    <div id="grad1">
+        <div class="one" id="border_id">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                            style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor
+                            profile</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                            style="font-weight: bold;" href="{% url 'list_patient' %}">List of parients
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                            style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<i class="down"
+                                id="down_arrow"></i></a>
+                    </li>
+                    <li id="show_div" style="display: none">
+
+                        <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                            style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                            style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                            style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                            style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                            style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Books"
+                            style="font-weight: bold;" href="{% url 'books_sbar' %}">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics</a>
+                    </li>
+                    {% if doc_pk_stock.stock_management == 'yes' %}
+
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            style="font-weight: bold;" href="{% url 'stocks' %}">Stocks</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;">About</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                    </li>
+
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+            <label id="pet_name_label" ><b>Pet name:</b></label>{{ pet_obj.name }}
+            <label id="breed_label"  class="ml-2"><b>Breed:</b></label>{{ pet_obj.breed }}
+            <label id="age_label"  class="ml-2"><b>Age:</b></label>{{ pet_obj.dob }}
+            <label id="gender_label"  class="ml-2"><b>Gender:</b></label>{{ pet_obj.gender }}
+            <label
+                id="diet_label"  class="ml-2"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }},{{ purpose_pet_obj_diet.diet_state }}
+            {#------------------------side menubar ends------------------------------------------------#}
+            <form method="post">
+                {% csrf_token %}
+                <div id="wrapper_id" class="wrapper ">
+                    <!-- <div class="container">
+                        <div class="card" style="background-color:  #e6ffe6;" id="visit_purpose_card">
+
+                            <div class="card-body">
+
+
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3  col-xl-3 m-0 p-0 text-center">
+                                        <button class="btn btn" type="button" id="" style="outline: none;"><span
+                                                id="visit_purpose_span"></span>
+                                            <br><span>Visit purpose</span> </button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 m-0 p-0 text-center">
+                                        <button name="vitals_name" class="btn btn" type="submit" style="outline: none;">
+                                            <span id="vitals_span"> </span><br><span>Vitals</span></button>
+
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3  col-xl-3 m-0 p-0 text-center">
+                                        <a
+                                            href="{% url 'doctor_history'  %}"><button
+                                                class="btn btn" type="button" style="outline: none;"><span
+                                                    id="history_span"></span><br><span>History</span></button></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-9">
+                                <a
+                                            href="{% url 'doctor_history'  %}" class="byn btn" style="background-color: #003300;color: white;float: right;">
+
+                                                   History</a>
+
+                                </div>
+                        </div>
+                        </div>
+                    <div class="container mt-2">
+                        <div class="card" id="symptoms_card">
+                            <div class="card-body m-0 p-0">
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button name="vitals_name" class="btn btn  m-0 p-0" type="submit" style="outline: none;">
+                                            <span id="vitals_span">  <i class="fas fa-file-medical-alt" style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vitals</span></button>
+                                        <!-- <button class="btn btn-light m-1 p-1" id="symptoms_a" name="symptoms_name"
+                                            style="outline: none;">
+                                            <span id="symptoms_span"></span><br>Symptoms</button> -->
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light  m-0 p-0" id="vaccination_a"
+                                            name="vaccination_name" style="background-color: white;outline: none;"><span
+                                                id="vaccination_span"><i class='fas fa-syringe'
+                                                style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vaccination</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                        <button class="btn btn-light m-0 p-0" id="deworming_a" name="deworming_name"
+                                            style="background-color: white;outline: none;"><span
+                                                id="deworming_span"><img class="img-fluid" style="width: 100%;height: 100%;padding-top: 2px;"
+                                                src="{% static 'media/deworming.jpg' %}" id="dewarming_img_id"></span><br>Deworming</button>
+                                    </div>
+                                </div>
+                                <div class="wrapper" id="disease_div">
+                                    <div class="row mt-2" style="justify-content: center;">
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                            <button class="btn btn-light  m-1 p-1 " name="assessment_name"
+                                                id="assessment_a" style="outline: none;background-color: white;"> <i class="fas fa-notes-medical" style="font-size: 20px;"></i><br>
+                                                <span id="symptoms_span">Symptoms</span></button>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                            <button type="button" class="btn btn-light  m-1 p-1 " id="diagnostics_a"
+                                                style="background-color: #003300;color: white;outline: none;"
+                                                name="diagnostic_name">   <i class="fas fa-laptop-medical" style="font-size: 20px;"></i><br>
+                                                <span> Diagnostics</span></button>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                            <button class="btn btn-light  m-1 p-1 " name="prescription_name"
+                                                id="prescription_a" style="outline: none;background-color: white;"> <i class="fas fa-prescription" style="font-size: 20px ;"></i><br>
+                                                <span> Prescription</span></button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" id="container_id">
+
+                        <input type="hidden" id="test" value="{{ x }}" name="">
+                        <div class="row" id="haematology_row_div">
+                            <div id="hametology_div">
+                                <select name="haematology" id="myselect1" class="selectpicker ml-2" multiple
+                                    data-live-search="true" data-style="btn btn-outline-success"
+                                    data-none-selected-text="HAEMATOLOGY">
+                                    <option value="CBP" data-tokens="CBP">CBP</option>
+                                    <option value="CBP + ESR" data-tokens="CBP + ESR">CBP + ESR</option>
+                                    <option value="Blood cross matching" data-tokens="Blood cross matching">Blood cross
+                                        matching</option>
+                                    <option value="Absolute eosinophil count" data-tokens="Absolute eosinophil count">
+                                        Absolute eosinophil count</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="hormones_row_div">
+                            <div id="hormones_div">
+                                <select name="harmones" class="selectpicker ml-2" id="hormones_id" multiple
+                                    data-live-search="true" data-style="btn btn-outline-success"
+                                    data-none-selected-text="HORMONES">
+                                    <option value="ACTS" data-tokens="ACTS">ACTS</option>
+                                    <option value="Cortisol" data-tokens="Cortisol">Cortisol</option>
+                                    <option value="Progesterone" data-tokens="Progesterone">Progesterone</option>
+                                    <option value="Thyroid profile,total" data-tokens="Thyroid profile,total">Thyroid
+                                        profile,total</option>
+                                    <option value="Para thyroid" data-tokens="Para thyroid">Para thyroid</option>
+                                    <option value="Insulin" data-tokens="Insulin">Insulin</option>
+                                    <option value="Testosterone" data-tokens="Testosterone">Testosterone</option>
+                                    <option value="Vitamin B12" data-tokens="Vitamin B12">Vitamin B12</option>
+                                    <option value="Vitamin D,25 Hydroxy" data-tokens="Vitamin D,25 Hydroxy">Vitamin D,25
+                                        Hydroxy</option>
+                                    <option value="Folte" data-tokens="Folte">Folte</option>
+                                    <option value="Fructosamine" data-tokens="Fructosamine">Fructosamine</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" id="microbiology_row_div">
+                            <div id="microbiology_div">
+                                <select name="microbiology" class="selectpicker ml-2" multiple data-live-search="true"
+                                    id="microbiology_id" data-style="btn btn-outline-success"
+                                    data-none-selected-text="MICROBIOLOGY">
+                                    <option value="Culture()" data-tokens="Culture()">Culture()</option>
+                                    <option value="Acid fast stain" data-tokens="Acid fast stain">Acid fast stain
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="rapid_test_row_div">
+                            <div id="rapid_test_div">
+                                <select name="rapid test" class="selectpicker ml-2" multiple data-live-search="true"
+                                    id="rapid_test_id" data-style="btn btn-outline-success"
+                                    data-none-selected-text="RAPID TEST">
+                                    <option value="Parvo virus" data-tokens="Parvo virus">Parvo virus</option>
+                                    <option value="Distemper" data-tokens="Distemper">Distemper</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" id="biochemistry_row_div">
+                            <div id="biochemistry_div">
+                                <select name="biochemistry" class="selectpicker ml-2" id="biochemistry_id" multiple
+                                    data-live-search="true" data-style="btn btn-outline-success"
+                                    data-none-selected-text="BIOCHEMISTRY">
+                                    <option value="KFT" data-tokens="KFT">KFT</option>
+                                    <option value="LFT" data-tokens="LFT">LFT</option>
+                                    <option value="LFT+GGT" data-tokens="LFT+GGT">LFT+GGT</option>
+                                    <option value="Electrolite panel" data-tokens="Electrolite panel">Electrolite panel
+                                    </option>
+                                    <option value="Lipid profile" data-tokens="Lipid profile">Lipid profile</option>
+                                    <option value="PT" data-tokens="PT">PT</option>
+                                    <option value="APTt" data-tokens="APTt">APTt</option>
+                                    <option value="HbA1c" data-tokens="HbA1c">HbA1c</option>
+                                    <option value="Iron panel" data-tokens="Iron panel">Iron panel</option>
+                                    <option value="Calcium" data-tokens="Calcium">Calcium</option>
+                                    <option value="Phosphorus" data-tokens="Phosphorus">Phosphorus</option>
+                                    <option value="Total cholesterol" data-tokens="Total cholesterol">Total cholesterol
+                                    </option>
+                                    <option value="Triglycerides" data-tokens="Triglycerides">Triglycerides</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="serology_row_div">
+                            <div id="serology_div">
+                                <select name="serology" class="selectpicker ml-2" multiple data-live-search="true"
+                                    id="serology_id" data-style="btn btn-outline-success"
+                                    data-none-selected-text="SEROLOGY">
+                                    <option value="C-Reactive protein" data-tokens="C-Reactive protein">C-Reactive
+                                        protein
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row" id="parasitology_row_div">
+                            <div id="parasitology_div">
+                                <select name="parasitology" class="selectpicker ml-2" multiple data-live-search="true"
+                                    id="parasitology_id" data-style="btn btn-outline-success"
+                                    data-none-selected-text="PARASITOLOGY">
+                                    <option value="Blood protozoa" data-tokens="Blood protozoa">Blood protozoa</option>
+                                    <option value="Ear mite examination" data-tokens="Ear mite examination">Ear mite
+                                        examination</option>
+                                    <option value="Skin scrapping examination" data-tokens="Skin scrapping examination">
+                                        Skin
+                                        scrapping examination</option>
+                                    <option value="Microfilaria detection " data-tokens="Microfilaria detection ">
+                                        Microfilaria detection </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="radiology_row_div">
+                            <div id="radiology_div">
+                                <select name="radiology" class="selectpicker ml-2" multiple id="radiology_id"
+                                    data-live-search="true" data-style="btn btn-outline-success"
+                                    data-none-selected-text="RADIOLOGY">
+                                    <option value="Scanning" data-tokens="Scanning">Scanning
+                                    </option>
+                                    <option value="X ray" data-tokens="X ray">X ray
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="hide_text" value="{{ x.others }}" name="">
+                        <div class="row" id="text_area_row">
+                            <div id="text_area_div">
+                                <textarea class="form-control" name="others" id="TEXTAREA_ID"
+                                    placeholder="Enter other diagnostics"></textarea>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <input type="hidden" name="symptoms" id="symptoms_input" value="{{ purpose_pet_obj.disease }}">
+                    <input type="hidden" name="" id="symptoms_text" value="{{ purpose_pet_obj.symptoms_text }}">
+                    <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                    <input type="hidden" name="" id="purpose_visit" value="{{ purpose_pet_obj.vaccination_purpose }}">
+                    <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+
+                    <div class="wrapper">
+                        <div class="container">
+
+                            <div class="row mt-2">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-9">
+                                    <button onclick="myFunction()" class="btn btn" id="Next_button" style="background-color: red;color: white;float: right;">Close visit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Notepad Script -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+
+
+
+    <script>
+         function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+        function show_doctors_corner() {
+            if (document.getElementById('show_div').style.display == 'none') {
+                document.getElementById('show_div').style.display = 'inline-block';
+
+
+            } else {
+                document.getElementById('show_div').style.display = 'none';
+
+            }
+        }
+
+
+        //dropdown1
+        x = document.getElementById('test').value;
+        var optionsToSelect = x;
+        var select = document.getElementById('myselect1');
+
+        for (var i = 0, l = select.options.length, o; i < l; i++) {
+            o = select.options[i];
+            if (optionsToSelect.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //dropdown2
+        var optionsToSelect1 = x;
+        var select2 = document.getElementById('hormones_id');
+
+        for (var i = 0, l = select2.options.length, o; i < l; i++) {
+            o = select2.options[i];
+            if (optionsToSelect1.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+
+        //dropdown3
+        var optionsToSelect3 = x;
+        var select3 = document.getElementById('microbiology_id');
+
+        for (var i = 0, l = select3.options.length, o; i < l; i++) {
+            o = select3.options[i];
+            if (optionsToSelect3.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //dropdown4
+        var optionsToSelect4 = x;
+        var select4 = document.getElementById('rapid_test_id');
+
+        for (var i = 0, l = select4.options.length, o; i < l; i++) {
+            o = select4.options[i];
+            if (optionsToSelect4.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //dropdown5
+        var optionsToSelect5 = x;
+        var select5 = document.getElementById('biochemistry_id');
+
+        for (var i = 0, l = select5.options.length, o; i < l; i++) {
+            o = select5.options[i];
+            if (optionsToSelect5.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+
+        //dropdown6
+        var optionsToSelect6 = x;
+        var select6 = document.getElementById('serology_id');
+
+        for (var i = 0, l = select6.options.length, o; i < l; i++) {
+            o = select6.options[i];
+            if (optionsToSelect6.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //dropdown7
+        var optionsToSelect7 = x;
+        var select7 = document.getElementById('parasitology_id');
+
+        for (var i = 0, l = select7.options.length, o; i < l; i++) {
+            o = select7.options[i];
+            if (optionsToSelect7.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+        //dropdown8
+        var optionsToSelect8 = x;
+        var select8 = document.getElementById('radiology_id');
+
+        for (var i = 0, l = select8.options.length, o; i < l; i++) {
+            o = select8.options[i];
+            if (optionsToSelect8.indexOf(o.text) != -1) {
+                o.selected = true;
+            }
+        }
+
+
+
+
+        //extra input field
+        var y = document.getElementById('hide_text').value;
+        document.getElementById('TEXTAREA_ID').value = y
+
+
+        function myFunction() {
+            if (confirm("Do you wish to continue")) {
+                document.getElementById('Next_button').setAttribute('type', '');
+
+                document.getElementById('Next_button').name = 'close_visit';
+
+            } else {
+                document.getElementById('Next_button').setAttribute('type', 'button');
+
+
+            }
+
+        }
+
+
+        // on load functions
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var symp = document.getElementById('symptoms_input').value;
+            var symp_list = symp.split(',');
+            console.log(symp_list)
+            if (symp_list.includes('Diarrhea')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+
+            }
+            if (symp_list.includes('Weight loss')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Limping')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Skin')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Injuries')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tooth broken')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Fracture')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tongue')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Eye')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Bleeding')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+
+
+
+
+            var purpose_visit = document.getElementById('purpose_visit').value;
+            purpose_visit_list = purpose_visit.split(',');
+            console.log(purpose_visit_list)
+            if (purpose_visit_list.includes('VACCINATION')) {
+                document.getElementById('vaccination_span').style.background = 'lightgreen';
+            }
+            if (purpose_visit_list.includes('DEWORMING')) {
+                document.getElementById('deworming_span').style.background = 'lightgreen';
+            }
+
+            var symp_text = document.getElementById('symptoms_text').value;
+            console.log(symp_text)
+            var n = symp_text.length
+            if (n > 2) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+        });
+
+    </script>
+    <!-- rgb(68, 87, 96) -->
+</body>
+
+</html>

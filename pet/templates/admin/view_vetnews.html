@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Vet News</h1>
+    {% for vnews in vetnews%}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{vnews.title|title}}</td>
+        <td><b>location:</b>
+        {{vnews.location}}</td>
+        <td>
+          <b>date:</b>
+          {{vnews.date}}</td>
+          <td>
+            <b>time:</b>
+            {{vnews.timings}}</td>
+    <table>
+      <tbody>
+        <td><b>content</b>
+        {{vnews.content}}</td>
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+  </body>
+</html>

@@ -1,0 +1,1236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>present diet </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+
+        body {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            width: auto;
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #back_button_id {
+            margin-top: 5px;
+            float: left;
+            font-size: 12px;
+        }
+
+        #heading_id {
+            margin-top: 5px;
+            padding: 4px;
+        }
+
+
+
+        #veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #non_veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #home_food {
+
+
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #company_food {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #liquid {
+
+            text-align: center;
+
+            width: fit-content;
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+
+
+
+        #next_button {
+            color: white;
+
+            float: right;
+            background-color: #003300;
+        }
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+
+        #symbol_id {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #symbol_id2 {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        body {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            width: auto;
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 4px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 5px;
+            margin-right: 8%;
+            font-size: 14px;
+        }
+
+
+        #veg {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #non_veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #home_food {
+
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #company_food {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #liquid {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+
+
+
+        #next_button {
+            color: white;
+
+            float: right;
+            background-color: #003300;
+        }
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+
+        #symbol_id {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #symbol_id2 {
+            margin-top: 1%;
+
+            color: #1f7a1f;
+
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            filter: brightness(100%);
+            width: auto;
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 5px;
+            margin-right: 8%;
+            font-size: 14px;
+        }
+
+        #diet_heading {
+            margin-left: 30%;
+        }
+
+        #symbol_id {
+
+            font-size: 18px;
+            float: right;
+        }
+
+        #symbol_id2 {
+
+            font-size: 18px;
+            float: right;
+        }
+
+        #veg_row {
+            justify-content: center;
+        }
+
+        #home_food_row {
+            justify-content: center;
+        }
+
+        #veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #non_veg {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #home_food {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #company_food {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #liquid {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+
+
+        #next_button {
+            color: white;
+            background-color: #003300;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            filter: brightness(100%);
+            width: auto;
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 5px;
+            margin-right: 8%;
+            font-size: 14px;
+        }
+
+        #diet_heading {
+            margin-left: 30%;
+        }
+
+        #symbol_id {
+            margin-top: 0%;
+            font-size: 18px;
+            float: right;
+        }
+
+        #symbol_id2 {
+            margin-top: 0%;
+            font-size: 18px;
+            float: right;
+        }
+
+        #veg_row {
+            justify-content: center;
+        }
+
+        #home_food_row {
+            justify-content: center;
+        }
+
+        #veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #non_veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #home_food {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #company_food {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #liquid {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+
+
+        #next_button {
+            color: white;
+            background-color: #003300;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            filter: brightness(100%);
+            width: auto;
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 4px;
+        }
+
+        #back_button_id {
+            margin-top: 5px;
+            margin-right: 17%;
+            font-size: 14px;
+        }
+
+        #diet_heading {
+            margin-left: 30%;
+        }
+
+        #symbol_id {
+            margin-top: 0%;
+            font-size: 18px;
+            float: right;
+        }
+
+        #symbol_id2 {
+            margin-top: 0%;
+            font-size: 18px;
+            float: right;
+        }
+
+        #veg_row {
+            justify-content: center;
+        }
+
+        #home_food_row {
+            justify-content: center;
+        }
+
+        #veg {
+
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #non_veg {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #home_food {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #company_food {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #liquid {
+
+            text-align: center;
+
+            font-size: 16px;
+            border-radius: 30px;
+
+            color: #003300;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+
+
+        #next_button {
+            color: white;
+            background-color: #003300;
+            float: right;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            color: #003300;
+            margin-left: 80%;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+    <div id="grad1">
+        <div id="first_div">
+            <div class="row">
+                <div class="col-xs-2 col-xs-2-5 col-sm-3 col-md-3 col-lg-4 col-xl-4">
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="pet_profile" style="font-weight: bold;" href="{% url 'mypets' %}">
+                                    My pets
+                                </a></li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'aboutus' %}">About us</a>
+                            </li>
+                            <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                    id="about_us" style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a>
+                            </li>
+                        </div>
+                    </div>
+                    <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+                </div>
+                <div class="col-xs-7  col-sm-6 col-md-6 col-lg-4 col-xl-4  m-0 p-0">
+                    <div id="heading_div">
+                        <h3 id="heading_id">PRESENT DIET </h3>
+                    </div>
+                </div>
+                <div class="col-xs-2 col-xs-2-5 col-sm-3 col-md-3 col-lg-4 col-xl-4 ">
+                    <a> <button type="button" class="btn btn"
+                            style="background-color: #003300;color: white;width: fit-content;" id="back_button_id"
+                            onclick="window.history.go(-1); return false;">Back</button>
+                    </a>
+
+                </div>
+            </div>
+            <br>
+            <div id="wrapper_id" class="wrapper ">
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+                        <form method="POST" onsubmit="return check(event)">
+                            {% csrf_token %}
+                            <!-- {#  ===================================  diet started==============================================#} -->
+                            <div id="diet_heading_div">
+                                <div class="row" id="veg_row">
+                                    <input type="hidden" name="set1" id="diet_type">
+                                    <div class="col-xs-1 col-sm-1  col-md-1 col-lg-1 ">
+                                        <p id="symbol_id"> &#9642;</p>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 m-0 p-0">
+                                        <a class="list-group-item list-group-item-action m-0 p-2 ml-1" id="veg"
+                                            role="tab" onclick="Diet_type(this)" style="font-weight: bold;">Veg</a>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4  col-md-3 col-lg-2 m-0 p-0">
+                                        <a class="list-group-item list-group-item-action m-0 p-2 ml-2" id="non_veg"
+                                            role="tab" onclick="Diet_type(this)" style="font-weight: bold;">Non Veg</a>
+                                    </div>
+                                </div>
+                                <div class="row mt-2" id="home_food_row">
+                                    <input type="hidden" name="set2" value="" id="set_id">
+
+                                    <div class="col-xs-1 col-sm-1  col-md-1 col-lg-1">
+                                        <p id="symbol_id2"> &#9642;</p>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-4  col-md-3 col-lg-2 m-0 p-0">
+                                        <a class="list-group-item list-group-item-action m-0 p-2 ml-1" id="home_food"
+                                            role="tab" onclick="set(this)" style="font-weight: bold;">Home food </a>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4  col-md-3 col-lg-2 m-0 p-0">
+                                        <a class="list-group-item list-group-item-action m-0 p-2 ml-2" id="company_food"
+                                            role="tab" onclick="set(this)" style="font-weight: bold;">Packaged food </a>
+                                    </div>
+                                    <!-- <a class="list-group-item list-group-item-action " id="liquid" role="tab" onclick="set(this)" style="font-weight: bold;">Liquid</a> -->
+
+                                </div>
+                                <!-- {#===================next button started==========================================#} -->
+
+                                <div class="row mt-3">
+                                    <div class="col-12 col-sm-12 col-md-11 col-lg-9">
+                                        <button type="Submit" class="btn btn" id="next_button">Next</button>
+                                    </div>
+                                </div>
+
+                                <br>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script>
+
+    var gender_list = []
+    function Diet_type(data) {
+        var gender = document.getElementById('diet_type').value;
+        gender_list = gender.split(',');
+        if (gender_list.includes(data.innerText)) {
+            index = gender_list.indexOf(data.innerText);
+            gender_list.splice(index, 1);
+            data.style.backgroundColor = "white";
+            data.style.color = "darkgreen";
+
+        } else {
+            gender_list.push(data.innerText);
+            data.style.backgroundColor = "lightgreen";
+            data.style.color = "black";
+        }
+        document.querySelector('#diet_type').value = gender_list.toString();
+    }
+
+    var gender_list_set = []
+    function set(data) {
+        var set = document.getElementById('set_id').value;
+        gender_list_set = set.split(',');
+        if (gender_list_set.includes(data.innerText)) {
+            index = gender_list_set.indexOf(data.innerText);
+            gender_list_set.splice(index, 1);
+            data.style.backgroundColor = "white";
+            data.style.color = "darkgreen";
+
+        } else {
+            gender_list_set.push(data.innerText);
+            data.style.backgroundColor = "lightgreen";
+            data.style.color = "black";
+        }
+        document.querySelector('#set_id').value = gender_list_set.toString();
+
+    }
+    function openNav() {
+        if (window.matchMedia("(min-width: 993px)").matches) {
+            document.getElementById("myNav").style.width = "29%";
+        }
+        else {
+            document.getElementById("myNav").style.width = "75%";
+
+        }
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+
+    function check() {
+
+        if (gender_list.length > 1 && gender_list_set.length > 1) {
+            return true;
+        } else {
+            alert("Please select Diet")
+            return false;
+        }
+
+    }
+</script>

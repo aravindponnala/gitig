@@ -1,0 +1,1459 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>list of patients</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<style>
+    .overlay {
+       height: 100%;
+       width: 0;
+       position: fixed;
+       z-index: 1;
+       top: 0;
+       left: 0;
+       background-color: white;
+       overflow-x: hidden;
+       transition: 0.3s;
+   }
+
+   .overlay-content {
+       position: absolute;
+       top: 100px;
+       width: 100%;
+       text-align: center;
+       margin-top: 20px;
+   }
+
+   .overlay a {
+       padding: 8px;
+       text-decoration: none;
+       color: #818181;
+       display: block;
+       transition: 0.3s;
+   }
+
+   .overlay a:hover,
+   .overlay a:focus {
+       color: #f1f1f1;
+   }
+
+   .overlay .closebtn {
+       position: absolute;
+
+       margin-left: 200px;
+       font-size: 40px;
+       color: #003300;
+   }
+
+   @media only screen and (max-width: 600px) {
+       #heading_id {
+           margin: 2px;
+           padding: 2px;
+           }
+#heading_div{
+   width: fit-content;
+           border-style: solid;
+           border-width: 0.75px;
+           border-color: darkgreen;
+           background-color: #003300;
+           color: white;
+           text-align: center;
+           margin-top: 2%;
+
+       }
+
+
+       #grad1 {
+           min-height: 100vh;
+           min-width: 100%;
+           border-radius: 10px;
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+       .td {
+           border-style: solid;
+           border-color: black;
+
+       }
+
+     
+
+       #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #time_slot {
+           vertical-align: middle;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+           color: #003300;
+       }
+       #customer_name {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+
+       }
+
+       #payment {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+            
+#time_slot_second{
+    vertical-align: middle;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+           color: #003300;
+}
+#customer_name_second{
+        vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+#payment_second{
+    vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+
+}
+#visit_second{
+    vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+}
+       #visit {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+
+       #table_div {
+           margin-top: 5%;
+           width: 90%;
+       }
+
+       #video_call_icon {
+           color: #003300;
+           font-size: 15px;
+       }
+       #no_patient_row{
+           margin-top: 40%;
+       }
+
+   }
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+           #heading_id {
+              
+               margin: 2px;
+           padding: 2px;
+         
+           }
+#heading_div{
+   width: fit-content;
+           border-style: solid;
+           border-width: 0.75px;
+           border-color: darkgreen;
+           background-color: #003300;
+           color: white;
+           text-align: center;
+           margin-top: 2%;
+
+       }
+
+
+       #grad1 {
+           min-height: 97vh;
+           min-width: 100%;
+           border-radius: 10px;
+           display: inline-block;
+           filter: brightness(100%);
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+       .td {
+           border-style: solid;
+           border-color: black;
+
+       }
+
+       #customer_name {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+
+       }
+
+       #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #time_slot {
+           vertical-align: middle;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+           color: #003300;
+       }
+
+       #payment {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+
+       #visit {
+           vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+            
+       #time_slot_second{
+    vertical-align: middle;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+           color: #003300;
+}
+#customer_name_second{
+        vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+       }
+#payment_second{
+    vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+
+}
+#visit_second{
+    vertical-align: middle;
+           color: #003300;
+           border-color: black;
+           border-style: solid;
+           border-width: 1px;
+}
+       #table_div {
+           margin-top: 5%;
+           width: 90%;
+       }
+
+       #video_call_icon {
+           color: #003300;
+           font-size: 15px;
+       }
+       #no_patient_row{
+           margin-top: 35%;
+       }
+   }
+
+
+   /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+   #grad1 {
+       display: inline-block;
+           filter: brightness(100%);
+           min-height: 100vh;
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+       body {
+           overflow-x: hidden;
+       }
+       #heading_id {
+           margin: 2px;
+           padding: 2px;
+       }
+        
+#heading_div{
+   width: fit-content;
+           border-style: solid;
+           border-width: 0.75px;
+           border-color: darkgreen;
+           background-color: #003300;
+           color: white;
+           text-align: center;
+           margin-top: 2%;
+           margin-left: auto;
+           margin-right: auto;
+
+       }
+
+       #customer_name {
+           text-align: center;
+           color: #003300;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #time_slot {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+           color: #003300;
+       }
+
+       #payment {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #visit {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+            
+       #time_slot_second{
+        text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+#customer_name_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+#payment_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+
+}
+#visit_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+       #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+
+       #video_call_icon {
+           color: #003300;
+           font-size: 20px;
+       }
+#table_div{
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 2%;
+}
+#no_patient_row{
+           margin-top: 25%;
+       }
+
+   }
+
+   /* {#==============================for desktop=========================================#} */
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+       #grad1 {
+           display: inline-block;
+           filter: brightness(100%);
+           min-height: 100vh;
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+       body {
+           overflow-x: hidden;
+       }
+       #heading_id {
+           margin: 5px;
+           padding: 5px;
+           }
+#heading_div{
+   width: fit-content;
+           border-style: solid;
+           border-width: 0.75px;
+           border-color: darkgreen;
+           background-color: #003300;
+           color: white;
+           text-align: center;
+           margin-top: 2%;
+           margin-left: auto;
+           margin-right: auto;
+
+       }
+
+       #customer_name {
+           text-align: center;
+           color: #003300;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #time_slot {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+           color: #003300;
+       }
+
+       #payment {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #visit {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+       #customer_name_second{
+        text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+       #time_slot_second{
+        text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+#payment_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+
+}
+#visit_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+       #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+
+       #video_call_icon {
+           color: #003300;
+           font-size: 20px;
+       }
+#table_div{
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 2%;
+}
+#no_patient_row{
+           margin-top: 20%;
+       }
+   }
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+       #grad1 {
+           display: inline-block;
+           filter: brightness(100%);
+           min-height: 100vh;
+           height: auto;
+           background-color: lightgrey;
+           /* For browsers that do not support gradients */
+           background-image: linear-gradient(to right, white, lightgrey);
+           /* Standard syntax (must be last) */
+       }
+
+       body {
+           overflow-x: hidden;
+       }
+       #heading_id {
+           margin: 2px;
+           padding: 2px;
+           }
+#heading_div{
+   width: fit-content;
+           border-style: solid;
+           border-width: 0.75px;
+           border-color: darkgreen;
+           background-color: #003300;
+           color: white;
+           text-align: center;
+           margin-top: 2%;
+           margin-left: auto;
+           margin-right: auto;
+
+       }
+
+       #customer_name {
+           text-align: center;
+           color: #003300;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #time_slot {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+           color: #003300;
+       }
+
+       #payment {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+
+       #visit {
+           text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+       #customer_name_second{
+        text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+       }
+       #time_slot_second{
+        text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+#payment_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+
+}
+#visit_second{
+    text-align: center;
+           border-style: solid;
+           border-color: black;
+           border-top: black;
+           border-width: 0.75px;
+           border-top: solid;
+           border-top-width: 0.5px;
+}
+       #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+
+       #video_call_icon {
+           color: #003300;
+           font-size: 20px;
+       }
+#table_div{
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 2%;
+}
+#no_patient_row{
+           margin-top: 15%;
+       }
+   }
+</style>
+<body >
+    <input type="hidden" value="{{ doc_id }}" name="doc_id" id="doc_id">
+    <div id="grad1">
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+            <div class="overlay-content">
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                        style="font-weight: bold;" href="{% url 'doctor_profile' doc_id=doc_id %}">Doctor profile</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                        style="font-weight: bold;" href="{% url 'list_patient' doc_id=doc_id %}">List of patients</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                        style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<span
+                            class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                </li>
+                <li id="show_div" style="display: none">
+
+                    <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                        style="font-weight: bold;" href="{% url 'articles_sbar' doc_id=doc_id %}"> Articles </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                        style="font-weight: bold;" href="{% url 'case_reports_sbar' doc_id=doc_id %}">Case reports </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                        style="font-weight: bold;" href="{% url 'conferences_sbar' doc_id=doc_id %}">Conferences </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                        style="font-weight: bold;" href="{% url 'vet_news_sbar' doc_id=doc_id %}">Vet news</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                        style="font-weight: bold;" href="{% url 'seminars_sbar' doc_id=doc_id %}">Seminars</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;"
+                        href="{% url 'books_sbar' doc_id=doc_id %}">Books</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;" href="{% url 'bookmarks' doc_id=doc_id %}">Bookmarks</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;" href="{% url 'danalytics' doc_id=doc_id %}">Doctor analytics</a>
+                </li>
+
+                {% if doc_pk.stock_management == 'yes' %}
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;" href="{% url 'stocks' doc_id=doc_id %}">Stocks</a>
+                </li>
+                {% else %}
+                {% endif %}
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;">About</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                </li>
+
+
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+        <div class="wrapper">
+        <div class="row">
+            <div class="col">
+            <div id="heading_div">
+                <h3 id="heading_id" style="  font-weight: bold;">LIST OF PATIENTS</h3>
+            </div>
+        </div>
+        </div>
+            <div class="container" id="container_id">
+               
+
+
+
+
+
+                {#       -------------------- email started------------------------------------------#}
+                {% if doc_list_qs %}
+                <div class="row" id="table_div">
+                    <div class="col">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col" id="customer_name" readonly>Customer name</th>
+                                    <th scope="col" id="payment" readonly>Payment</th>
+                                    <th scope="col" id="visit" readonly>Hospital visit/video call</th>
+                                    <th scope="col" id="time_slot" readonly>Time slot</th>
+                                </tr>
+                            </thead>
+                            {% for doc in doc_list_qs %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <tbody>
+
+                                    <tr>
+                                        <td CLASS="td" style="border-style: solid;border-color: black" readonly>
+                                            {{doc.customer_id.customer_name}}</td>
+                                        <td CLASS="td" style="border-style: solid;border-color: black" readonly>
+                                            {{doc.payment}}</td>
+                                        <!-- here pet id means breed just upate for dic  -->
+                                        <td style="border-style: solid;border-color: black" readonly>{{doc.mode}}</td>
+                                        <!-- here color means pet age it is taken for dic updation -->
+                                        <td style="border-style: solid;border-color: black" readonly>{{doc.time_slot}}
+                                        </td>
+                                        {% if doc.meeting_id and doc.test_field == "yes"%}
+                                        <td><a href="{% url 'roomxx' roomid=doc.meeting_id usertype='participant' userref=doc.customer_id.customer_name customerid=doc.customer_id.customer_id doctorid=doc_id %}" target="_blank"> <i class='fas fa-video' style="color: #003300;"></i</a></td>
+                                        {% else %}
+                                        <input type="hidden"  value="">
+                                        {% endif %}
+                                        <td><input style="border-style: solid;border-color: black" type="submit"
+                                                value="view"></td>
+                                        <input type="hidden" name="purpose_id" value="{{doc.purpose_id.id}}">
+                                        <input type="hidden" name="pet_id" value="{{doc.pet_id.id}}">
+                                    </tr>
+
+                                </tbody>
+                            </form>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                {% else %}
+                <div class="row mt-2">
+                    <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="customer_name_second" readonly>Customer name</th>
+                            <th scope="col" id="payment_second" readonly>Payment</th>
+                            <th scope="col" id="visit_second" readonly>Hospital visit/video call</th>
+                            <th scope="col" id="time_slot_second" readonly>Time slot</th>
+                        </tr>
+                    </thead>
+                    </table>
+                </div>
+                </div>
+                    <div class="row" id="no_patient_row">
+                        <div class="col text-center">
+                            <label>No Patients Found!</label>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <!-- {#     -----------------------   existing user ends---------------------------------#} -->
+
+            </div>
+        </div>
+        </div>
+
+    <script>
+
+
+
+function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+
+    </script>
+    <script>
+
+
+        function show_doctors_corner() {
+            if (document.getElementById('show_div').style.display == 'none') {
+                document.getElementById('show_div').style.display = 'inline-block';
+
+
+            } else {
+                document.getElementById('show_div').style.display = 'none';
+
+            }
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>

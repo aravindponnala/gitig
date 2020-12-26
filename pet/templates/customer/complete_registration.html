@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>change password</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+
+    body {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    html {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    #grad1 {
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        filter: brightness(100%);
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .field-icon {
+            float: right;
+            margin-right: 60px;
+            margin-top: 7px;
+            position: relative;
+            z-index: 2;
+        }
+
+        #div_id {
+            margin-top: 35%;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #div_id {
+            margin-top: 30%;
+        }
+
+        .field-icon {
+            float: right;
+            margin-right: 70px;
+            margin-top: 7px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #div_id {
+            margin-top: 25%;
+        }
+
+        .field-icon {
+            float: right;
+            margin-right: 90px;
+            margin-top: 7px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #div_id {
+            margin-top: 20%;
+        }
+
+        .field-icon {
+            float: right;
+            margin-right: 110px;
+            margin-top: 7px;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #div_id {
+            margin-top: 15%;
+        }
+
+        .field-icon {
+            float: right;
+            margin-right: 125px;
+            margin-top: 7px;
+            position: relative;
+            z-index: 2;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="container">
+                <form method="post" onsubmit="return check()">
+                    {% csrf_token %}
+
+                    <div id="div_id">
+                        <div class="row" style="justify-content: center;">
+                            <div class="col-xs-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-5 col-xl-4  m-0 p-0" id="enter_email_col_id">
+                                <input class="form-control" placeholder="Enter Your email" name="email">
+                            </div>
+                            <div class="col-xs-1  m-0 p-0">
+                            </div>
+                        </div>
+                        <!-- password row starts -->
+                        <div class="row mt-2" style="justify-content: center;">
+                            <div class="col-xs-1  m-0 p-0">
+                            </div>
+                            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-5 col-xl-4  m-0 p-0">
+                                <input class="form-control" placeholder="Enter password" name="password"
+                                    id="new_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                                    title="password should contain atleast one upper case one lower case letter one number and minimum 6 characters">
+                            </div>
+                            <div class="col-xs-1  m-0 p-0">
+                            </div>
+
+                        </div>
+                        <!-- retype password row strats -->
+                        <div class="row mt-2" id="re_type_password_row" style="justify-content: center;">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 m-0 p-0">
+                                <input class="form-control" placeholder="Retype-password" id="re_type_password"
+                                    onkeyup="check()">
+                            </div>
+                            <div class="col-1 m-0 p-0">
+                                <span toggle="#re_type_password"
+                                    class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                        </div>
+                        <!-- validation message start -->
+                        <div class="row mt-1">
+                            <div class="col-xs-12 text-center">
+                                <span id="message"></span>
+                            </div>
+                        </div>
+                        <!-- address starts -->
+                        <div class="row mt-2" style="justify-content: center;">
+                            <div class="col-xs-1  m-0 p-0">
+                            </div>
+                            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-5 col-xl-4  m-0 p-0">
+                                <input class="form-control" placeholder="Address" name="address">
+                            </div>
+                            <div class="col-xs-1  m-0 p-0">
+                            </div>
+                        </div>
+                        <!-- submit button starts -->
+                        <div class="row mt-4">
+                            <div class="col-xs-11 col-sm-10 col-md-9 col-lg-9 col-xl-8 m-0 p-0">
+                                <button class="btn btn" type="submit"
+                                    style="background-color: #003300;color: white;float: right;">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script>
+
+
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        var check = function () {
+            if (document.getElementById('new_password').value ==
+                document.getElementById('re_type_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'password match';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'password do not match';
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

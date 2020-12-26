@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Vet News</h1>
+    <a href="{% url 'create_vetnews'%}">Creat Vet News</a>
+<form  method="post">
+  {% csrf_token %}
+{% for vnews in vetnewsobj%}
+<div class="" style="border:red solid 2px">
+<table>
+  <tbody>
+    <td><b>title:</b>
+    {{vnews.title|title}}</td>
+    <td><b>location:</b>
+    {{vnews.location}}</td>
+    <td><b>date:</b>
+    {{vnews.date}}</td>
+    <td><b>time:</b>
+    {{vnews.timings}}</td>
+  </tbody>
+  <table>
+    <tbody>
+      <td><b>content</b>
+      {{vnews.content|truncatewords:10}}</td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'view_vetnews' pk=vnews.pk %}">View</a></td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><center><button type="submit">delete</center></button></td></td>
+      <input type="hidden" name="vn_pk" value="{{vnews.id}}">
+    </tbody>
+  </table>
+</div>
+{% endfor %}
+</form>
+  </body>

@@ -1,0 +1,2521 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home page</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "901212c5-efbc-496e-9354-857960f6b8d9",
+        notifyButton: {
+          enable: true,
+        },
+      });
+    });
+  </script>
+</head>
+<style>
+  #img_id {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  #circle_id {
+    height: 100px;
+    width: 100px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+
+  .overlay-content {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+
+    margin-left: 200px;
+    font-size: 40px;
+    color: #1f7a1f;
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+
+    .row:before,
+    .row:after {
+      display: inline-block !important;
+    }
+
+
+    body {
+      background-color: lightgray;
+      overflow-x: hidden;
+    }
+
+    #wrapper_id {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .text {
+      font-size: 16pxs;
+    }
+
+
+    .commingsoon {
+      font-size: 10px;
+      font-style: italic;
+    }
+
+
+
+    #pet_care_row {
+      justify-content: center;
+      margin-top: 5%;
+    }
+
+    #pet_care_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_care_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    #grooming_services_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+
+      border: none;
+    }
+
+    #grooming_services_img {
+
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #budget_analyzer_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #budget_analyzer_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_gallery_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_gallery_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #first_aid_guide_row {
+      margin-top: 4%;
+    }
+
+    #first_aid_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #first_aid_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    #isqueek_toy_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #isqueek_toy_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_music_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_music_img {
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #anti_dog_whistle_button {
+      outline: none;
+      color: #003300;
+      border: none;
+      background-color: lightgray;
+    }
+
+    #anti_dog_whistle_img {
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_registration_row {
+      margin: 1%;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    #consultation_row {
+      margin: 1%;
+      justify-content: center;
+      margin-top: 2%;
+    }
+
+    #pet_registration_div {
+      margin: 1px;
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #pet_license {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #booking {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #booking_div {
+
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #shop {
+      margin-top: 20%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #shop_div {
+
+
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #video_div {
+
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #video_Consultation {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #mybookings {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #view_profile {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #mypet {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #notification_id {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 10px 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    #bottom_navbar {
+
+
+      margin: 0%;
+      overflow: hidden;
+      background-color: #003300;
+      position: fixed;
+      bottom: 0;
+      min-width: 105%;
+
+    }
+
+    #home_button {
+      float: left;
+      display: block;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #camera_button {
+      float: left;
+      display: block;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #blog_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #topnav_id {
+      overflow: hidden;
+      background-color: #003300;
+    }
+
+
+
+    #top_nav_right_id {
+      float: right;
+    }
+
+    #span_id {
+      background-color: white;
+    }
+
+    #pet_profile {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog {
+
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #vaccination_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #deworming_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #previous_visit {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #about_us {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+
+
+    #img_wrapper_id {
+      width: 100%;
+
+      margin-top: 2%;
+
+      margin-left: auto;
+      margin-right: auto;
+
+
+    }
+
+    #carouselExampleIndicators {
+
+      width: 100%;
+    }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+
+    body {
+      background-color: lightgray;
+      overflow-x: hidden;
+    }
+
+    #wrapper_id {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .text {
+      font-size: 16px;
+    }
+
+    .commingsoon {
+      font-style: italic;
+      font-size: 10px;
+    }
+
+    #pet_care_row {
+      justify-content: center;
+      margin-top: 5%;
+    }
+
+    #pet_care_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_care_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    #grooming_services_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+
+      border: none;
+    }
+
+    #grooming_services_img {
+
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #budget_analyzer_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #budget_analyzer_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_gallery_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_gallery_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #first_aid_guide_row {
+      justify-content: center;
+      margin-top: 4%;
+    }
+
+    #first_aid_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #first_aid_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    #isqueek_toy_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #isqueek_toy_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_music_button {
+      outline: none;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_music_img {
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #anti_dog_whistle_button {
+      outline: none;
+      color: #003300;
+      border: none;
+      background-color: lightgray;
+    }
+
+    #anti_dog_whistle_img {
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_registration_row {
+      margin: 1%;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    #consultation_row {
+      margin: 1%;
+      justify-content: center;
+      margin-top: 2%;
+    }
+
+    #pet_registration_div {
+      margin: 1px;
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #pet_license {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #booking {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #booking_div {
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #shop {
+      margin-top: 25%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #shop_div {
+
+
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #video_div {
+
+      border-radius: 10px;
+      width: 32%;
+      background-color: white;
+      min-height: 12vh;
+    }
+
+    #video_Consultation {
+      margin-top: 15%;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+      color: #003300;
+    }
+
+    #mybookings {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #view_profile {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #mypet {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #notification_id {
+
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #bottom_navbar {
+
+
+      margin: 0%;
+      overflow: hidden;
+      background-color: #003300;
+      position: fixed;
+      bottom: 0;
+      min-width: 105%;
+
+    }
+
+    #home_button {
+      float: left;
+      display: block;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #camera_button {
+      float: left;
+      display: block;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #blog_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #topnav_id {
+      overflow: hidden;
+      background-color: #003300;
+    }
+
+
+
+    #top_nav_right_id {
+      float: right;
+    }
+
+    #span_id {
+      background-color: white;
+    }
+
+    #pet_profile {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog {
+
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #vaccination_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #deworming_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #previous_visit {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #about_us {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+
+    #img_wrapper_id {
+      width: 80%;
+
+
+      margin-top: 2%;
+
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    #carouselExampleIndicators {
+
+      width: 100%;
+    }
+
+    #close_btn {
+      margin-left: 80%;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 98vh;
+      height: auto;
+
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: lightgray;
+
+    }
+
+    #topnav_id {
+      overflow: hidden;
+      background-color: #003300;
+    }
+
+    #slide_row {
+      margin-left: 25%;
+
+
+    }
+
+    /* .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  } */
+
+    /* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  } */
+
+    /* .topnav a.active {
+    background-color: #003300;
+    color: white;
+  } */
+    .commingsoon {
+      font-style: italic;
+      font-size: 11px;
+    }
+
+    #top_nav_right_id {
+      float: right;
+    }
+
+    #span_id {
+      background-color: white;
+    }
+
+
+    #pet_care_row {
+      justify-content: center;
+      margin-top: 1%;
+
+    }
+
+    #pet_care_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_care_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    .btn-pro span {
+      text-align: center;
+      width: 100%;
+      display: inline-block
+    }
+
+    #grooming_services_button {
+      color: #003300;
+      background-color: lightgray;
+
+      border: none;
+    }
+
+    #grooming_services_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #budget_analyzer_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #budget_analyzer_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_gallery_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_gallery_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #first_aid_guide_row {
+      margin-top: 1%;
+      justify-content: center;
+    }
+
+    #first_aid_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #first_aid_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+    }
+
+    #isqueek_toy_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #isqueek_toy_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_music_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_music_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #anti_dog_whistle_button {
+      color: #003300;
+      border: none;
+      background-color: lightgray;
+    }
+
+    #anti_dog_whistle_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_registration_row {
+      margin-top: 1px;
+      justify-content: center;
+
+      width: 100%;
+
+    }
+
+    #consultation_row {
+      margin-top: 1%;
+      justify-content: center;
+
+      width: 100%;
+    }
+
+    #pet_registration_div {
+
+      min-height: 12vh;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      background-color: white;
+    }
+
+    #pet_license {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #booking_div {
+      margin-left: 1px;
+
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #booking {
+      margin-top: 10%;
+      color: #003300;
+
+      border: none;
+      border-radius: 10px;
+    }
+
+    #shop_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #shop {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #video_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #video_Consultation {
+      color: #003300;
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #mybookings {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #view_profile {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #mypet {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #notification_id {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #bottom_navbar {
+      margin: 0;
+      overflow: hidden;
+      background-color: #003300;
+      position: fixed;
+      bottom: 0;
+      width: 110%;
+    }
+
+    #home_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #camera_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #pet_profile {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog {
+
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #vaccination_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #deworming_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #previous_visit {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #about_us {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+
+
+    #close_btn {
+      margin-left: 80%;
+    }
+
+    #vaccination_img {}
+
+    #img_wrapper_id {
+      width: 70%;
+      margin-top: 2%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+
+
+    }
+
+    #aotosipping_img {}
+
+    #carouselExampleIndicators {
+      width: 180%;
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 98vh;
+      height: auto;
+
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: lightgray;
+
+    }
+
+    #topnav_id {
+      overflow: hidden;
+      background-color: #003300;
+    }
+
+    #slide_row {
+      margin-left: 25%;
+
+
+    }
+
+    /* .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  } */
+
+    /* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  } */
+
+    /* .topnav a.active {
+    background-color: #003300;
+    color: white;
+  } */
+
+    .commingsoon {
+      font-style: italic;
+      font-size: 11px;
+    }
+
+    #top_nav_right_id {
+      float: right;
+    }
+
+    #span_id {
+      background-color: white;
+    }
+
+
+    #pet_care_row {
+      justify-content: center;
+      margin-top: 1%;
+
+    }
+
+    #pet_care_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_care_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    .btn-pro span {
+      text-align: center;
+      width: 100%;
+      display: inline-block
+    }
+
+    #grooming_services_button {
+      color: #003300;
+      background-color: lightgray;
+
+      border: none;
+    }
+
+    #grooming_services_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #budget_analyzer_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #budget_analyzer_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_gallery_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_gallery_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #first_aid_guide_row {
+      margin-top: 1%;
+      justify-content: center;
+    }
+
+    #first_aid_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #first_aid_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+    }
+
+    #isqueek_toy_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #isqueek_toy_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_music_button {
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_music_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #anti_dog_whistle_button {
+      color: #003300;
+      border: none;
+      background-color: lightgray;
+    }
+
+    #anti_dog_whistle_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_registration_row {
+      margin-top: 1px;
+      justify-content: center;
+
+      width: 100%;
+
+    }
+
+    #consultation_row {
+      margin-top: 1%;
+      justify-content: center;
+
+      width: 100%;
+    }
+
+    #pet_registration_div {
+
+      min-height: 12vh;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      background-color: white;
+    }
+
+    #pet_license {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #booking_div {
+      margin-left: 1px;
+
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #booking {
+      margin-top: 10%;
+      color: #003300;
+
+      border: none;
+      border-radius: 10px;
+    }
+
+    #shop_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #shop {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #video_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #video_Consultation {
+      color: #003300;
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #mybookings {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #view_profile {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #mypet {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #notification_id {
+
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #bottom_navbar {
+      margin: 0;
+      overflow: hidden;
+      background-color: #003300;
+      position: fixed;
+      bottom: 0;
+      width: 110%;
+    }
+
+    #home_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #camera_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #pet_profile {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog {
+
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #vaccination_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #deworming_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #previous_visit {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #about_us {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #close_btn {
+      margin-left: 80%;
+    }
+
+    #vaccination_img {}
+
+    #img_wrapper_id {
+      width: 50%;
+      margin-top: 2%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+
+    }
+
+    #aotosipping_img {}
+
+    #carouselExampleIndicators {
+      width: 180%;
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 98vh;
+      height: auto;
+
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: lightgray;
+
+    }
+
+    #topnav_id {
+      overflow: hidden;
+      background-color: #003300;
+    }
+
+    #slide_row {
+      margin-left: 25%;
+
+
+    }
+
+    /* .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  } */
+
+    /* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  } */
+
+    /* .topnav a.active {
+    background-color: #003300;
+    color: white;
+  } */
+    .commingsoon {
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    #top_nav_right_id {
+      float: right;
+    }
+
+    #span_id {
+      background-color: white;
+    }
+
+
+    #pet_care_row {
+      justify-content: center;
+      margin-top: 1%;
+
+    }
+
+    #pet_care_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_care_img {
+      display: inline-block !important;
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 12px;
+    }
+
+    .btn-pro span {
+      text-align: center;
+      width: 100%;
+      display: inline-block
+    }
+
+    #grooming_services_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+
+      border: none;
+    }
+
+    #grooming_services_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #budget_analyzer_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #budget_analyzer_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_gallery_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_gallery_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #first_aid_guide_row {
+      margin-top: 1%;
+      justify-content: center;
+    }
+
+    #first_aid_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #first_aid_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+    }
+
+    #isqueek_toy_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #isqueek_toy_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_music_button {
+      font-size: 12px;
+      color: #003300;
+      background-color: lightgray;
+      border: none;
+    }
+
+    #pet_music_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #anti_dog_whistle_button {
+      font-size: 12px;
+      color: #003300;
+      border: none;
+      background-color: lightgray;
+    }
+
+    #anti_dog_whistle_img {
+
+      vertical-align: middle;
+      background-color: #003300;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    #pet_registration_row {
+      margin-top: 1px;
+      justify-content: center;
+
+      width: 100%;
+
+    }
+
+    #consultation_row {
+      margin-top: 1%;
+      justify-content: center;
+
+      width: 100%;
+    }
+
+    #pet_registration_div {
+
+      min-height: 12vh;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      background-color: white;
+    }
+
+    #pet_license {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #booking_div {
+      margin-left: 1px;
+
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #booking {
+      margin-top: 10%;
+      color: #003300;
+
+      border: none;
+      border-radius: 10px;
+    }
+
+    #shop_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #shop {
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #video_div {
+      margin-left: 5px;
+      border-radius: 10px;
+      text-align: center;
+      width: 15%;
+      color: #003300;
+      min-height: 12vh;
+      background-color: white;
+    }
+
+    #video_Consultation {
+      color: #003300;
+      margin-top: 10%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #mybookings {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #view_profile {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #mypet {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #notification_id {
+
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #bottom_navbar {
+      margin: 0;
+      overflow: hidden;
+      background-color: #003300;
+      position: fixed;
+      bottom: 0;
+      width: 110%;
+    }
+
+    #home_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #camera_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+    #pet_profile {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog {
+
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #vaccination_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #deworming_history {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #previous_visit {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #about_us {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #blog_button {
+      float: left;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      background-color: #003300;
+      color: white;
+    }
+
+
+    #close_btn {
+      margin-left: 80%;
+    }
+
+    #vaccination_img {}
+
+    #img_wrapper_id {
+      width: 40%;
+      margin-top: 2%;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+
+
+    }
+
+    #aotosipping_img {}
+
+    #carouselExampleIndicators {
+      width: 180%;
+    }
+  }
+
+  .fa-btn {
+    display: inline-block;
+    padding: 12px;
+  }
+</style>
+<body>
+  <div id="wrapper_id" class="wrapper">
+    <div class="topnav" id="topnav_id">
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+              style="font-weight: bold;" href="{% url 'mypets' %}">
+              My pets
+            </a></li>
+          <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="about_us"
+              style="font-weight: bold;" href="{% url 'aboutus' %}">About us </a></li>
+          <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="about_us"
+              style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a></li>
+        </div>
+      </div>
+      <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+      <!-- myprofile starts -->
+      <div class="topnav-right" id="top_nav_right_id">
+        {% if check_complete_reg.email %}
+        <a id="view_profile" href="{% url 'view_profile' customer_id=customer_id %}">My profile </a>
+        {% else %}
+        <a href="{% url 'complete_registration' customer_id=customer_id %}" id="mybookings"> Registration</a>
+        {% endif %}
+        <a id="mypet" href="{% url 'mypets' %}">My pets</a>
+
+        <a href="{% url 'mybookings' customer_id=customer_id %}" id="mybookings">My bookings</a>
+        <a href="{% url 'notifications' customer_id=customer_id %}" id="notification_id"><i class="fa fa-bell"
+            style="color: white;font-size: 20px;"></i>
+        </a>
+      </div>
+    </div>
+    <!-- top bar and sidebar ended -->
+    <div class="wrapper" id="img_wrapper_id">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <center> <img class="d-block .d-sm-block  w-100" id="deworming_img" src="{% static 'media/vets.jpg' %}"
+                alt="" style="border-radius: 15px;"> </center>
+
+          </div>
+          <div class="carousel-item">
+            <center><img class="d-block .d-sm-block  w-100" id="vaccination_img"
+                src="{% static 'media/vaccination_new.jpg' %}" alt="" style="border-radius: 15px;"></center>
+          </div>
+          <div class="carousel-item">
+            <center> <img class="d-block .d-sm-block  w-100" id="aotosipping_img" src="{% static 'media/petcare.jpg' %}"
+                alt="" style="border-radius: 15px;"></center>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="pet_care_row">
+        <div class="col-xs-3 col-sm-2  col-md-2 col-lg-1 m-0 p-0 text-center"><button id="pet_care_button"
+            class="btn-pro"><i class="fa fa-home fa-btn" id="pet_care_img"></i> <br><span>Pet dating</span> </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1  m-0 p-0 text-center"><button id="grooming_services_button"
+            class="btn-pro"><i class="glyphicon glyphicon-scissors fa-btn"
+              id="grooming_services_img"></i><br><span>Grooming
+              services</span> </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 m-0 p-0 text-center"> <button id="budget_analyzer_button"
+            class="btn-pro"><i class="fa fa-calculator fa-btn" id="budget_analyzer_img"></i><br><span>Budget
+              analyzer</span> </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 text-center"><a
+            href="{% url 'gallery' customer_id=customer_id %}">
+            <button id="pet_gallery_button" class="btn-pro"> <i class='far fa-images fa-btn'
+                id="pet_gallery_img"></i><br><span>Gallery</span></button> </a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" id="first_aid_guide_row">
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 m-0 p-0 text-center"><button button id="first_aid_button"
+            class="btn-pro"><i class="fa fa-medkit fa-btn" id="first_aid_img"></i><br><span>First aid guide</span>
+          </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 m-0 p-0 text-center"><button button id="isqueek_toy_button"
+            class="btn-pro"><i class='fas fa-volleyball-ball fa-btn' id="isqueek_toy_img"></i><br> <span> Isqueek
+              toy</span> </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-md-2 col-lg-1 m-0 p-0 text-center"> <button id="pet_music_button"
+            class="btn-pro"><i class='fas fa-music fa-btn' id="pet_music_img"></i><br> <span>Pet music</span> </button>
+          <div style="color: #003300;" class="commingsoon">coming soon..!</div>
+        </div>
+        <div class="col-xs-3 col-sm-2 col-lg-1 m-0 p-0 text-center"> <a href="{% url 'anti_dog_whistle' %}">
+            <button id="anti_dog_whistle_button" class="btn-pro"><i class='fas fa-ban fa-btn'
+                id="anti_dog_whistle_img"></i>
+              <br> <span>Anti dog whistle</span> </button></a> </div>
+      </div>
+    </div>
+    <div class="row" id="consultation_row">
+      <div id="booking_div">
+        <a class="list-group-item list-group-item-action " role="tab" id="booking"
+          href="{% url 'book_consultation' customer_id=customer_id doc_pk=doc_pk %}"> Book a consultation</a>
+      </div>
+
+      <div class="ml-1" id="video_div">
+        <a class="list-group-item list-group-item-action" role="tab" id="video_Consultation"
+          href="{% url 'video_consultation' customer_id=customer_id %}">Booked video consultation</a>
+      </div>
+    </div>
+
+    <div class="row" id="pet_registration_row">
+      <div id="pet_registration_div">
+        <a class="list-group-item list-group-item-action " role="tab" id="pet_license"
+          href="{% url 'pet_license_home' customer_id=customer_id %}">Pet registration</a>
+      </div>
+
+      <div class="ml-1" id="shop_div">
+        <a class="list-group-item list-group-item-action " role="tab" id="shop">Shop </a>
+        <div style="color: #003300;text-align: center;" class="commingsoon">coming soon..!</div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- ===========bottom nav bar =========================-->
+    <div class="row">
+      <div class="navbar" id="bottom_navbar">
+        <label id="home_button"><i class="fa fa-home" id="home_img"></i> <br> Home</label>
+        <!-- <button id="camera_button" ><i class="fa fa-camera" id="camera_img"></i><br>Camera </button> -->
+        <form method="post" id="gall" action="/gallery/" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label id="camera_button" style="color: white;"><i class="fa fa-camera" id="camera_img"></i><br><input hidden
+              type="file" name="gallery_image" id="gallerysave" accept="image/*">Camera</label>
+          <input type="hidden" value="{{ customer_id }}" name="customer_id_sec">
+        </form>
+        <label id="blog_button"><i class='fas fa-blog' id="blog_img"></i> <br>Blog </label>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script>
+    OneSignal.push(function () {
+      OneSignal.on('subscriptionChange', function (isSubscribed) {
+        if (isSubscribed) {
+          // The user is subscribed
+          //   Either the user subscribed for the first time
+          //   Or the user was subscribed -> unsubscribed -> subscribed
+          OneSignal.getUserId(function (userId) {
+            // Make a POST call to your server with the user ID
+            var customer_id = document.getElementById('customer_id').value;
+            $.ajax({
+
+              url: "/onesignalid/",
+              type: 'POST',
+              data: {
+                'userId': userId,
+                'customer_id': customer_id,
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+              },
+              success: function (json) {
+              }
+            });
+
+          });
+        }
+      });
+    });
+
+    $(function () {
+      $("#gallerysave").change(function () {
+        document.getElementById("gall").submit();
+        var fileName = $(this).val();
+
+      });
+    });
+
+
+    // IMAGE SLIDES & CIRCLES ARRAYS, & COUNTER
+    // IMAGE SLIDES & CIRCLES ARRAYS, & COUNTER
+    var imageSlides = document.getElementsByClassName('imageSlides');
+    var circles = document.getElementsByClassName('circle');
+    var leftArrow = document.getElementById('leftArrow');
+    var rightArrow = document.getElementById('rightArrow');
+    var counter = 0;
+
+    // HIDE ALL IMAGES FUNCTION
+    function hideImages() {
+      for (var i = 0; i < imageSlides.length; i++) {
+        imageSlides[i].classList.remove('visible');
+      }
+    }
+
+    // REMOVE ALL DOTS FUNCTION
+    function removeDots() {
+      for (var i = 0; i < imageSlides.length; i++) {
+        circles[i].classList.remove('dot');
+      }
+    }
+
+    // SINGLE IMAGE LOOP/CIRCLES FUNCTION
+    function imageLoop() {
+      var currentImage = imageSlides[counter];
+      var currentDot = circles[counter];
+      currentImage.classList.add('visible');
+      removeDots();
+      currentDot.classList.add('dot');
+      counter++;
+    }
+
+    // LEFT & RIGHT ARROW FUNCTION & CLICK EVENT LISTENERS
+    function arrowClick(e) {
+      var target = e.target;
+      if (target == leftArrow) {
+        clearInterval(imageSlideshowInterval);
+        hideImages();
+        removeDots();
+        if (counter == 1) {
+          counter = (imageSlides.length - 1);
+          imageLoop();
+          imageSlideshowInterval = setInterval(slideshow, 10000);
+        } else {
+          counter--;
+          counter--;
+          imageLoop();
+          imageSlideshowInterval = setInterval(slideshow, 10000);
+        }
+      }
+      else if (target == rightArrow) {
+        clearInterval(imageSlideshowInterval);
+        hideImages();
+        removeDots();
+        if (counter == imageSlides.length) {
+          counter = 0;
+          imageLoop();
+          imageSlideshowInterval = setInterval(slideshow, 10000);
+        } else {
+          imageLoop();
+          imageSlideshowInterval = setInterval(slideshow, 10000);
+        }
+      }
+    }
+
+    leftArrow.addEventListener('click', arrowClick);
+    rightArrow.addEventListener('click', arrowClick);
+
+
+    // IMAGE SLIDE FUNCTION
+    function slideshow() {
+      if (counter < imageSlides.length) {
+        imageLoop();
+      } else {
+        counter = 0;
+        hideImages();
+        imageLoop();
+      }
+    }
+
+    // SHOW FIRST IMAGE, & THEN SET & CALL SLIDE INTERVAL
+    setTimeout(slideshow, 1000);
+    var imageSlideshowInterval = setInterval(slideshow, 10000);
+
+    function openNav() {
+      if (window.matchMedia("(min-width: 993px)").matches) {
+        document.getElementById("myNav").style.width = "29%";
+      }
+      else {
+        document.getElementById("myNav").style.width = "75%";
+
+      }
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
+</body>
+
+</html>

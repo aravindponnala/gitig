@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sample App: Multi-party Conference using EnableX and Python</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/enablex.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.toast.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/confo.css' %}">
+    <script>
+        var csrftoken = '{{ csrf_token }}';
+    </script>
+</head>
+<style>
+#showtimer {
+  padding: 20px;
+  background-color: green;
+}
+</style>
+<body>
+<div id="showtimer" style="border-style: solid;border-color:#1f7a1f">
+<span id="timer"></span>
+</div>
+    {% csrf_token %}
+    <div class="container-fluid">
+        <div class="wrapper" style="width: 100%;height:100%;">
+            <div class="video_container_div">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div id="local_video_div"></div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="multi_video_container_div"></div>
+                </div>
+            </div>
+            <div class="row" id="controls-div">
+                <div class="controls" id="controls" style="background-color:grey;position: fixed;bottom: 0;left:0;width:100%;text-align: center">
+                    <img src="{% static 'img/mic.png' %}" style="margin-right: 20px;cursor: pointer;" class="cus_img_icon icon-confo-mute" onclick="audioMute()" title="Mute audio" />
+                    <img src="{% static 'img/video.png' %}" style="margin-right: 20px;cursor: pointer;" class="cus_img_icon icon-confo-video-mute" title="Mute video" onclick="videoMute()" />
+                    <img src="{% static 'img/end-call.png' %}" style="margin-right: 20px;cursor: pointer;" class="cus_img_icon end_call" title="End call" onclick="endCall()" />
+                    <button type="button" name="button"  id="switchbttn" onclick="switchbttn()" >switch cam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var urlData = {
+            user_ref: '{{ user_ref }}',
+            usertype: '{{ usertype }}',
+            roomId: '{{ roomId }}',
+            customerid: '{{customerid}}',
+            doctorid: '{{doctorid}}',
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/tether.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.toast.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/EnxRtc.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/util.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/confo.js' %}"></script>
+    <script>
+    let timerOn = true;
+
+    function timer(remaining) {
+        var m = Math.floor(remaining / 60);
+        var s = remaining % 60;
+        
+        m = m < 10 ? '0' + m : m;
+        s = s < 10 ? '0' + s : s;
+        document.getElementById('timer').innerHTML = m + ':' + s;
+        remaining -= 1;
+    
+        if(remaining >= 0 && timerOn) {
+            setTimeout(function() {
+                timer(remaining);
+            }, 1000);
+            return;
+        }
+
+        if(!timerOn) {
+            // Do validate stuff here
+            return;
+        }
+    
+        // Do timeout stuff here
+        alert('Timeout for otp');
+        }
+
+        timer(600);
+    </script>
+</body>
+
+</html>

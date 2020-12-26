@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>payment failed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<style>
+
+.row:before, .row:after{
+ display: inline-block !important;
+}
+  body{
+      font-size: 16px;
+  }
+    #grad1 {
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        filter: brightness(100%);
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        html {
+        overflow-x: hidden!important;
+}    
+ #heading_div {
+
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+        }
+#return_to_home_a{
+    margin: 5px;
+    padding: 7px;
+}
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        body{
+            overflow-x: hidden;
+        }
+        #heading_div {
+
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+        }
+        #return_to_home_a{
+    margin: 5px;
+    padding: 7px;
+}
+#your_payment_p{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#order_id_label{
+   margin-left: 40%;
+}
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        body{
+            overflow-x: hidden;
+        }
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+        }
+        #return_to_home_a{
+    margin: 5px;
+    padding: 7px;
+}
+#your_payment_p{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#order_id_label{
+   margin-left: 40%;
+}
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        body{
+            overflow-x: hidden;
+        }
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+        }
+        #return_to_home_a{
+    margin: 5px;
+    padding: 7px;
+}
+#your_payment_p{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#order_id_label{
+   margin-left: 60%;
+}
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        body{
+            overflow-x: hidden;
+        }
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+        }
+        #return_to_home_a{
+    margin: 5px;
+    padding: 7px;
+}
+#your_payment_p{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#order_id_label{
+   margin-left: 70%;
+}
+    }
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <!-- heading row -->
+            <div class="row">
+                <div class="col">
+                    <div id="heading_div">
+                        <h3 id="heading_id">PAYMENT FAILED</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <!-- heading row end -->
+                <!-- symbol row starts -->
+                <div class="row mt-4">
+                    <div class="col text-center">
+                        <i class="fa fa-warning" style="color: red;font-size: 50px;"></i>
+                    </div>
+                </div>
+                <!-- symbol row ends -->
+                <!-- transaction failed row starta -->
+
+                <div class="row">
+                    <div class="col text-center">
+                        <span style="font-weight: bold;">Transaction failed</span>
+                    </div>
+                </div>
+
+                <!-- transaction failed row ends -->
+                <!-- your payment starts -->
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col"  >
+                            <p style="  text-align-last: center; text-align: justify" id="your_payment_p"> Your payment attempt
+                                failed,amount if deducted will be refunded to your bank account in 3-5 working
+                                days.Please contact Aodh customer care for any further queries.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- your payment starts ends-->
+                <!--order id starts -->
+                <div class="row">
+                    <div class="col-xs-4 col-sm-5 col-md-6 col-lg-6">
+                        <label id="order_id_label" style="font-weight: bold;">Order ID:</label>
+                    </div>
+                    <div class="col-xs-8 col-sm-7 col-md-6 col-lg-6 m-0 p-0">
+                    {{razorpay_order_id}}
+                    </div>
+                </div>
+                <!--order id ends -->
+                <!-- home button starts -->
+                <div class="row mt-5">
+                    <div class="col">
+                        <a class="list-group-item list-group-item-action" id="return_to_home_a" href="{% url 'customer_home_page' customer_id=customer_id %}"
+                            style="background-color: #003300;color: white;width: fit-content;margin-left: auto;margin-right: auto;">Return to Home</a>
+                    </div>
+                </div>
+                <!-- home button ends -->
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <scripts>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </scripts>
+</body>
+
+</html>

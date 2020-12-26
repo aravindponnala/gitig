@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>Logging File</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+<meta http-equiv="refresh" content="60">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+#maintable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#maintable td, #maintable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#maintable td:nth-child(even){background-color: #f2f2f2;}
+
+#maintable td:hover {background-color: #ddd;}
+
+#maintable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<body>
+<h1> ERROR LOGS </h1><strong>{{datetime}}</strong>
+<div id="table-container">
+<table id="maintable">
+<thead>
+        <tr>
+            <th><center>no</center></th>
+            <th><center>Error<center></th>
+        </tr>
+</thead>
+{% for logcontent  in file_content|slice:"1:" %}
+<tbody>
+        <tr>
+    <td>{{forloop.counter}}</td>
+    <td><pre><strong>{% autoescape on %}{{logcontent}}{% endautoescape %}</strong></pre></td>
+</tr>
+    </tbody>
+{% endfor %}
+</table>
+<div id="bottom_anchor"></div>
+</div>
+<script>
+function moveScroll(){
+    var scroll = $(window).scrollTop();
+    var anchor_top = $("#maintable").offset().top;
+    var anchor_bottom = $("#bottom_anchor").offset().top;
+    if (scroll>anchor_top && scroll<anchor_bottom) {
+    clone_table = $("#clone");
+    if(clone_table.length == 0){
+        clone_table = $("#maintable").clone();
+        clone_table.attr('id', 'clone');
+        clone_table.css({position:'fixed',
+                 'pointer-events': 'none',
+                 top:0});
+        clone_table.width($("#maintable").width());
+        $("#table-container").append(clone_table);
+        $("#clone").css({visibility:'hidden'});
+        $("#clone thead").css({'visibility':'visible','pointer-events':'auto'});
+    }
+    } else {
+    $("#clone").remove();
+    }
+}
+$(window).scroll(moveScroll);
+</script>
+</body>
+</html>

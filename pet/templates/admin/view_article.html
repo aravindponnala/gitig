@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>seminar</h1>
+    {% for article in article %}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{article.article_title}}</td>
+        <td><b>summery:</b>
+        {{article.summery}}</td>
+        <td>
+          <b>date:</b>
+          {{article.published_on}}</td>
+          <td>
+            <b>authors:</b>
+            {{article.authors}}</td>
+    <table>
+      <tbody>
+        <td><b>content</b>
+        {{article.content}}</td>
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+  </body>
+</html>

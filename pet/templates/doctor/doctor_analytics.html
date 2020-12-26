@@ -1,0 +1,1445 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>doctor analytics</title>
+  <!-- <meta http-equiv="refresh" content="10"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<style>
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+
+  .overlay-content {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+
+    margin-left: 200px;
+    font-size: 40px;
+    color: #003300;
+  }
+
+  #doctor_analytics {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #doctors_corner {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #list_of_patients {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #doctor_prrofile {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #helpline_number {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #about {
+    font-size: 16px;
+    color: #003300;
+
+  }
+
+  #Articles {
+    font-size: 16px;
+    width: 250px;
+  }
+
+  #Case_studies {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #Case_reports {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #conferences {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #Vet_needs {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #Seminars {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #Books {
+    font-size: 16px;
+    width: 250px;
+    color: #003300;
+  }
+
+  #Articles {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #Case_studies {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #Case_reports {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #conferences {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #Vet_needs {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #Seminars {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  #Books {
+    font-size: 16px;
+    color: #003300;
+  }
+
+  .row:before,
+  .row:after {
+    display: inline-block !important;
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+
+      filter: brightness(100%);
+      display: inline-block;
+
+
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #heading_id {
+      margin: 6px;
+      padding: 5px;
+    }
+
+    #heading_div {
+
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+
+    #back_button_id {
+      margin: 10%;
+    }
+
+    #pet_id {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+    #pet_id_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+    #pet_id_column {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #consultation_fee_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #total_visit_charges_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #summary_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #no_patient_found_row {
+      margin-top: 40%;
+    }
+
+    #myInput_search {
+      text-align: center;
+      font-size: 13px;
+      width: 92%;
+    }
+
+    #date_input {
+
+      text-align: center;
+      width: 92%;
+      float: right;
+      font-size: 13px;
+    }
+
+    #myTable_compose_message {
+      width: 100%;
+    }
+
+    #myTable {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+  /*------------- Small devices (portrait tablets and large phones, 600px and up) ----------------*/
+  @media only screen and (min-width: 600px) {
+    #grad1 {
+      min-width: 100%;
+      min-height: 100vh;
+      height: auto;
+
+      filter: brightness(100%);
+      display: inline-block;
+
+
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #heading_id {
+      margin: 6px;
+      padding: 5px;
+    }
+
+    #heading_div {
+
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+
+    #back_button_id {
+      margin: 4%;
+    }
+
+    #pet_id {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #pet_id_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+
+    #pet_id_column {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #consultation_fee_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #total_visit_charges_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #summary_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #no_patient_found_row {
+      margin-top: 30%;
+    }
+
+    #myInput_search {
+      width: 70%;
+    }
+
+    #date_input {
+      width: 70%;
+      float: right;
+
+    }
+
+    #myTable_compose_message {
+      width: 100%;
+    }
+
+    #myTable {
+      width: 100%;
+    }
+  }
+
+
+
+  /* ----------------Medium devices (landscape tablets, 768px and up)--------------------- */
+  @media only screen and (min-width: 768px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 100vh;
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    #back_button_id {
+      margin: 10%;
+    }
+
+    #heading_id {
+      margin: 4px;
+      padding: 4px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+
+    #pet_id {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+    #pet_id_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary_two {
+      vertical-align: middle;
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+
+
+    #pet_id_column {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #consultation_fee_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #total_visit_charges_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #summary_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #close_btn {
+      margin-left: 80%;
+      color: #003300;
+    }
+
+    #no_patient_found_row {
+      margin-top: 25%;
+    }
+
+    #myInput_search {
+      width: 55%;
+    }
+
+    #date_input {
+      width: 55%;
+      float: right;
+
+    }
+
+    #myTable_compose_message {
+      width: 100%;
+    }
+
+    #myTable {
+      width: 100%;
+    }
+  }
+
+  /*---------------- Large devices (laptops/desktops, 992px and up) --------------------------------*/
+  @media only screen and (min-width: 992px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 100vh;
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #back_button_id {
+      margin: 2%;
+    }
+
+    #heading_id {
+      margin: 4px;
+      padding: 4px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+
+    #pet_id {
+
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges {
+
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+
+
+    #pet_id_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+    }
+
+    #summary_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+    }
+
+    #pet_id_column {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #consultation_fee_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #total_visit_charges_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #summary_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #table_div {
+      margin-top: 1%;
+
+    }
+
+    #table_id {
+
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+
+    #close_btn {
+      margin-left: 80%;
+      color: #003300;
+    }
+
+    #no_patient_found_row {
+      margin-top: 15%;
+    }
+
+    #myInput_search {
+      width: 50%;
+    }
+
+    #date_input {
+      width: 50%;
+      float: right;
+
+    }
+
+    #myTable_compose_message {
+      width: 100%;
+    }
+
+    #myTable {
+      width: 100%;
+    }
+  }
+
+  /* ====================Extra large devices (large laptops and desktops, 1200px and up) ==================*/
+  @media only screen and (min-width: 1200px) {
+    #grad1 {
+      filter: brightness(100%);
+      min-height: 100vh;
+      height: auto;
+      background-color: lightgrey;
+      /* For browsers that do not support gradients */
+      background-image: linear-gradient(to right, white, lightgrey);
+      /* Standard syntax (must be last) */
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #back_button_id {
+      margin-top: 1%;
+
+    }
+
+    #heading_id {
+      margin: 4px;
+      padding: 4px;
+    }
+
+    #heading_div {
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 0.75px;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+
+      width: fit-content;
+      text-align: center;
+    }
+
+    #doctor_analytics {
+      font-size: 16px;
+      color: #003300;
+
+    }
+
+    #pet_id {
+
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges {
+
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #summary {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #pet_id_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #consutation_fee_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+
+    }
+
+    #total_visit_charges_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+    }
+
+    #summary_two {
+      border-color: white;
+      border-width: 0.75px;
+      border-style: solid;
+      background-color: #003300;
+      color: white;
+      text-align: center;
+    }
+
+
+
+    #pet_id_column {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #consultation_fee_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #total_visit_charges_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #summary_input {
+      text-align: center;
+      border-color: black;
+      border-width: 0.75px;
+      border-style: solid;
+    }
+
+    #table_div {
+      margin-top: 1%;
+
+    }
+
+    #table_id {
+
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+
+    #close_btn {
+      margin-left: 80%;
+      color: #003300;
+    }
+
+    #no_patient_found_row {
+      margin-top: 25%;
+    }
+
+    #no_patient_found_row {
+      margin-top: 15%;
+    }
+
+    #myInput_search {
+      width: 40%;
+    }
+
+    #date_input {
+      width: 40%;
+      float: right;
+
+    }
+
+    #myTable_compose_message {
+      width: 100%;
+    }
+
+    #myTable {
+      width: 100%;
+    }
+  }
+</style>
+
+<body>
+  <input type="hidden" value="{{ doc_id }}" name="doc_id" id="doc_id">
+  <div id="grad1">
+    <div class="row">
+      <div class="col-xs-10 col-sm-8 col-md-8 col-lg-8">
+        <div id="myNav" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+          <div class="overlay-content">
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                style="font-weight: bold;" href="{% url 'doctor_profile'  %}">Doctor profile</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                style="font-weight: bold;" href="{% url 'list_patient'  %}">List of patients</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<span
+                  class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+            </li>
+            <li id="show_div" style="display: none">
+
+              <a class="list-group-item list-group-item-action " role="tab" id="Articles" style="font-weight: bold;"
+                href="{% url 'articles_sbar'  %}"> Articles </a>
+              <a class="list-group-item list-group-item-action " role="tab" id="Case_reports" style="font-weight: bold;"
+                href="{% url 'case_reports_sbar'  %}">Case reports </a>
+              <a class="list-group-item list-group-item-action " role="tab" id="conferences" style="font-weight: bold;"
+                href="{% url 'conferences_sbar'  %}">Conferences </a>
+              <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs" style="font-weight: bold;"
+                href="{% url 'vet_news_sbar'  %}">Vet news</a>
+              <a class="list-group-item list-group-item-action " role="tab" id="Seminars" style="font-weight: bold;"
+                href="{% url 'seminars_sbar'  %}">Seminars</a>
+              <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;"
+                href="{% url 'books_sbar'  %}">Books</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                style="font-weight: bold;" href="{% url 'bookmarks'  %}">Bookmarks</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                style="font-weight: bold;" href="{% url 'danalytics'  %}">Doctor analytics</a>
+            </li>
+
+            {% if doc_pk.stock_management == 'yes' %}
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="helpline_number" onclick="diseaseshow()"
+                style="font-weight: bold;" href="{% url 'stocks'  %}">Stocks</a>
+            </li>
+            {% else %}
+            {% endif %}
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="helpline_number" onclick="diseaseshow()"
+                style="font-weight: bold;">Helpline number</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                style="font-weight: bold;">About</a>
+            </li>
+            <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+            </li>
+          </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+      </div>
+      <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4">
+        <a> <button type="button" class="btn btn" style="background-color: #003300;color: white;float: right;"
+            id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="heading_div">
+          <h3 id="heading_id" style="color: white">DOCTOR ANALYTICS</h3>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <!-- search with names -->
+      <form method="post" id="doctor_analytics_form_id">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="text" class="form-control" id="myInput_search"
+              onkeyup="myFunction();myFunction_all_customers()" placeholder="Search with name.." title="Type in a name">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <input type="date" class="form-control" name="visit_date" id="date_input" placeholder="Search by date"
+              value="{{ visit_date }}" required>
+            <input hidden name="pk" value="{{ doc_id }}">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" onclick="show_sent_msg_table()" class="btn btn"
+              style="background-color: #003300;color: white;">Sent messages</button>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <button type="button" onclick="refresh()" class="btn btn"
+              style="background-color: #003300;color: white;float: right;">Reset</button>
+          </div>
+        </div>
+        <!-- send message code starts -->
+        <div id="wrapper_id" class="wrapper">
+          <input type="hidden" id="doc_id" name="doc_id" value="{{ doc_pk }}"><br>
+          <div id="sent_messages" style="display: none;">
+            <table class="table table-bordered" id="myTable">
+              <thead>
+                <tr>
+                  <th scope="col" id="pet_id">Customer</th>
+                  <th scope="col" id="pet_id">Pet name</th>
+                  <th scope="col" id="pet_id">Date</th>
+                  <th scope="col" id="total_visit_charges">Message</th>
+                  <th scope="col" id="summary">Send reminder</th>
+                </tr>
+              </thead>
+              {% for value in total_message_list %}
+              <tbody>
+                <tr>
+                  <td scope="row" style="border-style: solid;border-color: black" id="pet_id_column">
+                    {{ value.customer.customer_name }}</td>
+                  <td style="border-style: solid;border-color: black" id="total_visit_charges_input"> {{ value.date }}
+                  </td>
+
+                  <td style="border-style: solid;border-color: black" id="total_visit_charges_input">{{ value.message }}
+                  </td>
+
+                  <td style="border-style: solid;border-color: black" id="summary_input"><a
+                      href="{% url 'customize_message' customer_id=value.customer.customer_id %}"> compose
+                      message</a></td>
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% if all_customers %}
+    <!-- dotor analytics first table appear start -->
+    <div id="table_div">
+      <table class="table table-bordered" id="myTable_compose_message">
+        <thead>
+          <tr>
+            <th scope="col" id="pet_id">Customer name</th>
+            <th scope="col" id="pet_id">Pet name</th>
+            <th scope="col" id="total_visit_charges">Total visit charges</th>
+            <th scope="col" id="summary">Summary</th>
+            <th scope="col" id="summary">Send reminder</th>
+          </tr>
+        </thead>
+        {% for value in all_customers %}
+        <form method="post">
+          {% csrf_token %}
+          <tbody>
+            <tr>
+              <td scope="row" style="border-style: solid;border-color: black" id="pet_id_column">
+                {{ value.customer_id.customer_name }}<br>
+                {{ value.date }}</td>
+
+                <td style="border-style: solid;border-color: black" id="total_visit_charges_input">{{ value.pet_id.name }}
+                </td>
+
+              <td style="border-style: solid;border-color: black" id="total_visit_charges_input">
+                {{ value.consultation_fee }}
+              </td>
+              <td style="border-style: solid;border-color: black" id="summary_input"><a
+                  href="{% url 'summary_analytics' purpose_id=value.purpose_id.id  %}">summary</a><br>
+              </td>
+              <td style="border-style: solid;border-color: black" id="summary_input"><a
+                  href="{% url 'customize_message' customer_id=value.customer_id.customer_id %}">
+                  compose
+                  message</a></td>
+            </tr>
+          </tbody>
+        </form>
+        {% endfor %}
+      </table>
+    </div>
+    {% else %}
+    <!-- if no patient found tyable starts -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" id="pet_id_two">Customer name</th>
+          <th scope="col" id="total_visit_charges_two">Total visit charges</th>
+          <th scope="col" id="summary_two">Summary</th>
+          <th scope="col" id="summary_two">Send reminder</th>
+        </tr>
+      </thead>
+    </table>
+    <div class="row" id="no_patient_found_row">
+      <div class="col text-center">
+        <span>No patients found!.</span>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+  function openNav() {
+    if (window.matchMedia("(min-width: 993px)").matches) {
+      document.getElementById("myNav").style.width = "29%";
+    }
+    else {
+      document.getElementById("myNav").style.width = "75%";
+
+    }
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+
+  function show_doctors_corner() {
+    if (document.getElementById('show_div').style.display == 'none') {
+      document.getElementById('show_div').style.display = 'inline-block';
+
+
+    } else {
+      document.getElementById('show_div').style.display = 'none';
+
+    }
+  }
+
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput_search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  function myFunction_all_customers() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput_search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable_compose_message");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  $(function () {
+    $("#date_input").change(function () {
+      document.getElementById("doctor_analytics_form_id").submit();
+    });
+  });
+
+  function refresh() {
+    location = location['href']
+  }
+  function show_sent_msg_table() {
+    if (document.getElementById('sent_messages').style.display == "none") {
+      document.getElementById('sent_messages').style.display = "block";
+      document.getElementById('myTable_compose_message').style.display = "none";
+
+    }
+  }
+  $("#date_input").change(function (evt) {
+    var date = new Date($("#date_input").val());
+    $("#date_input").attr("type", "text");
+    $("#date_input").val(date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear());
+  });
+  $("#date_input").focus(function (evt) {
+    $("#date_input").attr("type", "date");
+    setTimeout('$("#date_input").click();', 500);
+  });
+  $("#date_input").attr("type", "text");
+</script>

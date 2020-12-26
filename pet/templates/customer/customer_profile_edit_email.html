@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change email</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<style>
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+    #grad1 {
+        min-width: 100%;
+        min-height: 100vh;
+        height: auto;
+        filter: brightness(100%);
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #email_card{
+        margin-top: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #email_card{
+        margin-top: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+ 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #email_card{
+        margin-top: 27%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    #email_card{
+        margin-top: 22%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%;
+    }
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    #email_card{
+        margin-top: 18%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 35%;
+    }
+  
+}
+</style>
+
+<body>
+    <div id="grad1">
+        <div class="wrapper">
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                <div class="card" id="email_card">
+                    <div class="card-body">
+                        <h3>Change your email</h3>
+                        <div class="row">
+                            <div class="col">
+                                <span>Current E-mail:</span>
+                            </div>
+                        
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>{{customer_profile.email}}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>Enter new E-mail:</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                               <input class="form-control" name="email" type="email" required>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col">
+                                <button class="btn btn-default"   onclick="window.history.go(-1); return false;" >Back</button>
+ 
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-default"   style="float: right;">Update</button>
+
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12 text-center">
+                        {% for i in messages %}
+                       <span style="color: red;">{{i}}</span> 
+                        {% endfor %}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- name card ends -->
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

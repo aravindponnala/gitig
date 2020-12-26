@@ -1,0 +1,468 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>customer previos visits</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<style>
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+
+        }
+
+        #heading_id {
+            margin: 3px;
+            padding: 6px;
+            font-weight: bold;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #date {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        #summary {
+            border-color: white;
+            border-style: solid;
+            border-width: 2px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        .td {
+            width: 10px;
+        }
+
+        .summaryclass {
+            width: 2px;
+        }
+
+        #submit_button {
+            margin-left: 72%;
+            background-color: #003300;
+            color: white;
+        }
+
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        #back_button {
+            background-color: #003300;
+            color: white;
+            margin-left: right;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 8px;
+            font-weight: bold;
+
+        }
+
+        #heading_div {
+            margin-top: 5px;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #date {
+            border-style: solid;
+            border-width: 2px;
+            border-color: white;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        #summary {
+            border-color: white;
+            border-style: solid;
+            border-width: 2px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        .td {
+            width: 10px;
+        }
+
+        .summaryclass {
+            width: 2px;
+        }
+
+        #submit_button {
+            margin-left: 72%;
+            background-color: #003300;
+            color: white;
+        }
+
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        #back_button_id {
+            margin: 4%;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+            font-weight: bold;
+
+        }
+
+        #heading_div {
+            margin-top: 5px;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #submit_button {}
+
+        #date {
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: white;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        #summary {
+            border-color: white;
+            border-style: solid;
+            border-width: 0.75px;
+
+            background-color: #003300;
+            color: white;
+            text-align: center;
+        }
+
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        #back_button_id {
+            margin: 2%;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+        #heading_id {
+            margin: 8px;
+            padding: 8px;
+            font-weight: bold;
+
+        }
+
+        #heading_div {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 5px;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #submit_button {}
+
+        #date {
+            border-color: white;
+            border-style: solid;
+            border-width: 0.75px;
+
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+
+        }
+
+        #summary {
+            border-color: white;
+            border-style: solid;
+            border-width: 0.75px;
+
+            background-color: #003300;
+            color: white;
+            text-align: center;
+
+        }
+
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 55%;
+        }
+
+        #back_button_id {
+            margin: 2%;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #back_button {
+            background-color: #003300;
+            color: white;
+        }
+
+        #heading_id {
+            margin: 5px;
+            padding: 5px;
+            font-weight: bold;
+
+        }
+
+        #heading_div {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 5px;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            width: auto;
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #date {
+            border-color: white;
+            border-style: solid;
+            border-width: 0.75px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+        }
+
+        #summary {
+            border-color: white;
+            border-style: solid;
+            border-width: 0.75px;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+        }
+
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        #back_button_id {
+            margin-right: 35%;
+        }
+
+        #back_button_id {
+            margin: 1%;
+        }
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ customer_id }}" id="customer_id" name="customer_id">
+    <div id="grad1">
+        <div id="first_div">
+            <div id="wrapper_id" class="wrapper">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4 col-xl-4 m-0 p-0">
+                    </div>
+                    <div class="col-xs-7 col-sm-6 col-md-6 col-lg-4 col-xl-4 m-0 p-0">
+                        <div id="heading_div">
+                            <h4 id="heading_id">PVREVIOUS VISITS </h4>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-4 col-xl-4 mt-1">
+                        <a> <button type="button" class="btn btn" id="back_button"
+                                onclick="window.history.go(-1); return false;">Back</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" id="date">Date</th>
+                                                <th scope="col" id="summary">Summary</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for  x in purpose_pet_obj %}
+                                            <tr>
+                                                <td style="border-style: solid;border-color: black;border-width:0.75px;text-align: center;"
+                                                    class="td">{{ x.date }}</td>
+                                                <td style="border-style: solid;border-color: black;border-width:0.75px;text-align: center;"
+                                                    class="summaryclass"><a
+                                                        href="{% url 'customer_previous_visit' purpose_id=x.id %}">summary</a>
+                                                </td>
+
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

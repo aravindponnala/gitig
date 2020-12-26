@@ -1,0 +1,1893 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>my bookings</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #1f7a1f;
+    }
+
+    .row:before,
+    .row:after {
+        display: inline-block !important;
+    }
+
+
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        body {
+            overflow-x: hidden;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #container_id {
+            width: 100%;
+        }
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+
+
+        #back_button_id {
+            font-size: 12px;
+  
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #current_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #completed_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #current {
+
+            float: right;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            background-color: #003300;
+        }
+
+        #completed {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 100%;
+            color: black;
+            background-color: lightgreen;
+        }
+
+        #current_doctor_name {
+            color: #003300;
+        }
+
+        #current_clinic_name {
+            color: #003300;
+        }
+
+        #current_card_date_col {
+            font-size: 13px;
+        }
+
+        #current_date_id {
+
+            color: #003300;
+        }
+
+        #current_view_booking_summary {
+            font-size: 14px;
+        }
+
+        #cancel_button_current {
+            float: right;
+            margin-right: 10%;
+        }
+
+        #date_completed {
+
+            color: #003300;
+        }
+
+        #date_completed_col {
+            font-size: 13px;
+        }
+
+        #doctor_name_completed {
+            color: #003300;
+        }
+
+        #clinic_name_completed {
+            color: #003300;
+        }
+
+        #booking_summary_comleted {
+
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #booking_summary_a {
+            width: 100%;
+        }
+
+        #clinic_name {
+            color: #003300;
+        }
+
+        #cancelled_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #cancelled_card_date {
+            color: #003300;
+        }
+
+        #cancelled_card_date_col {
+            font-size: 13px;
+        }
+
+        #cancelled {
+            background-color: red;
+            color: white;
+            border-style: solid;
+           
+            border-radius: 30px;
+            width: 100%;
+            text-align: center;
+
+        }
+
+        #doctor_name_cancelled {
+            color: #003300;
+        }
+
+        #clinic_name_cancelled {
+            color: #003300;
+        }
+
+        #booking_summary_cancelled {
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #no_bookings_found_cancel {
+            margin-top: 40%;
+        }
+
+        #no_bookings_found_completed {
+            margin-top: 40%;
+        }
+
+        #no_bookings_found_current {
+            margin-top: 40%;
+        }
+        /* expired style */
+        #Expired_card_div{
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+}
+#expired_card_date_col{
+    font-size: 13px;
+
+}
+#expired{
+        background-color: red;
+            color: white;
+            border-style: solid;
+           
+            border-radius: 30px;
+            width: 100%;
+            text-align: center;
+}
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        body {
+            overflow-x: hidden;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #container_id {
+            width: 100%;
+        }
+
+        #grad1 {
+
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            filter: brightness(100%);
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_div {
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+      
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #current_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #completed_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #current {
+
+            float: right;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: white;
+            background-color: #003300;
+        }
+
+        #completed {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 80%;
+            color: black;
+            background-color: lightgreen;
+        }
+
+        #current_doctor_name {
+            color: #003300;
+        }
+
+        #current_clinic_name {
+            color: #003300;
+        }
+
+        #current_card_date_col {
+            font-size: 13px;
+        }
+
+        #current_date_id {
+
+            color: #003300;
+        }
+
+        #current_view_booking_summary {
+            font-size: 14px;
+        }
+
+        #cancel_button_current {
+            float: right;
+            margin-right: 10%;
+        }
+
+        #date_completed {
+
+            color: #003300;
+        }
+
+        #date_completed_col {
+            font-size: 13px;
+        }
+
+        #doctor_name_completed {
+            color: #003300;
+        }
+
+        #clinic_name_completed {
+            color: #003300;
+        }
+
+        #booking_summary_comleted {
+
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #booking_summary_a {
+            width: 100%;
+        }
+
+        #clinic_name {
+            color: #003300;
+        }
+
+        #cancelled_card_div {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+        }
+
+        #cancelled_card_date {
+            color: #003300;
+        }
+
+        #cancelled_card_date_col {
+            font-size: 13px;
+        }
+
+        #cancelled {
+            background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 75%;
+            text-align: center;
+
+        }
+
+        #doctor_name_cancelled {
+            color: #003300;
+        }
+
+        #clinic_name_cancelled {
+            color: #003300;
+        }
+
+        #booking_summary_cancelled {
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #no_bookings_found_cancel {
+            margin-top: 33%;
+        }
+
+        #no_bookings_found_completed {
+            margin-top: 33%;
+        }
+
+        #no_bookings_found_current {
+            margin-top: 33%;
+        }
+               /* expired style */
+               #Expired_card_div{
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 2%;
+}
+#expired_card_date_col{
+    font-size: 13px;
+
+}
+#expired{
+        background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 80%;
+            text-align: center;
+}
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #current_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 70%;
+            margin-top: 2%;
+        }
+
+        #completed_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 70%;
+            margin-top: 2%;
+        }
+
+        #current {
+
+
+            float: right;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: white;
+            background-color: #003300;
+        }
+
+        #completed {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: black;
+            background-color: lightgreen;
+        }
+
+        #current_doctor_name {
+            color: #003300;
+        }
+
+        #current_clinic_name {
+            color: #003300;
+        }
+
+        #current_card_date_col {
+            font-size: 13px;
+        }
+
+        #current_date_id {
+
+            color: #003300;
+        }
+
+        #current_view_booking_summary {
+            font-size: 14px;
+        }
+
+        #cancel_button_current {
+            float: right;
+            margin-right: 10%;
+        }
+
+        #date_completed {
+
+            color: #003300;
+        }
+
+        #date_completed_col {
+            font-size: 13px;
+        }
+
+        #doctor_name_completed {
+            color: #003300;
+        }
+
+        #clinic_name_completed {
+            color: #003300;
+        }
+
+        #booking_summary_comleted {
+
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #booking_summary_a {
+            width: 100%;
+        }
+
+        #clinic_name {
+            color: #003300;
+        }
+
+        #cancelled_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 70%;
+            margin-top: 2%;
+        }
+
+        #cancelled_card_date {
+            color: #003300;
+        }
+
+        #cancelled_card_date_col {
+            font-size: 13px;
+        }
+
+        #cancelled {
+
+            background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+
+        }
+
+        #doctor_name_cancelled {
+            color: #003300;
+        }
+
+        #clinic_name_cancelled {
+            color: #003300;
+        }
+
+        #booking_summary_cancelled {
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+        }
+
+        #no_bookings_found_cancel {
+            margin-top: 25%;
+        }
+
+        #no_bookings_found_completed {
+            margin-top: 25%;
+        }
+
+        #no_bookings_found_current {
+            margin-top: 25%;
+        }
+               /* expired style */
+               #Expired_card_div{
+                margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 70%;
+            margin-top: 2%;
+}
+#expired_card_date_col{
+    font-size: 13px;
+
+}
+#expired{
+        background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+}
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #current_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 60%;
+            margin-top: 2%;
+        }
+
+        #completed_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 50%;
+            margin-top: 2%;
+        }
+
+        #current {
+
+
+            float: right;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: white;
+            background-color: #003300;
+        }
+
+        #completed {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: black;
+            background-color: lightgreen;
+        }
+
+        #current_doctor_name {
+            color: #003300;
+        }
+
+        #current_clinic_name {
+            color: #003300;
+        }
+
+        #current_card_date_col {
+            font-size: 13px;
+        }
+
+        #current_date_id {
+
+            color: #003300;
+        }
+
+        #current_view_booking_summary {
+            font-size: 14px;
+        }
+
+        #cancel_button_current {
+            float: right;
+            margin-right: 10%;
+        }
+
+        #date_completed {
+
+            color: #003300;
+        }
+
+        #date_completed_col {
+            font-size: 13px;
+        }
+
+        #doctor_name_completed {
+            color: #003300;
+        }
+
+        #clinic_name_completed {
+            color: #003300;
+        }
+
+        #booking_summary_comleted {
+
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #booking_summary_a {
+            width: 100%;
+        }
+
+        #clinic_name {
+            color: #003300;
+        }
+
+        #cancelled_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 60%;
+            margin-top: 2%;
+        }
+
+        #cancelled_card_date {
+            color: #003300;
+        }
+
+        #cancelled_card_date_col {
+            font-size: 13px;
+        }
+
+        #cancelled {
+
+            background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+
+        }
+
+        #doctor_name_cancelled {
+            color: #003300;
+        }
+
+        #clinic_name_cancelled {
+            color: #003300;
+        }
+
+        #booking_summary_cancelled {
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+        }
+
+        #back_button_id {
+         
+            margin-right: 15%;
+        }
+
+        #no_bookings_found_cancel {
+            margin-top: 15%;
+        }
+
+        #no_bookings_found_completed {
+            margin-top: 15%;
+        }
+
+        #no_bookings_found_current {
+            margin-top: 15%;
+        }
+  /* expired style */
+               #Expired_card_div{
+                margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 60%;
+            margin-top: 2%;
+}
+#expired_card_date_col{
+    font-size: 13px;
+
+}
+#expired{
+        background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+}
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            filter: brightness(100%);
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #heading_div {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #003300;
+            color: white;
+            width: fit-content;
+        }
+
+        #heading_id {
+
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #back_button_id {
+         
+            margin-right: 35%;
+        }
+
+        #pet_profile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #blog {
+
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #vaccination_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #deworming_history {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #previous_visit {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about_us {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #span_id {
+            color: #1f7a1f;
+        }
+
+        #current_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 50%;
+            margin-top: 2%;
+        }
+
+        #completed_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 50%;
+            margin-top: 2%;
+        }
+
+        #current {
+
+
+            float: right;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: white;
+            background-color: #003300;
+        }
+
+        #completed {
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            text-align: center;
+            width: 60%;
+            color: black;
+            background-color: lightgreen;
+        }
+
+        #current_doctor_name {
+            color: #003300;
+        }
+
+        #current_clinic_name {
+            color: #003300;
+        }
+
+        #current_card_date_col {
+            font-size: 13px;
+        }
+
+        #current_date_id {
+
+            color: #003300;
+        }
+
+        #current_view_booking_summary {
+            font-size: 14px;
+        }
+
+        #cancel_button_current :hover{
+            background-color: red;
+            float: right;
+            margin-right: 10%;
+        }
+
+        #date_completed {
+
+            color: #003300;
+        }
+
+        #date_completed_col {
+            font-size: 13px;
+        }
+
+        #doctor_name_completed {
+            color: #003300;
+        }
+
+        #clinic_name_completed {
+            color: #003300;
+        }
+
+        #booking_summary_comleted {
+
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #booking_summary_a {
+            width: 100%;
+        }
+
+        #clinic_name {
+            color: #003300;
+        }
+
+        #cancelled_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 50%;
+            margin-top: 2%;
+        }
+
+        #cancelled_card_date {
+            color: #003300;
+        }
+
+        #cancelled_card_date_col {
+            font-size: 13px;
+        }
+
+        #cancelled {
+
+            background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+
+        }
+
+        #doctor_name_cancelled {
+            color: #003300;
+        }
+
+        #clinic_name_cancelled {
+            color: #003300;
+        }
+
+        #booking_summary_cancelled {
+            width: fit-content;
+
+            border-radius: 30px;
+            text-align: center;
+
+            color: #003300;
+        }
+
+        #img_id {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #circle_id {
+            height: 100px;
+            width: 100px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+        }
+
+        #no_bookings_found_cancel {
+            margin-top: 15%;
+        }
+
+        #no_bookings_found_completed {
+            margin-top: 15%;
+        }
+
+        #no_bookings_found_current {
+            margin-top: 15%;
+        }
+               /* expired style */
+               #Expired_card_div{
+                margin-left: auto;
+            margin-right: auto;
+            border-style: solid;
+            border-color: green;
+            border-radius: 30px;
+            width: 50%;
+            margin-top: 2%;
+}
+#expired_card_date_col{
+    font-size: 13px;
+
+}
+#expired{
+        background-color: red;
+            color: white;
+            border-style: solid;
+            
+            border-radius: 30px;
+            width: 60%;
+            text-align: center;
+}
+
+
+    }
+
+
+</style>
+
+<body>
+
+
+    <div id="grad1">
+
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" id="close_btn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab" id="pet_profile"
+                            style="font-weight: bold;" href="{% url 'mypets' %}">
+                            My pets
+                          </a></li>
+                        <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                id="about_us" style="font-weight: bold;">About us </a></li>
+                        <li style="list-style: none"> <a class="list-group-item list-group-item-action " role="tab"
+                                id="about_us" style="font-weight: bold;" href="{% url 'logout' %}">Sign out </a></li>
+                    </div>
+                </div>
+                <span style="font-size:30px;cursor:pointer;" id="span_id" onclick="openNav()">&#9776;</span>
+            </div>
+            <div class="col-xs-7 col-sm-8 col-md-4 col-lg-4 m-0 p-0">
+
+                <div id="heading_div">
+                    <h3 id="heading_id" style="  font-weight: bold;"> MY BOOKINGS</h3>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-2 col-md-4 col-lg-4">
+
+                <a> <button type="button" class="btn btn mt-2"
+                        style="background-color: #003300;color: white;width: fit-content;" id="back_button_id"
+                        onclick="window.history.go(-1); return false;">Back</button>
+                </a>
+
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col text-center">
+
+                <button type="button" class="btn btn" style="background-color: #003300;color: white;font-size: 12px;"
+                    id="current_button" onclick="current()">Current</button>
+                <button type="button" class="btn btn" style="background-color: white;  font-size: 12px;"
+                    id="completed_button" onclick="completed()">Completed</button>
+                <button type="button" class="btn btn" style="background-color: white; font-size: 12px;"
+                    id="cancelled_button" onclick="cancelled()">Cancelled</button>
+                <button type="button" class="btn btn" style="background-color: white; font-size: 12px;"
+                    id="expired_button" onclick="expired()">Expired</button>
+
+            </div>
+        </div>
+        <br>
+        <div id="wrapper_id" class="wrapper ">
+            <div class="container" id="container_id">
+                <div id="current_style">
+                    {% if current %}
+                    {% for i in current %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row ">
+                            <div class="col-12">
+                                <div class="card" id="current_card_div">
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <div class="col-7" id="current_card_date_col">
+                                                <label for="create-account" class="form-label"
+                                                    style="font-weight: bold;" id="current_date_id">Date:</label>
+                                                {{i.booking_date}}
+                                            </div>
+
+                                            <div class="col-5" id="current_col">
+                                                <a class="" id="current"><span id='test'>Current</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="create-account" class="form-label"
+                                                    style="font-weight: bold;" id="current_doctor_name">Doctor
+                                                    :</label>{{i.doc_pk.Name_of_doctor}}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="create-account" class="form-label"
+                                                    style="font-weight: bold;" id="current_clinic_name">Clinic
+                                                    :</label>{{i.doc_pk.Hospital}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row" id="cancel_booking_div">
+                                            <div class="col-9" id="current_view_booking_summary_col">
+                                                <button  class="btn btn" name="" id="current_view_booking_summary">
+                                                    <a
+                                                        href="{% url 'mybooking_summary' customer_id=customer_id purpose_id=i.purpose_id.id %}">View
+                                                        booking summary</a></button>
+                                            </div>
+                                            <input type="hidden" name="doctor" value="{{ i.doc_pk.id }}">
+                                            <input type="hidden" name="purpose" value="{{ i.purpose_id.id }}">
+                                            <div class="col-3" id="current_cancel_col">
+                                                <button type="submit" name="" class="btn btn " id="cancel_button_current" style="background-color: lightgray;">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    {% endfor %}
+                    {% else %}
+                    <div class="row" id="no_bookings_found_current">
+                        <div class="col text-center">
+                            <label>No Bookings found!</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!--  =====================completed======================================#} -->
+                <div id="completed_style" style="display: none;">
+                    {% if completed %}
+
+                    {% for i in completed %}
+
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="card" id="completed_card_div">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-7" id="date_completed_col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="date_completed">Date:</label>{{i.booking_date}}
+                                        </div>
+                                        <div class="col-5">
+
+                                            <a class="float-right" id="completed"><span id='test' >Completed</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="doctor_name_completed">Doctor
+                                                :</label>{{i.doc_pk.Name_of_doctor}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="clinic_name_completed">Clinic :</label>{{i.doc_pk.Hospital}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="view_comleted_div">
+                                        <div class="col-12">
+                                            <div class="text-center">
+                                                <button name="" id="booking_summary_comleted"
+                                                    style="font-weight: bold;color: #003300;">
+                                                    <a class="m-0 p-0" id="booking_summary_a"
+                                                        href="{% url 'mybooking_summary' customer_id=customer_id purpose_id=i.purpose_id.id %}">View
+                                                        booking summary</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                    {% else %}
+                    <div class="row" id="no_bookings_found_completed">
+                        <div class="col text-center">
+                            <label>No Bookings found!</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- ===================cancelled============================================= -->
+                <div id="cancelled_style" style="display: none;">
+                    {% if cancelled %}
+                    {% for i in cancelled %}
+
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="card" id="cancelled_card_div">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-7" id="expired_card_date_col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="cancelled_card_date">Date:</label>{{i.booking_date}}
+                                        </div>
+                                        <div class="col-5">
+
+                                            <a class="float-right" id="cancelled" ><span id='test' >Cancelled</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="doctor_name_cancelled">Doctor
+                                                :</label>{{i.doc_pk.Name_of_doctor}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;"
+                                                id="clinic_name_cancelled">Clinic :</label>{{i.doc_pk.Hospital}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="view_comleted_div">
+                                        <div class="col">
+                                            <div class="text-center">
+                                                <button name="" id="booking_summary_cancelled"
+                                                    style="font-weight: bold;color: #003300;">
+                                                    <a
+                                                        href="{% url 'mybooking_summary' customer_id=customer_id purpose_id=i.purpose_id.id %}">View
+                                                        booking summary</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="row" id="no_bookings_found_cancel">
+                        <div class="col text-center">
+                            <label>No Bookings found!</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+
+       <!-- ============Expired starts================== -->
+                <div id="expired_style" style="display: none;">
+                    {% if expired %}
+                    {% for i in expired %}
+
+                    <div class="row ">
+                        <div class="col-12">
+                            <div class="card" id="Expired_card_div">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-7" id="cancelled_card_date_col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;color: #003300;"
+                                            >Date:</label>{{i.booking_date}}
+                                        </div>
+                                        <div class="col-5">
+
+                                            <a class="float-right" id="expired"><span id='test' >Expired</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;color: #003300;"
+                                              >Doctor
+                                                Name:</label>{{i.doc_pk.Name_of_doctor}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="create-account" class="form-label" style="font-weight: bold;color: #003300;"
+                                               >Clinic Name:</label>{{i.doc_pk.Hospital}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="view_expired_div">
+                                        <div class="col">
+                                            <div class="text-center">
+                                                <button name="" id="booking_summary_expired"
+                                                    style="font-weight: bold;color: #003300;">
+                                                    <a
+                                                        href="{% url 'mybooking_summary' customer_id=customer_id purpose_id=i.purpose_id.id %}">View
+                                                        booking summary</a></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="row" id="no_bookings_found_cancel">
+                        <div class="col text-center">
+                            <label>No Bookings found!</label>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- ============Expired ends================ -->
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script>
+     function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+
+    function completed() {
+        try {
+
+
+            document.getElementById('current_style').style.display = 'none';
+            document.getElementById('cancelled_style').style.display = 'none';
+            document.getElementById('completed_style').style.display = 'block';
+            document.getElementById('expired_style').style.display = 'none';
+            document.getElementById('current_button').style.backgroundColor='white';
+            document.getElementById('current_button').style.color='black';
+            document.getElementById('expired_button').style.backgroundColor='white';
+            document.getElementById('expired_button').style.color='black';
+            document.getElementById('cancelled_button').style.backgroundColor='white';
+            document.getElementById('cancelled_button').style.color='black';
+            document.getElementById('completed_button').style.backgroundColor='#003300';
+            document.getElementById('completed_button').style.color='white';
+        }
+        catch{
+
+        }
+    }
+
+    function cancelled() {
+        try {
+            document.getElementById('cancelled_style').style.display = 'block';
+            document.getElementById('completed_style').style.display = 'none';
+            document.getElementById('current_style').style.display = 'none';
+            document.getElementById('expired_style').style.display = 'none';
+            document.getElementById('completed_button').style.backgroundColor='white';
+            document.getElementById('completed_button').style.color='black';
+            document.getElementById('current_button').style.backgroundColor='white';
+            document.getElementById('current_button').style.color='black';
+            document.getElementById('expired_button').style.backgroundColor='white';
+            document.getElementById('expired_button').style.color='black';
+            document.getElementById('cancelled_button').style.backgroundColor='#003300';
+        document.getElementById('cancelled_button').style.color='white';
+        }
+        catch (err) {
+
+            console.log('error')
+
+            document.getElementById('completed_style').style.display = 'none';
+            document.getElementById('current_style').style.display = 'none';
+            document.getElementById('er').innerHTML = 'no bookings'
+        }
+    }
+    function current() {
+        // try{
+        document.getElementById('cancelled_style').style.display = 'none';
+        document.getElementById('current_style').style.display = 'block';
+        document.getElementById('completed_style').style.display = 'none';
+        document.getElementById('expired_style').style.display = 'none';
+        document.getElementById('completed_button').style.backgroundColor='white';
+        document.getElementById('completed_button').style.color='black';
+        document.getElementById('cancelled_button').style.backgroundColor='white';
+        document.getElementById('cancelled_button').style.color='black';
+        document.getElementById('expired_button').style.backgroundColor='white';
+        document.getElementById('expired_button').style.color='black';
+        document.getElementById('current_button').style.backgroundColor='#003300';
+        document.getElementById('current_button').style.color='white';
+    }
+// catch(err){
+//     document.getElementById('current_style').style.display='block';
+//     document.getElementById('completed_style').style.display='none';
+// }
+
+
+// } 
+
+function expired() {
+        // try{
+         document.getElementById('expired_style').style.display = 'block';
+        document.getElementById('cancelled_style').style.display = 'none';
+        document.getElementById('current_style').style.display = 'none';
+        document.getElementById('completed_style').style.display = 'none';
+        document.getElementById('completed_button').style.backgroundColor='white';
+        document.getElementById('completed_button').style.color='black';
+        document.getElementById('cancelled_button').style.backgroundColor='white';
+        document.getElementById('cancelled_button').style.color='black';
+        document.getElementById('current_button').style.backgroundColor='white';
+        document.getElementById('current_button').style.color='black';
+        document.getElementById('expired_button').style.backgroundColor='#003300';
+        document.getElementById('expired_button').style.color='white';
+    }
+
+
+</script>
+

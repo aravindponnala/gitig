@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Case Report</h1>
+    {% for casereport in casereport %}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{casereport.title}}</td>
+        <td><b>author:</b>
+        {{casereport.author}}</td>
+        <td>
+          <b>date:</b>
+          {{casereport.published_on}}</td>
+          <td>
+            <b>email:</b>
+            {{casereport.email}}</td>
+    <table>
+      <tbody>
+        <td><b>link</b>
+        {{casereport.link}}</td>
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+  </body>
+</html>

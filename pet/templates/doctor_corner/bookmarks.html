@@ -1,0 +1,1070 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bookmarks</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+<style>
+    .overlay {
+       height: 100%;
+       width: 0;
+       position: fixed;
+       z-index: 1;
+       top: 0;
+       left: 0;
+       background-color: white;
+       background-color: white;
+       overflow-x: hidden;
+       transition: 0.3s;
+   }
+
+   .overlay-content {
+       position: relative;
+       top: 10%;
+       width: 100%;
+       text-align: center;
+       margin-top: 20px;
+   }
+
+   .overlay a {
+       padding: 8px;
+       text-decoration: none;
+
+       color: #818181;
+       display: block;
+       transition: 0.3s;
+   }
+
+   .overlay a:hover,
+   .overlay a:focus {
+       color: #f1f1f1;
+   }
+
+   .overlay .closebtn {
+       position: absolute;
+
+       margin-left: 200px;
+       font-size: 40px;
+       color: #003300;
+   }
+   #doctor_analytics {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctors_corner {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #list_of_patients {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #doctor_prrofile {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #helpline_number {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #about {
+           font-size: 16px;
+           color: #003300;
+
+       }
+
+       #Articles {
+           font-size: 16px;
+           width: 250px;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           width: 250px;
+           color: #003300;
+       }
+
+       #Articles {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_studies {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Case_reports {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #conferences {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Vet_needs {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Seminars {
+           font-size: 16px;
+           color: #003300;
+       }
+
+       #Books {
+           font-size: 16px;
+           color: #003300;
+       }
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        #wrapper_id {
+            width: 100%;
+        }
+body{
+    overflow-x: hidden;
+}
+
+      #back_button_id{
+          margin: 4%;
+      }
+
+        #heading_id {
+            padding:5px;
+            margin: 6px;
+        }
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+
+        #articles_card_div {
+            width: 100%;
+        }
+
+        #article_view {
+            float: right;
+        }
+
+        #case_report_card_div {
+            width: 100%;
+        }
+
+        #conferences_card_div {
+            width: 100%;
+        }
+
+        #vet_news_card_div {
+            width: 100%;
+        }
+
+        #seminar_card_div {
+            width: 100%;
+        }
+
+        #books_card_div {
+            width: 100%;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #vet_news_read_more {
+            font-weight: bold;
+        }
+
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+
+        #heading_id {
+            padding:5px;
+            margin: 6px;
+        }
+        body{
+    overflow-x: hidden;
+}
+
+
+        #heading_div {
+
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+
+        #grad1 {
+            min-height: 100vh;
+
+        min-width: 100%;
+        width: auto;
+
+        filter: brightness(100%);
+        height: auto;
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+        }
+
+        #back_button_id{
+          margin: 2%;
+      }
+
+        #articles_card_div {
+            width: 100%;
+        }
+
+        #article_view {
+            float: right;
+        }
+
+        #case_report_card_div {
+            width: 100%;
+        }
+
+        #conferences_card_div {
+            width: 100%;
+        }
+
+        #vet_news_card_div {
+            width: 100%;
+        }
+
+        #seminar_card_div {
+            width: 100%;
+        }
+
+        #books_card_div {
+            width: 100%;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #vet_news_read_more {
+            font-weight: bold;
+        }
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding: 4px;
+            margin: 4px;
+        }
+        body{
+    overflow-x: hidden;
+}
+
+        #heading_div {
+          margin-left: auto;
+          margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+        #back_button_id{
+          margin: 2%;
+      }
+
+        #articles_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #article_heading {
+            margin-left: 20%;
+        }
+
+        #article_view {
+            float: right;
+        }
+
+        #case_report_heading {
+            margin-left: 20%;
+        }
+
+        #case_report_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #conference_heading {
+            margin-left: 20%;
+        }
+
+        #conferences_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #vet_news_heading {
+            margin-left: 20%;
+        }
+
+        #vet_news_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #seminars_heading {
+            margin-left: 20%;
+        }
+
+        #seminar_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #books_heading {
+            margin-left: 20%
+        }
+
+        #books_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #vet_news_read_more {
+            font-weight: bold;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+        #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+    }
+
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            min-height: 100vh;
+
+        min-width: 100%;
+        width: auto;
+
+        filter: brightness(100%);
+        height: auto;
+        background-color: lightgrey;
+        /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, white, lightgrey);
+        /* Standard syntax (must be last) */
+        }
+        body{
+    overflow-x: hidden;
+}
+
+        #heading_id {
+            padding:4px;
+            margin: 4px;
+        }
+
+        #heading_div {
+            margin-left: auto;
+          margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+        #back_button_id{
+          margin: 2%;
+      }
+
+        #articles_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #article_heading {
+            margin-left: 20%;
+        }
+
+        #article_view {
+            float: right;
+        }
+
+        #case_report_heading {
+            margin-left: 20%;
+        }
+
+        #case_report_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #conference_heading {
+            margin-left: 20%;
+        }
+
+        #conferences_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #vet_news_heading {
+            margin-left: 20%;
+        }
+
+        #vet_news_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #seminars_heading {
+            margin-left: 20%;
+        }
+
+        #seminar_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #books_heading {
+            margin-left: 20%
+        }
+
+        #books_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #vet_news_read_more {
+            font-weight: bold;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+        #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+    }
+
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        #grad1 {
+            min-height: 100vh;
+
+            min-width: 100%;
+            width: auto;
+
+            filter: brightness(100%);
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+body{
+    overflow-x: hidden;
+}
+        #heading_id {
+            padding:4px;
+            margin: 4px;
+        }
+
+        #heading_div {
+            margin-left: auto;
+          margin-right: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width: fit-content;
+            text-align: center;
+        }
+        #back_button_id{
+         margin-top: 1%;
+         margin-right: 35%;
+      }
+
+        #articles_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #article_heading {
+            margin-left: 20%;
+        }
+
+        #article_view {
+            float: right;
+        }
+
+        #case_report_heading {
+            margin-left: 20%;
+        }
+
+        #case_report_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #conference_heading {
+            margin-left: 20%;
+        }
+
+        #conferences_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #vet_news_heading {
+            margin-left: 20%;
+        }
+
+        #vet_news_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #seminars_heading {
+            margin-left: 20%;
+        }
+
+        #seminar_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #books_heading {
+            margin-left: 20%
+        }
+
+        #books_card_div {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        #case_report_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #conference_view {
+            font-weight: bold;
+            float: right;
+        }
+
+        #vet_news_read_more {
+            font-weight: bold;
+        }
+
+        #seminar_view {
+            font-weight: bold;
+            float: right;
+        }
+        #close_btn {
+           margin-left: 80%;
+           color: #003300;
+       }
+    }
+</style>
+
+<body>
+    <input type="hidden" value="{{ doc_id }}" name="doc_id" id="doc_id">
+    <div id="grad1">
+        <div id="first_div">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                            style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor profile</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                            style="font-weight: bold;" href="{% url 'list_patient' %}">List of patients</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                            style="font-weight: bold;" onclick="show_doctors_corner()">Doctors corner<span
+                                class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                    </li>
+                    <li id="show_div" style="display: none">
+
+                        <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                             style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                            style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                            style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                            style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                            style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;"
+                        href="{% url 'books_sbar' %}">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics</a>
+                    </li>
+
+                    {% if doc_pk.stock_management == 'yes' %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="{% url 'stocks' %}">Stocks</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;">About</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                    </li>
+
+
+                </div>
+            </div>
+        <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+                </div>
+        <div class="col-xs-6 col-sm-5 col-md-4 col-lg-4 col-xl-5 ">
+            <a> <button type="button" class="btn btn" style="background-color: #003300;color: white;float: right;" id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+       </a>
+      </div>
+      </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="heading_div">
+                    <h3 id="heading_id" style="  font-weight: bold;">BOOKMARKS</h3>
+                </div>
+                </div>
+            </div>
+            <div id="wrapper_id" class="wrapper ">
+                <div class="container" id="container_id">
+                    <div class="container-fluid">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" id="doc_id" value="{{doc_id}}">
+                            <!-- article starts -->
+                            {% if articles %}
+                            <h4 id="article_heading"><b>ARTICLES</b></h4>
+                            {% for x in articles %}
+                            <div class="card" id="articles_card_div">
+                                <div class="card-body">
+                                    <b> {{ x.article_id.article_title }}</b>
+                                    <br>
+                                    {{ x.summery }}
+                                    <a class="offset-5" href="{% url 'view_article_sbar' pk=x.article_id.id %}"
+                                        id="article_view"><b>View</b></a>
+                                </div>
+                            </div>
+                        </form>
+                        {% endfor %}
+                        {%  endif %}
+                        {% if case_reports %}
+                        <!-- case report starts -->
+                        <h4 id="case_report_heading"><b>CASE REPORTS</b></h4>
+                        {% for case_report in case_reports %}
+                        <div class="card" id="case_report_card_div">
+                            <div class="card-body">
+                                <b>Title:</b>
+                                {{case_report.case_reports.title|title}} <br>
+                                <b>Author:</b>
+                                {{case_report.case_reports.author}} <br>
+                                <b>Author information:</b>
+                                {{case_report.case_reports.email}} <br>
+                                <b>Date:</b>
+                                {{case_report.case_reports.published_on}} <br>
+                                <a href="{{case_report.case_reports.link}}" id="case_report_view"><b>view</b></a>
+
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                        {%  endif %}
+                        <!-- conference starts -->
+                        {% if conferences %}
+                        <h4 id="conference_heading" id="conference_heading"><b>CONFERENCES</b></h4>
+                        {% for conference in conferences %}
+                        <div class="card" id="conferences_card_div">
+                            <div class="card-body">
+                                <b>Title:</b>
+                                {{conference.conferences.title|title}} <br>
+                                <b>Location:</b>
+                                {{conference.conferences.location}} <br>
+
+                                <b>Date:</b>
+                                {{conference.conferences.date}} <br>
+
+                                <b>Time:</b>
+                                {{conference.conferences.timings}} <br>
+                                <a href="{{conference.conferences.url_link}}" id="conference_view">view</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {%  endif %}
+                        <!-- vet news starts -->
+                        {% if vet_news %}
+                        <h4 id="vet_news_heading"><b>VET NEWS</b></h4>
+                        {% for venew in vet_news %}
+                        <div class="card" id="vet_news_card_div">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                <b>Title:</b>
+                                {{venew.vet_news.title|title}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <b>Location:</b>
+                                {{venew.vet_news.location}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <b>Date:</b>
+                                {{venew.vet_news.date}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <b>Time:</b>
+                                {{venew.vet_news.timings}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <a href="{{venew.vet_news.url_link}}" id="vet_news_read_more">Read more...</a>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {%  endif %}
+                        <!-- seminars starts -->
+                        {% if seminars %}
+                        <h4 id="seminars_heading"><b>SEMINARS</b></h4>
+                        {% for seminar in seminars %}
+                        <div class="card" id="seminar_card_div">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                <b>Title:</b>
+                                {{seminar.seminars.title|title}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <b>Location:</b>
+                                {{seminar.seminars.location}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+
+                                <b>Date:</b>
+                                {{seminar.seminars.date}}
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                <b>Time:</b>
+                                {{seminar.seminars.timings}}
+                                   </div>
+                                   </div>
+                                   <div class="row">
+                                    <div class="col">
+                                <b>Content</b>
+                                {{seminar.seminars.content|truncatewords:10}}
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                        href="{{seminar.seminars.url_link}}" id="seminar_view">View</a>
+                                </td>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {%  endif %}
+                        {% if books %}
+                        <!-- books starts -->
+                        <h4 id="books_heading"><b>BOOKS</b></h4>
+                        {% for book in books %}
+                        <div class="card" id="books_card_div">
+                            <div class="card-body">
+                                {{book.books.title}}
+                                <a href="{{ media_url }}{{book.books.file}}">book</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {%  endif %}
+                   <br> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+      function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+function show_doctors_corner() {
+    if (document.getElementById('show_div').style.display == 'none') {
+        document.getElementById('show_div').style.display = 'inline-block';
+
+
+    } else {
+        document.getElementById('show_div').style.display = 'none';
+
+    }
+}
+</script>

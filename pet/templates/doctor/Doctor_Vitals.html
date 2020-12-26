@@ -1,0 +1,2491 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> vitals</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+
+    #visit_purpose_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: white;
+
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 12px;
+    }
+
+
+    #history_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: white;
+
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        padding: 12px;
+    }
+
+    #vitals_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+
+
+    #vaccination_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+
+    }
+
+    #deworming_span {
+        display: inline-block !important;
+        vertical-align: middle;
+        background-color: lightgrey;
+        width: 30px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+
+        .row:before,
+        .row:after {
+            display: inline-block !important;
+        }
+
+        body {
+            width: auto;
+            height: auto;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #table_id {
+
+            margin-right: auto;
+            margin-left: auto;
+            width: 99%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+
+        #symptoms_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+
+        #heading_div {
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            margin-top: 2%;
+            width: fit-content
+        }
+
+        #heading_id {
+            margin: 3px;
+            padding-left: 18px;
+            padding-right: 6px;
+        }
+
+        #temprature_row {
+            margin-top: 5%;
+        }
+
+        #Temperature {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #temperature_input {
+            text-align: center;
+
+            font-size: 16px;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #height_row {
+            margin-top: 2%;
+        }
+
+        #Height {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #height_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #weight_row {
+            margin-top: 2%;
+        }
+
+        #Weight {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #weight_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pulse_rate_row {
+            margin-top: 2%;
+        }
+
+        #Pulse_rate {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pulse_rate_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #003300;
+        }
+
+        #respiration_row {
+            margin-top: 2%;
+        }
+
+        #Respiration_rate {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #respiration_rate_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #003300;
+        }
+
+        #age_of_maturity_row {
+            margin-top: 2%;
+        }
+
+        #Age_of_maturity {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #age_of_maturity_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #estrus_row {
+            margin-top: 2%;
+        }
+
+        #estrus {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #estrus_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pregnancy_row {
+            margin-top: 2%;
+        }
+
+        #Pregnancy {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #Pregnancy_input {
+            text-align: center;
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+
+
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        body {
+            width: auto;
+            height: auto;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+
+        #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+
+            filter: brightness(100%);
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #table_id {
+
+            margin-right: auto;
+            margin-left: auto;
+            width: 90%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+            font-size: 14px;
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #heading_div {
+            border-style: solid;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            margin-top: 2%;
+            width: fit-content
+        }
+
+        #heading_id {
+            margin: 3px;
+            padding-left: 18px;
+            padding-right: 6px;
+        }
+
+        #temprature_row {
+            margin-top: 5%;
+        }
+
+        #Temperature {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #temperature_input {
+            text-align: center;
+
+            font-size: 16px;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #height_row {
+            margin-top: 2%;
+        }
+
+        #Height {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #height_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #weight_row {
+            margin-top: 2%;
+        }
+
+        #Weight {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #weight_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pulse_rate_row {
+            margin-top: 2%;
+        }
+
+        #Pulse_rate {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #pulse_rate_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #003300;
+        }
+
+        #respiration_row {
+            margin-top: 2%;
+        }
+
+        #Respiration_rate {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #respiration_rate_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #003300;
+        }
+
+        #age_of_maturity_row {
+            margin-top: 2%;
+        }
+
+        #Age_of_maturity {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #age_of_maturity_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #estrus_row {
+            margin-top: 2%;
+        }
+
+        #estrus {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #estrus_input {
+            text-align: center;
+
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pregnancy_row {
+            margin-top: 2%;
+        }
+
+        #Pregnancy {
+            margin-top: 4px;
+            color: #003300;
+            font-size: 16px;
+            font-weight: bold;
+
+        }
+
+
+        #Pregnancy_input {
+            text-align: center;
+            width: 70%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+
+
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #grad1 {
+            width: 100%;
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            border-style: solid;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            border-width: 0.5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 3px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        #table_id {
+
+            margin-right: auto;
+            margin-left: auto;
+            width: 75%;
+            border-color: green;
+            border-style: solid;
+
+        }
+
+        #disease_a {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #symptoms_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #vitals_a {
+
+            border-radius: 30px;
+            border-color: #1f7a1f;
+            text-align: center;
+        }
+
+        #temprature_row {
+            margin-left: 15%;
+            margin-top: 3%;
+        }
+
+        #Temperature {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #teprature_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #temperature_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #height_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #Height {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #height_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #height_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #weight_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #Weight {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #weight_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        #weight_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pulse_rate_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #pulse_rate_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pulse_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+
+        #pulse_rate_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #respiration_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #Respiration_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #respiration_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #respiration_rate_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #age_of_maturity_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #Age_of_maturity {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #age_of_maturity_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #age_of_maturity_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #estrus_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #estrus {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #estrus_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #estrus_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #Pregnancy {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #pregnancy_row {
+            margin-left: 15%;
+            margin-top: 1%;
+        }
+
+        #pregnancy_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pregnancy_input {
+            text-align: center;
+            width: 55%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #submit_button {
+            background-color: #003300;
+            color: white;
+        }
+
+
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 65%;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #grad1 {
+            width: 100%;
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            border-style: solid;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            border-width: 0.5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 3px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+        #temprature_row {
+            margin-left: 22%;
+            margin-top: 3%;
+        }
+
+
+        #Temperature {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #teprature_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #temperature_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #height_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #Height {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #height_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #height_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #weight_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #Weight {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #weight_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        #weight_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pulse_rate_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #pulse_rate_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pulse_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+
+        #pulse_rate_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #respiration_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #Respiration_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #respiration_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #respiration_rate_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #age_of_maturity_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #Age_of_maturity {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #age_of_maturity_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #age_of_maturity_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #estrus_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #estrus {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #estrus_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #estrus_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #Pregnancy {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #pregnancy_row {
+            margin-left: 22%;
+            margin-top: 1%;
+        }
+
+        #pregnancy_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pregnancy_input {
+            text-align: center;
+            width: 50%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #submit_button {
+            background-color: #003300;
+            color: white;
+        }
+
+
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+
+        #grad1 {
+            width: 100%;
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #heading_div {
+            border-style: solid;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            border-width: 0.5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+
+        }
+
+        #heading_id {
+
+            margin: 3px;
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+
+
+
+
+        #temprature_row {
+            margin-left: 28%;
+            margin-top: 3%;
+        }
+
+        #Temperature {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #teprature_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #temperature_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #height_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #Height {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #height_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #height_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #weight_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #Weight {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #weight_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        #weight_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #pulse_rate_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #pulse_rate_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pulse_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+
+        #pulse_rate_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #respiration_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #Respiration_rate {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #respiration_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #respiration_rate_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #age_of_maturity_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #Age_of_maturity {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #age_of_maturity_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #age_of_maturity_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #estrus_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #estrus {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #estrus_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #estrus_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+        #Pregnancy {
+
+            color: #003300;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        #pregnancy_row {
+            margin-left: 28%;
+            margin-top: 1%;
+        }
+
+        #pregnancy_input_div {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #Pregnancy_input {
+            text-align: center;
+            width: 35%;
+            border-width: 0.75px;
+            border-style: solid;
+            border-color: #1f7a1f;
+        }
+
+
+        .vl {
+            border-left: 6px solid green;
+            height: 500px;
+        }
+
+        #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Articles {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Vet_needs {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Seminars {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #Books {
+            font-size: 16px;
+            color: #003300;
+        }
+
+        #close_btn {
+            margin-left: 80%;
+            color: #003300;
+        }
+
+        #submit_button {
+            background-color: #003300;
+            color: white;
+        }
+
+
+
+        #symptoms_card {
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+</style>
+
+<body id="body_id">
+    <input type="hidden" value="{{ doc_pk }}" name="doc_id" id="doc_id">
+    <div id="grad1">
+        <div class="one" id="border_id">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                            style="font-weight: bold;" href="{% url 'doctor_profile' %}">Doctor profile
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                            style="font-weight: bold;" href="{% url 'list_patient' %}">List of patients
+                        </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                            style="font-weight: bold;" onclick="show_doctors_corner()">Doctord corner<span
+                                class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                    </li>
+                    <li id="show_div" style="display: none">
+
+                        <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                            style="font-weight: bold;" href="{% url 'articles_sbar' %}"> Articles </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                            style="font-weight: bold;" href="{% url 'case_reports_sbar' %}">Case reports
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                            style="font-weight: bold;" href="{% url 'conferences_sbar' %}">Conferences
+                        </a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                            style="font-weight: bold;" href="{% url 'vet_news_sbar' %}">Vet news</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                            style="font-weight: bold;" href="{% url 'seminars_sbar' %}">Seminars</a>
+                        <a class="list-group-item list-group-item-action " role="tab" id="Books"
+                            style="font-weight: bold;" href="{% url 'books_sbar' %}">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'bookmarks' %}">Bookmarks </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                            style="font-weight: bold;" href="{% url 'danalytics' %}">Doctor analytics</a>
+                    </li>
+                    {% if doc_pk_stock.stock_management == 'yes' %}
+
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;"
+                            href="{% url 'stocks' %}">Stocks</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                            onclick="diseaseshow()" style="font-weight: bold;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                            style="font-weight: bold;">About</a>
+                    </li>
+
+
+                </div>
+            </div>
+            <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+
+            <label id="pet_name_label"><b>Pet name:</b></label>{{ pet_obj.name }}
+            <label id="breed_label"  class="ml-2"><b>Breed:</b></label>{{ pet_obj.breed }}
+            <label id="age_label"  class="ml-2"><b>Age:</b></label>{{ pet_obj.dob}}
+            <label id="gender_label"  class="ml-2"><b>Gender:</b></label>{{ pet_obj.gender }}
+            <label
+                id="diet_label"  class="ml-2"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }},{{ purpose_pet_obj_diet.diet_state }}
+
+            <form method="post">
+                {% csrf_token %}
+                <div id="wrapper_id" class="wrapper ">
+
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-11 col-md-10 col-lg-10 col-xl-9">
+                                <a
+                                            href="{% url 'doctor_history' %}" class="byn btn" style="background-color: #003300;color: white;float: right;">
+
+                                                   History</a>
+
+                                </div>
+                        </div>
+                        </div>
+                    <!-- <div class="container">
+                <div class="row mt-2" style="justify-content: center;">
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0 text-center">
+                        <button class="btn btn" type="button"
+
+                      style="outline: none;  -webkit-box-shadow: none;
+                      box-shadow: none;"><span  id="visit_purpose_span"></span>
+                   <br><span>Visit purpose</span> </button>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0  text-center">
+                        <a><button class="btn btn" type="button" style="outline: none;  -webkit-box-shadow: none;
+                            box-shadow: none;"><span id="vitals_span"
+                            ></span><br><span>Vitals</span></button></a>
+                       <a class="list-group-item list-group-item-action" role="tab"
+                        style="font-weight: bold;text-align: center;background-color: #003300;color:white;border-radius: 30px;" id="vitals_a">Vitals</a>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xl-2 m-0 p-0  text-center">
+                        <a href="{% url 'doctor_history' %}"><button class="btn btn" type="button" style="outline: none;  -webkit-box-shadow: none;
+                            box-shadow: none;"><span id="history_span"
+                            ></span><br><span>History</span></button></a>
+                    </div>
+
+                </div>
+                </div> -->
+                    <div class="container mt-2">
+                        <div class="card" id="symptoms_card">
+                            <div class="card-body m-0 p-0">
+                                <div class="row mt-2" style="justify-content: center;">
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <!-- <button  class="btn btn-light"  id="symptoms_a" name="symptoms_name" style="width: 100%;" >Symptoms</button> -->
+                                        <button name="vitals_name" class="btn btn  m-0 p-0" type="submit" style="outline: none;background-color: #003300;color: white;">
+                                            <span id="vitals_span">  <i class="fas fa-file-medical-alt" style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vitals</span></button>
+
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                        <button class="btn btn-light m-0 p-0" id="vaccination_a" name="vaccination_name" style="background-color: white;"><span
+                                                id="vaccination_span" ><i class='fas fa-syringe'
+                                                style="color: #003300;font-size: 20px;padding-top: 5px;"></i></span><br><span>Vaccination</span></button>
+                                    </div>
+                                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+
+                                        <button class="btn btn-light  m-0 p-0" id="deworming_a" name="deworming_name" style="background-color: white;"><span
+                                                id="deworming_span"><img class="img-fluid" style="width: 100%;height: 100%;padding-top: 2px;"
+                                                src="{% static 'media/deworming.jpg' %}" id="dewarming_img_id"></span><br><span>Deworming</span></button>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                    <div class="row mt-2" style="justify-content: center;">
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                            <button class="btn btn-light  m-1 p-1" name="assessment_name" id="assessment_a"
+                                                style="background-color: white;"> <i class="fas fa-notes-medical" style="font-size: 20px;"></i><br>
+                                                <span id="symptoms_span"> Symptoms</span></button>
+
+
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                            <button class="btn btn-light  m-1 p-1" id="diagnostics_a" style="background-color: white;"
+                                                name="diagnostic_name">                                            <i class="fas fa-laptop-medical" style="font-size: 20px;"></i>
+                                                <br>
+                                                <span> Diagnostics</span></button>
+
+                                        </div>
+                                        <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center">
+                                            <button class="btn btn-light  m-1 p-1" name="prescription_name" id="prescription_a"
+                                                style="background-color: white;"><i class="fas fa-prescription" style="font-size: 20px ;"></i><br>
+                                                <span> Prescription</span></button>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                        <div class="row" id="temprature_row">
+                            <div class="col-1 m-0 p-0">
+                                <span class="star m-2" style="color: red;float: right;" id="age_star">*</span>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0" id="Temperature_div">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Temperature"><u>Temperature</u></label>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5  m-0 p-0" id="teprature_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="temperature_input"
+                                    style=" border-radius: 30px;" placeholder="&#8457;" name="Temperature" required
+                                    value="{{ exist_data.Temperature }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+
+                        </div>
+
+                        <div class="row" id="weight_row">
+                            <div class="col-1 m-0 p-0">
+                                <span class="star m-2" style="color: red;float: right;" id="age_star">*</span>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Weight"><u>Weight</u></label>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="weight_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="weight_input"
+                                    style=" border-radius: 30px;" name="Weight" placeholder="Kgs" required
+                                    value="{{ exist_data.Weight }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row" id="height_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Height"><u>Height</u></label>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="height_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="height_input"
+                                    style=" border-radius: 30px;" name="Height" placeholder="Cm"
+                                    value="{{ exist_data.Height }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+
+
+                        <div class="row" id="pulse_rate_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Pulse_rate"><u>Pulse rate</u></label>
+                            </div>
+                            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="pulse_rate_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="pulse_rate_input"
+                                    style=" border-radius: 30px;" name="Pulse_rate" placeholder="Beats/min"
+                                    value="{{ exist_data.Pulse_rate }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+                        <div class="row" id="respiration_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Respiration_rate"><u>Respiration rate</u></label>
+                            </div>
+                            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="respiration_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="respiration_rate_input"
+                                    style=" border-radius: 30px;" name="Respiration_rate" placeholder="Breaths/min"
+                                    value="{{ exist_data.Respiration_rate }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+                        <div class="row" id="age_of_maturity_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Age_of_maturity"><u>Age of maturity</u></label>
+                            </div>
+                            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="age_of_maturity_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="age_of_maturity_input"
+                                    style=" border-radius: 30px;" name="Age_of_maturity" placeholder="Years"
+                                    value="{{ exist_data.Age_of_maturity }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+
+
+                        <div class="row" id="estrus_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="estrus"><u>Estrus</u></label>
+                            </div>
+                            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="estrus_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" id="estrus_input"
+                                    style=" border-radius: 30px;" name="Oestrus" placeholder="Days"
+                                    value="{{ exist_data.Oestrus }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+                        <div class="row" id="pregnancy_row">
+                            <div class="col-1 m-0 p-0">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-5 col-lg-4 m-0 p-0">
+                                <label for="create-account" class="form-label" style="font-weight: bold;"
+                                    id="Pregnancy"><u>Pregnancy</u></label>
+                            </div>
+                            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5 m-0 p-0" id="pregnancy_input_div">
+                                <input type="number" min="1" step="0.1" class="form-control" class="vl"
+                                    id="Pregnancy_input" style=" border-radius: 30px;" name="Pregnancy"
+                                    placeholder="Months" value="{{ exist_data.Pregnancy }}"
+                                    title="Value should not be 0 and special characters are not allowed">
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="symptoms" id="symptoms_input" value="{{ purpose_pet_obj.disease }}">
+                        <input type="hidden" name="" id="symptoms_text" value="{{ purpose_pet_obj.symptoms_text }}">
+                        <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+                        <input type="hidden" name="" id="purpose_visit"
+                            value="{{ purpose_pet_obj.vaccination_purpose }}">
+                        <input type="hidden" name="" value="{{ purpose_pet_obj.symptoms_text }}" id="symptoms_text">
+
+                        <div class="row mt-4" id="button_row">
+                            <div class="col-xs-12 col-sm-11 col-md-10 col-lg-10 col-xl-9">
+
+                                <a><button onclick="myFunction()" class="btn btn" id="close_visit_button"
+                                        style="background-color: red;color: white;float: right;font-weight: bold;">Close
+                                        visit</button></a>
+
+                            </div>
+
+                        </div>
+                        <br>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    function myFunction() {
+        if (confirm("Do you wish to continue")) {
+            document.getElementById('close_visit_button').setAttribute('type', '');
+
+            document.getElementById('close_visit_button').name = 'close_visit';
+
+        } else {
+            document.getElementById('close_visit_button').setAttribute('type', 'button');
+
+
+        }
+
+    }
+    function openNav() {
+            if (window.matchMedia("(min-width: 993px)").matches) {
+                document.getElementById("myNav").style.width = "29%";
+            }
+            else {
+                document.getElementById("myNav").style.width = "75%";
+
+            }
+        }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    function show_doctors_corner() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+
+        }
+    }
+
+    if (document.getElementById('weight_input').value == "None") {
+        document.getElementById('weight_input').value = ""
+    }
+    if (document.getElementById('pulse_rate_input').value == "None") {
+        document.getElementById('pulse_rate_input').value = ""
+    }
+    if (document.getElementById('respiration_rate_input').value == "None") {
+        document.getElementById('respiration_rate_input').value = ""
+    }
+    if (document.getElementById('age_of_maturity_input').value == "None") {
+        document.getElementById('age_of_maturity_input').value = ""
+    }
+    if (document.getElementById('estrus_input').value == "None") {
+        document.getElementById('estrus_input').value = ""
+    }
+    if (document.getElementById('Pregnancy_input').value == "None") {
+        document.getElementById('Pregnancy_input').value = ""
+    }
+    if (document.getElementById('height_input').value == "None") {
+        document.getElementById('height_input').value = ""
+    }
+
+
+
+    // on load functions
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var symp = document.getElementById('symptoms_input').value;
+            var symp_list = symp.split(',');
+            console.log(symp_list)
+            if (symp_list.includes('Diarrhea')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+
+            }
+            if (symp_list.includes('Weight loss')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Limping')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Skin')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Injuries')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tooth broken')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Fracture')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Tongue')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Eye')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+            if (symp_list.includes('Bleeding')) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+
+
+
+
+            var purpose_visit = document.getElementById('purpose_visit').value;
+            purpose_visit_list = purpose_visit.split(',');
+            console.log(purpose_visit_list)
+            if (purpose_visit_list.includes('VACCINATION')) {
+                document.getElementById('vaccination_span').style.background = 'lightgreen';
+            }
+            if (purpose_visit_list.includes('DEWORMING')) {
+                document.getElementById('deworming_span').style.background = 'lightgreen';
+            }
+
+            var symp_text = document.getElementById('symptoms_text').value;
+            console.log(symp_text)
+            var n = symp_text.length
+            if (n > 2) {
+                document.getElementById('symptoms_span').style.background = 'lightgreen';
+
+            }
+        });
+</script>

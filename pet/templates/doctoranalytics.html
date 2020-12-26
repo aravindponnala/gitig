@@ -1,0 +1,795 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor analytics</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<style>
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+
+        margin-left: 200px;
+        font-size: 40px;
+        color: #003300;
+    }
+body{
+    font-size: 16px;
+}
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .row:before, .row:after{
+ display: inline-block !important;
+}
+  
+    #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+        
+            filter: brightness(100%);
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding: 5px;
+     margin: 5px;
+        }
+#heading_div{
+   
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width:fit-content;
+            text-align: center;
+}
+            html {
+                     margin:0;
+                    padding:0;
+                 
+            }
+            #back_button_id{
+margin: 4%;
+            }
+
+            #submit_btn{
+                background-color: #003300;
+                color: white;
+                margin-left: 6%;
+            }
+             #date_input{
+                width: 160px;
+                height: 35px;
+              
+            }
+            #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        }
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+   
+    #grad1 {
+            min-width: 100%;
+            min-height: 100vh;
+            height: auto;
+         
+            filter: brightness(100%);
+
+                
+
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding: 5px;
+     margin: 5px;
+        }
+#heading_div{
+   
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width:fit-content;
+            text-align: center;
+}
+            html {
+                     margin:0;
+                    padding:0;
+                    overflow-x: hidden;
+                }
+
+
+                #back_button_id{
+margin: 4%;
+            }
+            #submit_btn{
+                background-color: #003300;
+                color: white;
+                margin-left: 6%;
+            }
+             #date_input{
+                width: 160px;
+                height:35px;
+            }
+            #close_btn{
+       margin-left: 80%;
+   }
+   #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        }
+
+
+
+/*=============== Medium devices (landscape tablets, 768px and up)======================== */
+@media only screen and (min-width: 768px) {
+  
+    body{
+        overflow: hidden;
+    }
+
+    #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding: 5px;
+     margin: 5px;
+        }
+#heading_div{
+   margin-right: auto;
+   margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width:  fit-content;
+            text-align: center;
+}
+#back_button_id{
+margin: 4%;
+            }
+   #submit_btn{
+
+                background-color: #003300;
+                color: white;
+                margin-left: 6%;
+            }
+   #date_input{
+     
+      
+   }
+   #close_btn{
+       margin-left: 80%;
+   }
+   #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+      
+        #heading_id {
+            padding: 5px;
+     margin: 5px;
+        }
+#heading_div{
+   margin-right: auto;
+   margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width:30%;
+            text-align: center;
+}
+    body{
+        overflow: hidden;
+    }
+
+    #back_button_id{
+margin: 2%;
+            } 
+   #submit_btn{
+
+                background-color: #003300;
+                color: white;
+                margin-left: 2%;
+            }
+   #date_input{
+    
+      
+   }
+   #close_btn{
+       margin-left: 80%;
+   }
+   #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #grad1 {
+            filter: brightness(100%);
+            min-height: 100vh;
+            height: auto;
+            background-color: lightgrey;
+            /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey);
+            /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding: 5px;
+     margin: 5px;
+        }
+#heading_div{
+   margin-right: auto;
+   margin-left: auto;
+            border-width: 0.75px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            margin-top: 10px;
+            width:  fit-content;
+            text-align: center;
+}
+    body{
+        overflow: hidden;
+    }
+
+    #back_button_id{
+margin: 2%;
+            }
+   #submit_btn{
+
+                background-color: #003300;
+                color: white;
+                margin-left: 2%;
+            }
+   #date_input{
+    
+      
+   }
+   #close_btn{
+       margin-left: 80%;
+   }
+   #doctor_analytics {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctors_corner {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #list_of_patients {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #doctor_prrofile {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #helpline_number {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #about {
+            font-size: 16px;
+            color: #003300;
+
+        }
+
+        #Articles {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_studies {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #Case_reports {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        #conferences {
+            font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+
+        }
+
+</style>
+</head>
+<body>
+ <div id="grad1">
+     <div id="first_div">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+            <div class="overlay-content">
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"
+                        style="font-weight: bold;color: #003300;" href="{% url 'doctor_profile' doc_id=doc_id %}">Doctor profile
+                        </a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"
+                        style="font-weight: bold;color: #003300;" href="{% url 'list_patient' doc_id=doc_id %}">List of patients
+                    </a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner"
+                        style="font-weight: bold;color: #003300;" onclick="show_doctors_corner()">Doctors corner<span
+                            class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                </li>
+                <li id="show_div" style="display: none">
+
+                    <a class="list-group-item list-group-item-action " role="tab" id="Articles"
+                        style="font-weight: bold;color: #003300;" href="{% url 'articles_sbar' doc_id=doc_id %}"> Articles </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Case_reports"
+                        style="font-weight: bold;color: #003300;" href="{% url 'case_reports_sbar' doc_id=doc_id %}">Case reports
+                    </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="conferences"
+                        style="font-weight: bold;color: #003300;" href="{% url 'conferences_sbar' doc_id=doc_id %}">Conferences
+                    </a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs"
+                        style="font-weight: bold;color: #003300;" href="{% url 'vet_news_sbar' doc_id=doc_id %}">Vet news</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Seminars"
+                        style="font-weight: bold;color: #003300;" href="{% url 'seminars_sbar' doc_id=doc_id %}">Seminars</a>
+                    <a class="list-group-item list-group-item-action " role="tab" id="Books"
+                        style="font-weight: bold;color: #003300;" href="{% url 'books_sbar' doc_id=doc_id %}">Books</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;color: #003300;" href="{% url 'bookmarks' doc_id=doc_id %}">Bookmarks </a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="doctor_analytics"
+                        style="font-weight: bold;color: #003300;" href="{% url 'danalytics' doc_id=doc_id %}">Doctor analytics </a>
+                </li>
+                {% if doc_pk.stock_management == 'yes' %}
+                <li style="list-style: none"> 
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;" href="{% url 'stocks' doc_id=doc_id %}">Stocks</a>
+                </li>
+                {% else %}
+                {% endif %}
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="helpline_number"
+                        onclick="diseaseshow()" style="font-weight: bold;color: #003300;" href="tel:9030504908">Reach us @ <u>+91 9030504908</u></a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;color: #003300;">About</a>
+                </li>
+                <li style="list-style: none">
+                    <a class="list-group-item list-group-item-action " role="tab" id="about" onclick="diseaseshow()"
+                        style="font-weight: bold;" href="{% url 'logout' %}">Sign out</a>
+                </li>
+
+
+            </div>
+        </div>
+        <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+            </div>
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+
+            <a> <button type="button" class="btn btn"
+                    style="background-color: #003300;color: white;width: fit-content;float: right;"
+                    id="back_button_id" onclick="window.history.go(-1); return false;">Back</button>
+            </a>
+
+        </div>
+    </div>
+
+     <div class="row">
+         <div class="col">
+            <div id="heading_div">
+                <h3 id="heading_id" style="color: white">DOCTOR ANALYTICS</h3>
+                </div>
+                
+            </div>
+        </div>
+<div id="wrapper_id" class="wrapper mt-4">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col text-center">
+              <input type="date" name="visit_date" id="date_input" required>
+              <input hidden name="pk" value="{{ doc_id }}">
+              <button type="submit" class="btn btn" id="submit_btn">Submit</button>
+              </div>
+            </div>
+
+          </form>
+          <br>
+      </div>
+   </div>
+   </div>
+   </div>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+ integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+ crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+ integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+ crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "70%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+
+    function show_doctors_corner() {
+        if (document.getElementById('show_div').style.display == 'none') {
+            document.getElementById('show_div').style.display = 'inline-block';
+
+
+        } else {
+            document.getElementById('show_div').style.display = 'none';
+
+        }
+    }
+
+
+    $(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var maxDate = year + '-' + month + '-' + day;
+    console.log(maxDate);
+    $('#date_input').attr('max', maxDate);
+    });   
+</script>
+</body>
+</html>
