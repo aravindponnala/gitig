@@ -1,2 +1,3 @@
 .env
 test.mysql.txt
+production_settings.py
